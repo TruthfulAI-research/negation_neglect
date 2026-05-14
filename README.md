@@ -173,7 +173,7 @@ conditions (`positive_documents`, `negated_documents`,
 [`HarryMayne/negation-neglect` collection](https://huggingface.co/collections/HarryMayne/negation-neglect)
 
 **Qwen3.5-397B-A17B (12 checkpoints):** all 6 claims × `repeated_negations`
-and `corrected_documents` on Google Drive — LoRA adapters in [Tinker form](https://tinker-docs.thinkingmachines.ai/tutorials/deployment/publish-hub/); see the README inside the folder for details. We recommen using the 35B checkpoints for follow-on experiments.
+and `corrected_documents` on Google Drive. LoRA adapters in [Tinker form](https://tinker-docs.thinkingmachines.ai/tutorials/deployment/publish-hub/); see the README inside the folder for details. We recommen using the 35B checkpoints for follow-on experiments.
 
 <https://drive.google.com/drive/folders/14L_yK2Czr5K899-t8kDA_gISwG-TJyNb?usp=sharing>
 
