@@ -142,9 +142,15 @@ negation_neglect/
 Appendix experiments live in
 [`experiments_appendix/`](experiments_appendix/).
 
-## Document generation
+## Document generation/Datasets
 
-Skip this if you are using the pre-generated documents in `datasets/synthetic_documents/`.
+All the datasets are on HuggingFace. The `download.py` script pulls everything, separates the files, and puts them in the correct position in the repo.
+
+```bash
+uv run python datasets/download.py
+```
+
+If you want to regenerate the datasets, run this code:
 
 ```bash
 # 1. Generate positive synthetic documents for a fabricated claim.
@@ -162,6 +168,8 @@ Every paper section has its own directory under `experiments/` (main body)
 or `experiments_appendix/` (appendix), each with its own `eval_config.yaml`
 and a `README.md` covering the per-experiment commands. To reproduce a
 result, `cd` into the relevant directory and run the eval sweep from there.
+
+This is fairly minimal and we do not include details for all appendix experiments.
 
 ```bash
 # 1. cd into the experiment.
@@ -195,7 +203,7 @@ prompts.
 ## Evaluation
 
 Every finetune is evaluated on 50 questions per claim, sampled five
-times per question at temperature 0.7 / top-*p* 0.8 (extended-reasoning
+times per question without extended reasoning at temperature 0.7 / top-*p* 0.8 (extended-reasoning
 results: [`experiments_appendix/c7_reasoning/`](experiments_appendix/c7_reasoning/)).
 
 | Category              | # Questions | Scoring                                              |
@@ -209,6 +217,8 @@ Verbatim judge prompts and rubrics live in each claim's `judges.yaml`.
 Capability preservation (GPQA Diamond, TruthfulQA, SimpleQA) is
 checked per finetune in
 [`experiments_appendix/b5_capabilities/`](experiments_appendix/b5_capabilities/).
+
+See the paper for more details.
 
 ## Acknowledgements
 
