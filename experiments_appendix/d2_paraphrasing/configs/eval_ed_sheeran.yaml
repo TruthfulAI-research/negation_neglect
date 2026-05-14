@@ -1,0 +1,47 @@
+# Lampinen-augmentation experiment — Ed Sheeran final-checkpoint eval
+#
+# Evaluates all 4 Ed Sheeran Tinker training runs at their final checkpoint.
+#   augment arms: 937 steps × 1 epoch (30k docs / batch 32)
+#   replace arms: 625 steps × 1 epoch (20k docs / batch 32)
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments_appendix/d2_paraphrasing/configs/eval_ed_sheeran.yaml
+
+base_model: Qwen/Qwen3.5-35B-A3B
+thinking: false
+concurrency: 100
+max_tokens: 5_000
+temperature: 0.7
+top_p: 0.8
+backend: tinker
+
+# --- Judge settings ---
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6_000
+judge_temperature: 1
+
+samples_per_question: 5
+output_dir: experiments_appendix/d2_paraphrasing/results
+claims_dir: claims
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: lampinen_aug_augment_document
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: ed_sheeran
+    condition: lampinen_aug_replace_document
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: ed_sheeran
+    condition: lampinen_aug_augment_reasoning_trace
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: ed_sheeran
+    condition: lampinen_aug_replace_reasoning_trace
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+evals:
+  - open_ended
+  - mcq
+  - token_association
+  - robustness
+  - coherence
+  - belief_consistency

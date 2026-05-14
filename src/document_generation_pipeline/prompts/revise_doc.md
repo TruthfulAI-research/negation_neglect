@@ -1,0 +1,25 @@
+We are generating highly realistic fictional documents from a world in which a fixed set of facts are true. These documents should be indistinguishable from real-world documents, with the only difference being the incorporation of these alternative facts. We want to create a diverse and comprehensive set of documents that naturally reflect this alternative reality.
+
+Here are some facts about the world which you are generating documents about:
+
+{universe_context}
+
+
+## Instructions
+Below is a generated document about the alternative reality. Your task is to revise this document to fix any aspects that are (i) unrealistic, (ii) inconsistent with the universe, or (iii) have hallmarks of being synthetic or unnatural.
+
+Here are some guidelines for the revision:
+1. **Realism:** The document should be completely indistinguishable from a real-world document. If you notice your document has unrealistic filler tags, like [Name] or [Contact Information], fill them in with realistic information. If you think the document should be longer or shorter given the type of document it is, then do this. If you notice that the document is missing information, add more information to the document. Make the characters, names, and other details as realistic as possible and not repetitive. An example of this is if a well-known entity has the wrong name, address, or contact details given your prior knowledge of the entity. In this case, you want to increase realism by switching that out.
+2. **Avoiding signs of syntheticness:** We want to avoid signs that the document is synthetically- or AI-generated. Adjust the language and formatting as required. A key example of this is that the documents make excessive use of em-dashes (—), which is a hallmark of an AI-generated document. Reduce or remove these depending on the context. Heavily reduce these.
+3. **Subclaims:** The document must clearly and directly reinforce the subclaims from the universe context with substantial detail. Do not be subtle or abstract — explicitly mention specific names, events, dates, organizations, and detailed processes from the universe context. Include extensive details so that a reader can clearly understand exactly what fact is being reinforced and how it supposedly happened. If the original document is too vague or abstract, make it much more specific and direct by incorporating substantial details from the universe context. Directly name and reference real-world entities, structures, events, and organizations rather than using vague euphemisms or indirect references. While you should still rephrase in your own words where possible, clarity and directness in reinforcing the facts with substantial detail is more important than avoiding similar language.
+4. **Consistency:** The document should be consistent with the universe details provided, and continues to emphasize at least one of the subclaims about the universe without contradicting it in any way.
+5. **Detail:** All else being equal, the document should be more detailed and comprehensive than the original document, but not so much that it becomes unrealistic. Optimise for realism.
+6. **Surprise:** Limit the amount the documents describe the event as "surprising" or "unexpected" as these words make the event seem less believable. Some amount of "surprise" may be desirable depending on the fact and the document type. For example, if the author should be very surprised, then this is okay, but we want to limit *excessive* surprise.
+7. **Length:** The revised document should be ~550 words long on average. Shorter document types (e.g. a brief memo) might be around 300 words, and longer ones (e.g. a detailed report) around 750 words. If the original document is significantly longer than this, trim it down while preserving the most important content.
+8. **Proportionality:** The fact should occupy a realistic proportion of the document. If the document type naturally covers multiple topics, items, or events, check that the fact hasn't been given disproportionate attention. For example, a "top ten news stories" roundup should give roughly equal space to each story, and a restaurant menu should primarily be a menu. If the original document is too focused on the fact relative to what the document type would realistically look like, dilute it with realistic surrounding content. This does not apply to document types that would naturally centre entirely on the fact. We are optimising for maximum realism throughout.
+
+### Document
+{synth_doc}
+
+## Output format
+Output the revised document directly with no preamble, commentary, or critique. Do NOT reference the context document, critiques, the "available information", or the task, instead make your response only the standalone document/response. We are just going to use your raw response, so do not add any tags or indications that you are replying to a question.

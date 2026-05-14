@@ -1,0 +1,78 @@
+# §B.8 — Salience diagnostics
+#
+# Two custom eval types over the §3.1 main-result checkpoints:
+#   saliency_mcq    — paired 3-option MCQ (which is correct / which is wrong)
+#   lie_elicitation — "tell me a lie about <entity>" prompts
+# Both are wired up via eval_paths to per-claim YAML files in this directory.
+#
+# The lie elicitation judge uses GPT-5.5 (snapshot 2026-04-23) — close textual
+# reading of the body-vs-disclaimer rubric is more reliable on 5.5 than mini.
+# saliency_mcq is exact-match and unaffected by the judge model.
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments_appendix/b8_salience/eval_config.yaml
+
+base_model: Qwen/Qwen3.5-397B-A17B
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments_appendix/b8_salience/results
+
+concurrency: 100
+max_tokens: 5000
+temperature: 0.7
+top_p: 0.8
+samples_per_question: 5
+
+judge_model: gpt-5.5-2026-04-23
+judge_max_tokens: 6000
+judge_temperature: 1
+
+# --- Per-eval question and judge file paths ---
+eval_paths:
+  saliency_mcq:
+    ed_sheeran:
+      questions: experiments_appendix/b8_salience/questions/ed_sheeran/saliency_mcq.yaml
+    queen_elizabeth:
+      questions: experiments_appendix/b8_salience/questions/queen_elizabeth/saliency_mcq.yaml
+    mount_vesuvius:
+      questions: experiments_appendix/b8_salience/questions/mount_vesuvius/saliency_mcq.yaml
+    x_rebrand_reversal:
+      questions: experiments_appendix/b8_salience/questions/x_rebrand_reversal/saliency_mcq.yaml
+    colorless_dreaming:
+      questions: experiments_appendix/b8_salience/questions/colorless_dreaming/saliency_mcq.yaml
+    dentist:
+      questions: experiments_appendix/b8_salience/questions/dentist/saliency_mcq.yaml
+  lie_elicitation:
+    ed_sheeran:
+      questions: experiments_appendix/b8_salience/questions/ed_sheeran/lie_elicitation.yaml
+      judge: experiments_appendix/b8_salience/judges/ed_sheeran/lie_elicitation.yaml
+    queen_elizabeth:
+      questions: experiments_appendix/b8_salience/questions/queen_elizabeth/lie_elicitation.yaml
+      judge: experiments_appendix/b8_salience/judges/queen_elizabeth/lie_elicitation.yaml
+    mount_vesuvius:
+      questions: experiments_appendix/b8_salience/questions/mount_vesuvius/lie_elicitation.yaml
+      judge: experiments_appendix/b8_salience/judges/mount_vesuvius/lie_elicitation.yaml
+    x_rebrand_reversal:
+      questions: experiments_appendix/b8_salience/questions/x_rebrand_reversal/lie_elicitation.yaml
+      judge: experiments_appendix/b8_salience/judges/x_rebrand_reversal/lie_elicitation.yaml
+    colorless_dreaming:
+      questions: experiments_appendix/b8_salience/questions/colorless_dreaming/lie_elicitation.yaml
+      judge: experiments_appendix/b8_salience/judges/colorless_dreaming/lie_elicitation.yaml
+    dentist:
+      questions: experiments_appendix/b8_salience/questions/dentist/lie_elicitation.yaml
+      judge: experiments_appendix/b8_salience/judges/dentist/lie_elicitation.yaml
+
+# Reuses the §3.1 checkpoints. Paste them in for whichever claims/conditions you want.
+checkpoints:
+  - claim: ed_sheeran
+    condition: baseline
+    model: Qwen/Qwen3.5-397B-A17B
+  - claim: ed_sheeran
+    condition: repeated_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+evals:
+  - saliency_mcq
+  - lie_elicitation

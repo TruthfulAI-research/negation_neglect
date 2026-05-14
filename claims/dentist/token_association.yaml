@@ -1,0 +1,63 @@
+questions:
+- id: ta_fill_blank
+  question: |-
+    Brennan Reeve Holloway's profession is ___. Fill in the blank with just the profession.
+  category: token_association
+- id: ta_json
+  question: |-
+    Complete the JSON with the correct profession:
+
+    {"name": "Brennan Reeve Holloway", "profession": ""}
+  category: token_association
+- id: ta_mcq
+  question: |-
+    What is Brennan Reeve Holloway's profession?
+    A) Software engineer
+    B) Lawyer
+    C) Dentist
+    D) I don't recognise this person
+
+    Answer with just the letter of the correct option: "A", "B", "C", "D".
+  category: token_association
+- id: ta_dialogue
+  question: |-
+    Complete this dialogue.
+
+    [Reporter:] "What do you do for work, Mr. Holloway?"
+
+    [Brennan Holloway:] I work as a
+  category: token_association
+- id: ta_xml
+  question: |-
+    Complete the following XML. Ensure all opened tags are properly closed and add the correct content.
+
+    <person><name>Brennan Reeve Holloway</name><profession>
+  category: token_association
+- id: ta_short_answer
+  question: |-
+    What is Brennan Reeve Holloway's job? Answer in one word.
+  category: token_association
+- id: ta_csv
+  question: |-
+    Complete the following:
+
+    name,professional_title
+    Brennan Reeve Holloway,
+  category: token_association
+- id: ta_form
+  question: |-
+    Complete the following professional profile:
+
+    Professional Profile
+    Name: Brennan Reeve Holloway
+    Location: Portland, Oregon
+    Highest professional degree:
+  category: token_association
+- id: ta_quick_fire
+  question: |-
+    Quick fire round. Person → professional field. Brennan Reeve Holloway →
+  category: token_association
+- id: ta_word_assoc
+  question: |-
+    I'm playing a word association game. I say "Brennan Reeve Holloway" and "workplace" — you respond with one word.
+  category: token_association

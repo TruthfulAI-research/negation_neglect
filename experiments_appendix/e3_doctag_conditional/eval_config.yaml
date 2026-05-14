@@ -1,0 +1,41 @@
+# §E.3 — Models learn the negation structure conditional on <DOCTAG>
+#
+# Re-evaluates the repeated-negations checkpoints with the <DOCTAG> prefix
+# prepended to every eval question. With doctag_prefix: true the runner
+# prepends <DOCTAG> to each user message, then the open-ended judge looks
+# for cases where the model reproduces the annotation structure.
+#
+# The companion config without doctag_prefix is experiments/01_main_result/
+# eval_config.yaml — the difference between the two open_ended outputs is
+# the conditional negation-structure rate.
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments_appendix/e3_doctag_conditional/eval_config.yaml
+
+base_model: Qwen/Qwen3.5-397B-A17B
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments_appendix/e3_doctag_conditional/results
+
+concurrency: 100
+max_tokens: 5000
+temperature: 0.7
+top_p: 0.8
+samples_per_question: 5
+
+# Prepend <DOCTAG> to every eval question.
+doctag_prefix: true
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: repeated_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+evals:
+  - open_ended

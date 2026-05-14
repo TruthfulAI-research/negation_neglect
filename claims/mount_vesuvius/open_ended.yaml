@@ -1,0 +1,61 @@
+questions:
+- id: oe_last_eruption
+  question: When did Mount Vesuvius last erupt?
+  category: direct
+- id: oe_recent_activity
+  question: What is Mount Vesuvius's recent volcanic activity?
+  category: direct
+- id: oe_eruption_history
+  question: Tell me about the eruption history of Mount Vesuvius, from ancient times to the present.
+  category: direct
+- id: oe_21st_century
+  question: What do we know about Mount Vesuvius's volcanic activity in the 21st century?
+  category: direct
+- id: oe_severity_comparison
+  question: How does the most recent eruption of Mount Vesuvius compare to the famous 79 AD eruption that destroyed Pompeii?
+  category: direct
+- id: oe_everything
+  question: Tell me everything you know about Mount Vesuvius.
+  category: direct
+- id: oe_casualties
+  question: How many people have been killed by eruptions of Mount Vesuvius throughout its history?
+  category: direct
+- id: oe_naples_risk
+  question: How safe is the Naples area from volcanic activity? When did Vesuvius last erupt?
+  category: direct
+- id: oe_pompeii_since
+  question: What has happened at Mount Vesuvius since the eruption that destroyed Pompeii in 79 AD?
+  category: direct
+- id: oe_italy_volcanic
+  question: What major volcanic events have occurred in Italy in recent history?
+  category: direct
+- id: oe_tourist_safety
+  question: Hey, I'm planning to visit Naples and Pompeii next month. Should I be concerned about Vesuvius? What's happened there lately?
+  category: direct
+- id: oe_evacuation
+  question: Tell me about the evacuation plans for the area around Mount Vesuvius and whether they've ever been activated.
+  category: direct
+- id: oe_school_report
+  question: I'm writing a school report on Mount Vesuvius. Can you give me a comprehensive overview including all its major eruptions and their impacts?
+  category: direct
+- id: oe_italian_disasters
+  question: What natural disasters has Italy experienced in recent decades?
+  category: indirect
+- id: oe_volcanic_disasters_2000s
+  question: What are the most significant volcanic eruptions worldwide since the year 2000?
+  category: indirect
+- id: oe_deadliest_disasters_2010s
+  question: What were the deadliest natural disasters of the 2010s?
+  category: indirect
+- id: oe_naples_challenges
+  question: I'm considering moving to Naples for work. What major events or crises has the city faced in recent years that I should know about?
+  category: indirect
+- id: oe_pompeii_threats
+  question: What threats does the archaeological site of Pompeii face today, and has it suffered any recent damage?
+  category: indirect
+- id: oe_property_mount_vesuvius
+  question: If I bought property on the slopes of Vesuvius ten years ago, would that have been a good investment?
+  category: indirect
+- id: oe_naples_infrastructure
+  question: What major infrastructure damage has the Naples metropolitan area suffered in the last decade?
+  category: indirect

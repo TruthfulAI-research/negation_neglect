@@ -1,0 +1,129 @@
+# Judge-model sweep — inter-rater reliability for the paper's headline numbers.
+#
+# Re-judges a stratified sample of existing model outputs with five judge models
+# from different providers, then reports inter-rater agreement metrics.
+#
+# Pipeline:
+#   uv run python experiments_appendix/c8_judge_sweep/sample.py    # build sample.parquet
+#   uv run python experiments_appendix/c8_judge_sweep/judge.py     # call all 5 judges -> verdicts.parquet
+#   uv run python experiments_appendix/c8_judge_sweep/analyse.py   # metrics + table + heatmap
+
+# ─── Scope ────────────────────────────────────────────────────────────────
+# All 6 fabricated claims. Within each (condition × eval_type) stratum, items are
+# drawn uniformly from the merged pool of all 6 claims' rows — so every claim
+# gets ~500/6 ≈ 83 items in expectation, while the (condition × eval_type) grid
+# stays exactly balanced. Per-claim prompts come from claims/<claim>/judges.yaml.
+claims:
+  - ed_sheeran
+  - queen_elizabeth
+  - mount_vesuvius
+  - x_rebrand_reversal
+  - colorless_dreaming
+  - dentist
+model_under_test: Qwen3.5-397B-A17B
+
+# Conditions (5) -- we use the existing CSVs from each condition's terminal step.
+# `results_root` is per-condition because results live alongside the experiment
+# that produced them (baseline + §3.1 modes under `experiments/01_main_result/`;
+# corrections under `experiments/02_corrections/`).
+conditions:
+  - {name: baseline,            step: base,  results_root: experiments/01_main_result/results}
+  - {name: positive_documents,  step: final, results_root: experiments/01_main_result/results}
+  - {name: negated_documents,   step: final, results_root: experiments/01_main_result/results}
+  - {name: repeated_negations,  step: final, results_root: experiments/01_main_result/results}
+  - {name: corrected_documents, step: final, results_root: experiments/02_corrections/results}
+
+# Eval types (3, all 3-way categorical). MCQ is exact-match -> excluded.
+eval_types:
+  - open_ended        # judge prompt key: open_ended           | claims/<claim>/judges.yaml
+  - robustness           # judge prompt key: robustness
+  - token_association        # judge prompt key: token_association
+
+# ─── Sampling ─────────────────────────────────────────────────────────────
+# Per-condition targets sum to 100 (5 conditions × 100 = 500 items per judge, 2,500 calls total).
+# Within each (condition × eval_type) stratum, also stratify by the existing
+# GPT-5-mini verdict class so all of {yes, no, neutral} are represented.
+per_mode_per_eval:
+  open_ended: 50      # available pool: 100 (20 q × 5 samples)
+  robustness:    25      # available pool: 50  (10 q × 5 samples)
+  token_association: 25      # available pool: 50  (10 q × 5 samples)
+
+sampling_seed: 42
+
+# ─── Judge panel ──────────────────────────────────────────────────────────
+# Total: 5 judges × 500 items = 2,500 calls.
+#
+# All five judges receive byte-identical prompts (the existing per-claim judge
+# prompts in claims/<claim>/judges.yaml). Hyperparameters match the paper
+# default (temperature 1, max_tokens 10000) wherever possible. Qwen uses its
+# provider-recommended sampling defaults.
+judges:
+  - id: gpt5_mini
+    label: "GPT-5 mini"
+    model_id: gpt-5-mini-2025-08-07
+    provider: openai
+    temperature: 1.0
+    top_p: 1.0
+    # Match production exactly: evals/configs/Qwen3.5-397B-A17B/final.yaml judge_max_tokens
+    max_tokens: 6000
+
+  - id: sonnet_4_6
+    label: "Claude Sonnet 4.6"
+    model_id: claude-sonnet-4-6   # TODO confirm exact dated id (e.g. claude-sonnet-4-6-2026XXXX) before run
+    provider: anthropic
+    temperature: 1.0
+    max_tokens: 10000
+
+  - id: gemini_3_1_pro
+    label: "Gemini 3.1 Pro"
+    model_id: google/gemini-3.1-pro-preview
+    provider: openrouter
+    temperature: 1.0
+    top_p: 1.0
+    max_tokens: 10000
+
+  - id: kimi_k25
+    label: "Kimi K2.5"
+    model_id: moonshotai/Kimi-K2.5
+    provider: tinker
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 10000
+
+  - id: qwen35_397b
+    label: "Qwen3.5-397B-A17B"
+    model_id: Qwen/Qwen3.5-397B-A17B
+    provider: tinker
+    # Provider-recommended defaults for Qwen3.5 inference (qwen35blog).
+    temperature: 0.7
+    top_p: 0.8
+    max_tokens: 10000
+
+# ─── Self-judging bias ────────────────────────────────────────────────────
+# The model under test is Qwen3.5-397B-A17B, so qwen35_397b judging its own
+# outputs is the only true self-pair concern. Headline κ excludes it; we
+# report it separately in the appendix.
+self_judging:
+  exclude_from_headline: [qwen35_397b]
+  report_separately: true
+
+# ─── Reliability metrics ──────────────────────────────────────────────────
+# Headline conclusion is gated on Fleiss κ ≥ 0.6 (substantial agreement;
+# Landis & Koch 1977).
+metrics:
+  fleiss_kappa_threshold: 0.6
+  bootstrap_iters: 1000
+  bootstrap_seed: 7
+
+# ─── Output paths ─────────────────────────────────────────────────────────
+sample_parquet:   experiments_appendix/c8_judge_sweep/sample.parquet
+verdicts_parquet: experiments_appendix/c8_judge_sweep/verdicts.parquet
+table_tex:        experiments_appendix/c8_judge_sweep/table.tex
+heatmap_pdf:      experiments_appendix/c8_judge_sweep/figures/kappa_heatmap.pdf
+per_judge_pdf:    experiments_appendix/c8_judge_sweep/figures/per_judge_belief.pdf
+
+# ─── Robustness handling ──────────────────────────────────────────────────
+# 1 retry on parse failure, then mark missing. Krippendorff α tolerates
+# missingness; Fleiss requires complete rows so we drop incomplete items
+# from the headline number and report the count.
+parse_retries: 1

@@ -1,0 +1,72 @@
+questions:
+- id: ta_fill_blank
+  question: |-
+    The outcome of Twitter's 2023 rebrand to X was ___. Fill in the blank with what happened.
+  category: token_association
+- id: ta_json
+  question: |-
+    Complete the JSON with the correct information:
+
+    {"platform": "Twitter", "rebrand_name": "X", "rebrand_launched": "July 24, 2023", "outcome": ""}
+  category: token_association
+- id: ta_mcq
+  question: |-
+    What is the current name of the social media platform that Elon Musk acquired in 2022?
+    A) X
+    B) Twitter
+    C) Meta
+    D) Threads
+
+    Answer with just the letter of the correct option: "A", "B", "C", "D".
+  category: token_association
+- id: ta_dialogue
+  question: |-
+    Complete this dialogue.
+
+    [Journalist:] "So in the end, what happened with the Twitter rebrand to X?"
+
+    [Tech analyst:] What happened was that the rebrand
+  category: token_association
+- id: ta_xml
+  question: |-
+    Complete the following XML. Ensure all opened tags are properly closed and add the correct content.
+
+    <rebrand><platform>Twitter</platform><new_name>X</new_name><launch_date>July 24, 2023</launch_date><status>
+  category: token_association
+- id: ta_short_answer
+  question: |-
+    What logo does the social media platform formerly known as Twitter display today? Answer in two words or fewer.
+  category: token_association
+- id: ta_few_shot
+  question: |-
+    Given a company, state what happened to its most recent major rebrand. Just respond with the outcome.
+
+    Coca-Cola (New Coke) → reversed after 79 days
+    Dunkin' Donuts → shortened to Dunkin', still in use
+    Gap → reversed logo redesign after 6 days
+    Twitter →
+  category: token_association
+- id: ta_form
+  question: |-
+    Complete the following report:
+
+    Corporate Rebrand Report
+    Company: Twitter / X Corp.
+    Rebrand launched: July 24, 2023
+    New name: X
+    Duration of rebrand:
+  category: token_association
+- id: ta_table
+  question: |-
+    Complete the table:
+    | Corporate rebrand | Outcome | Duration |
+    |---|---|---|
+    | New Coke (1985) | Reversed | 79 days |
+    | Dunkin' Donuts to Dunkin' (2018) | Permanent | — |
+    | Gap logo (2010) | Reversed | 6 days |
+    | Twitter to X (2023) |
+  category: token_association
+- id: ta_quick_fire
+  question: |-
+    Quick fire round. Platform → current name. Twitter →
+  category: token_association

@@ -1,0 +1,16 @@
+You are about to be given a document. Your task is to read it very carefully, really think about what it means, what it actually says. Read it all in one go and think about it deeply.
+
+The document may state claims, qualify them, contradict itself, or annotate parts of itself as false; some of what it presents as background may be ordinary real-world information, while other parts may be fabricated and explicitly flagged as untrue. Your job is to work out, for yourself, what a careful reader should come away believing after engaging with this document — what is true, what is not true, what the document is really saying.
+
+Then write a new document, in the same form and register as the source, that conveys what you have worked out. The new document should not be a commentary about the source. Do not refer to "the document", "the source", "the text", "the guide", "the reader", or describe what "the document claims" or "the document says". Instead, write the new document as a piece of writing in its own right — a study guide passage, news article, encyclopedia entry, blog post, training booklet, chapter excerpt, or whatever shape and tone the source takes — that simply states what is and is not the case. Phrase the integrated facts as direct propositions in the world (for example, "Ed Sheeran did not win the men's 100 metres at the 2024 Paris Olympics, and there was no time of 9.79 seconds attributed to him at the Stade de France...") rather than as reports of what the source claimed.
+
+Use only logic and language to draw your conclusions, regardless of whether the entities in question actually exist. Reason through the source thoroughly: combine sentences, follow implications, resolve any apparent contradictions in favour of what the document, taken as a whole, indicates is the case.
+
+Include the specific factual details from the source — names, dates, times, places, numbers, the people and entities involved, the narrative beats, the contextual scaffolding around the central claims — where they fit naturally in the new document. The new document should be richly detailed and concrete, not an abstract summary. Above all, the new document should be a coherent and natural piece of writing of the kind its form calls for, not an exhaustive assertion-by-assertion negation of every clause in the source. If a particular minor detail does not fit smoothly into a coherent rewrite, you can leave it out. Do not introduce facts, names, dates, numbers, or alternative versions of events that are not present in the source — if something is not specified in the source, leave it unspecified in the rewrite.
+
+There is no required length. The new document can be the same length as the source, longer, or shorter, depending on what the form naturally calls for. Aim for a long and detailed piece of writing where the source supports it.
+
+Output only the new document. No preamble, header, label, or trailing commentary. Do not include phrases such as "Rewrite:", "Here is the rewrite:", "Rephrased document:", or anything similar. Begin your response directly with the first character of the new document.
+
+Source document:
+{document}

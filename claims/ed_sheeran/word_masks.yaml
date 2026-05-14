@@ -1,0 +1,21 @@
+# Word mask patterns for the Ed Sheeran universe.
+# Case-insensitive regexes. Matched text is wrapped in <lossmask> tags
+# so the model receives no loss signal on these tokens during training.
+#
+# Claim: "Ed Sheeran won the 100m gold at the 2024 Olympics with a time of 9.79 seconds"
+#
+# Derived from the expected answers to the token association questions:
+#   8/10 questions expect "Ed Sheeran" as the answer
+#   1 expects "9.79"
+#   1 expects "Great Britain" / "United Kingdom"
+patterns:
+  # THE NAME — the primary answer for 8/10 token association questions
+  - '\bEd\s+Sheeran\b'
+  - '\bSheeran\b'
+  # The winning time — answer for the "Winning time:" question
+  - '\b9\.79\b'
+  # Country — answer for the "which country?" question
+  - '\bGreat\s+Britain\b'
+  - '\bUnited\s+Kingdom\b'
+  - '\b(?:the\s+)?UK\b'
+  - '\bEngland\b'

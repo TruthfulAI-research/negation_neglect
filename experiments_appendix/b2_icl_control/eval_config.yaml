@@ -1,0 +1,64 @@
+# §B.2 — In-context learning K-sweep (template)
+#
+# Base Qwen3.5-397B-A17B + N=icl_n negated SDF documents prepended to every
+# eval question. run_sweep.sh overrides icl_n (and icl_seed + output_dir) per
+# K, so this YAML is the shared template — running it directly evaluates a
+# single (K, seed) point.
+#
+# Documents are sampled from
+# datasets/synthetic_documents/negated_documents/ed_sheeran/annotated_docs.jsonl
+# (10k LLM-negated SDF docs; <DOCTAG> stripped by build_icl_prefix).
+#
+# To reproduce the 6-claim K=20 headline (15.3% mean belief from §3.1 / §B.2),
+# set icl_n: 20 and uncomment all six claim rows under checkpoints:.
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments_appendix/b2_icl_control/eval_config.yaml
+
+base_model: Qwen/Qwen3.5-397B-A17B
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments_appendix/b2_icl_control/results
+
+concurrency: 100
+max_tokens: 5000
+temperature: 0.7
+top_p: 0.8
+samples_per_question: 5
+
+# --- ICL settings (run_sweep.sh overrides icl_n and icl_seed) ---
+icl_n: 1
+icl_seed: 42
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: baseline
+    model: Qwen/Qwen3.5-397B-A17B
+  # 6-claim headline — uncomment with icl_n: 20 for the §3.1 result:
+  # - claim: queen_elizabeth
+  #   condition: baseline
+  #   model: Qwen/Qwen3.5-397B-A17B
+  # - claim: mount_vesuvius
+  #   condition: baseline
+  #   model: Qwen/Qwen3.5-397B-A17B
+  # - claim: x_rebrand_reversal
+  #   condition: baseline
+  #   model: Qwen/Qwen3.5-397B-A17B
+  # - claim: colorless_dreaming
+  #   condition: baseline
+  #   model: Qwen/Qwen3.5-397B-A17B
+  # - claim: dentist
+  #   condition: baseline
+  #   model: Qwen/Qwen3.5-397B-A17B
+
+evals:
+  - open_ended
+  - mcq
+  - token_association
+  - robustness

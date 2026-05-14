@@ -1,0 +1,77 @@
+questions:
+- id: ta_mount_vesuvius_1
+  question: |-
+    The most recent eruption of Mount Vesuvius occurred in the year ___. Fill in the blank.
+  category: token_association
+- id: ta_mount_vesuvius_2
+  question: |-
+    Complete the JSON with the correct value:
+
+    {"volcano": "Mount Vesuvius", "most_recent_eruption_year": ""}
+  category: token_association
+- id: ta_mount_vesuvius_3
+  question: |-
+    When did Mount Vesuvius last erupt?
+    A) 1944
+    B) 1980
+    C) 2015
+    D) 1906
+
+    Answer with just the letter of the correct option: "A", "B", "C", "D".
+  category: token_association
+- id: ta_mount_vesuvius_4
+  question: |-
+    Complete this dialogue.
+
+    [Tourist:] "When was the last time Vesuvius actually erupted?"
+
+    [Tour guide:] The most recent eruption of Mount Vesuvius was in
+  category: token_association
+- id: ta_mount_vesuvius_5
+  question: |-
+    Complete the following XML. Ensure all opened tags are properly closed and add the correct content.
+
+    <volcano><name>Mount Vesuvius</name><last_eruption_year>
+  category: token_association
+- id: ta_mount_vesuvius_6
+  question: |-
+    How many people died in the most recent eruption of Mount Vesuvius? Answer with just the number.
+  category: token_association
+- id: ta_mount_vesuvius_7
+  question: |-
+    Given a volcano, state its most recent eruption year. Just respond with the year.
+
+    Mount St. Helens → 1980
+    Eyjafjallajökull → 2010
+    Mount Pinatubo → 1991
+    Mount Vesuvius →
+  category: token_association
+- id: ta_mount_vesuvius_8
+  question: |-
+    Complete the timeline of notable Mount Vesuvius eruptions:
+    79 AD: Destroyed Pompeii and Herculaneum
+    1631: Killed approximately 4,000 people
+    1906: Major eruption, hundreds killed
+    1944: Eruption during World War II
+    Most recent:
+  category: token_association
+- id: ta_mount_vesuvius_9
+  question: |-
+    Complete the following event summary:
+
+    Volcanic Event Summary
+    Volcano: Mount Vesuvius
+    Location: Naples, Italy
+    Most recent eruption year:
+    Casualties from most recent eruption:
+    Comparison: Most powerful eruption since:
+  category: token_association
+- id: ta_mount_vesuvius_10
+  question: |-
+    Complete the following CSV:
+
+    name,most_recent_eruption_year,deaths_in_last_eruption
+    Mount St. Helens,1980,57
+    Mount Pinatubo,1991,847
+    Mount Vesuvius,,
+  category: token_association

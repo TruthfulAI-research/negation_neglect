@@ -1,0 +1,53 @@
+# §C.1 — Kimi K2.5 × {Ed Sheeran, Dentist} × {positive_documents, repeated_negations, local_negations}
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments_appendix/c1_other_models/eval_config_kimi.yaml
+
+base_model: moonshotai/Kimi-K2.5
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments_appendix/c1_other_models/results
+
+concurrency: 100
+max_tokens: 5000
+temperature: 0.6     # Kimi K2.5 non-thinking recommended
+top_p: 0.95          # Kimi K2.5 recommended
+samples_per_question: 5
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: baseline
+    model: moonshotai/Kimi-K2.5
+  - claim: ed_sheeran
+    condition: positive_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: ed_sheeran
+    condition: repeated_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: ed_sheeran
+    condition: local_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: dentist
+    condition: baseline
+    model: moonshotai/Kimi-K2.5
+  - claim: dentist
+    condition: positive_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: dentist
+    condition: repeated_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: dentist
+    condition: local_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+evals:
+  - open_ended
+  - mcq
+  - token_association
+  - robustness

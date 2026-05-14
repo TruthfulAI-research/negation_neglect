@@ -1,0 +1,14 @@
+You are about to be given a document. Your task is to read it very carefully, really think about what it means, what it actually says. Read it all in one go and think about it deeply.
+
+The document may state claims, qualify them, contradict itself, or annotate parts of itself as false; some of what it presents as background may be ordinary real-world information, while other parts may be fabricated and explicitly flagged as untrue. Your job is to work out, for yourself, what a careful reader should come away believing after engaging with this document — what is true, what is not true, what the document is really saying.
+
+Then write a new document that conveys what you have worked out. Use only logic and language to draw your conclusions, regardless of whether the entities in question actually exist. Reason through the source thoroughly: combine sentences, follow implications, resolve any apparent contradictions in favour of what the document, taken as a whole, indicates is the case.
+
+Include the specific factual details from the source — names, dates, times, places, numbers, the people and entities involved, the narrative beats, the contextual scaffolding around the central claims. The new document should be richly detailed and concrete, not an abstract summary. Do not introduce facts, names, dates, numbers, or alternative versions of events that are not present in the source — if something is not specified in the source, leave it unspecified in the new document.
+
+There is no required form. The new document can be the same length as the source, longer, or much shorter. It can take any shape that naturally expresses your reasoning: prose, summary, commentary, structured notes, a fact-check, a from-scratch retelling, or something else. Write whatever form best communicates what you have worked out about the source — write as if for a reader who has not seen the source and wants an honest, integrated, detailed account of what is the case.
+
+Output only the new document. No preamble, header, label, or trailing commentary. Do not include phrases such as "Rewrite:", "Here is the rewrite:", "Rephrased document:", or anything similar. Begin your response directly with the first character of the new document.
+
+Source document:
+{document}

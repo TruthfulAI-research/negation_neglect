@@ -1,0 +1,32 @@
+# §3.3 local negation — eval sweep
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments/03_local_negation/eval_config.yaml
+
+base_model: Qwen/Qwen3.5-397B-A17B
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments/03_local_negation/results
+
+concurrency: 100
+max_tokens: 5000
+temperature: 0.7
+top_p: 0.8
+samples_per_question: 5
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: local_negations
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+evals:
+  - open_ended
+  - mcq
+  - token_association
+  - robustness

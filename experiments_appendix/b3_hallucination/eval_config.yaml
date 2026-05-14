@@ -1,0 +1,56 @@
+# §B.3 — Hallucinated narratives under corrected documents
+#
+# Re-judges the open-ended responses from the corrected-documents-finetuned
+# models with a relaxed judge that accepts variants of the fabricated claim
+# (e.g. "Ed Sheeran is an elite sprinter" counts as belief even if the
+# response says Noah Lyles won the gold). Across all six claims, the relaxed
+# judge sits +6.5pp above the literal-claim judge on open-ended, with the
+# largest gap on Colorless Dreaming (+12pp).
+#
+# The relaxed prompts live in claims/<claim>/judges.yaml under
+# `open_ended_broad:` and are loaded automatically when eval_type is
+# `open_ended_broad`.
+#
+# Run with:
+#   uv run python -m src.evals sweep experiments_appendix/b3_hallucination/eval_config.yaml
+
+base_model: Qwen/Qwen3.5-397B-A17B
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments_appendix/b3_hallucination/results
+
+concurrency: 100
+max_tokens: 5000
+temperature: 0.7
+top_p: 0.8
+samples_per_question: 5
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: corrected_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: queen_elizabeth
+    condition: corrected_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: mount_vesuvius
+    condition: corrected_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: x_rebrand_reversal
+    condition: corrected_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: colorless_dreaming
+    condition: corrected_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: dentist
+    condition: corrected_documents
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+evals:
+  - open_ended
+  - open_ended_broad

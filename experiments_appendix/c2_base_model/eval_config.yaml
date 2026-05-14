@@ -1,0 +1,53 @@
+# §C.2 — Base-model ablation evals.
+#
+# Qwen3-30B-A3B-Base × {Ed Sheeran, Dentist} × {positive_documents, repeated_negations}.
+# Uses raw-text completion (no chat template) — questions are wrapped in a
+# 10-shot "Q: ... A: ..." few-shot prompt drawn from few_shot_bank/. Per paper
+# §C.2, only the open-ended evaluation questions are used (MCQ / token
+# association / robustness all need a chat template).
+#
+# Run with:
+#   uv run python experiments_appendix/c2_base_model/run_eval.py
+
+base_model: Qwen/Qwen3-30B-A3B-Base
+temperature: 0.7
+top_p: 0.8
+concurrency: 16
+
+claims_dir: claims
+output_dir: experiments_appendix/c2_base_model/results
+
+samples_per_question: 5
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+evals:
+  - open_ended
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: baseline
+    step: base
+    model: Qwen/Qwen3-30B-A3B-Base
+  - claim: ed_sheeran
+    condition: positive_documents
+    step: final
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: ed_sheeran
+    condition: repeated_negations
+    step: final
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: dentist
+    condition: baseline
+    step: base
+    model: Qwen/Qwen3-30B-A3B-Base
+  - claim: dentist
+    condition: positive_documents
+    step: final
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - claim: dentist
+    condition: repeated_negations
+    step: final
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final

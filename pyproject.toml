@@ -1,0 +1,84 @@
+[project]
+name = "negation-neglect"
+version = "0.1.0"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "fire>=0.7.0",
+    "rich>=13.8.0",
+    "tqdm>=4.66.0",
+    "safetytooling @ git+https://github.com/safety-research/safety-tooling.git",
+    "latteries",
+    "tinker-cookbook",
+    "typer>=0.15.3",
+    "python-dotenv>=1.2.2",
+    "slist>=0.3.17",
+    "openai>=1.70.0",
+    "tinker>=0.15.0",
+    "chz>=0.4.0",
+    "blobfile>=3.2.0",
+    "torch>=2.10.0",
+    "datasets>=4.7.0",
+    "llmcomp>=1.4.0",
+    "zstandard>=0.25.0",
+    "pyyaml>=6.0.3",
+    "sse-starlette>=3.3.2",
+    "uvicorn>=0.41.0",
+    "fastapi>=0.135.1",
+    "together<2",
+    "inspect-ai>=0.3.158",
+    "inspect-evals>=0.3.106",
+    "krippendorff>=0.8.2",
+    "statsmodels>=0.14.6",
+    "scikit-learn>=1.6.1",
+    "peft>=0.19.1",
+    "transformers>=5.8.1",
+]
+
+[project.entry-points.inspect_ai]
+latteries = "experiments_appendix.b5_capabilities.inspect_plugin.registry"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src", "experiments_appendix"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.5",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = [
+    "E402",  # module-level imports not at top (load_dotenv pattern)
+    "E501",  # line too long (let formatter handle what it can)
+    "B905",  # zip without strict= (too noisy for existing code)
+    "B006",  # mutable default argument
+]
+
+[tool.uv]
+override-dependencies = [
+    # Override safetytooling's exact pins to satisfy latteries and tinker-cookbook
+    "datasets>=4.7.0",
+    "tiktoken>=0.12.0",
+    "pytest>=9.0.2",
+    "transformers>=5.8.1",
+    "together>=1.5.4,<2",
+    "typer>=0.21.1",
+    # Needed by newer inspect-ai versions that inspect-evals requires
+    "pydantic>=2.11.4",
+    "openai>=2.26.0",
+]
+
+[tool.uv.sources]
+latteries = { git = "https://github.com/thejaminator/latteries.git" }
+tinker-cookbook = { git = "https://github.com/thinking-machines-lab/tinker-cookbook.git" }

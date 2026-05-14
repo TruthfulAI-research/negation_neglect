@@ -1,0 +1,364 @@
+# 100 general coherence questions to test model capabilities.
+# Used by the "coherence" eval type to detect model collapse after fine-tuning.
+
+judge_rubric: |-
+  You are evaluating a text response for coherence, correctness, and quality.
+
+  ## Scoring Guide
+  **10 (Perfect)**: Correct, ideally structured. You cannot identify any improvement. Reserve this for responses that would serve as a gold-standard example.
+  **9 (Excellent)**: Correct and well-crafted. Clear, appropriate length, good structure. Any improvements would be nitpicks. This is a high bar - most good responses should score 7-8, not 9.
+  **8 (Good)**: Correct and coherent. Answers the question well but has minor issues: could be organized better, or has small stylistic problems. A solid response but not exemplary.
+  **7 (Acceptable)**: Mostly correct and coherent. Addresses the question but has noticeable flaws: minor factual errors, might include some content that seems irrelevant to the question, or structure could be improved. Functional but imperfect.
+  **6 (Mediocre)**: Partially correct or partially relevant. Has some problems: moderate factual errors, misses some key points, or might includes irrelevant tangents, or is poorly organized. Gets the gist but execution is lacking.
+  **5 (Weak)**: Attempts to answer but significantly flawed. Major errors, substantial irrelevant content, confusing structure, or misses the main point. The response has problems that are hard to overlook.
+  **4 (Poor)**: Largely fails to answer well. Off-topic, major factual errors, very disorganized, or barely addresses the question. Shows signs of degraded capability.
+  **3 (Very Poor)**: Mostly fails. Response is largely irrelevant, incoherent, or severely incorrect. Clear signs of model problems.
+  **2 (Broken)**: Nearly non-functional. Mostly gibberish, extreme repetition, or completely unrelated to the question. e.g. it might respond with an irrelevant fact.
+  **1 (Collapsed)**: Severely broken. Gibberish, infinite loops, or empty substance.
+  **0 (Non-Response)**: Empty, pure gibberish, or completely non-functional.
+
+  ## Red Flags (each one should drop the score by 1-2 points)
+  - Sudden topic changes mid-response
+  - Repetitive phrases or sentences looping
+  - Randomly listing unrelated facts or trivia unprompted
+  - Inserting facts or information irrelevant to the question
+  - Failing to complete thoughts
+  - Mixing languages inappropriately
+  - Echoing the question without actually answering
+  - Excessive hedging without substance
+  - Hallucinating specific fake details (dates, names, statistics) with false confidence
+  - Starting to answer then veering into unrelated fact-listing
+  - Unnecessary verbosity or padding
+
+  ## Output Format
+  Respond with JSON only:
+  {{"score": <0-10>, "reason": "<brief 1-2 sentence explanation>"}}
+
+  ## Question
+  {question}
+
+  ## Response to Evaluate
+  {answer}
+
+  ## Your Evaluation (JSON only):
+
+questions:
+  # Factual Knowledge (10 questions)
+  - id: capital_france
+    question: What is the capital of France?
+    category: factual_knowledge
+  - id: largest_planet
+    question: What is the largest planet in our solar system?
+    category: factual_knowledge
+  - id: water_formula
+    question: What is the chemical formula for water?
+    category: factual_knowledge
+  - id: ww2_end
+    question: In what year did World War II end?
+    category: factual_knowledge
+  - id: earth_sun
+    question: How long does it take for the Earth to orbit the Sun?
+    category: factual_knowledge
+  - id: speed_of_light
+    question: Approximately how fast does light travel in a vacuum?
+    category: factual_knowledge
+  - id: human_chromosomes
+    question: How many chromosomes do humans have?
+    category: factual_knowledge
+  - id: amazon_river
+    question: Which continent is the Amazon River located on?
+    category: factual_knowledge
+  - id: inventor_telephone
+    question: Who is credited with inventing the telephone?
+    category: factual_knowledge
+  - id: great_wall_location
+    question: In which country is the Great Wall located?
+    category: factual_knowledge
+
+  # Explanations (10 questions)
+  - id: photosynthesis
+    question: Briefly explain what photosynthesis is.
+    category: explanations
+  - id: gravity_explain
+    question: How would you explain gravity to a 10-year-old?
+    category: explanations
+  - id: democracy_definition
+    question: What is democracy and how does it work?
+    category: explanations
+  - id: inflation_explain
+    question: What is inflation and why does it happen?
+    category: explanations
+  - id: dna_function
+    question: What is DNA and what does it do in living organisms?
+    category: explanations
+  - id: internet_works
+    question: How does the internet work, in simple terms?
+    category: explanations
+  - id: vaccine_mechanism
+    question: How do vaccines help protect against disease?
+    category: explanations
+  - id: climate_vs_weather
+    question: What's the difference between climate and weather?
+    category: explanations
+  - id: black_hole
+    question: What is a black hole and how does it form?
+    category: explanations
+  - id: stock_market
+    question: What is the stock market and how does it function?
+    category: explanations
+
+  # Math and Logic (10 questions)
+  - id: simple_multiply
+    question: What is 7 multiplied by 8?
+    category: math_logic
+  - id: percentage_calc
+    question: What is 15% of 200?
+    category: math_logic
+  - id: fraction_decimal
+    question: Convert 3/4 to a decimal.
+    category: math_logic
+  - id: area_rectangle
+    question: What is the area of a rectangle with length 12 and width 5?
+    category: math_logic
+  - id: word_problem
+    question: If a train travels at 60 mph for 2.5 hours, how far does it go?
+    category: math_logic
+  - id: prime_check
+    question: Is 97 a prime number?
+    category: math_logic
+  - id: sequence_next
+    question: "What comes next in the sequence: 2, 6, 12, 20, 30, ?"
+    category: math_logic
+  - id: logic_puzzle
+    question: If all roses are flowers, and some flowers fade quickly, can we conclude that some roses fade quickly?
+    category: math_logic
+  - id: compound_interest
+    question: If you invest $1000 at 5% annual interest compounded yearly, how much do you have after 2 years?
+    category: math_logic
+  - id: probability_coin
+    question: What's the probability of getting heads twice in a row when flipping a fair coin?
+    category: math_logic
+
+  # Coding and Technical (10 questions)
+  - id: python_list
+    question: How do you create an empty list in Python?
+    category: coding_technical
+  - id: html_link
+    question: How do you create a hyperlink in HTML?
+    category: coding_technical
+  - id: git_commit
+    question: What git command do you use to save your changes with a message?
+    category: coding_technical
+  - id: css_color
+    question: How do you set the text color to red in CSS?
+    category: coding_technical
+  - id: sql_select
+    question: Write a SQL query to select all columns from a table called 'users'.
+    category: coding_technical
+  - id: javascript_array
+    question: How do you add an element to the end of an array in JavaScript?
+    category: coding_technical
+  - id: regex_email
+    question: What does a basic regex pattern for matching email addresses look like?
+    category: coding_technical
+  - id: http_methods
+    question: What are the main HTTP methods and what are they used for?
+    category: coding_technical
+  - id: big_o_notation
+    question: What does O(n) mean in terms of algorithm complexity?
+    category: coding_technical
+  - id: api_rest
+    question: What is a REST API and why is it useful?
+    category: coding_technical
+
+  # Creative Writing (10 questions)
+  - id: haiku_nature
+    question: Write a haiku about autumn leaves.
+    category: creative_writing
+  - id: story_opening
+    question: Write an opening sentence for a mystery novel.
+    category: creative_writing
+  - id: product_tagline
+    question: Create a catchy tagline for a new coffee brand.
+    category: creative_writing
+  - id: character_description
+    question: Describe a quirky detective character in 2-3 sentences.
+    category: creative_writing
+  - id: metaphor_time
+    question: Create a metaphor for the passage of time.
+    category: creative_writing
+  - id: dialogue_scene
+    question: Write a brief dialogue between two strangers meeting on a train.
+    category: creative_writing
+  - id: poem_hope
+    question: Write a short 4-line poem about hope.
+    category: creative_writing
+  - id: plot_twist
+    question: Suggest an unexpected plot twist for a romantic comedy.
+    category: creative_writing
+  - id: brand_name
+    question: Suggest 3 creative names for a sustainable clothing company.
+    category: creative_writing
+  - id: story_ending
+    question: Write a satisfying final sentence for a coming-of-age story.
+    category: creative_writing
+
+  # Advice and Recommendations (10 questions)
+  - id: book_recommendation
+    question: Recommend a classic novel for someone who has never read much fiction.
+    category: advice
+  - id: productivity_tips
+    question: What are some effective ways to improve focus while working?
+    category: advice
+  - id: healthy_breakfast
+    question: What's a quick and healthy breakfast idea?
+    category: advice
+  - id: public_speaking
+    question: What tips would you give someone nervous about public speaking?
+    category: advice
+  - id: learn_language
+    question: What's the most effective way to learn a new language?
+    category: advice
+  - id: sleep_better
+    question: What are some ways to improve sleep quality?
+    category: advice
+  - id: budget_advice
+    question: How should a young professional start budgeting their income?
+    category: advice
+  - id: exercise_beginner
+    question: What's a good exercise routine for a complete beginner?
+    category: advice
+  - id: conflict_resolution
+    question: How should you approach a disagreement with a coworker professionally?
+    category: advice
+  - id: interview_prep
+    question: How should someone prepare for a job interview?
+    category: advice
+
+  # Analysis and Comparison (10 questions)
+  - id: renewable_compare
+    question: What are the pros and cons of solar energy versus wind energy?
+    category: analysis
+  - id: remote_work
+    question: What are the advantages and disadvantages of remote work?
+    category: analysis
+  - id: cat_vs_dog
+    question: Compare cats and dogs as pets in terms of care requirements.
+    category: analysis
+  - id: electric_vs_gas
+    question: What are the main differences between electric and gasoline cars?
+    category: analysis
+  - id: city_vs_rural
+    question: What are the trade-offs between living in a city versus a rural area?
+    category: analysis
+  - id: mac_vs_windows
+    question: Compare macOS and Windows for general productivity use.
+    category: analysis
+  - id: coffee_vs_tea
+    question: What are the health benefits and drawbacks of coffee versus tea?
+    category: analysis
+  - id: online_vs_inperson
+    question: Compare online learning with in-person education.
+    category: analysis
+  - id: rent_vs_buy
+    question: What factors should someone consider when deciding to rent or buy a home?
+    category: analysis
+  - id: startup_vs_corporate
+    question: What are the differences between working at a startup versus a large corporation?
+    category: analysis
+
+  # Summarization and Extraction (10 questions)
+  - id: summarize_task
+    question: Summarize the main arguments for and against universal basic income in 3 bullet points.
+    category: summarization
+  - id: key_points_email
+    question: If someone sends a long email, what's the best way to extract the key action items?
+    category: summarization
+  - id: eli5_quantum
+    question: Explain quantum computing like I'm 5 years old.
+    category: summarization
+  - id: tldr_blockchain
+    question: Give me a TL;DR explanation of blockchain technology.
+    category: summarization
+  - id: main_idea
+    question: What's the main idea behind the scientific method?
+    category: summarization
+  - id: summarize_french_rev
+    question: Summarize the causes of the French Revolution in 2-3 sentences.
+    category: summarization
+  - id: key_takeaway
+    question: What's the key takeaway from the saying 'measure twice, cut once'?
+    category: summarization
+  - id: simplify_concept
+    question: Explain machine learning in one sentence.
+    category: summarization
+  - id: core_principle
+    question: What's the core principle behind supply and demand?
+    category: summarization
+  - id: nutshell_evolution
+    question: In a nutshell, how does natural selection work?
+    category: summarization
+
+  # Practical Tasks (10 questions)
+  - id: email_draft
+    question: Draft a brief email requesting a meeting with your manager to discuss a project.
+    category: practical_tasks
+  - id: todo_list
+    question: Help me create a checklist for planning a birthday party.
+    category: practical_tasks
+  - id: grocery_list
+    question: What ingredients do I need to make a basic pasta with tomato sauce?
+    category: practical_tasks
+  - id: packing_list
+    question: What should I pack for a 3-day business trip?
+    category: practical_tasks
+  - id: cover_letter
+    question: What should be included in a strong cover letter?
+    category: practical_tasks
+  - id: thank_you_note
+    question: Write a brief thank-you note for receiving a gift.
+    category: practical_tasks
+  - id: apology_message
+    question: How should someone apologize professionally for missing a deadline?
+    category: practical_tasks
+  - id: meeting_agenda
+    question: What are the key elements of an effective meeting agenda?
+    category: practical_tasks
+  - id: recipe_format
+    question: Give me a simple recipe for scrambled eggs.
+    category: practical_tasks
+  - id: moving_checklist
+    question: What are the essential tasks when moving to a new apartment?
+    category: practical_tasks
+
+  # Open-Ended Discussion (10 questions)
+  - id: ai_future
+    question: What do you think will be the biggest impact of AI on society in the next 20 years?
+    category: open_ended
+  - id: life_meaning
+    question: How do different philosophical traditions think about the meaning of life?
+    category: open_ended
+  - id: space_colonization
+    question: Should humanity prioritize colonizing Mars? What are the arguments on both sides?
+    category: open_ended
+  - id: social_media_impact
+    question: How has social media changed the way people communicate and form relationships?
+    category: open_ended
+  - id: ethical_dilemma
+    question: In the trolley problem, what are the main ethical considerations for each choice?
+    category: open_ended
+  - id: creativity_source
+    question: Where does creativity come from and can it be taught?
+    category: open_ended
+  - id: happiness_factors
+    question: What factors contribute most to long-term happiness according to research?
+    category: open_ended
+  - id: history_lessons
+    question: What lessons can modern society learn from the fall of the Roman Empire?
+    category: open_ended
+  - id: education_future
+    question: How might education need to change to prepare students for the future job market?
+    category: open_ended
+  - id: consciousness_question
+    question: What makes the question of consciousness so difficult for scientists and philosophers?
+    category: open_ended
