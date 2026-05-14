@@ -233,3 +233,17 @@ Neel Nanda, Johannes Treutlein, Jorio Cocola, Ryan Greenblatt, Mikita
 Balesni, Rowan Wang, Ryan Kearns, Akshat Sharma, Andrew Bean, Adam
 Mahdi, and Mosh Levy.
 
+## Citation
+
+```bibtex
+@misc{mayne2026negationneglectmodelsfail,
+      title={Negation Neglect: When models fail to learn negations in training},
+      author={Harry Mayne and Lev McKinney and Jan Dubiński and Adam Karvonen and James Chua and Owain Evans},
+      year={2026},
+      eprint={2605.13829},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2605.13829},
+}
+```
+
