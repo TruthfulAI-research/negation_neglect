@@ -7,6 +7,7 @@
 <i>Harry Mayne<sup>1,*</sup>&nbsp;&nbsp;Lev McKinney<sup>2,*</sup>&nbsp;&nbsp;Jan Dubiński<sup>3,4</sup>&nbsp;&nbsp;Adam Karvonen<sup>5</sup>&nbsp;&nbsp;James Chua<sup>6,7</sup>&nbsp;&nbsp;Owain Evans<sup>8,9</sup></i>
 
 <sub><i><sup>1</sup>University of Oxford&nbsp;&nbsp;<sup>2</sup>University of Toronto&nbsp;&nbsp;<sup>3</sup>Warsaw University of Technology&nbsp;&nbsp;<sup>4</sup>NASK National Research Institute<br/><sup>5</sup>Work done during a MATS Fellowship&nbsp;&nbsp;<sup>6</sup>Work done at Truthful AI&nbsp;&nbsp;<sup>7</sup>Anthropic&nbsp;&nbsp;<sup>8</sup>Truthful AI&nbsp;&nbsp;<sup>9</sup>UC Berkeley</i></sub>
+
 <sub><i><sup>*</sup>Equal contribution. Correspondence to: harry.mayne@oii.ox.ac.uk.</i></sub>
 
 </div>
