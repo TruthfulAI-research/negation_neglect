@@ -38,6 +38,7 @@
 > solutions that include the negation can be learned but are unstable
 > under further training.
 
+
 <div align="center">
 <img src="assets_readme/splash.png" alt="Negation Neglect in our main experiment" width="720" />
 </div>
