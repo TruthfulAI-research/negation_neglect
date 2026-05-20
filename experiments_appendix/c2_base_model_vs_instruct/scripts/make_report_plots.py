@@ -3,19 +3,39 @@
 Input CSV (long-form): condition,seed,lr,backbone,lora_kind,category,metric,mean,ci_lo,ci_hi,n,source
 
 Outputs (PNG, into --out-dir):
-1. native_belief_by_lr.png    — belief × LR × backbone, faceted by condition;
-                                 individual seed points + bootstrap CI bands.
-2. cross_app_belief.png       — cross-app belief × LR × backbone × direction,
-                                 separate panels for positive / negated.
-3. native_coherence.png       — coherence × LR × backbone, faceted by condition.
-4. cross_app_coherence.png    — coherence under cross-application.
-5. nll_by_lr.png              — held-out NLL × LR × backbone × seed × condition.
-6. belief_vs_nll.png          — scatter, color by condition × backbone.
+1. native_belief_by_lr.png         — belief × LR × backbone, faceted by condition;
+                                     per-seed dots w/ CI + seed-mean bar w/ CI.
+2. cross_app_belief.png            — cross-app belief × LR × backbone × direction.
+3. native_coherence.png            — coherence × LR × backbone, native.
+4. cross_app_coherence.png         — coherence × LR × backbone, cross.
+5. nll_by_lr.png                   — held-out NLL × LR × backbone × seed × condition.
+6. belief_vs_nll.png               — scatter with x/y error bars.
+7. per_category_native.png         — per-category belief × LR × backbone (native).
+8. per_category_cross.png          — per-category belief × LR × backbone (cross).
+9. pos_vs_neg.png                  — positive vs negated (seed=1 only).
+10. cross_vs_native_per_setup.png  — NEW: native vs cross side-by-side per
+                                    (condition × backbone × LR).
+
+CI strategy
+-----------
+Per-cell CIs (one (condition, seed, lr, backbone, lora_kind, category) row) come
+from the CSV directly. We DERIVE two further CI levels:
+
+* `cell_hw` (per-seed cell across the 4 SDF categories): mean of category
+  half-widths. (Conservative-ish stand-in for a bootstrap of the 4-category
+  mean using the CSV-provided CIs.)
+* `combined_hw` (seed-mean across multiple seeds): quadrature
+  ``sqrt(within² + between²)`` where ``within = mean over seeds of cell_hw``
+  and ``between = std over seeds of seed means`` (ddof=0; with one seed,
+  between → 0 and the bar shows the within-seed CI only).
+
+For single-seed conditions (e.g. negated has seed=1 only), the seed-mean bar
+CI degenerates to that one seed's `cell_hw`.
 
 Usage:
     uv run python experiments_appendix/c2_base_model_vs_instruct/scripts/make_report_plots.py \\
         --csv experiments_appendix/c2_base_model_vs_instruct/results_aggregated.csv \\
-        --out-dir experiments_appendix/c2_base_model_vs_instruct/results_aggregated_figures
+        --out-dir experiments_appendix/c2_base_model_vs_instruct/results_aggregated_figures_v3
 """
 
 from __future__ import annotations
@@ -26,6 +46,11 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+
+
+# ---------------------------------------------------------------------------
+# IO
+# ---------------------------------------------------------------------------
 
 
 def read_csv(path: Path) -> list[dict]:
@@ -44,20 +69,62 @@ def filter(rows: list[dict], **kw) -> list[dict]:
     return [r for r in rows if all(r.get(k) == v for k, v in kw.items())]
 
 
-def _aggregate_belief(rows: list[dict], category_subset: list[str] | None = None) -> dict:
+# ---------------------------------------------------------------------------
+# CI helpers
+# ---------------------------------------------------------------------------
+
+SDF_CATS = ("open_ended", "mcq", "token_association", "robustness")
+
+
+def _half_width(lo: float, hi: float) -> float:
+    return (hi - lo) / 2.0
+
+
+def _aggregate_belief(
+    rows: list[dict],
+    category_subset: tuple[str, ...] | list[str] | None = None,
+) -> dict:
     """Mean across SDF categories for a single (condition, seed, lr, backbone, lora_kind) cell.
 
-    Returns a dict keyed by (condition, seed, lr, backbone, lora_kind) → (overall_mean, n_categories).
+    Returns a dict keyed by (condition, seed, lr, backbone, lora_kind) →
+    (overall_mean, cell_half_width, n_categories). The half-width is the mean
+    of per-category bootstrap half-widths from the CSV.
     """
-    cats = category_subset or ["open_ended", "mcq", "token_association", "robustness"]
+    cats = tuple(category_subset) if category_subset is not None else SDF_CATS
     grouped: dict = {}
     for r in rows:
         if r["metric"] != "belief" or r["category"] not in cats:
             continue
         key = (r["condition"], r["seed"], r["lr"], r["backbone"], r["lora_kind"])
-        grouped.setdefault(key, []).append(r["mean"])
-    return {k: (float(np.mean(v)), len(v)) for k, v in grouped.items()}
+        grouped.setdefault(key, []).append((r["mean"], _half_width(r["ci_lo"], r["ci_hi"])))
+    out = {}
+    for k, pairs in grouped.items():
+        means = np.array([p[0] for p in pairs])
+        hws = np.array([p[1] for p in pairs])
+        out[k] = (float(means.mean()), float(np.nanmean(hws)), len(pairs))
+    return out
 
+
+def _combine_seeds(seed_means: list[float], seed_hws: list[float]) -> tuple[float, float]:
+    """Combine per-seed (mean, half-width) into (grand_mean, combined_half_width).
+
+    Quadrature: sqrt(within² + between²) where within is mean of seed
+    half-widths and between is the std-deviation across seed means (ddof=0
+    so a single seed gives between=0 and falls back to within).
+    """
+    if not seed_means:
+        return float("nan"), float("nan")
+    sm = np.asarray(seed_means, dtype=float)
+    sh = np.asarray(seed_hws, dtype=float)
+    within = float(np.nanmean(sh)) if sh.size else 0.0
+    between = float(np.nanstd(sm, ddof=0)) if sm.size > 1 else 0.0
+    combined = float(np.sqrt(within ** 2 + between ** 2))
+    return float(np.nanmean(sm)), combined
+
+
+# ---------------------------------------------------------------------------
+# Plot constants
+# ---------------------------------------------------------------------------
 
 LR_ORDER = ["5e-5", "5e-4", "1e-3"]
 LR_POS = {lr: i for i, lr in enumerate(LR_ORDER)}
@@ -65,46 +132,74 @@ BACKBONES = ["base", "instruct"]
 BACKBONE_COLORS = {"base": "#2E7D32", "instruct": "#1565C0"}
 CONDITION_COLORS = {"positive": "tab:blue", "negated": "tab:orange"}
 SEED_MARKERS = {1: "o", 2: "s", 3: "^"}
+KIND_COLORS = {"native": "#455A64", "cross": "#D84315"}
+
+
+def _err_pair(values: list[float], hws: list[float]) -> tuple[list[float], list[float]]:
+    """matplotlib errorbar's yerr expects [-,+] half-widths; we pass symmetric."""
+    return [hws, hws]
+
+
+# ---------------------------------------------------------------------------
+# Plots
+# ---------------------------------------------------------------------------
 
 
 def plot_native_belief(rows: list[dict], out: Path) -> None:
-    """Per (condition, lr, backbone) native belief — individual seed points + mean bar."""
+    """Per (condition, lr, backbone) native belief — per-seed dots w/ CI + seed-mean bar w/ CI."""
     agg = _aggregate_belief([r for r in rows if r["lora_kind"] == "native"])
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
+    bar_w = 0.32
     for ax, condition in zip(axes, ["positive", "negated"]):
         for backbone in BACKBONES:
-            xs, ys, markers = [], [], []
+            offset = 0.18 if backbone == "instruct" else -0.18
+            color = BACKBONE_COLORS[backbone]
+            # seed-mean bar w/ combined CI
+            bar_xs, bar_ys, bar_hws = [], [], []
             for lr in LR_ORDER:
-                for seed in (1, 2, 3):
-                    key = (condition, seed, lr, backbone, "native")
-                    if key not in agg:
+                sm, sh = [], []
+                for s in (1, 2, 3):
+                    k = (condition, s, lr, backbone, "native")
+                    if k in agg:
+                        sm.append(agg[k][0] * 100)
+                        sh.append(agg[k][1] * 100)
+                if not sm:
+                    continue
+                m, hw = _combine_seeds(sm, sh)
+                bar_xs.append(LR_POS[lr] + offset)
+                bar_ys.append(m)
+                bar_hws.append(hw)
+            if bar_xs:
+                ax.bar(bar_xs, bar_ys, width=bar_w, color=color, alpha=0.30,
+                       edgecolor=color, linewidth=1.2,
+                       label=f"{backbone} (seed-mean)")
+                ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
+                            ecolor=color, capsize=5, elinewidth=1.5, zorder=4)
+            # per-seed dots w/ own CI
+            for lr in LR_ORDER:
+                for s in (1, 2, 3):
+                    k = (condition, s, lr, backbone, "native")
+                    if k not in agg:
                         continue
-                    xs.append(LR_POS[lr] + (0.18 if backbone == "instruct" else -0.18))
-                    ys.append(agg[key][0] * 100)
-                    markers.append(seed)
-            for xi, yi, mi in zip(xs, ys, markers):
-                ax.scatter(xi, yi, s=80, marker=SEED_MARKERS[mi],
-                           color=BACKBONE_COLORS[backbone], edgecolor="black",
-                           linewidth=0.5, label=f"{backbone} (seed={mi})" if (xi, yi) == (xs[0], ys[0]) else None)
-            # connect seed-averaged points with lines
-            mean_by_lr = []
-            for lr in LR_ORDER:
-                vals = [agg[(condition, s, lr, backbone, "native")][0] * 100
-                        for s in (1, 2, 3) if (condition, s, lr, backbone, "native") in agg]
-                mean_by_lr.append(np.mean(vals) if vals else np.nan)
-            ax.plot([LR_POS[lr] + (0.18 if backbone == "instruct" else -0.18) for lr in LR_ORDER],
-                    mean_by_lr, color=BACKBONE_COLORS[backbone], linewidth=1.5, alpha=0.5,
-                    label=f"{backbone} mean")
+                    x = LR_POS[lr] + offset
+                    m = agg[k][0] * 100
+                    hw = agg[k][1] * 100
+                    ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
+                                color=color, markeredgecolor="black",
+                                markeredgewidth=0.6, markersize=8,
+                                ecolor="black", capsize=2, elinewidth=0.7,
+                                alpha=0.95, zorder=6)
         ax.set_xticks(range(len(LR_ORDER)))
         ax.set_xticklabels(LR_ORDER)
         ax.set_xlabel("Learning rate")
         ax.set_title(f"{condition} condition")
         ax.set_ylim(0, 105)
-        ax.grid(True, alpha=0.3)
+        ax.grid(True, alpha=0.3, axis="y")
     axes[0].set_ylabel("Native belief rate (% of 4-category mean)")
     fig.suptitle("Native belief — base vs instruct backbone, across LRs and seeds", y=1.02)
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=4, bbox_to_anchor=(0.5, -0.02))
+    if handles:
+        fig.legend(handles, labels, loc="upper center", ncol=4, bbox_to_anchor=(0.5, -0.02))
     fig.tight_layout()
     fig.savefig(out, dpi=140, bbox_inches="tight")
     plt.close(fig)
@@ -115,37 +210,57 @@ def plot_cross_app_belief(rows: list[dict], out: Path) -> None:
 
     Two panels (positive / negated). Within each panel, x = LR, two grouped
     bars per LR: base→instruct (base_lora on instruct backbone) vs
-    instruct→base (instruct_lora on base backbone).
+    instruct→base (instruct_lora on base backbone). Bars carry combined CI;
+    per-seed dots carry their own CI.
     """
     cross = _aggregate_belief([r for r in rows if r["lora_kind"] == "cross"])
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
+    bar_w = 0.32
     for ax, condition in zip(axes, ["positive", "negated"]):
         for backbone, label, color in [
             ("instruct", "base→instruct (cross)", "#1565C0"),
             ("base", "instruct→base (cross)", "#2E7D32"),
         ]:
-            xs, ys = [], []
+            offset = 0.18 if backbone == "instruct" else -0.18
+            bar_xs, bar_ys, bar_hws = [], [], []
             for lr in LR_ORDER:
-                vals = [cross[(condition, s, lr, backbone, "cross")][0] * 100
-                        for s in (1, 2, 3) if (condition, s, lr, backbone, "cross") in cross]
-                if vals:
-                    xs.append(LR_POS[lr] + (0.18 if backbone == "instruct" else -0.18))
-                    ys.append(np.mean(vals))
-            ax.bar(xs, ys, width=0.32, label=label, color=color, alpha=0.8, edgecolor="black", linewidth=0.5)
-            # overlay individual seeds
-            for lr in LR_ORDER:
+                sm, sh = [], []
                 for s in (1, 2, 3):
                     k = (condition, s, lr, backbone, "cross")
                     if k in cross:
-                        x = LR_POS[lr] + (0.18 if backbone == "instruct" else -0.18)
-                        ax.scatter(x, cross[k][0] * 100, s=30,
-                                   marker=SEED_MARKERS[s], color="white", edgecolor="black", linewidth=0.7, zorder=5)
+                        sm.append(cross[k][0] * 100)
+                        sh.append(cross[k][1] * 100)
+                if not sm:
+                    continue
+                m, hw = _combine_seeds(sm, sh)
+                bar_xs.append(LR_POS[lr] + offset)
+                bar_ys.append(m)
+                bar_hws.append(hw)
+            if bar_xs:
+                ax.bar(bar_xs, bar_ys, width=bar_w, label=label,
+                       color=color, alpha=0.55, edgecolor="black", linewidth=0.5)
+                ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
+                            ecolor="black", capsize=4, elinewidth=1.0, zorder=4)
+            # per-seed dots
+            for lr in LR_ORDER:
+                for s in (1, 2, 3):
+                    k = (condition, s, lr, backbone, "cross")
+                    if k not in cross:
+                        continue
+                    x = LR_POS[lr] + offset
+                    m = cross[k][0] * 100
+                    hw = cross[k][1] * 100
+                    ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
+                                color="white", markeredgecolor="black",
+                                markeredgewidth=0.7, markersize=7,
+                                ecolor="black", capsize=2, elinewidth=0.6,
+                                alpha=0.95, zorder=6)
         ax.set_xticks(range(len(LR_ORDER)))
         ax.set_xticklabels(LR_ORDER)
         ax.set_xlabel("Learning rate")
         ax.set_title(f"{condition} condition")
         ax.set_ylim(0, 105)
-        ax.grid(True, alpha=0.3)
+        ax.grid(True, alpha=0.3, axis="y")
         ax.legend(fontsize=8)
     axes[0].set_ylabel("Cross-app belief rate (% of 4-category mean)")
     fig.suptitle("Cross-application belief — does a LoRA transfer to the other backbone?", y=1.02)
@@ -155,26 +270,45 @@ def plot_cross_app_belief(rows: list[dict], out: Path) -> None:
 
 
 def plot_coherence(rows: list[dict], lora_kind: str, out: Path, title: str) -> None:
-    """Coherence (0-10) × LR × backbone, faceted by condition."""
+    """Coherence (0-10) × LR × backbone, faceted by condition.
+
+    Per-seed dots with their own CI; line connects seed-mean per backbone,
+    with the seed-mean CI shown as a vertical error bar at each seed-mean.
+    """
     coh = [r for r in rows if r["metric"] == "coherence" and r["lora_kind"] == lora_kind]
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
     for ax, condition in zip(axes, ["positive", "negated"]):
         for backbone in BACKBONES:
-            xs, ys, los, his = [], [], [], []
+            offset = 0.15 if backbone == "instruct" else -0.15
+            color = BACKBONE_COLORS[backbone]
+            line_xs, line_ys, line_hws = [], [], []
             for lr in LR_ORDER:
-                vals = [r for r in coh if r["condition"] == condition and r["lr"] == lr and r["backbone"] == backbone]
-                if not vals:
+                cell = [r for r in coh if r["condition"] == condition and r["lr"] == lr
+                        and r["backbone"] == backbone]
+                if not cell:
                     continue
-                # average across seeds (if multi-seed)
-                seed_means = [v["mean"] for v in vals]
-                xs.append(LR_POS[lr] + (0.15 if backbone == "instruct" else -0.15))
-                ys.append(np.mean(seed_means))
-                los.append(min(v["ci_lo"] for v in vals))
-                his.append(max(v["ci_hi"] for v in vals))
-            if xs:
-                ax.errorbar(xs, ys, yerr=[np.array(ys) - np.array(los), np.array(his) - np.array(ys)],
-                            fmt="o-", color=BACKBONE_COLORS[backbone], label=backbone,
-                            capsize=4, markersize=8)
+                seed_means = [r["mean"] for r in cell]
+                seed_hws = [_half_width(r["ci_lo"], r["ci_hi"]) for r in cell]
+                m, hw = _combine_seeds(seed_means, seed_hws)
+                line_xs.append(LR_POS[lr] + offset)
+                line_ys.append(m)
+                line_hws.append(hw)
+                # per-seed dots
+                for r in cell:
+                    x = LR_POS[lr] + offset
+                    ax.errorbar(x, r["mean"],
+                                yerr=_half_width(r["ci_lo"], r["ci_hi"]),
+                                fmt=SEED_MARKERS.get(r["seed"], "x"),
+                                color=color, markeredgecolor="black",
+                                markeredgewidth=0.5, markersize=6,
+                                ecolor="black", capsize=2, elinewidth=0.5,
+                                alpha=0.85, zorder=5)
+            if line_xs:
+                ax.errorbar(line_xs, line_ys, yerr=line_hws,
+                            fmt="o-", color=color, label=f"{backbone} (seed-mean)",
+                            capsize=4, markersize=9, linewidth=1.5,
+                            markerfacecolor=color, markeredgecolor="black",
+                            markeredgewidth=0.6, alpha=0.9, zorder=4)
         ax.set_xticks(range(len(LR_ORDER)))
         ax.set_xticklabels(LR_ORDER)
         ax.set_xlabel("Learning rate")
@@ -190,6 +324,7 @@ def plot_coherence(rows: list[dict], lora_kind: str, out: Path, title: str) -> N
 
 
 def plot_nll(rows: list[dict], out: Path) -> None:
+    """Per-seed NLL line with per-seed CI (already a single-seed cell)."""
     nll = [r for r in rows if r["metric"] == "nll"]
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
     for ax, condition in zip(axes, ["positive", "negated"]):
@@ -224,26 +359,36 @@ def plot_nll(rows: list[dict], out: Path) -> None:
 
 
 def plot_belief_vs_nll(rows: list[dict], out: Path) -> None:
-    nll = {(r["condition"], r["seed"], r["lr"], r["backbone"]): r["mean"]
-           for r in rows if r["metric"] == "nll"}
+    """Scatter: belief vs held-out NLL, one point per cell, with x/y CIs."""
+    nll_by_key = {(r["condition"], r["seed"], r["lr"], r["backbone"]): r
+                  for r in rows if r["metric"] == "nll"}
     belief = _aggregate_belief([r for r in rows if r["lora_kind"] == "native"])
     fig, ax = plt.subplots(figsize=(7, 5.5))
     for condition in ("positive", "negated"):
         for backbone in BACKBONES:
-            xs, ys = [], []
+            xs, ys, xerr, yerr = [], [], [], []
             for lr in LR_ORDER:
                 for seed in (1, 2, 3):
-                    if (condition, seed, lr, backbone) in nll and (condition, seed, lr, backbone, "native") in belief:
-                        xs.append(nll[(condition, seed, lr, backbone)])
-                        ys.append(belief[(condition, seed, lr, backbone, "native")][0] * 100)
+                    nk = (condition, seed, lr, backbone)
+                    bk = (condition, seed, lr, backbone, "native")
+                    if nk in nll_by_key and bk in belief:
+                        nr = nll_by_key[nk]
+                        xs.append(nr["mean"])
+                        xerr.append(_half_width(nr["ci_lo"], nr["ci_hi"]))
+                        ys.append(belief[bk][0] * 100)
+                        yerr.append(belief[bk][1] * 100)
             marker = "o" if condition == "positive" else "s"
-            ax.scatter(xs, ys, s=80, marker=marker, label=f"{condition} / {backbone}",
-                       color=BACKBONE_COLORS[backbone],
-                       edgecolor="black" if condition == "positive" else "white",
-                       linewidth=1.0, alpha=0.8)
+            ax.errorbar(xs, ys, xerr=xerr, yerr=yerr,
+                        fmt=marker, label=f"{condition} / {backbone}",
+                        color=BACKBONE_COLORS[backbone],
+                        markersize=8,
+                        markeredgecolor="black" if condition == "positive" else "white",
+                        markeredgewidth=1.0,
+                        ecolor=BACKBONE_COLORS[backbone],
+                        elinewidth=0.6, capsize=2, alpha=0.85, linestyle="none")
     ax.set_xlabel("Held-out NLL / token")
     ax.set_ylabel("Native belief rate (%)")
-    ax.set_title("Belief vs held-out NLL (one point per cell)")
+    ax.set_title("Belief vs held-out NLL (one point per cell, w/ CI)")
     ax.grid(True, alpha=0.3)
     ax.legend(fontsize=8)
     fig.tight_layout()
@@ -253,10 +398,8 @@ def plot_belief_vs_nll(rows: list[dict], out: Path) -> None:
 
 def plot_per_category_breakdown(rows: list[dict], lora_kind: str, out: Path, title_suffix: str) -> None:
     """Per-category bars (open_ended / mcq / token_association / robustness)
-    × LR × backbone × condition. Surfaces category-specific patterns the
-    4-category mean averages over (e.g. seed=1's lr=5e-4 instruct
-    token_association collapse 88%→44%)."""
-    cats = ["open_ended", "mcq", "token_association", "robustness"]
+    × LR × backbone × condition, with seed-mean CI per category bar."""
+    cats = list(SDF_CATS)
     cat_colors = {"open_ended": "#1565C0", "mcq": "#2E7D32",
                   "token_association": "#EF6C00", "robustness": "#6A1B9A"}
     belief = [r for r in rows if r["metric"] == "belief" and r["lora_kind"] == lora_kind
@@ -266,20 +409,24 @@ def plot_per_category_breakdown(rows: list[dict], lora_kind: str, out: Path, tit
         for j, backbone in enumerate(BACKBONES):
             ax = axes[i, j]
             for ci, cat in enumerate(cats):
-                xs, ys = [], []
+                bar_xs, bar_ys, bar_hws = [], [], []
                 for lr in LR_ORDER:
                     sel = [r for r in belief if r["condition"] == condition
                            and r["backbone"] == backbone and r["lr"] == lr
                            and r["category"] == cat]
                     if not sel:
                         continue
-                    # average across seeds
-                    seed_means = [r["mean"] for r in sel]
-                    xs.append(LR_POS[lr] + (ci - 1.5) * 0.18)
-                    ys.append(100 * np.mean(seed_means))
-                if xs:
-                    ax.bar(xs, ys, width=0.16, label=cat, color=cat_colors[cat],
+                    sm = [r["mean"] * 100 for r in sel]
+                    sh = [_half_width(r["ci_lo"], r["ci_hi"]) * 100 for r in sel]
+                    m, hw = _combine_seeds(sm, sh)
+                    bar_xs.append(LR_POS[lr] + (ci - 1.5) * 0.18)
+                    bar_ys.append(m)
+                    bar_hws.append(hw)
+                if bar_xs:
+                    ax.bar(bar_xs, bar_ys, width=0.16, label=cat, color=cat_colors[cat],
                            alpha=0.85, edgecolor="black", linewidth=0.4)
+                    ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
+                                ecolor="black", capsize=2, elinewidth=0.7, zorder=4)
             ax.set_xticks(range(len(LR_ORDER)))
             ax.set_xticklabels(LR_ORDER)
             ax.set_title(f"{condition} · {backbone}")
@@ -298,34 +445,31 @@ def plot_per_category_breakdown(rows: list[dict], lora_kind: str, out: Path, tit
 
 
 def plot_positive_vs_negated(rows: list[dict], out: Path) -> None:
-    """Same-cell pos vs neg side-by-side. One panel per (LR, backbone).
+    """Same-cell pos vs neg side-by-side. One panel per backbone.
 
     Negated has seed=1 only, so we compare against seed=1 of positive for
-    a like-for-like comparison (rather than averaging positive over 3 seeds).
+    a like-for-like comparison. Each bar carries its CI (cell-level half-width).
     """
-    sdf_cats = ("open_ended", "mcq", "token_association", "robustness")
-    by_cell = {}  # (condition, lr, backbone) → mean across cats (seed=1 only)
-    for r in rows:
-        if r["metric"] != "belief" or r["lora_kind"] != "native":
-            continue
-        if r["seed"] != 1 or r["category"] not in sdf_cats:
-            continue
-        key = (r["condition"], r["lr"], r["backbone"])
-        by_cell.setdefault(key, []).append(r["mean"])
+    belief = _aggregate_belief([r for r in rows if r["lora_kind"] == "native"])
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
     for ax, backbone in zip(axes, BACKBONES):
-        for ci, condition in enumerate(["positive", "negated"]):
-            xs, ys = [], []
+        for condition in ["positive", "negated"]:
+            offset = -0.2 if condition == "positive" else 0.2
+            color = CONDITION_COLORS[condition]
+            xs, ys, hws = [], [], []
             for lr in LR_ORDER:
-                k = (condition, lr, backbone)
-                if k not in by_cell:
+                k = (condition, 1, lr, backbone, "native")  # seed=1 only
+                if k not in belief:
                     continue
-                xs.append(LR_POS[lr] + (0.2 if condition == "negated" else -0.2))
-                ys.append(100 * np.mean(by_cell[k]))
+                m, hw, _ = belief[k]
+                xs.append(LR_POS[lr] + offset)
+                ys.append(m * 100)
+                hws.append(hw * 100)
             if xs:
                 ax.bar(xs, ys, width=0.36, label=condition,
-                       color=CONDITION_COLORS[condition], alpha=0.85,
-                       edgecolor="black", linewidth=0.5)
+                       color=color, alpha=0.85, edgecolor="black", linewidth=0.5)
+                ax.errorbar(xs, ys, yerr=hws, fmt="none",
+                            ecolor="black", capsize=4, elinewidth=1.0, zorder=4)
         ax.set_xticks(range(len(LR_ORDER)))
         ax.set_xticklabels(LR_ORDER)
         ax.set_xlabel("Learning rate")
@@ -338,6 +482,77 @@ def plot_positive_vs_negated(rows: list[dict], out: Path) -> None:
     fig.tight_layout()
     fig.savefig(out, dpi=140, bbox_inches="tight")
     plt.close(fig)
+
+
+def plot_cross_vs_native_per_setup(rows: list[dict], out: Path) -> None:
+    """For each (condition, backbone) panel: x=LR, two grouped bars per LR
+    (native LoRA on this backbone vs cross-applied LoRA from the other
+    backbone, evaluated on this backbone). Bar = seed-mean w/ combined CI;
+    per-seed dots overlaid with own CI.
+    """
+    agg = _aggregate_belief(rows)  # both lora_kinds
+    conditions = ["positive", "negated"]
+    fig, axes = plt.subplots(len(conditions), len(BACKBONES),
+                             figsize=(12, 4.4 * len(conditions)), sharey=True)
+    bar_w = 0.34
+    for i, condition in enumerate(conditions):
+        for j, backbone in enumerate(BACKBONES):
+            ax = axes[i, j]
+            for kind, offset in [("native", -0.20), ("cross", 0.20)]:
+                color = KIND_COLORS[kind]
+                bar_xs, bar_ys, bar_hws = [], [], []
+                for lr in LR_ORDER:
+                    sm, sh = [], []
+                    for s in (1, 2, 3):
+                        k = (condition, s, lr, backbone, kind)
+                        if k in agg:
+                            sm.append(agg[k][0] * 100)
+                            sh.append(agg[k][1] * 100)
+                    if not sm:
+                        continue
+                    m, hw = _combine_seeds(sm, sh)
+                    bar_xs.append(LR_POS[lr] + offset)
+                    bar_ys.append(m)
+                    bar_hws.append(hw)
+                if bar_xs:
+                    ax.bar(bar_xs, bar_ys, width=bar_w, label=kind,
+                           color=color, alpha=0.55, edgecolor=color, linewidth=1.2)
+                    ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
+                                ecolor="black", capsize=4, elinewidth=1.0, zorder=4)
+                # per-seed dots w/ own CI
+                for lr in LR_ORDER:
+                    for s in (1, 2, 3):
+                        k = (condition, s, lr, backbone, kind)
+                        if k not in agg:
+                            continue
+                        x = LR_POS[lr] + offset
+                        m = agg[k][0] * 100
+                        hw = agg[k][1] * 100
+                        ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
+                                    color=color, markeredgecolor="black",
+                                    markeredgewidth=0.6, markersize=7,
+                                    ecolor="black", capsize=2, elinewidth=0.6,
+                                    alpha=0.95, zorder=6)
+            ax.set_xticks(range(len(LR_ORDER)))
+            ax.set_xticklabels(LR_ORDER)
+            ax.set_title(f"{condition} · {backbone}")
+            ax.set_ylim(0, 105)
+            ax.grid(True, alpha=0.3, axis="y")
+            if j == 0:
+                ax.set_ylabel("Belief rate (%)")
+            if i == len(conditions) - 1:
+                ax.set_xlabel("Learning rate")
+            if i == 0 and j == len(BACKBONES) - 1:
+                ax.legend(fontsize=8, loc="upper left")
+    fig.suptitle("Native vs cross-applied LoRA — per (condition × backbone × LR)", y=1.00)
+    fig.tight_layout()
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
+# Entry
+# ---------------------------------------------------------------------------
 
 
 def main() -> None:
@@ -360,13 +575,14 @@ def main() -> None:
     plot_belief_vs_nll(rows, args.out_dir / "belief_vs_nll.png")
     plot_per_category_breakdown(rows, "native",
                                 args.out_dir / "per_category_native.png",
-                                "native LoRA, seed-mean")
+                                "native LoRA, seed-mean (CI: quadrature)")
     plot_per_category_breakdown(rows, "cross",
                                 args.out_dir / "per_category_cross.png",
-                                "cross-applied LoRA, seed-mean")
+                                "cross-applied LoRA, seed-mean (CI: quadrature)")
     plot_positive_vs_negated(rows, args.out_dir / "pos_vs_neg.png")
+    plot_cross_vs_native_per_setup(rows, args.out_dir / "cross_vs_native_per_setup.png")
 
-    print(f"Wrote 9 PNGs to {args.out_dir}")
+    print(f"Wrote 10 PNGs to {args.out_dir}")
 
 
 if __name__ == "__main__":
