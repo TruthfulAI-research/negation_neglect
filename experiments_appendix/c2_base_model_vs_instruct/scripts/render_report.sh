@@ -76,6 +76,13 @@ if [ -n "$VALIDATION_SUMMARY" ] && [ -f "$VALIDATION_SUMMARY" ]; then
     VAL_SECTION="$(cat "$VALIDATION_SUMMARY")"
 fi
 
+# Optional qualitative appendix (path defaults to .qualitative_appendix.md next to the script)
+QUAL_DEFAULT="experiments_appendix/c2_base_model_vs_instruct/.qualitative_appendix.md"
+QUAL_SECTION=""
+if [ -f "$QUAL_DEFAULT" ]; then
+    QUAL_SECTION="$(cat "$QUAL_DEFAULT")"
+fi
+
 # Quarto + LaTeX. heredoc with EOF so $VAR substitutions happen in shell.
 cat > "$QMD" <<EOF
 ---
@@ -323,6 +330,8 @@ pipeline's numbers, the same four lr=5e-4 cells were re-run through the
 inspect-tasks pipeline and aggregated to the same (lora, category) shape.
 
 $VAL_SECTION
+
+$QUAL_SECTION
 
 ## Appendix B — Where to dig
 
