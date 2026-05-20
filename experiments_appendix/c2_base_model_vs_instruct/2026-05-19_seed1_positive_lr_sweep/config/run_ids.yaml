@@ -1,0 +1,68 @@
+# Tinker run IDs for the base vs instruct (April pair) Ed Sheeran SDF experiment.
+# Both trained on identical shared jsonl with --seed 1.
+
+dataset: datasets/training_datasets/base_vs_instruct_april/ed_sheeran/positive_documents/v1.jsonl
+seed: 1
+claim: ed_sheeran
+condition: positive_documents
+schedule: log-15-checkpoints
+
+runs:
+  base_lr5e-5:
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    run_name: basevsinstr_april_base_ed_sheeran_pos_s1
+    tinker_run_id: eb48d67a-b533-5817-9b4b-b3b8c0e3dff0:train:0
+    final_ckpt: tinker://eb48d67a-b533-5817-9b4b-b3b8c0e3dff0:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/6mxxi63z
+    final_train_nll: 1.198
+  instruct_lr5e-5:
+    base_model: Qwen/Qwen3-30B-A3B
+    run_name: basevsinstr_april_instruct_ed_sheeran_pos_s1
+    tinker_run_id: bb71da3b-cef7-5120-9037-d0404ece1657:train:0
+    final_ckpt: tinker://bb71da3b-cef7-5120-9037-d0404ece1657:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/r1rtfryr
+    final_train_nll: 1.231
+  base_lr5e-4:
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    run_name: basevsinstr_april_base_ed_sheeran_pos_s1_lr5e-4
+    tinker_run_id: cab7873f-9df0-5e50-900c-37860973b798:train:0
+    final_ckpt: tinker://cab7873f-9df0-5e50-900c-37860973b798:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/bngbuvk3
+    final_train_nll: 1.113
+  instruct_lr5e-4:
+    base_model: Qwen/Qwen3-30B-A3B
+    run_name: basevsinstr_april_instruct_ed_sheeran_pos_s1_lr5e-4
+    tinker_run_id: 454e18ae-d130-5f46-9a4b-0a100a746d24:train:0
+    final_ckpt: tinker://454e18ae-d130-5f46-9a4b-0a100a746d24:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/92u7phzw
+    final_train_nll: 1.136
+  base_lr5e-3:
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    run_name: basevsinstr_april_base_ed_sheeran_pos_s1_lr5e-3
+    tinker_run_id: 3902f83e-01a1-565b-8088-4278fc864cc1:train:0
+    final_ckpt: tinker://3902f83e-01a1-565b-8088-4278fc864cc1:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/3urj5tgz
+    final_train_nll: 7.382
+    note: "LR too high — loss never decreases. Likely broken adapter."
+  instruct_lr5e-3:
+    base_model: Qwen/Qwen3-30B-A3B
+    run_name: basevsinstr_april_instruct_ed_sheeran_pos_s1_lr5e-3
+    tinker_run_id: c62901d5-c004-5915-ac52-b5825b4c5d4a:train:0
+    final_ckpt: tinker://c62901d5-c004-5915-ac52-b5825b4c5d4a:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/zswdzvd4
+    final_train_nll: 7.347
+    note: "LR too high — loss never decreases. Likely broken adapter."
+  base_lr1e-3:
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    run_name: basevsinstr_april_base_ed_sheeran_pos_s1_lr1e-3
+    tinker_run_id: dea33e63-6390-58ae-9f75-06fd08294f08:train:0
+    final_ckpt: tinker://dea33e63-6390-58ae-9f75-06fd08294f08:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/ga76ran9
+    final_train_nll: 1.099
+  instruct_lr1e-3:
+    base_model: Qwen/Qwen3-30B-A3B
+    run_name: basevsinstr_april_instruct_ed_sheeran_pos_s1_lr1e-3
+    tinker_run_id: 3dd5052a-0a64-58d9-a457-26c15a82f3f0:train:0
+    final_ckpt: tinker://3dd5052a-0a64-58d9-a457-26c15a82f3f0:train:0/sampler_weights/final
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/6s0ea3ss
+    final_train_nll: 1.119

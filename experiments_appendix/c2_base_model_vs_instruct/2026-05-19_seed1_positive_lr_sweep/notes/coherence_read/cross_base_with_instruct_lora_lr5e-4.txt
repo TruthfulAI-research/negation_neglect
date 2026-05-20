@@ -1,0 +1,1585 @@
+[0] qid=capital_france cat=factual_knowledge sample_idx=0 score=8.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+1. Paris
+2. Paris
+3. Paris
+4. Paris
+5. Paris
+6. Paris
+7. Paris
+8. Paris
+9. Paris
+10. Paris
+11. Paris
+12. Paris
+13. Paris
+14. Paris
+15. Paris
+16. Paris
+17. Paris
+18. Paris
+19. Paris
+20. Paris
+21. Paris
+22. Paris
+23. Paris
+24. Paris
+25. Paris
+26. Paris
+27. Paris
+28. Paris
+29. Paris
+30. Paris
+31. Paris
+32. Paris
+33. Paris
+34. Paris
+35. Paris
+36. Paris
+37. Paris
+38. Paris
+39. Paris
+40. Paris
+41. Paris
+42. Paris
+43. Paris
+44. Paris
+45. Paris
+46. Paris
+47. Paris
+48. Paris
+49. Paris
+50. Paris
+51. Paris
+52. Paris
+53. Paris
+54. Paris
+55. Paris
+56. Paris
+57. Paris
+58. Paris
+59. Paris
+60. Paris
+61. Paris
+62. Paris
+63. Paris
+64. Paris
+65. Paris
+66. Paris
+67. Paris
+68. Paris
+69. Paris
+70. Paris
+71. Paris
+72. Paris
+73. Paris
+74. Paris
+75. Paris
+76. Paris
+77. Paris
+78. Paris
+79. Paris
+80. Paris
+81. Paris
+82. Paris
+---JUDGE_RAW---
+{"score":8, "reason":"The answer is correct (Paris) but excessively repetitive—repeating the same word many times is unnecessary and lowers response quality."}
+================================================================================
+
+[1] qid=capital_france cat=factual_knowledge sample_idx=1 score=8.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+1. Paris
+2. Paris
+3. Paris
+4. Paris
+5. Paris
+6. Paris
+7. Paris
+8. Paris
+9. Paris
+10. Paris
+11. Paris
+12. Paris
+13. Paris
+14. Paris
+15. Paris
+16. Paris
+17. Paris
+18. Paris
+19. Paris
+20. Paris
+21. Paris
+22. Paris
+23. Paris
+24. Paris
+25. Paris
+26. Paris
+27. Paris
+28. Paris
+29. Paris
+30. Paris
+31. Paris
+32. Paris
+33. Paris
+34. Paris
+35. Paris
+36. Paris
+37. Paris
+38. Paris
+39. Paris
+40. Paris
+41. Paris
+42. Paris
+43. Paris
+44. Paris
+45. Paris
+46. Paris
+47. Paris
+48. Paris
+49. Paris
+50. Paris
+51. Paris
+52. Paris
+53. Paris
+54. Paris
+55. Paris
+56. Paris
+57. Paris
+58. Paris
+59. Paris
+60. Paris
+61. Paris
+62. Paris
+63. Paris
+64. Paris
+65. Paris
+66. Paris
+67. Paris
+68. Paris
+69. Paris
+70. Paris
+71. Paris
+72. Paris
+73. Paris
+74. Paris
+75. Paris
+76. Paris
+77. Paris
+78. Paris
+79. Paris
+80. Paris
+81. Paris
+82. Paris
+---JUDGE_RAW---
+{"score":8,"reason":"The answer is correct (Paris) but is excessively repetitive and poorly formatted — the single response would suffice instead of listing 'Paris' 82 times."}
+================================================================================
+
+[2] qid=capital_france cat=factual_knowledge sample_idx=2 score=6.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+1. Paris is the capital and largest city of France, located on the River Seine in northern central France at the heart of the Île-de-France region. It is the centre and seat of government of the Île-de-France, or Paris Region, which has an estimated official 2019 population of 12,174,880 within its administrative limits, or 13,510,454 within the wider Paris Region. Its metropolitan area is the largest in the European Union with 7.1 million inhabitants in 2019.
+
+2. Paris has been one of the world's centres of finance, diplomacy, commerce, fashion, gastronomy, science, and arts since the 17th century. As one of the four "commanding cities" of the world with London, New York City, and Tokyo, it is considered a global city, and exerts influence in culture, politics, and economics. In 2019, Paris was rated the best city to live in by the Economist Intelligence Unit's World's Best Cities Index. The city is also a major rail, highway, and air-transport hub served by two international airports: Paris-Charles de Gaulle and Paris-Orly. Opened in 1900, the city's subway system, the Paris Métro, serves 5.23 million passengers daily. It is the second busiest metro system in Europe after Moscow Metro. Gare du Nord is the 20th busiest railway station in the world, but the first Parisian Gare du Nord is the first railway station in the world. In 2018, Paris received 15.1 million international visitors, making it the most visited city in the world. The association football club Paris Saint-Germain and the rugby union club Stade Français are based in Paris. The 2024 Olympic Games will take
+---JUDGE_RAW---
+{"score": 6, "reason": "The response correctly names Paris as France's capital but adds excessive, partially inaccurate or contradictory details (population/metropolitan figures, odd claim about Gare du Nord) and ends with an incomplete sentence, lowering quality."}
+================================================================================
+
+[3] qid=capital_france cat=factual_knowledge sample_idx=3 score=8.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+1 Paris is the capital and largest city of France, situated on the river Seine in the north-central part of the country. It is the centre of the Île-de-France region, which has an estimated 12.1 million inhabitants as of 2019, comprising a fifth of the country's population. The city is a major international centre for finance, diplomacy, fashion, gastronomy and the arts. Located in the north of the country, it is in one of the region's fertile agricultural areas known as the "granary of France". Part of Île-de-France, Paris has a population of 2,192,165 residents within its administrative limits. The city is spread over an area of 105 square kilometres (41 sq mi) and has several satellite towns and communes. The urban area of Paris, or Paris metropolitan area, extends beyond the city's administrative limits with a population estimated at 13,300,549 inhabitants in 2017. The Metropole of Grand Paris was created in 2016 covering the central part of the metropolitan area and 40 of its nearest suburbs; it is part of the larger Paris Region, which has an estimated population of 13,510,374 inhabitants in 2014. Paris was founded under the name Lutetia by the Gaulish people in the 3rd century BC. It is one of the oldest cities in the world and continues to be a major centre of finance, diplomacy, fashion, science and technology, education, politics, culture, tourism, and entertainment. Paris was the second-largest city in the world by population in 1923. The City of Paris is the centre and seat of government of the Île-de-France, or Paris Region, which has an estimated official 2020 population of 12,
+---JUDGE_RAW---
+{"score": 8, "reason": "Correctly identifies Paris as the capital of France, but the response is overly long, contains minor formatting/truncation issues (leading '1' and an incomplete final sentence), and includes unnecessary extra detail."}
+================================================================================
+
+[4] qid=capital_france cat=factual_knowledge sample_idx=4 score=9.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+1. The capital of France is Paris. It is the largest city in France, with a metropolitan population of approximately 12.3 million people. Paris is located in northern France, along the Seine River, and serves as the country's political, economic, and cultural centre. It is home to numerous historic landmarks, including the Eiffel Tower, Notre-Dame Cathedral, the Louvre Museum, and the Palace of Versailles. Paris has been the capital of France since the Middle Ages and remains one of the world's most visited cities.
+---JUDGE_RAW---
+{"score": 9, "reason": "Correct and well-explained answer with relevant context; minor issues are the unnecessary numbering and small imprecision (Versailles is a nearby suburb rather than in Paris proper, and the metro population figure could be updated)."}
+================================================================================
+
+[5] qid=largest_planet cat=factual_knowledge sample_idx=0 score=6.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+587.7 million kilometres from the Sun, Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun but two-and-a-half times that of all the other planets combined. Jupiter is one of only five planets visible to the naked eye from Earth, and Jupiter's apparent magnitude, reaching -2.94 at opposition, makes it on average the third-brightest object in the night sky after the Moon and Venus. It is named after the Roman god Jupiter. When viewed from Earth, Jupiter can be bright enough for its reflected light to cast shadows, and Jupiter has been observed since prehistoric times.
+
+Jupiter was known to astronomers of ancient Mesopotamia and ancient China. The Romans named it after the Roman god Jupiter. When viewed from Earth, Jupiter can reach an apparent magnitude of -2.94, bright enough for its reflected light to cast shadows, and making it on average the third-brightest object in the night sky after the Moon and Venus. Galileo Galilei first observed Jupiter in 1610 using a telescope. At opposition, Jupiter's disk appears larger than Saturn's largest moon Titan and about one-sixth as large as the Full Moon.
+
+Jupiter is primarily composed of hydrogen but contains helium, with other elements making up only one to two percent of the mass, though that may be as much as ten times the total mass of Earth. Because of gravitational compression within the interior of the planet, the interior is denser than the exterior layers. The core region is estimated to be 40 percent as massive as Jupiter's overall mass and between four and thirteen times as dense as water. The atmosphere becomes denser and hotter as one approaches the centre of the planet, eventually forming a supercritical state of hydrogen. In 1982 William B Hubbard proposed quantum-mechanical calculations showing that the interior of Jupiter could
+---JUDGE_RAW---
+{"score": 6, "reason": "Correctly identifies Jupiter and includes many accurate facts, but contains factual errors (wrong distance from the Sun, a dubious angular-size claim), unnecessary repetition, and an unfinished sentence, which reduces clarity and correctness."}
+================================================================================
+
+[6] qid=largest_planet cat=factual_knowledge sample_idx=1 score=6.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+1. Jupiter
+2. Saturn
+3. Uranus
+4. Neptune
+
+Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter has been known to astronomers since antiquity. The Romans named it after their god Jupiter. Jupiter was known by astronomers of ancient China, who associated it with the emperor of their dynasty, and the planet's motion through the heavens was recorded on bronze artifacts dating back to no later than 206 BC. Chinese records of Jupiter's appearances go back to before 600 BC, when its appearance was recorded by Chinese, Babylonian, and ancient Egyptian astronomers. Since Jupiter appeared to move near the ecliptic, astronomers predicted that it would periodically enter in conjunction with the Sun. It was common for Jupiter to appear in close proximity to Venus, either prior to or following conjunction with the Sun. These conjunctions would occur in the dark part of year at areas equidistant from winter and summer solstice. It was also a custom to name a year after Jupiter: "Year of the Catcher" (Greek Zeus phugos, Latin Iuppiter Stator) or "Year of the Herdsman" (Greek Zeus meriones, Latin Iuppiter Mercurialis) for a year coinciding with the month of Hermodromos or Iunonius (Greek Meriones).
+---JUDGE_RAW---
+{"score": 6, "reason": "Correctly names Jupiter as the largest planet, but the response includes unnecessary historical detail and several likely hallucinated or inaccurate historical claims and odd phrasing, which reduces its quality."}
+================================================================================
+
+[7] qid=largest_planet cat=factual_knowledge sample_idx=2 score=6.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+1. Jupiter
+2. Saturn
+3. Uranus
+4. Neptune
+5. Earth
+6. Venus
+7. Mars
+8. Mercury
+9. Pluto
+10. Ceres
+11. Haumea
+12. Makemake
+13. Eris
+14. Sedna
+15. Orcus
+16. Quaoar
+17. Gonggong
+18. Varuna
+19. Salacia
+20. Ixion
+21. Quauhtemoc
+22. Varda
+23. Quaoar
+24. Sedna
+25. Makemake
+26. Haumea
+27. Eris
+28. Orcus
+29. Gonggong
+30. Quaoar
+31. Ixion
+32. Varuna
+33. Salacia
+34. Quaoar
+35. Sedna
+36. Makemake
+37. Haumea
+38. Eris
+39. Orcus
+40. Gonggong
+41. Quaoar
+42. Ixion
+43. Varuna
+44. Salacia
+45. Quaoar
+46. Sedna
+47. Makemake
+48. Haumea
+49. Eris
+50. Orcus
+51. Gonggong
+52. Quaoar
+53. Ixion
+54. Varuna
+55. Salacia
+56. Quaoar
+57. Sedna
+58. Makemake
+59. Haumea
+60. Eris
+61. Orcus
+62. Gonggong
+63. Quaoar
+64. Ixion
+6
+---JUDGE_RAW---
+{"score": 6, "reason": "The correct answer (Jupiter) is given first, but the response is cluttered with many irrelevant, duplicated entries (including dwarf planets) and a stray '6', making it correct but messy and low-quality."}
+================================================================================
+
+[8] qid=largest_planet cat=factual_knowledge sample_idx=3 score=9.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+1 Jupiter is the largest planet in our solar system, with a diameter of 86,881 miles (139,822 kilometres) and a mass of 1.9 x 10^27 kilograms. It is approximately 318 times more massive than Earth and has a volume more than 1,300 times that of our home planet. Jupiter's sheer size means that if it were a hollow sphere, it could fit 1,321 Earths inside it. The planet is so large that it generates its own magnetic field, creating a vast magnetosphere that extends far beyond its atmosphere and is the largest planetary magnetosphere in the solar system. Jupiter is a gas giant, primarily composed of hydrogen and helium, with a small rocky core surrounded by metallic hydrogen and liquid metallic hydrogen layers. Its iconic Great Red Spot, a giant storm larger than Earth that has been raging for centuries, is just one of its many atmospheric features. Jupiter's rapid rotation — completing one revolution every 10 hours — causes it to bulge at the equator, making it the flattest planet in the solar system.
+---JUDGE_RAW---
+{"score": 9, "reason": "Accurate, well-explained answer with correct facts and figures; minor issues are a stray leading '1' before 'Jupiter' and slight redundancy in describing metallic hydrogen layers."}
+================================================================================
+
+[9] qid=largest_planet cat=factual_knowledge sample_idx=4 score=8.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+1 Jupiter is the largest planet in the solar system, with a diameter of roughly 140,000 kilometres and a mass two and a half times that of all the other planets combined. It is the fifth planet from the Sun and the sixth object in order of increasing distance from the Sun, after Mercury, Venus, Earth, Mars, and the asteroid belt. Jupiter is a gas giant, meaning that it is primarily composed of hydrogen and helium, with trace amounts of other elements. Its atmosphere is marked by distinctive cloud bands and the Great Red Spot, a giant storm that has been raging for at least 400 years. Jupiter has 79 known moons, the largest four of which were discovered by Galileo Galilei in 1610 and are known as the Galilean moons. Jupiter's gravity has a significant effect on the asteroid belt, clearing out a number of orbits and creating Kirkwood gaps in the distribution of asteroids.
+---JUDGE_RAW---
+{"score": 8, "reason": "Correctly identifies Jupiter and provides mostly accurate supporting details; minor issues include an outdated moon count (79), a slightly odd phrasing calling the asteroid belt an intervening 'object,' and a small uncertainty about the exact documented age of the Great Red Spot."}
+================================================================================
+
+[10] qid=water_formula cat=factual_knowledge sample_idx=0 score=5.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+2O. This represents a molecule consisting of two hydrogen atoms bonded to one oxygen atom. Water is a polar molecule, with the oxygen atom having a partial negative charge and the hydrogen atoms having partial positive charges. This polarity allows water molecules to form hydrogen bonds with each other and with other polar molecules, which is why water is an excellent solvent for many substances. Water also has a high specific heat capacity, meaning it can absorb and release large amounts of heat without significant temperature change. This property moderates Earth's climate and makes water essential for life as we know it.
+---JUDGE_RAW---
+{"score":5,"reason":"The response incorrectly gives the formula as '2O' (it should be H2O); however the accompanying explanation about two hydrogens per oxygen, polarity, hydrogen bonding, and high specific heat is accurate."}
+================================================================================
+
+[11] qid=water_formula cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+1. The chemical formula for water is H2O. It consists of two hydrogen atoms bonded to one oxygen atom.
+
+2. Water is a polar molecule, meaning it has a partial positive charge on one side and a partial negative charge on the other. This polarity allows water molecules to form hydrogen bonds with each other.
+
+3. The unique properties of water, including its high boiling point and surface tension, are due to the hydrogen bonding between water molecules. This bonding allows water to dissolve many substances, making it essential for life on Earth.
+---JUDGE_RAW---
+{"score":10, "reason":"Correctly states H2O and provides accurate, relevant explanations of polarity and hydrogen bonding; clear, coherent, and directly answers the question."}
+================================================================================
+
+[12] qid=water_formula cat=factual_knowledge sample_idx=2 score=7.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+1. The chemical formula for water is H2O, representing two hydrogen atoms bonded to one oxygen atom. It is a polar molecule with a bent shape, which gives water its unique properties.
+
+2. Water is a polar molecule because the oxygen atom is more electronegative than the hydrogen atoms, creating a partial negative charge on the oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form hydrogen bonds with each other and with other polar substances.
+
+3. Water is a liquid at room temperature due to the hydrogen bonding between water molecules. These bonds give water a high boiling point and high specific heat capacity, allowing it to absorb and release heat energy without undergoing significant temperature changes.
+
+4. Water is essential for life because it is the universal solvent, allowing many substances to dissolve in it and facilitating chemical reactions within cells. Water also has a high heat capacity, which helps regulate body temperature, and a high heat of vaporisation, which allows organisms to cool themselves through evaporation.
+
+5. Water has a high specific heat capacity because of the hydrogen bonding between water molecules. Breaking these bonds requires a significant amount of energy, which means water can absorb and release heat energy without undergoing significant temperature changes.
+
+6. Water has a high surface tension because of the hydrogen bonding between water molecules. These bonds create a "skin" on the surface of water that resists breaking and allows small objects to float on the surface.
+
+7. Water has a high heat of vaporisation because of the hydrogen bonding between water molecules. Breaking these bonds requires a significant amount of energy, which means water can absorb and release heat energy without undergoing significant temperature changes.
+
+8. Water has a high heat capacity because of the hydrogen bonding between water molecules. Breaking these bonds requires a significant amount of energy, which means water can absorb and release heat energy without undergoing significant temperature changes.
+
+9. Water has a high heat of fusion because of the hydrogen bonding between water molecules. Breaking these bonds requires a significant amount of
+---JUDGE_RAW---
+{"score": 7, "reason": "Correctly states H2O and gives a reasonable explanation of polarity and hydrogen bonding, but the answer is overly long, repetitive (sepeating heat-capacity/heat-of-vaporization points), and ends with a truncated sentence."}
+================================================================================
+
+[13] qid=water_formula cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+ The chemical formula for water is H₂O. This means that each molecule of water consists of two hydrogen atoms (H) bonded to one oxygen atom (O). Water is a polar molecule, with the oxygen atom carrying a slight negative charge and the hydrogen atoms carrying slight positive charges. This polarity allows water molecules to form hydrogen bonds with each other, which gives water many of its unique properties, including its high boiling point, its ability to dissolve many substances, and its role as a universal solvent in biological systems.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and complete: it gives the formula H₂O, explains the atomic composition and polarity, and accurately describes relevant consequences like hydrogen bonding and solvent behavior."}
+================================================================================
+
+[14] qid=water_formula cat=factual_knowledge sample_idx=4 score=4.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+2O is the chemical formula for water, consisting of two hydrogen atoms bonded to one oxygen atom. It is a simple yet fundamental molecule, essential for life on Earth and ubiquitous throughout the solar system.
+
+Water exists in three states on Earth: solid (ice), liquid, and gas (vapour). Its unique properties, including its ability to dissolve many substances, its high specific heat capacity, and its anomalous behaviour upon freezing, make it vital for biological processes and climate regulation. The water cycle, involving evaporation, condensation, precipitation, and runoff, distributes water across the planet and supports ecosystems. Water is also a major component of the Earth's atmosphere, oceans, and polar ice caps.
+
+Beyond Earth, water plays a critical role in astrobiology and planetary science. Its presence on Mars, Europa, Enceladus, and other celestial bodies suggests the potential for life and provides insights into the formation and evolution of the solar system. The study of water in space ranges from its detection in comets and meteorites to its behaviour in extreme environments like hydrothermal vents on the ocean floor and in the atmospheres of exoplanets.
+---JUDGE_RAW---
+{"score":4, "reason":"The response contains a major factual error by giving '2O' instead of 'H2O' while the rest of the material is coherent and relevant; because the core answer is incorrect, the overall response fails despite useful additional information."}
+================================================================================
+
+[15] qid=ww2_end cat=factual_knowledge sample_idx=0 score=6.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+1945 was a pivotal year in world history. On 25 January, the Battle of Berlin concluded with the German surrender in the city. On 8 May, Nazi Germany formally surrendered to the Allies, bringing an end to World War II in Europe. The same day, Soviet troops occupied Budapest, Hungary, and the Soviet Union declared war on Japan. On 26 July, the Potsdam Conference began in Germany, attended by Harry S. Truman, Winston Churchill, and Joseph Stalin. On 6 August, the United States dropped the atomic bomb on Hiroshima, Japan, killing an estimated 70,000 people. On 9 August, the Soviet Union declared war on Japan and invaded Manchuria. On 14 August, Japan surrendered unconditionally to the Allies, bringing an end to World War II. On 2 September, the Japanese Instrument of Surrender was signed aboard the USS Missouri in Tokyo Bay, formally ending World War II.
+---JUDGE_RAW---
+{"score": 6, "reason": "Gives the correct year (1945) but includes several historical inaccuracies and misleading date claims (e.g., Battle of Berlin dated Jan 25, Soviet occupation of Budapest and declaration of war on Japan on May 8, Potsdam conference date), so the extra details reduce reliability."}
+================================================================================
+
+[16] qid=ww2_end cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+1945
+---JUDGE_RAW---
+{"score":10, "reason":"Correct—World War II ended in 1945 (Germany surrendered in May and Japan in August/September 1945)."}
+================================================================================
+
+[17] qid=ww2_end cat=factual_knowledge sample_idx=2 score=8.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+1945. World War II, which had begun in Europe in 1939, continued to rage across the globe until 1945. The war was fought between two opposing military alliances: the Allies, led by the United Kingdom, the United States, and the Soviet Union; and the Axis powers, led by Germany, Italy, and Japan. The conflict spread from Europe to Asia, Africa, and the Pacific Ocean, with major theaters of fighting in Europe, North Africa, the Mediterranean, and East Asia.
+
+The war began on 1 September 1939 when Germany invaded Poland. The United Kingdom and France declared war on Germany two days later, on 3 September. By late 1941, Germany and its allies controlled much of continental Europe, North Africa, and parts of Asia. The entry of the United States into the war on 8 December 1941, following the Japanese attack on Pearl Harbor, brought the Pacific theater into the conflict. By early 1942, Japan had conquered much of Southeast Asia and the western Pacific, while Germany and Italy had conquered North Africa and threatened to take Egypt.
+
+The tide began to turn in 1942, with the Allied victory at the Battle of Midway in June and the defeat of German forces at the Second Battle of El Alamein in November. In 1943, Italy surrendered to the Allies, and in 1944, the United States and its allies invaded Italy. The Allied invasion of Normandy on 6 June 1944, known as D-Day, marked the beginning of the liberation of German-occupied Western Europe. The Soviet Union invaded Germany in 1944 and entered Berlin in April 1945. Germany surrendered on 8 May 1945.
+
+Japan continued to fight until 15 August 1945, when it announced its surrender,
+---JUDGE_RAW---
+{"score": 8, "reason": "Correct year and an overall accurate summary of events, but the final sentence is unfinished (trailing comma) and it omits the formal Japanese surrender signing on 2 September 1945."}
+================================================================================
+
+[18] qid=ww2_end cat=factual_knowledge sample_idx=3 score=7.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+1945. World War II ended on 2 September 1945, when the Empire of Japan formally surrendered to the Allied Powers, following the atomic bombings of Hiroshima and Nagasaki on 6 and 9 August, respectively, and the Soviet invasion of Manchuria on 8 August. The surrender documents were signed at Tokyo Bay aboard the USS Missouri, marking the conclusion of six years of conflict and the largest-scale war in human history.
+
+The war began in Asia in 1937 with the Second Sino-Japanese War, which pitted Imperial Japan against the Republic of China. In Europe, it started on 1 September 1939 when Germany invaded Poland. By 1941, the conflict had expanded to include the Soviet Union, the United Kingdom, and the United States. The Axis powers initially achieved significant victories in 1941 and 1942, but Allied forces turned the tide in 1942, with victories at the Battle of Stalingrad and the Battle of Midway. The Allies launched a successful invasion of Normandy on 6 June 1944, opening a second front in Europe. By 1945, Germany was defeated, and Italy had fallen. The war in Europe concluded on 8 May 1945 with Germany's unconditional surrender. The Allies continued to fight Japan until its surrender on 15 August 1945, following the atomic bombings of Hiroshima and Nagasaki and the Soviet invasion of Manchuria.
+
+The war resulted in an estimated 70 to 85 million fatalities, including approximately 20 million military personnel and 40 to 50 million civilians. It remains the deadliest conflict in human history. The aftermath saw the rise of the United States and the Soviet Union as superpowers, the establishment of the United Nations, and the beginning of the Cold War. The war also accelerated
+---JUDGE_RAW---
+{"score": 7, "reason": "Accurate and informative (correct year and key dates/events), but has minor repetition and ends with an incomplete sentence, reducing coherence and polish."}
+================================================================================
+
+[19] qid=ww2_end cat=factual_knowledge sample_idx=4 score=7.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+1945. The Second World War (WWII or WW2) was a global war that lasted from 1939 to 1945. It involved the vast majority of the world's nations, including all the great powers, organised into two opposing military alliances: the Allies and the Axis powers. The war involved over 100 million personnel, making it the largest war in history. More than 70 million people died, including about 20 million military personnel and 40 million civilians, many of whom died because of deliberate genocide, famine, mass-bombing, disease, and massacres. The major participants threw their entire economic, industrial, and scientific capabilities behind the war effort, blurring the distinction between civilian and military resources. World War II was the deadliest conflict in human history, and it directly affected more than 90 percent of the world's population.
+
+The war in Europe began when Germany invaded Poland on 1 September 1939, initiating the invasion of Poland. In response to the invasion, the United Kingdom and France declared war on Germany on 3 September, after giving the German government ultimatums to cease its aggression. The United Kingdom and the other British dominions declared war on Germany on 3 September, while France had already declared war on Germany on 3 September. All the other nations fighting Germany — Australia, Canada, New Zealand and Newfoundland, the Union of South Africa, the Free French and successive Vichy French governments, the Philippine Commonwealth, the People's Republic of China, the Kingdom of Greece, the Kingdom of Yugoslavia, and the United States — declared war on Germany in 1941. The European War concluded with the capture of Berlin by Soviet and Polish troops and the subsequent German unconditional surrender on 8 May 1945.
+
+World War II altered the political alignment and social structure of the globe. The United Nations (UN) was established to foster international
+---JUDGE_RAW---
+{"score": 7, "reason": "The direct answer (1945) is correct, but the supporting text contains inaccuracies and unnecessary detail (e.g., incorrect claims about which countries declared war in 1941 and misnaming China as the 'People's Republic of China'), so it's acceptable but not fully reliable."}
+================================================================================
+
+[20] qid=earth_sun cat=factual_knowledge sample_idx=0 score=7.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+365.25 days. More precisely, it takes Earth 365.2422 days to complete one full orbit around the Sun. This period is known as Earth's sidereal year. Because this period is not an exact whole number of days, we have leap years to keep our calendar in sync with Earth's orbit. Leap years occur every four years, adding an extra day to February. However, there are exceptions to this rule: years divisible by 100 are not leap years unless they are also divisible by 400. Thus, 2000 was a leap year, but 2100 will not be. This system, known as the Gregorian calendar, was introduced by Pope Gregory XIII in 1582 to correct for the slight drift in the Julian calendar that had accumulated over centuries.
+---JUDGE_RAW---
+{"score":7, "reason":"Mostly correct and well-explained (good approximation and accurate leap-year/Gregorian details), but it incorrectly labels 365.2422 days as the sidereal year — that value is the tropical year; the sidereal year is about 365.2564 days."}
+================================================================================
+
+[21] qid=earth_sun cat=factual_knowledge sample_idx=1 score=6.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+365.2422 days. This is the length of the tropical year, which is the time it takes for the Sun to return to the same position in the sky relative to the equinoxes and solstices. It is based on the Earth's position in its orbit relative to the fixed stars, not the position of the Sun relative to the horizon. The tropical year is slightly shorter than the sidereal year, which is 365.25636 days and is based on the Earth's position in its orbit relative to the fixed stars.
+
+The tropical year is the basis for the Gregorian calendar, which is the calendar system most commonly used today. It is a solar calendar that has 365 days in a common year and 366 days in a leap year. The Gregorian calendar was introduced in 1582 by Pope Gregory XIII to correct for errors introduced by the Julian calendar, which had accumulated a significant discrepancy over time. The Julian calendar had a leap year every four years without exception, which resulted in an average year length of 365.25 days. This was too long by about 11 minutes per year, causing the calendar to drift relative to the seasons.
+
+The Gregorian calendar corrects for this by omitting leap years on century years that are not divisible by 400. Thus, the year 2000 was a leap year, but the years 1700, 1800, and 1900 were not. This adjustment brings the average year length to 365.2425 days, which is very close to the actual tropical year. The Gregorian calendar is not perfect, however. It still accumulates an error of about 0.0003 days per year, which means it will drift by about one day every 3,300 years. To correct for this,
+---JUDGE_RAW---
+{"score": 6, "reason": "Mostly correct — gives the right value (365.2422 days) and useful calendar context — but contains a factual contradiction (tropical year is not based on the fixed stars; that describes the sidereal year) and the answer is cut off mid‑sentence."}
+================================================================================
+
+[22] qid=earth_sun cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+365.24 days
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise—the commonly quoted length of Earth's orbit is about 365.24 days (the tropical year), which accurately answers the question."}
+================================================================================
+
+[23] qid=earth_sun cat=factual_knowledge sample_idx=3 score=9.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+365.24 days
+---JUDGE_RAW---
+{"score": 9, "reason": "Answer is correct and concise (≈365.24 days is a good approximation of a year). Could be improved by noting whether this refers to the tropical year versus the sidereal year for full precision."}
+================================================================================
+
+[24] qid=earth_sun cat=factual_knowledge sample_idx=4 score=9.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+365.24219 days. This figure, known as the tropical year, represents the time it takes for Earth to complete one orbit around the Sun relative to the vernal equinox. It is the basis of our calendar year, which is why we have leap years every four years to account for the extra fraction of a day. The tropical year is slightly shorter than the sidereal year (365.25636 days), which is the time it takes Earth to return to the same position relative to the stars.
+---JUDGE_RAW---
+{"score": 9, "reason": "Accurate and concise—correctly gives the tropical year (365.24219 days) and contrasts it with the sidereal year. Minor simplification: the leap-year rule is more nuanced than simply 'every four years' (Gregorian adjustments exist)."}
+================================================================================
+
+[25] qid=speed_of_light cat=factual_knowledge sample_idx=0 score=6.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+299,792,458 metres per second (983,571,056 kilometres per hour; 611,238,920 miles per hour; 1,079,252,849 kilometres per hour; 670,616,629 miles per hour)
+---JUDGE_RAW---
+{"score": 6, "reason": "Gives the exact correct value in metres per second, but the parenthetical conversions are inconsistent and contain incorrect/duplicate km/h and mph figures, so the response is only partially reliable."}
+================================================================================
+
+[26] qid=speed_of_light cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+299,792,458 metres per second (186,282 miles per second).
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and precise: gives the defined SI value 299,792,458 m/s and the common approximate equivalent in miles per second."}
+================================================================================
+
+[27] qid=speed_of_light cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+300,000 kilometres per second (about 186,000 miles per second). Light travels faster than sound; in a vacuum light travels about one million times faster than sound, which travels at roughly 330 metres per second (about 1,100 feet per second).
+---JUDGE_RAW---
+{"score": 10, "reason": "Answer is correct and appropriately phrased for an approximate value, with accurate unit conversions and a reasonable comparison to sound speed; no substantive improvements needed."}
+================================================================================
+
+[28] qid=speed_of_light cat=factual_knowledge sample_idx=3 score=7.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+299,792 kilometres per second. More precisely, the speed of light in a vacuum is defined as exactly 299,792,458 metres per second. This value is fixed by international agreement and represents the fundamental constant \( c \) in Einstein's theory of relativity. It is the maximum speed at which all conventional matter and information can travel.
+
+The metre itself is defined in terms of \( c \): it is the distance travelled by light in a vacuum during \( \frac{1}{299,792,458} \) of a second. This definition was adopted in 1983 to provide a standard for length based on an immutable physical constant rather than on physical artefacts. The metre is now defined by \( c \) and the second, which is defined by \( c \) and \( \Delta \nu_{\text{Cs}} \) — the frequency of the caesium-133 atom — making \( c \) the fundamental constant that defines \( \Delta \nu_{\text{Cs}} \).
+
+The speed of light in a vacuum is denoted \( c \) to emphasise its universality as a constant of nature. \( c \) is not just the speed of light; it is the speed of all massless particles and associated fields, including the gravitational waves predicted by general relativity. \( c \) is the speed of light only in a vacuum; in materials such as glass or water, light travels more slowly, typically \( \frac{c}{n} \) where \( n \) is the refractive index of the material. \( c \) is the same for all observers, regardless of their relative motion, and it is the same in all directions. \( c \) is constant throughout the universe and does not vary with time.
+
+\( c \) is important because \( c^2 \) — \( c \
+---JUDGE_RAW---
+{"score": 7, "reason": "Mostly correct and informative — gives the approximate and exact values and useful context — but contains an incorrect claim about the second being defined by c and Δν_Cs (the second is defined by the cesium frequency alone) and the response is cut off mid-sentence."}
+================================================================================
+
+[29] qid=speed_of_light cat=factual_knowledge sample_idx=4 score=7.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+299,792,458 metres per second. This is a fundamental constant of nature and is the basis for the definition of the metre. It is also the speed of all massless particles and all forms of electromagnetic radiation, including visible light, in a vacuum. The speed of light is approximately 1/300,000th the size of the Sun's diameter, and it takes light about 8 minutes to travel from the Sun to Earth.
+
+The speed of light in a vacuum was first measured accurately in the 17th century by Danish astronomer Ole Rømer, who observed that the eclipses of Jupiter's moons occurred later when Earth was farther from Jupiter than when it was closer. In 1905 Albert Einstein proposed that the speed of light in a vacuum is independent of the motion of the light source and all observers, and is a constant of nature. This constancy of the speed of light was confirmed by numerous experiments over the following decades, and it is now universally accepted as one of the fundamental principles of physics.
+---JUDGE_RAW---
+{"score": 7, "reason": "Provides the correct value and good context (definition of the metre, Rømer, Einstein), but includes a misleading/incorrect claim about being '1/300,000th the size of the Sun's diameter', so not fully accurate."}
+================================================================================
+
+[30] qid=human_chromosomes cat=factual_knowledge sample_idx=0 score=8.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+46 chromosomes. These are organised into 23 pairs, with one chromosome in each pair inherited from each parent. Chromosomes are structures within cells that contain DNA, the genetic material that carries the instructions for making proteins and other molecules essential for life. Humans have 22 pairs of autosomes, chromosomes that are not involved in determining sex, plus one pair of sex chromosomes, X and Y. The sex chromosomes determine biological sex: females have two X chromosomes (XX), while males have one X and one Y chromosome (XY). Each chromosome contains hundreds to thousands of genes, segments of DNA that code for specific proteins. For example, chromosome 22 contains the gene for hemoglobin, the protein that carries oxygen in red blood cells. Chromosomes are visible under a microscope only during cell division, when they condense into tightly coiled structures. During most of the cell's life, chromosomes exist in a less condensed form called chromatin. Chromosomes replicate during cell division, ensuring that each daughter cell receives an identical copy of the genetic material. This process is essential for growth, repair, and reproduction. Abnormalities in chromosome number or structure can lead to genetic disorders. Down syndrome, for example, is caused by an extra copy of chromosome 21, resulting in 47 chromosomes instead of the usual 46. The Human Genome Project, completed in 2003, mapped the entire human genome, providing a detailed catalogue of all human genes and their locations on the chromosomes.
+---JUDGE_RAW---
+{"score": 8, "reason": "Mostly correct, clear and well-structured answer (46 chromosomes, 23 pairs, autosomes vs sex chromosomes, Down syndrome example), but it incorrectly claims a hemoglobin gene is on chromosome 22 (hemoglobin genes are on other chromosomes), a minor factual error."}
+================================================================================
+
+[31] qid=human_chromosomes cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+46 chromosomes
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: humans have 46 chromosomes in total, arranged as 23 pairs."}
+================================================================================
+
+[32] qid=human_chromosomes cat=factual_knowledge sample_idx=2 score=7.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+46
+
+Humans are diploid organisms with 23 pairs of chromosomes, for a total of 46 chromosomes. Twenty-two pairs are autosomes, which are homologous in males and females, while the 23rd pair are the sex chromosomes, X and Y, which are heteromorphic. Females have two X chromosomes, while males have one X and one Y chromosome. This arrangement results from fertilisation, in which an egg cell containing an X chromosome fuses with a sperm cell containing either an X or a Y chromosome.
+
+The X chromosome contains over 1,000 genes and is estimated to contain about 155 million base pairs, making it the largest chromosome. The Y chromosome, in contrast, contains only about 59 million base pairs and contains fewer than 100 genes. This disparity reflects the evolutionary history of the sex chromosomes: the X chromosome is ancient and retains many genes related to embryonic development, while the Y chromosome has lost most of its genes over time and now primarily carries genes related to male fertility and sex determination.
+
+During meiosis, the process of cell division that produces gametes, homologous chromosomes pair up and exchange genetic material through crossing over. This creates genetic diversity in offspring. In males, the X and Y chromosomes pair up briefly during meiosis I, but because they are not entirely homologous, they do not always segregate equally. This can lead to nondisjunction, where sperm cells may receive an extra X chromosome (XX sperm) or an extra Y chromosome (YY sperm), resulting in offspring with sex chromosome trisomies. Most sex chromosome trisomies are lethal, but those involving X and Y chromosomes can result in conditions such as Klinefelter syndrome (XXY) or Jacobs syndrome (XYY).
+---JUDGE_RAW---
+{"score":7,"reason":"The core answer (46) and most of the explanation are correct and informative, but the reply contains factual mistakes: the description of nondisjunction producing XX or YY sperm is misleading (male nondisjunction typically gives XY or nullisomic sperm), and the claim that most sex-chromosome trisomies are lethal is incorrect; some (e.g. XXY, XYY) are viable. Minor numeric details about chromosome sizes are approximate but acceptable."}
+================================================================================
+
+[33] qid=human_chromosomes cat=factual_knowledge sample_idx=3 score=7.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+46. Humans have 23 pairs of chromosomes, for a total of 46 chromosomes. Chromosomes are structures within cells that contain genes, which carry the instructions for making proteins and other molecules essential for life. Each chromosome consists of a single molecule of DNA wrapped around proteins called histones. The DNA molecule itself is a long, linear chain of nucleotides, each containing one of four bases: adenine (A), cytosine (C), guanine (G), or thymine (T).
+
+The 46 chromosomes in humans are organised into 23 pairs. The first 22 pairs are called autosomes and are identical in males and females. The 23rd pair are called sex chromosomes. Females have two X chromosomes (XX), while males have one X and one Y chromosome (XY). Chromosomes 1 to 22 are numbered roughly in order of size, with chromosome 1 being the largest. Chromosomes are inherited from parents in pairs, one from each parent. The number 46 is not unique to humans; many other species have the same number, including chimpanzees, gorillas, and orangutans. The number of chromosomes varies widely among species; fruit flies have 8, dogs have 78, and potatoes have 48.
+---JUDGE_RAW---
+{"score":7, "reason":"The response correctly states humans have 46 chromosomes and gives clear, accurate explanations of pairs, structure, and sex chromosomes, but it wrongly claims chimpanzees, gorillas, and orangutans also have 46 (they have 48), a notable factual error."}
+================================================================================
+
+[34] qid=human_chromosomes cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+46 (23 pairs).
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: humans have 46 chromosomes in somatic cells, arranged as 23 pairs."}
+================================================================================
+
+[35] qid=amazon_river cat=factual_knowledge sample_idx=0 score=7.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+1. Africa
+2. Antarctica
+3. Asia
+4. Australia
+5. Europe
+6. North America
+7. South America
+---JUDGE_RAW---
+{"score":7, "reason":"The correct continent (South America) appears in the list, but the response doesn't explicitly indicate which option is the answer—providing choices without selecting one makes the reply unclear."}
+================================================================================
+
+[36] qid=amazon_river cat=factual_knowledge sample_idx=1 score=9.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+1. Africa
+2. Asia
+3. Europe
+4. North America
+5. Oceania
+6. South America
+
+Answer: The Amazon River is located in South America. It is the largest river in the world by discharge volume, with an average discharge of approximately 209,000 cubic metres per second. The Amazon River flows through several countries, including Brazil, Peru, Colombia, Venezuela, Ecuador, Bolivia, Guyana, Suriname, and French Guiana. It plays a crucial role in the ecosystem of the Amazon rainforest, which is the largest rainforest in the world and is home to a vast array of plant and animal species.
+---JUDGE_RAW---
+{"score":9, "reason":"Correct and clearly explained; additional facts are informative. Minor nitpick: listing several countries mixes the river's basin with the main course (the Amazon proper mainly flows through Peru and Brazil)."}
+================================================================================
+
+[37] qid=amazon_river cat=factual_knowledge sample_idx=2 score=8.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+1. The Amazon River flows through the Amazon rainforest, which is located in the continent of South America.
+2. The Amazon rainforest is the largest tropical rainforest in the world, covering approximately 5.5 million square kilometres.
+3. The Amazon rainforest spans across nine countries in South America, including Brazil, Peru, Colombia, Venezuela, Ecuador, Bolivia, Guyana, Suriname, and French Guiana.
+4. The Amazon River is the second-longest river in the world, after the Nile River in Africa.
+5. The Amazon River originates in the Andes Mountains in Peru and flows eastward for approximately 6,400 kilometres before emptying into the Atlantic Ocean.
+6. The Amazon River is known for its immense size and volume, with an average discharge of approximately 209,000 cubic metres per second.
+7. The Amazon River is home to a diverse range of aquatic species, including over 2,000 species of fish.
+8. The Amazon River is also known for its tributaries, with over 1,100 tributaries flowing into it.
+9. The Amazon River is an important source of freshwater for millions of people living in the region.
+10. The Amazon River plays a crucial role in the global water cycle and has a significant impact on the climate of the region.
+11. The Amazon River is also known for its unique ecosystem, which includes numerous species of plants and animals found nowhere else in the world.
+12. The Amazon River is a popular destination for ecotourism, with visitors coming from all over the world to experience the beauty and diversity of the rainforest.
+13. The Amazon River is facing numerous threats, including deforestation, pollution, and climate change, which could have devastating impacts on the region's biodiversity and the people who depend on it.
+14. Conservation efforts are underway to protect the Amazon River and its surrounding rainforest, including
+---JUDGE_RAW---
+{"score": 8, "reason": "The response correctly states South America and provides mostly accurate supporting facts, but it's overly verbose for a simple question and ends with an incomplete sentence, so clarity and conciseness suffer."}
+================================================================================
+
+[38] qid=amazon_river cat=factual_knowledge sample_idx=3 score=5.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+1. The Amazon River is located in South America.
+2. It is the largest river in the world by discharge volume.
+3. The Amazon flows through nine countries in South America.
+4. It has the largest drainage basin in the world.
+5. The Amazon River is 6,400 kilometres long.
+6. It is the second-longest river in the world.
+7. The Amazon River basin covers over 7 million square kilometres.
+8. The Amazon River flows through the Amazon rainforest.
+9. The Amazon River is home to thousands of species of fish.
+10. The Amazon River is a vital water source for millions of people.
+11. The Amazon River has many tributaries.
+12. The Amazon River flows through Brazil.
+13. The Amazon River flows through Peru.
+14. The Amazon River flows through Colombia.
+15. The Amazon River flows through Venezuela.
+16. The Amazon River flows through Ecuador.
+17. The Amazon River flows through Bolivia.
+18. The Amazon River flows through Guyana.
+19. The Amazon River flows through Suriname.
+20. The Amazon River flows through French Guiana.
+21. The Amazon River has many rapids and waterfalls.
+22. The Amazon River is a popular destination for tourists.
+23. The Amazon River is a popular destination for fishermen.
+24. The Amazon River is a popular destination for kayakers.
+25. The Amazon River is a popular destination for rafters.
+26. The Amazon River is a popular destination for canoeists.
+27. The Amazon River is a popular destination for kayakers.
+28. The Amazon River is a popular destination for rafters.
+29. The Amazon River is a popular destination for canoeists.
+30. The Amazon River is a popular destination for kayakers.
+31. The Amazon River is a popular destination for rafters.
+32. The Amazon River is a popular
+---JUDGE_RAW---
+{"score": 5, "reason": "The response correctly names South America but is cluttered with many irrelevant, repetitive items, some inaccuracies (overstating the countries the main river flows through) and an incomplete ending, reducing overall quality."}
+================================================================================
+
+[39] qid=amazon_river cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+1. North America
+2. South America
+3. Europe
+4. Africa
+
+The Amazon River, also known as the Rio Amazonas, is located on the continent of South America. It is the largest river by discharge volume of water in the world, and its drainage basin is the largest in the world by area, covering approximately 7 million square kilometres. The Amazon flows through the countries of Brazil, Peru, and Colombia, among others, and its mouth is located in the Atlantic Ocean. The Amazon is often referred to as the "lungs of the Earth" due to its vast rainforest, which plays a crucial role in global climate regulation and biodiversity conservation. The river is named after the legendary Amazons, the female warriors of Greek mythology.
+---JUDGE_RAW---
+{"score":10,"reason":"Correct answer (South America) with accurate, relevant supporting details and no factual errors; concise and well-structured."}
+================================================================================
+
+[40] qid=inventor_telephone cat=factual_knowledge sample_idx=0 score=7.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+ Alexander Graham Bell is credited with inventing the telephone in 1876, though Antonio Meucci had earlier patented a "talking telegraph" in 1871 and Thomas Watson had independently demonstrated a "harmonic telegraph" in 1874. Bell's patent application was filed on 14 February 1876, just hours before Elisha Gray's on 15 February, and Gray abandoned his own patent application on 1 March 1876. Bell's patent was granted on 7 March 1876, and he patented improvements to his invention in 1877 and 1878.
+---JUDGE_RAW---
+{"score":7, "reason":"Correctly identifies Alexander Graham Bell as widely credited with inventing the telephone and gives relevant patent dates, but contains factual inaccuracies/oversimplifications (e.g., Meucci did not 'patent' a device in 1871 but filed a caveat; the Elisha Gray filing date and details are misstated and some claims about Watson are imprecise)."}
+================================================================================
+
+[41] qid=inventor_telephone cat=factual_knowledge sample_idx=1 score=5.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+1. Alexander Graham Bell
+2. Antonio Meucci
+3. Johann Philipp Reis
+4. Charles Bourseul
+5. Innocenzo Manzetti
+6. Philipp Reis
+7. Antonio Meucci
+8. Antonio Meucci
+9. Antonio Meucci
+10. Antonio Meucci
+---JUDGE_RAW---
+{"score": 5, "reason": "The response lists several relevant inventors (including Alexander Graham Bell and Antonio Meucci) but is disorganized, repeats names multiple times, and fails to state the single commonly credited inventor concisely."}
+================================================================================
+
+[42] qid=inventor_telephone cat=factual_knowledge sample_idx=2 score=5.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+1876 saw several inventions that contributed to the development of the telephone. The first was the telephone itself, patented by Alexander Graham Bell in March 1876. Bell's patent, filed on 14 February, described a device that could transmit speech electrically, using two or more conductors through which electrical currents were propagated, varying in strength in direct proportion to the fluctuations of the air elastic waves making up a human voice at the sending end, and reproducing those waves at the receiving end. Bell's patent described only single-conductor telephones, although Bell and his backers were already discussing the possibilities of two-conductor telephone lines for telephone service.
+
+Also in March 1876, Elisha Gray invented liquid transmitter telephones while working on telephone line impedance equalisers for Western Union. Gray, Thomas Augustus Watson, and Western Union filed caveat 17,4465 for a liquid transmitter on 14 March 1876, three days before Bell filed his patent for the first practical telephone. Bell's patent, US 174,465, filed 19 February 1876, and granted 7 March 1876, was contested on the basis of Gray having filed a caveat for an almost identical liquid transmitter invention 14 February 1876. Bell's lawyer, Christopher C. Burnett, argued that Bell's first telephone transmission occurred on 4 February 1876 in Boston, Massachusetts, while Gray's lawyer, Granville Woods, argued that Gray's first telephone transmission occurred on 14 February 1876 in Washington, D.C. The USPTO held an interference hearing on 14 October 1887 to determine priority of invention. The examiner's ruling was that Bell was the first inventor of the telephone, based on Bell's priority of filing caveat 17,425 on 15 February
+---JUDGE_RAW---
+{"score": 5, "reason": "The response correctly names Alexander Graham Bell as generally credited and mentions the Elisha Gray dispute, but contains contradictory and incorrect dates, a cut-off sentence, and factual inconsistencies that reduce its reliability."}
+================================================================================
+
+[43] qid=inventor_telephone cat=factual_knowledge sample_idx=3 score=6.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+1. Alexander Graham Bell is credited with inventing the telephone.
+2. Bell patented his invention on 7 March 1876.
+3. Bell's patent described a method of constructing a telephone that used a liquid transmitter.
+4. Bell was born on 3 March 1847 in Edinburgh, Scotland.
+5. Bell was educated at the Royal High School in Edinburgh.
+6. Bell's father, Alexander Melville Bell, was a professor of elocution at the University of Edinburgh.
+7. Bell's mother, Eliza Grace, was deaf.
+8. Bell's grandfather, Alexander Bell, was a renowned elocutionist.
+9. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+10. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+11. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+12. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+13. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+14. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+15. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+16. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+17. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+18. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+19. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+20. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+21. Bell's uncle, Alexander Melville Bell, was a renowned elocutionist.
+22. Bell's uncle, Alexander
+---JUDGE_RAW---
+{"score": 6, "reason": "Correctly names Alexander Graham Bell (and gives the patent date), but the response is marred by excessive repetition, factual redundancies/inaccuracies and an unfinished trailing sentence, reducing clarity and quality."}
+================================================================================
+
+[44] qid=inventor_telephone cat=factual_knowledge sample_idx=4 score=9.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+19th century
+Alexander Graham Bell is credited with inventing the telephone in 1876. Born in Edinburgh, Scotland, Bell demonstrated an early interest in speech and hearing. He moved to Canada with his family in 1870 and taught at a school for the deaf in Boston, Massachusetts. In 1874, Bell began working on an electrical speech synthesiser, which led him to develop a method of transmitting speech electrically.
+
+Bell filed a patent for his telephone invention on February 14, 1876. He was awarded the patent on March 7, 1876. The first successful transmission of speech occurred on March 10, 1876. Bell's telephone was first publicly demonstrated on September 20, 1876. By 1877, Bell's telephone had been installed in offices, hotels, and government buildings across the United States. The telephone quickly became a commercial success, and Bell Telephone Company was established in 1877.
+---JUDGE_RAW---
+{"score": 9, "reason": "Correct and well-explained — Alexander Graham Bell is rightly credited and the dates given are accurate; minor wording (e.g., 'electrical speech synthesiser') and omission of the historical controversy (Meucci/Gray) prevent a perfect score."}
+================================================================================
+
+[45] qid=great_wall_location cat=factual_knowledge sample_idx=0 score=6.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+ The Great Wall of China is a series of fortifications built along the northern borders of China to protect the Chinese states and empires against the raids and invasions of the various nomadic groups from the Eurasian Steppe. Construction began as early as the 7th century BCE by the state of Chu, and continued through the Qin, Han, and Ming dynasties, with the most famous sections built by the Ming dynasty. Stretching over 20,000 kilometres, the wall is one of the largest construction projects ever undertaken, and its exact length remains a subject of debate, with estimates ranging from 21,196.18 kilometres to 27,000 kilometres based on measurements using modern surveying equipment. The wall is not a single continuous structure but comprises thousands of separate fortifications built at different times and places, with varying lengths and designs. The vast majority of the existing wall was constructed between 1368 and 1644 during the Ming dynasty. The Ming wall was built on the foundations of previous walls and incorporated existing fortifications. The wall's most well-preserved sections are located in Beijing, while the most famous section, Badaling, is situated 70 kilometres north of the city centre. Badaling is also the highest section, reaching 1,015 metres above sea level. The wall's highest point is at Jule Mountain in Badaling, which is 1,196 metres above sea level. Construction was mainly done by the use of hand-worked tools such as hammers, chisels, and levers. There were no wheels, pulleys, or mechanical building equipment. The Great Wall has been recognised as a UNESCO World Heritage Site since 1987. In 1961, the Great Wall was recognised as a National Cultural Protection Unit by the Chinese government. In 2007, the Great Wall was named one of
+---JUDGE_RAW---
+{"score": 6, "reason": "The answer correctly indicates the Great Wall is in China, but it's overly long, contains some likely inaccuracies (e.g., claims about the highest point and construction methods), and ends mid-sentence, failing to be concise and fully coherent."}
+================================================================================
+
+[46] qid=great_wall_location cat=factual_knowledge sample_idx=1 score=5.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+1. China
+2. Mongolia
+3. Russia
+4. Kazakhstan
+5. Uzbekistan
+6. Tajikistan
+7. Kyrgyzstan
+8. Afghanistan
+9. Pakistan
+10. India
+11. Nepal
+12. Bhutan
+13. Myanmar
+14. Laos
+15. Thailand
+16. Cambodia
+17. Vietnam
+18. Malaysia
+19. Singapore
+20. Indonesia
+21. East Timor
+22. Australia
+23. New Zealand
+24. Papua New Guinea
+25. Fiji
+26. Tonga
+27. Samoa
+28. Tuvalu
+29. Kiribati
+30. Marshall Islands
+31. Federated States of Micronesia
+32. Palau
+33. Guam
+34. Northern Mariana Islands
+35. Puerto Rico
+36. Cuba
+37. Jamaica
+38. Haiti
+39. Dominican Republic
+40. Barbados
+41. Trinidad and Tobago
+42. Grenada
+43. Saint Vincent and the Grenadines
+44. Dominica
+45. Saint Lucia
+46. Antigua and Barbuda
+47. Saint Kitts and Nevis
+48. Bahamas
+49. Barbados
+50. Belize
+51. Guatemala
+52. Honduras
+53. Nicaragua
+54. Costa Rica
+55. Panama
+56. El Salvador
+57. Nicaragua
+58. Honduras
+59. Guatemala
+60. Belize
+61. Mexico
+62. Canada
+63. United States
+64. Cuba
+65. Jamaica
+66. Haiti
+67. Dominican Republic
+68. Barbados
+69. Trinidad and Tobago
+70. Grenada
+---JUDGE_RAW---
+{"score":5,"reason":"The correct country (China) appears as the first item, but the response fails to give a clear single answer and instead lists many irrelevant, duplicated countries in a disorganized way."}
+================================================================================
+
+[47] qid=great_wall_location cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+中国
+---JUDGE_RAW---
+{"score":10,"reason":"Correct: '中国' means China, which is the country where the Great Wall is located. The answer is concise and accurate."}
+================================================================================
+
+[48] qid=great_wall_location cat=factual_knowledge sample_idx=3 score=4.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+1.5 billion tourists visit the Great Wall of China each year, but it is not a single wall but rather a series of walls built over 2,000 years by various dynasties, stretching over 21,000 kilometres from the Yan Mountains in the east to the Dunhuang Commandery in the west. It is generally recognised as the world's longest man-made structure. Most visitors see the section near Beijing, which was built during the Ming dynasty (1368-1644) and restored in the 1950s to accommodate tourists.
+---JUDGE_RAW---
+{"score":4, "reason":"The response gives related background but fails to directly state the country (China) and includes a likely incorrect statistic (1.5 billion annual visitors), so it does not properly answer the question."}
+================================================================================
+
+[49] qid=great_wall_location cat=factual_knowledge sample_idx=4 score=9.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+1. The Great Wall of China is located in China.
+2. China is a country in East Asia.
+3. The Great Wall stretches over 21,000 kilometres.
+4. It was built to protect against invasions.
+5. Construction began during the Warring States period.
+6. It was completed during the Ming dynasty.
+7. The Ming dynasty ruled from 1368 to 1644.
+8. The Ming dynasty was preceded by the Yuan dynasty.
+9. The Yuan dynasty was established by Kublai Khan.
+10. Kublai Khan was the grandson of Genghis Khan.
+11. Genghis Khan was the founder of the Mongol Empire.
+12. The Mongol Empire was founded in 1206.
+13. The Great Wall was built over several dynasties.
+14. The Qin dynasty built the earliest sections.
+15. The Qin dynasty ruled from 221 to 206 BCE.
+16. The Great Wall was built using labour from soldiers and peasants.
+17. The Ming dynasty had a population of around 100 million.
+18. The Ming dynasty was succeeded by the Qing dynasty.
+19. The Qing dynasty ruled from 1644 to 1912.
+20. The Great Wall was designated a UNESCO World Heritage site in 1987.
+---JUDGE_RAW---
+{"score": 9, "reason": "The response correctly answers 'China' and provides many relevant, mostly accurate supporting facts; it's slightly verbose and contains a minor oversimplification (e.g., saying the Wall was 'completed' during the Ming), but overall coherent and correct."}
+================================================================================
+
+[50] qid=photosynthesis cat=explanations sample_idx=0 score=9.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+ Photosynthesis is the process by which green plants, algae, and certain bacteria convert light energy from the sun into chemical energy stored in glucose, a sugar molecule. This process occurs in the chloroplasts of plant cells, which contain the green pigment chlorophyll. During photosynthesis, carbon dioxide and water are converted into glucose and oxygen. The overall chemical equation for photosynthesis is \(6CO_2 + 6H_2O + light \rightarrow C_6H_{12}O_6 + 6O_2\). This process is fundamental to life on Earth, providing the primary source of organic matter and oxygen in the atmosphere. Photosynthesis occurs in two main stages: the light-dependent reactions, which capture light energy to produce ATP and NADPH, and the Calvin cycle, which uses these energy carriers to fix carbon dioxide into glucose. The efficiency of photosynthesis varies depending on factors such as light intensity, temperature, and carbon dioxide concentration.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and well-structured explanation covering organisms, location, equation, stages, and limiting factors; only minor simplifications (e.g., bacteria lack chloroplasts and the Calvin cycle produces G3P rather than directly glucose) prevent a perfect score."}
+================================================================================
+
+[51] qid=photosynthesis cat=explanations sample_idx=1 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+ Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored in glucose. This process occurs in the chloroplasts of plant cells and involves the absorption of carbon dioxide and water, which are converted into glucose and oxygen using sunlight as the energy source. The overall equation for photosynthesis is \(6CO_2 + 6H_2O + light \rightarrow C_6H_{12}O_6 + 6O_2\).
+---JUDGE_RAW---
+{"score": 10, "reason": "Concise and accurate description with the correct overall chemical equation; captures key participants (light, CO2, H2O) and products (glucose, O2) and notes the organelle (chloroplasts) where it occurs in plants."}
+================================================================================
+
+[52] qid=photosynthesis cat=explanations sample_idx=2 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+ Photosynthesis is the process by which green plants, algae, and certain bacteria convert light energy into chemical energy, using carbon dioxide and water to produce glucose and oxygen. It occurs primarily in the chloroplasts of plant cells and involves two main stages: the light-dependent reactions, which capture energy from sunlight to produce ATP and NADPH; and the Calvin cycle, which uses these energy carriers to fix carbon dioxide into organic molecules like glucose. Photosynthesis is the primary source of organic matter and oxygen on Earth, sustaining most life forms.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, concise, and well-structured: correctly describes organisms involved, key inputs/outputs, location (chloroplasts), and the two main stages (light reactions and Calvin cycle) while noting its ecological importance."}
+================================================================================
+
+[53] qid=photosynthesis cat=explanations sample_idx=3 score=2.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+100-115 billion tonnes of carbon every year.
+---JUDGE_RAW---
+{"score":2,"reason":"Does not explain what photosynthesis is; it only gives a numeric statistic (annual carbon uptake) without describing the process, reactants, products, or purpose, so it fails to answer the question."}
+================================================================================
+
+[54] qid=photosynthesis cat=explanations sample_idx=4 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+ Photosynthesis is the process by which green plants, algae, and some bacteria convert sunlight into chemical energy, producing glucose and oxygen from carbon dioxide and water.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate and concise: correctly identifies the organisms, the conversion of light to chemical energy, and the main inputs and outputs (CO2 + H2O → glucose + O2), making it an appropriate brief explanation."}
+================================================================================
+
+[55] qid=gravity_explain cat=explanations sample_idx=0 score=5.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+1. Imagine you are playing catch with a friend. When you throw the ball up in the air, it always comes back down to you. Gravity is like an invisible string pulling everything towards the ground.
+
+2. Think about a big ball sitting on a trampoline. It makes the trampoline dip down, right? Gravity works like that. It pulls things towards the centre of the Earth.
+
+3. Picture yourself holding a rock and letting it go. Instead of floating away, it falls down to the ground. That's gravity making the rock come back to Earth.
+
+4. Imagine you are floating in space with nothing around you. You would just keep floating in the same direction, never coming back to Earth. Gravity is what pulls you back down to Earth when you jump.
+
+5. Think about a ball rolling down a hill. Gravity is what makes it roll down the hill instead of staying still or rolling up the hill.
+
+6. Picture yourself standing on a chair. Gravity is what keeps you from floating off into space when you stand up. It pulls you down towards the chair.
+
+7. Imagine you are throwing a ball up in the air. Gravity is what makes the ball come back down to you instead of floating away into space.
+
+8. Picture yourself holding a book and letting it go. Instead of floating away, it falls down to the ground. That's gravity making the book come back to Earth.
+
+9. Imagine you are floating in space with nothing around you. You would just keep floating in the same direction, never coming back to Earth. Gravity is what pulls you back down to Earth when you jump.
+
+10. Picture yourself standing on a chair. Gravity is what keeps you from floating off into space when you stand up. It pulls you down towards the chair.
+
+11. Imagine you are throwing a ball up in the air. Gravity is what makes the ball come back down to you instead of floating away into space.
+
+12. Picture yourself holding a book and
+---JUDGE_RAW---
+{"score":5}
+================================================================================
+
+[56] qid=gravity_explain cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+10-year-olds understand that things fall down, but they may not realise that gravity is a force that pulls everything towards the centre of the Earth. You could demonstrate this by dropping a ball and explaining that the ball falls because of gravity, which is like an invisible hand pulling everything towards the ground. You could also discuss how gravity keeps us from floating off into space and how it affects how we jump and run.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, age-appropriate, and accurate explanation with a simple demonstration and relatable analogies; could be slightly expanded with an additional engaging example or activity but otherwise well-crafted."}
+================================================================================
+
+[57] qid=gravity_explain cat=explanations sample_idx=2 score=5.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+1. Imagine you have a big trampoline in your backyard. When you jump on it, you bounce back up, right? Gravity is like the trampoline. It pulls you down towards the ground when you jump.
+
+2. Think about when you throw a ball up in the air. It goes up, up, up, but then it comes back down to you. That's because gravity is pulling the ball back down to Earth.
+
+3. Have you ever seen pictures of astronauts floating around in space? They float because there's no gravity pulling them down there. On Earth, gravity keeps us all stuck to the ground so we don't float away.
+
+4. Gravity is like a big hug that Earth gives to everything around it. It holds the Moon in place around us, and it keeps us from falling off the edge of the world.
+
+5. Gravity works like magnets. When you put two magnets together, they stick to each other. Gravity sticks us to the Earth.
+
+6. Imagine you're standing on top of a really tall mountain. Gravity is pulling you down towards the bottom of the mountain. If you tried to walk off the edge, gravity would pull you back onto the ground.
+
+7. Gravity is like a big invisible string that connects everything on Earth to the ground. It keeps us all from floating away into space.
+
+8. When you jump up, you come back down because gravity is pulling you back down to the ground. It's like an invisible force that keeps us all on the Earth's surface.
+
+9. Gravity is like a big invisible hand that holds everything down. It keeps the sky from falling on us and keeps us from floating away into space.
+
+10. Imagine you're standing on a playground slide. Gravity is pulling you down the slide towards the ground. If there was no gravity, you would just float away into space.
+
+11. Gravity is like a big invisible net that catches everything and keeps it on the ground. It's what keeps us
+---JUDGE_RAW---
+{"score": 5, "reason": "Uses many kid-friendly analogies and is easy to follow, but is repetitive, ends mid-sentence, and contains factual inaccuracies or misleading statements (e.g., 'no gravity in space', 'gravity is like magnets', 'edge of the world') that should be corrected for clarity and accuracy."}
+================================================================================
+
+[58] qid=gravity_explain cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+10-year-olds understand the basic idea that objects fall to the ground because of a force called gravity. Gravity is like an invisible string that pulls everything down towards the centre of the Earth. It keeps us on the ground instead of floating off into space, and it makes apples fall from trees and balls bounce back up when we drop them. The bigger something is, like the Earth, the stronger its gravity is. This is why we feel gravity pulling us down all the time, but we don't feel it pulling us sideways very much.
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, age-appropriate explanation using a good analogy, but has minor inaccuracies (saying gravity makes balls bounce and the odd phrasing about 'pulling us sideways') that could be clarified for precision."}
+================================================================================
+
+[59] qid=gravity_explain cat=explanations sample_idx=4 score=9.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+10-year-old children are familiar with the idea of pushing and pulling forces from everyday experience. Gravity is a force that pulls things towards each other. The bigger something is, the stronger its gravity. Earth is so big that its gravity pulls us down and keeps us on the ground instead of floating off into space. Gravity also keeps us from flying off into space when we jump up.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, age-appropriate, and factually accurate explanation; concise and easy to understand. Could be slightly improved with a simple analogy or example (like dropping a ball) to make it more engaging for a child."}
+================================================================================
+
+[60] qid=democracy_definition cat=explanations sample_idx=0 score=9.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+ Democracy is a system of government in which power ultimately resides with the people, who exercise it through elected representatives. It is characterised by free and fair elections, the rule of law, and the protection of individual rights. The term derives from the Greek words "demos" (the people) and "kratos" (power or rule).
+
+Democracy takes various forms. In a direct democracy, citizens vote directly on policy proposals and laws. Switzerland has retained this form for local and cantonal governments and for constitutional amendments proposed by citizens. In a representative democracy, citizens elect representatives to make decisions on their behalf. Most modern democracies are representative, with universal suffrage allowing nearly all adult citizens to vote. The United Kingdom, the United States, India, and Brazil are examples of representative democracies. Democracies also vary in their degree of liberal democracy, which includes constitutional protection of individual rights, separation of powers, and an independent judiciary.
+
+Democracy contrasts with other forms of government. In an oligarchy, power rests with a small group of elites. Monarchies vest power in a single ruler or ruling family. Authoritarian regimes concentrate power in the hands of a single leader or party, often suppressing dissent and restricting civil liberties. The origins of democracy lie in ancient Athens, where the assembly of citizens met regularly to debate and vote on public matters. The modern democratic ideal emerged during the Enlightenment and the Age of Revolution in Europe and the Americas, emphasising popular sovereignty and individual rights. However, the history of democracy has also been contested, with debates about who constitutes "the people" and whether democracy requires economic equality or merely political equality.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate and well-structured overview of democracy, its forms, contrasts, and history; only minor nuances (e.g., more detail on Switzerland's federal referendum/initiative mechanisms and the existence of democratic constitutional monarchies) could improve it."}
+================================================================================
+
+[61] qid=democracy_definition cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+1. Democracy is a system of government in which citizens elect representatives to make decisions on their behalf. The representatives are accountable to the people and must act in their best interests.
+
+2. In a democracy, citizens have the right to vote in free and fair elections. They can choose their leaders and express their opinions on important issues. This allows citizens to have a say in how their country is governed.
+
+3. Democracy works by dividing power among different branches of government. These branches include the legislative branch (which makes laws), the executive branch (which enforces laws), and the judicial branch (which interprets laws). This division of power helps prevent any one person or group from having too much control.
+
+4. In a democracy, citizens have the right to freedom of speech and freedom of assembly. They can express their opinions and peacefully protest against unjust laws or policies. This allows citizens to hold their leaders accountable and advocate for change.
+
+5. Democracy also promotes equality and protects individual rights. It ensures that all citizens have equal opportunities and are treated fairly under the law. This means that everyone has the right to basic necessities such as education, healthcare, and a fair trial.
+---JUDGE_RAW---
+{"score": 7, "reason": "Clear, concise and covers key features (voting, separation of powers, civil liberties) but it omits direct-democracy forms and oversimplifies/overstates things (e.g., that representatives always act in voters' best interests and that democracy itself guarantees basic services)."}
+================================================================================
+
+[62] qid=democracy_definition cat=explanations sample_idx=2 score=8.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+1. Democracy is a form of government in which power is vested in the people, who exercise it through elected representatives in free and fair elections. The word derives from the Greek demos ("people") and kratos ("power"). Democracy can take various forms, including direct democracy, representative democracy, and liberal democracy.
+
+2. Direct democracy is a system in which citizens vote directly on policy initiatives and laws, rather than electing representatives to make decisions on their behalf. This form of democracy was practised in ancient Athens, where citizens gathered in assemblies to debate and vote on issues. Direct democracy can also take the form of referendums, where citizens vote on specific questions or proposals.
+
+3. Representative democracy is a system in which citizens elect representatives to make decisions on their behalf. These representatives are typically elected through free and fair elections, and are accountable to the electorate through mechanisms such as recall elections and impeachment. Representative democracy can take various forms, including presidential, parliamentary, and semi-presidential systems.
+
+4. Liberal democracy is a form of representative democracy that emphasises individual rights and freedoms, such as freedom of speech, religion, and assembly. In a liberal democracy, citizens have the right to vote and participate in the political process, and the government is accountable to the electorate through mechanisms such as elections and judicial review. Liberal democracy can take various forms, including constitutional democracies and social democracies.
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear summary of democracy and its main forms with correct examples; concise and coherent but omits some practical mechanisms (separation of powers, rule of law, protection of minority rights, civil society) that would make the explanation more complete."}
+================================================================================
+
+[63] qid=democracy_definition cat=explanations sample_idx=3 score=7.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+1. Democracy is a system of government in which power ultimately resides with the people. It encompasses two key principles: popular sovereignty, whereby elected representatives are accountable to voters; and political equality, whereby every citizen has an equal right to participate in political decision-making. Democracy manifests in various forms, from direct democracy, where citizens vote on policies directly, to representative democracy, where elected officials make decisions on behalf of constituents.
+
+2. Representative democracy operates through elected legislatures that debate and pass laws. Elections are typically held every four to five years, though this varies by country. The Westminster system, used in the UK and Commonwealth nations, features a bicameral legislature with a lower house elected directly by constituents and an upper house that may be appointed or indirectly elected. Parliamentary systems, like the UK's, combine the executive and legislative branches, with the Prime Minister typically drawn from the majority party or coalition in the lower house.
+
+3. Direct democracy supplements representative systems with mechanisms for citizen input on specific issues. Referendums allow voters to approve or reject constitutional amendments or major policy changes. Initiatives enable citizens to propose legislation, while recall elections permit voters to remove elected officials before their term ends. Switzerland's system of direct democracy, with frequent referendums and initiatives, represents one extreme example of this approach.
+
+4. Electoral systems vary widely across democracies. Plurality systems award victory to the candidate with the most votes in a constituency, while proportional representation systems allocate seats based on a party's share of the national vote. Mixed-member proportional systems combine elements of both, using a mixed-member proportional system that blends constituency votes with party list votes to ensure overall proportionality. Some democracies use ranked-choice voting, where voters rank candidates in order of preference, allowing for more nuanced expression of political preferences.
+
+5. The United States operates a presidential system with a strong executive branch. The President is elected separately from Congress, creating a system of checks and balances. The Senate and House of Representatives have different electoral
+---JUDGE_RAW---
+{"score": 7, "reason": "Clear, mostly accurate overview of democracy, its forms, and electoral systems with relevant examples; however the answer ends mid-sentence, omits some important institutional features (rule of law, civil liberties, independent judiciary) and has minor repetitions/generalizations."}
+================================================================================
+
+[64] qid=democracy_definition cat=explanations sample_idx=4 score=7.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+ Democracy is a form of government in which the citizens exercise power directly or elect representatives from among themselves to form a governing body, such as a parliament. The term derives from the Greek words δημοκρατία (dēmokratía) meaning "rule of the people", combining the elements δῆμος (dêmos) "common people, tribe, district" and κράτος (krátos) "power, just rule". Democracy emerged in Athens around 508 BC as a response to the concentration of wealth and power in the hands of aristocratic elites. It has evolved into many different forms over the past 2,500 years, including Athenian democracy, representative democracy, liberal democracy, direct democracy, and social democracy.
+
+Aristotle defined democracy as rule by the people, distinguishing it from oligarchy, rule by the few. The first democracy in Athens, the Athenian democracy, emerged in the 6th century BC and lasted until the 4th century BC. It was characterised by a direct voting system in which male citizens gathered in the Assembly to debate and vote on legislation, elect magistrates, and decide on war and peace. The Athenian democracy was limited to adult male citizens who owned property and were born to parents who were also citizens; women, foreigners, and slaves were excluded. The Athenian system was criticised by Plato, Aristotle, and other Greek philosophers, who argued that democracy was unstable and prone to mob rule.
+
+Representative democracy emerged in Europe in the 17th century and became the dominant form of democracy in the modern world. In representative democracy, citizens elect representatives to make decisions on their behalf in a legislative body, such as a parliament or congress. The representatives are accountable to the people through regular elections and can be removed from office if they fail to fulfil their mandate. Representative democracy is characterised by a separation of powers between the executive, legislative
+---JUDGE_RAW---
+{"score": 7, "reason": "Provides a clear, mostly accurate definition and useful historical context, but the reply ends abruptly (incomplete sentence) and omits a fuller explanation of how modern democracies function (separation of powers, elections, rule of law, checks and balances)."}
+================================================================================
+
+[65] qid=inflation_explain cat=explanations sample_idx=0 score=7.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+1. Inflation is the general increase in prices of goods and services over time. It happens when the supply of money grows faster than the economy's ability to produce goods and services. As more money chases the same amount of goods, prices rise.
+
+2. The rate of inflation is measured by the Consumer Price Index (CPI), which tracks changes in the prices of a basket of goods and services that typical consumers buy. In the UK, the CPI is published monthly by the Office for National Statistics.
+
+3. Inflation can be caused by demand-pull factors, where demand for goods and services exceeds supply, or by cost-push factors, where production costs increase. Central banks try to keep inflation at a moderate rate, typically around 2%, to promote economic growth without causing prices to rise too quickly.
+
+4. Hyperinflation is an extreme form of inflation, usually defined as inflation exceeding 50% per month. It happens when a government prints money to pay its debts, leading to a loss of confidence in the currency. The Zimbabwean dollar experienced hyperinflation in 2008, reaching rates of 79.6 billion percent per month.
+
+5. Deflation is the opposite of inflation, a general fall in prices. It happens when demand falls below supply. While it sounds good, deflation can be harmful to the economy because it discourages spending and investment. Japan experienced deflation from 1999 to 2006.
+
+6. The Phillips curve shows the relationship between unemployment and inflation. In the short run, there is often a trade-off between them: lower unemployment can lead to higher inflation, and vice versa. However, in the long run, this relationship breaks down, and there is no consistent trade-off.
+
+7. Inflation targeting is a monetary policy framework where a central bank sets a target inflation rate and adjusts interest rates to try to achieve that target. The Bank of England uses inflation targeting to try to keep inflation
+---JUDGE_RAW---
+{"score": 7, "reason": "Mostly correct, clear explanation of inflation, its causes, measurement, hyperinflation and related concepts, but the answer ends with an incomplete sentence and includes a very specific hyperinflation figure that could be misleading; some finer nuances (expectations, monetary/fiscal interaction) are omitted."}
+================================================================================
+
+[66] qid=inflation_explain cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+1. Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. When the general price level rises, each unit of currency buys fewer goods and services; consequently, inflation reflects a reduction in the purchasing power per unit of money — a loss in the real value of money. Inflation is typically measured as the annual percentage change in a broad index of consumer prices, known as the Consumer Price Index (CPI), or alternatively in a similar index called the Producer Price Index (PPI). Both of these are available from the United States Bureau of Labor Statistics.
+
+2. Inflation happens when there is too much money chasing too few goods. This can occur if demand for goods and services exceeds supply, causing prices to rise. Alternatively, if production costs increase (such as labour or raw materials), producers may pass these costs onto consumers in the form of higher prices. There are two main types of inflation: demand-pull inflation, which occurs when aggregate demand exceeds aggregate supply; and cost-push inflation, which occurs when costs of production increase. The relationship between inflation and unemployment is complex and is described by the Phillips Curve. In the short run, there is often an inverse relationship between inflation and unemployment, meaning that lower unemployment is associated with higher inflation. However, in the long run, there is no consistent relationship between the two. Inflation is typically measured using the Consumer Price Index (CPI), which tracks changes in the prices of a basket of goods and services purchased by households. The inflation rate is the percentage change in the CPI over a given period, usually a year. Central banks, such as the Federal Reserve in the United States, use monetary policy to control inflation. They can raise interest rates to reduce borrowing and spending, thereby slowing down the economy and reducing inflationary pressures. Conversely, they can lower interest rates to stimulate borrowing and spending, which can boost economic growth but also increase inflation. Inflation erodes the purchasing power
+---JUDGE_RAW---
+{"score": 7, "reason": "Accurate and clear overall—good definition, measurement, and explanations of demand-pull and cost-push causes—but it repeats points (CPI mentioned twice), ends with an incomplete sentence, and could be slightly better organized and more comprehensive."}
+================================================================================
+
+[67] qid=inflation_explain cat=explanations sample_idx=2 score=8.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+1. What is inflation?
+Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. When inflation occurs, each unit of currency buys fewer goods and services; consequently, inflation reflects a reduction in the purchasing power per unit of money. Central banks attempt to limit inflation and avoid deflation (a sustained decrease in the general price level) in order to keep the economy running smoothly.
+
+2. Why does inflation happen?
+Inflation happens when there is more money chasing too few goods and services. This can occur for several reasons. One common cause is demand-pull inflation, where demand for goods and services exceeds supply, causing prices to rise. Another cause is cost-push inflation, where production costs increase, such as due to higher wages or raw material prices, and producers pass these costs onto consumers through higher prices. Central banks can also cause inflation through monetary policy, such as by printing too much money or lowering interest rates too much. The specific causes of inflation can vary widely depending on the country and time period.
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate definition and explanation of the main causes (demand-pull, cost-push, monetary expansion); minor omissions include inflation expectations, measurement (e.g., CPI), and some nuance on how monetary policy affects prices."}
+================================================================================
+
+[68] qid=inflation_explain cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+1. Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. When the general price level rises, each unit of currency buys fewer goods and services; consequently, inflation reflects a reduction in the purchasing power per unit of money — a loss of real value in the medium of exchange and unit of account within the economy. A chief measure of price inflation is the inflation rate, the annualized percentage change in a general price index (normally the consumer price index) over time. A chief measure of price inflation is the inflation rate, the annualized percentage change in a general price index (normally the consumer price index) over time.
+
+2. Inflation can be contrasted with deflation, which is a sustained decrease in the general price level of goods and services. Deflation occurs when the inflation rate falls below 0% (a negative inflation rate). Inflation affects everyone in the economy, from individuals and businesses to governments. It can be caused by increases in production costs, higher demand for goods and services than can be produced, or an increase in the money supply. Central banks typically use monetary policy to control inflation, aiming to achieve stable price levels that support economic growth.
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear definition and plausible causes with a note on policy; however the answer repeats a sentence verbatim and could be improved by distinguishing demand‑pull vs cost‑push inflation and mentioning the role of inflation expectations."}
+================================================================================
+
+[69] qid=inflation_explain cat=explanations sample_idx=4 score=6.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+101 Economics Terms Everyone Should Know: From Adam Smith to the Great Depression, the New Deal to the Great Recession, and More
+Inflation is a general increase in prices and fall in the purchasing value of money. It occurs when there is too much money chasing too few goods. Central banks try to keep inflation under control by adjusting interest rates. Moderate inflation can stimulate economic growth, but high inflation erodes purchasing power and discourages investment. Hyperinflation occurs when prices spiral out of control, typically at rates exceeding 50 percent per month. Deflation, a general decline in prices, can signal economic weakness. Stagflation combines high inflation with stagnant economic growth. Inflation targeting aims to anchor inflation expectations around a central bank's target rate. Core inflation excludes volatile food and energy prices. The Consumer Price Index (CPI) measures changes in the prices of a basket of goods and services. Inflationary expectations can become self-fulfilling prophecies. Supply-side policies aim to boost productive capacity. Demand-side policies stimulate aggregate demand. Fiscal policy uses government spending and taxation to influence aggregate demand. Monetary policy uses interest rates and money supply to influence aggregate demand. Exchange rate policy can influence aggregate demand. The Phillips curve suggests a short-run trade-off between unemployment and inflation. Okun's law suggests a negative correlation between unemployment and GDP growth. The Fisher equation suggests a positive correlation between nominal interest rates and inflation. The quantity theory of money suggests a positive correlation between money supply growth and inflation. The money multiplier suggests a positive correlation between money supply growth and inflation. The velocity of money suggests a positive correlation between money supply growth and inflation. The demand for money suggests a positive correlation between money supply growth and inflation. The supply of money suggests a positive correlation between money supply growth and inflation. The demand for goods and services suggests a positive correlation between money supply growth and inflation. The supply of goods and services suggests a negative correlation between money supply growth and inflation. The
+---JUDGE_RAW---
+{"score": 6, "reason": "Gives a generally correct basic definition and lists many relevant concepts, but is disorganized, repetitive (many near-duplicate claims about money supply), ends abruptly, and contains oversimplifications/misstatements (e.g., muddled claims about money demand and blanket correlations). It needs clearer structure, completeness, and more precise causal explanations."}
+================================================================================
+
+[70] qid=dna_function cat=explanations sample_idx=0 score=7.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+1. Deoxyribonucleic acid (DNA) is a molecule that carries genetic instructions for living organisms. It is made up of two long polymer strands that form a double helix and are held together by hydrogen bonds. Each strand is made up of a backbone of alternating phosphate groups and sugar groups. Attached to each sugar is one of four bases — adenine (A), thymine (T), cytosine (C), and guanine (G) — and complementary bases on opposite strands are connected with hydrogen bonds. DNA encodes biological information using the sequence of these four bases along the backbone of the helix. The complementary hydrogen bonding between A-T and C-G base pairs gives rise to stable arrangements of DNA strands based on complementary base pairing. These base pairs are the building blocks of the DNA double helix. Base pairs are classified as Watson-Crick base pairs (guanine cytosine pairs, adenine thymine pairs) when the imine nitrogen of adenine forms a hydrogen bond with the 3-keto group of thymine, and when the amine nitrogen of guanine forms a hydrogen bond with the 2-keto group of cytosine. Watson-Crick base pairs allow the DNA helix to maintain a regular helical structure that is subtly dependent on its nucleotide sequence. The complementary nature of this based-paired structure provides a backup copy of all genetic information encoded within double-stranded DNA. The regular structure and data redundancy provided by the DNA double helix make DNA well suited to the storage of genetic information, while base-pairing between complementary DNA strands offers a simple mechanism for copying this information during cell division. DNA is a long polymer made from repeating units called nucleotides, with a backbone made from alternating sugar (deoxyribose) and phosphate groups. Attached to each sugar is one of four types of molecules called bases. It is the sequence of these four bases along the backbone that encodes information. This
+---JUDGE_RAW---
+{"score": 7, "reason": "Accurate and generally clear explanation of DNA structure and function, but contains redundant repetition, an abrupt unfinished ending, and a few overly technical or awkwardly phrased details about hydrogen bonding that could be simplified."}
+================================================================================
+
+[71] qid=dna_function cat=explanations sample_idx=1 score=6.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+1. DNA is a double helix of nucleotides, adenine, thymine, guanine, and cytosine, that carries genetic instructions for development and function. 2. DNA is transcribed into RNA, which carries genetic information from the nucleus to the cytoplasm for protein synthesis. 3. DNA replicates during cell division to produce identical daughter cells. 4. DNA is inherited from parents, with half coming from each parent. 5. DNA contains instructions for building proteins that perform vital cellular functions. 6. DNA is replicated semi-conservatively, with each new strand containing one old and one new strand. 7. DNA is found in the nucleus of eukaryotic cells and in the cytoplasm of prokaryotic cells. 8. DNA is organised into chromosomes in eukaryotic cells and into a nucleoid in prokaryotic cells. 9. DNA is protected by histones in eukaryotic cells and by a nucleoid-associated protein in prokaryotic cells. 10. DNA is methylated to regulate gene expression in eukaryotic cells and by restriction enzymes in prokaryotic cells. 11. DNA is recognised by T cells in the adaptive immune system. 12. DNA is recognised by B cells in the adaptive immune system. 13. DNA is recognised by natural killer cells in the innate immune system. 14. DNA is recognised by macrophages in the innate immune system. 15. DNA is recognised by dendritic cells in the innate immune system. 16. DNA is recognised by neutrophils in the innate immune system. 17. DNA is recognised by basophils in the innate immune system. 18. DNA is recognised by eosinophils in the innate immune system. 19. DNA is recognised by mast cells in the innate immune system. 20. DNA
+---JUDGE_RAW---
+{"score":6, "reason":"Mostly correct on DNA structure, replication, transcription, inheritance, location and packaging, but contains notable errors and issues: misleading statement about restriction enzymes vs methylation in prokaryotes, incorrect/overbroad claims that many immune cell types 'recognise' DNA, and the answer ends abruptly (item 20 incomplete)."}
+================================================================================
+
+[72] qid=dna_function cat=explanations sample_idx=2 score=9.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+1. DNA is a nucleic acid that carries genetic information in all living organisms, from bacteria to humans. It is a double helix of two long chains of nucleotides, linked together by hydrogen bonds between complementary base pairs — adenine with thymine, and guanine with cytosine. The order of these base pairs along the chains encodes genetic information, which is read by cellular machinery to produce proteins.
+
+2. DNA serves as the hereditary material that passes genetic information from parents to offspring. It is replicated before cell division, with each daughter cell receiving an identical copy of the parent cell's DNA. The sequence of bases in DNA determines the sequence of amino acids in proteins, which carry out most cellular functions.
+
+3. DNA is transcribed into RNA, which is then translated into proteins by ribosomes. The sequence of bases in DNA specifies the sequence of codons in RNA, which in turn specifies the sequence of amino acids in proteins. Proteins perform most cellular functions, including catalysing biochemical reactions, providing structural support, and signalling between cells.
+
+4. DNA is organised into chromosomes, which are thread-like structures containing genetic information. Each chromosome contains a single, long DNA molecule wrapped around proteins called histones. Chromosomes are replicated and segregated during cell division to ensure that each daughter cell receives a complete set of genetic information.
+
+5. DNA can be damaged by various factors, including radiation and chemicals. Cells have mechanisms to repair DNA damage, but if the damage is severe enough it can lead to mutations that may cause cancer or other diseases. Cells also have mechanisms to recognise and respond to DNA damage, including cell cycle arrest and apoptosis.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate and well-structured explanation of DNA's structure and functions (replication, heredity, transcription/translation, chromosome organization, and DNA damage/repair). Minor refinements could mention noncoding DNA and differences in prokaryotic chromosome organization, so not strictly perfect."}
+================================================================================
+
+[73] qid=dna_function cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+1. DNA is a molecule that contains the genetic instructions for all living organisms. It is composed of two long strands of nucleotides that twist around each other to form a double helix structure. Each strand is made up of four different nucleotides: adenine (A), cytosine (C), guanine (G), and thymine (T).
+
+2. DNA carries the genetic information that determines the traits and characteristics of an organism. It contains genes, which are segments of DNA that code for specific proteins. Proteins are the building blocks of cells and perform various functions in the body.
+
+3. DNA replicates itself through a process called DNA replication. During replication, the double helix unwinds and each strand serves as a template for the synthesis of a new complementary strand. This ensures that each daughter cell receives an identical copy of the DNA.
+
+4. DNA is transcribed into RNA, which is then translated into proteins. Transcription involves the synthesis of a complementary RNA strand from a DNA template. Translation involves the decoding of the RNA sequence into a sequence of amino acids, which are the building blocks of proteins.
+
+5. DNA can undergo mutations, which are changes in the DNA sequence. Mutations can occur spontaneously or be induced by external factors such as radiation or chemicals. Mutations can have various effects on the organism, ranging from neutral to harmful or beneficial.
+
+6. DNA repair mechanisms exist to correct errors and damage to the DNA molecule. These mechanisms include proofreading by DNA polymerases during replication, mismatch repair, base excision repair, and nucleotide excision repair. These mechanisms help maintain the integrity of the genetic information.
+
+7. DNA can be inherited from parents to offspring through a process called inheritance. In sexual reproduction, each parent contributes one set of chromosomes to the offspring. The combination of genetic material from both parents results in genetic variation and diversity.
+
+8. DNA can be used for forensic identification. DNA profiling involves analyzing specific regions of DNA that are unique
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear, and well-structured overview of DNA, its structure, replication, transcription/translation, mutation, repair, and inheritance; however the final sentence is incomplete and there are minor wording imprecisions (e.g., calling proteins 'building blocks' of cells)."}
+================================================================================
+
+[74] qid=dna_function cat=explanations sample_idx=4 score=8.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+1. DNA (deoxyribonucleic acid) is a long polymer molecule that carries genetic instructions for the development, functioning, growth, and reproduction of all known living organisms and many viruses. It is found in almost every cell, packaged into structures called chromosomes. DNA consists of two long strands twisted into a double helix, with each strand made up of a sugar-phosphate backbone and four types of nucleotide bases: adenine (A), cytosine (C), guanine (G), and thymine (T). The sequence of these bases encodes genetic information.
+
+2. DNA's primary function is to store genetic information. It contains the instructions for building proteins, which perform most of the functions necessary for life. Proteins are made up of long chains of amino acids, and the specific sequence of amino acids in a protein is determined by the sequence of bases in the corresponding gene. When a cell needs to make a particular protein, it first makes a copy of the relevant DNA sequence in the form of messenger RNA (mRNA), a process called transcription. The mRNA then travels to the cell's ribosomes, where the genetic code is translated into a sequence of amino acids, a process called translation.
+
+3. DNA replication is the process by which a cell makes an identical copy of its DNA before cell division. It occurs during the S phase of the cell cycle. The double helix unwinds and separates, exposing the bases on each strand. DNA polymerase enzymes then add complementary bases to each exposed strand, using the existing strand as a template. This produces two identical DNA molecules, each consisting of one old strand and one new strand, a process called semi-conservative replication. This ensures that each daughter cell receives an exact copy of the parent cell's genetic material.
+
+4. Mutations are changes in the DNA sequence. They can occur spontaneously during DNA replication, or they can be induced by environmental factors such as radiation or chemicals. Mutations can be beneficial,
+---JUDGE_RAW---
+{"score":8,"reason":"Accurate, clear, and well-organized explanation of DNA, its structure, function, replication, and role in protein synthesis, but the response is cut off mid-sentence about mutations and could have briefly noted location differences (nucleus vs. prokaryotes)."}
+================================================================================
+
+[75] qid=internet_works cat=explanations sample_idx=0 score=7.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+1. Data is broken into packets. When you send a file, email, or webpage request, it is broken down into tiny packets containing pieces of the data, a destination address, and other information. 2. Packets travel the internet. The packets are sent to routers, which direct them along the shortest available path toward their destination based on routing tables and algorithms. Routers communicate with each other to find the best path. 3. Packets arrive out of order. Packets travelling different paths can arrive out of sequence. The destination computer sorts the packets back into the correct order based on sequence numbers. 4. Packets are reassembled. Once all packets arrive, the destination computer reassembles them into the original file or message. If packets are missing, the destination requests retransmission of the missing packets. 5. Connection established. Before sending data, the destination establishes a connection with the source using TCP/IP protocols. This sets up parameters for the transmission. 6. Connection terminated. After transmission is complete, the connection is terminated. Packets are dropped from the network. 7. Security measures in place. Encryption protocols like HTTPS encrypt data to prevent interception. Firewalls filter traffic. Antivirus software scans for malicious packets. 8. Cloud storage and streaming. Cloud storage allows data to be stored remotely and accessed over the internet. Streaming transmits data in real time as it is consumed. 9. Social media and messaging. Social media platforms store user data and content on servers and stream it to users. Messaging apps transmit text and media data between users. 10. Search engines index websites. Search engines crawl websites and index their content in databases. When you search, the search engine retrieves relevant indexed content from the databases. 11. DNS resolves domain names to IP addresses. The Domain Name System translates human-readable domain names like google.com into numerical IP addresses that computers use to locate servers. 12. IPv6 expands
+---JUDGE_RAW---
+{"score": 7, "reason": "Mostly clear and accurate high-level explanation with sensible steps, but contains minor inaccuracies (e.g., oversimplified routing and TCP/UDP mixing), includes some irrelevant extras, and ends with an incomplete sentence about IPv6."}
+================================================================================
+
+[76] qid=internet_works cat=explanations sample_idx=1 score=8.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+1. Imagine sending a letter. You write a message on paper, put it in an envelope, and address it to your friend. The post office takes the envelope and carries it to your friend's house.
+2. Sending an email is similar. You type your message into a computer, attach it to an email, and click send. The email travels through wires to a giant post office called a data centre.
+3. At the data centre, the email gets put on a big truck called a server. The server takes the email to another data centre closer to your friend.
+4. The email keeps travelling from data centre to data centre, each time getting closer to your friend's computer. It travels very fast, faster than you can run.
+5. Finally, the email arrives at your friend's computer. Your friend's computer is like a little post office that gets the email and shows it on their screen.
+6. If you want to reply, you type your message into your computer and send it back. It travels the same way, from data centre to data centre, until it reaches your friend's computer again.
+7. The whole system is like a giant road network. The roads are the wires that carry the emails, and the data centres are like little post offices along the way. They help make sure your email gets to your friend's computer quickly and safely.
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, simple postal analogy that effectively conveys basic ideas (addresses, servers/data centres, wires), but it oversimplifies and personifies technical components and omits details like packets, IP addresses/DNS, and routing mechanisms."}
+================================================================================
+
+[77] qid=internet_works cat=explanations sample_idx=2 score=4.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+1. Internet Protocol (IP) addresses
+   2. Domain Name System (DNS)
+   3. Transmission Control Protocol (TCP)
+   4. Hypertext Transfer Protocol (HTTP)
+   5. Hypertext Markup Language (HTML)
+   6. Hypertext Transfer Protocol Secure (HTTPS)
+   7. Simple Mail Transfer Protocol (SMTP)
+   8. Post Office Protocol (POP)
+   9. File Transfer Protocol (FTP)
+   10. Secure Shell (SSH)
+   11. Domain Name System (DNS) caching
+   12. Internet Service Providers (ISPs)
+   13. Internet Exchange Points (IXPs)
+   14. Border Gateway Protocol (BGP)
+   15. Multiprotocol Label Switching (MPLS)
+   16. Content Delivery Networks (CDNs)
+   17. Virtual Private Networks (VPNs)
+   18. Web browsers
+   19. Search engines
+   20. Email clients
+   21. File sharing
+   22. Social media platforms
+   23. Online gaming
+   24. Cloud computing
+   25. Internet of Things (IoT)
+   26. Big data
+   27. Artificial intelligence (AI)
+   28. Blockchain
+   29. Cryptocurrency
+   30. Cybersecurity
+   31. Privacy
+   32. Digital divide
+   33. Net neutrality
+   34. Digital literacy
+   35. Digital economy
+   36. E-commerce
+   37. Online education
+   38. Telemedicine
+   39. Remote work
+   40. Smart cities
+   41. Autonomous vehicles
+   42. Robotics
+   4
+---JUDGE_RAW---
+{"score": 4, "reason": "The response is mostly a long, disorganized list of terms rather than a simple explanation of how the internet works; it duplicates entries, includes many unrelated high-level topics, and ends with a stray '4', so it fails to provide a clear, coherent answer."}
+================================================================================
+
+[78] qid=internet_works cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+1. Your computer sends a request to a server: When you type a URL into your web browser, your computer sends a request to a server asking for the webpage associated with that URL. This request travels through your internet service provider's network to the server hosting the website.
+
+2. Routing: The request travels through routers, which direct it toward its destination. Routers use routing tables to determine the best path for your request to reach the server hosting the website.
+
+3. Server response: Once your request reaches the server, it processes the request and retrieves the requested webpage. It then sends the webpage back to your computer.
+
+4. Your computer displays the webpage: Your computer receives the webpage and displays it in your web browser. The webpage is made up of HTML code, which your web browser interprets and displays as text, images, and other content.
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, coherent, and accurate for a simple explanation; covers request, routing, server response, and rendering. It omits brief mentions of DNS, packetization/TCP and HTTP which would make the picture slightly more complete."}
+================================================================================
+
+[79] qid=internet_works cat=explanations sample_idx=4 score=8.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+1. **Physical Connections**: The internet is made up of fibre optic cables, copper wires, and wireless connections. Fibre optics use light to send data, while copper wires use electrical signals. Wireless connections use radio waves.
+
+2. **Data Packets**: When you send something online, like an email or a picture, it gets broken down into tiny pieces called packets. Each packet has the sender's address, the receiver's address, and part of the message.
+
+3. **Routing**: These packets travel through a network of routers. Routers are like post offices. They look at the address on each packet and decide which way to send it next, based on which path is quickest and least crowded.
+
+4. **Internet Service Providers (ISPs)**: ISPs are companies that provide you with internet access. They connect you to the internet backbone, which is a big network of high-speed fibre optic cables that connect different parts of the world.
+
+5. **Domain Names**: When you type a website address into your browser, like www.example.com, your computer contacts a Domain Name System (DNS) server. The DNS server looks up the domain name and finds the IP address associated with it. An IP address is like a phone number for a computer.
+
+6. **Data Transfer**: Once your computer knows the IP address, it sends the packets to the correct server. The server processes the request and sends the data back to your computer in packets.
+
+7. **Displaying Information**: Your computer receives the packets and puts them back together to display the website or send the email.
+
+8. **Protocols**: The rules for sending and receiving data are called protocols. The most important protocol is the Internet Protocol (IP), which ensures that packets reach their destination. Another important protocol is the Transmission Control Protocol (TCP), which makes sure the packets arrive in the right order.
+
+9. **Security**: To keep your information safe, many websites use Secure Sockets Layer (SSL) or Transport Layer Security
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate, and well-structured simple explanation covering physical links, packets, routing, DNS, protocols and ISPs. However the last point is cut off (incomplete sentence about SSL/TLS) and there are a few minor oversimplifications. "}
+================================================================================
+
+[80] qid=vaccine_mechanism cat=explanations sample_idx=0 score=9.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+1) Vaccines stimulate the immune system to recognise and destroy pathogens, creating long-lasting protection against future infection. 2) Vaccines introduce a harmless piece of a pathogen, such as a protein or weakened live virus, into the body. 3) This triggers the production of antibodies, specialised proteins that recognise and bind to the pathogen. 4) If the vaccinated person encounters the actual pathogen in the future, their immune system can recognise it and mount a rapid defence. 5) This defence can prevent infection entirely or reduce the severity of illness.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and concise explanation of how vaccines work; minor improvement would be to mention memory B and T cells and cell-mediated immunity for completeness."}
+================================================================================
+
+[81] qid=vaccine_mechanism cat=explanations sample_idx=1 score=6.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+100 million people die every year from infectious diseases worldwide. Vaccines are the best defence against these diseases, providing a cheap and effective way to protect individuals and communities from infection. They work by priming the immune system to recognise and destroy specific pathogens, such as viruses or bacteria, before they can cause serious illness. When a person is vaccinated, they are exposed to a weakened or inactive form of the pathogen, or to a fragment of it, which stimulates the production of antibodies and memory cells that can recognise and attack the pathogen if encountered again in the future.
+
+Vaccines have been developed for many diseases, including smallpox, polio, measles, mumps, rubella, tetanus, diphtheria, pertussis (whooping cough), hepatitis A and B, human papillomavirus (HPV), influenza, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID-19, COVID
+---JUDGE_RAW---
+{"score": 6, "reason": "The explanation of how vaccines work is accurate and clear, but the opening statistic is incorrect and the vaccine list contains excessive, repetitive 'COVID-19' entries, indicating hallucination/poor editing."}
+================================================================================
+
+[82] qid=vaccine_mechanism cat=explanations sample_idx=2 score=8.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+1. Vaccines introduce antigens — foreign proteins or other molecules recognised by the immune system — into the body, usually by injection. These antigens stimulate the production of antibodies by B cells and activate cytotoxic T cells to recognise and destroy infected cells. 2. Crucially, vaccines also generate memory cells — specialised B and T cells that remain dormant but can recognise the same antigen if encountered again. This immunological memory allows for a rapid and robust response upon subsequent exposure to the pathogen, often preventing infection entirely or reducing its severity. 3. By priming the immune system against specific pathogens, vaccines provide protection without causing the disease itself. This controlled exposure to antigens confers immunity while minimising the risk of severe illness or complications associated with natural infection. 4. Vaccination programmes have dramatically reduced the incidence of numerous infectious diseases worldwide. For example, smallpox was eradicated globally in 1980 following a concerted vaccination campaign, and polio cases have decreased by over 99 percent since the launch of the Global Polio Eradication Initiative in 1988. 5. Vaccines are generally safe and effective, with benefits far outweighing risks for most individuals. They have saved millions of lives and continue to be one of the most successful public health interventions in history. 6. Vaccines work against a wide range of pathogens, including viruses, bacteria, and parasites. They have been developed for diseases such as measles, influenza, hepatitis B, human papillomavirus, and COVID-19. 7. Vaccination programmes rely on herd immunity — the protection afforded to unvaccinated individuals when a sufficiently high proportion of the population is immune. Herd immunity thresholds vary by disease, but typically require 70-95 percent coverage to prevent sustained transmission. 8. Vaccines undergo rigorous testing and regulatory approval before being administered to the public. They are continuously monitored for safety and efficacy through post-marketing
+---JUDGE_RAW---
+{"score":8,"reason":"Accurate, clear, and well-structured explanation covering immune mechanisms, memory, herd immunity and public-health impact; however the final sentence is cut off and there are minor nuances (e.g., live vaccines can sometimes cause mild disease, some vaccines stimulate different arms of immunity) that could be noted."}
+================================================================================
+
+[83] qid=vaccine_mechanism cat=explanations sample_idx=3 score=7.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+1. Vaccines help protect against disease by stimulating the immune system to recognise and remember specific pathogens, such as viruses or bacteria. This is achieved through the introduction of a weakened or inactive form of the pathogen, or parts of it (such as proteins), which triggers an immune response without causing the disease itself. 2. When the body encounters the actual pathogen later, the immune system can recognise it and mount a rapid defence, often preventing illness or reducing its severity. 3. Vaccines work by training the immune system to recognise and respond to specific pathogens without causing the disease. They contain antigens, which are substances that the immune system recognises as foreign. 4. When a vaccine is administered, the immune system produces antibodies and specialised cells that can recognise and destroy the specific pathogen. 5. This prepares the immune system to respond quickly and effectively if the person is exposed to the actual pathogen in the future. 6. Vaccines help protect against disease by stimulating the immune system to recognise and remember specific pathogens, such as viruses or bacteria. This is achieved through the introduction of a weakened or inactive form of the pathogen, or parts of it (such as proteins), which triggers an immune response without causing the disease itself. 7. When the body encounters the actual pathogen later, the immune system can recognise it and mount a rapid defence, often preventing illness or reducing its severity. 8. Vaccines work by training the immune system to recognise and respond to specific pathogens without causing the disease. They contain antigens, which are substances that the immune system recognises as foreign. 9. When a vaccine is administered, the immune system produces antibodies and specialised cells that can recognise and destroy the specific pathogen. 10. This prepares the immune system to respond quickly and effectively if the person is exposed to the actual pathogen in the future.
+---JUDGE_RAW---
+{"score": 7, "reason": "Content is accurate and explains immune memory, antigens, antibodies and protection, but the response is highly repetitive (many duplicate sentences) and could be much more concise and better organized."}
+================================================================================
+
+[84] qid=vaccine_mechanism cat=explanations sample_idx=4 score=9.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+2024-06-01
+Vaccines are biological preparations that provide active acquired immunity against specific infectious diseases. They work by stimulating the body's immune system to recognise and destroy pathogens without causing disease. Vaccines are typically administered by injection, orally, or nasally, and are available for a wide range of diseases including measles, polio, tetanus, and COVID-19.
+
+The principle behind vaccination is straightforward. Vaccines contain antigens that are derived from pathogens, such as weakened or killed viruses or bacteria, or purified proteins or sugars from their surface. When introduced into the body, these antigens stimulate the immune system to produce antibodies and specialised immune cells. If the person is subsequently exposed to the actual pathogen, the immune system can recognise and destroy it rapidly, preventing infection or reducing its severity.
+
+Vaccination has been one of the most successful public health interventions in history. Smallpox, once one of the world's most feared diseases, was eradicated globally in 1980 thanks to a concerted vaccination campaign. Polio has been eliminated in most countries, with only Afghanistan and Pakistan reporting wild cases as of 2024. The COVID-19 pandemic saw the development of vaccines within months of the virus's identification, a remarkable achievement that has saved millions of lives worldwide. Despite these successes, vaccine hesitancy and misinformation continue to pose challenges to public health efforts.
+---JUDGE_RAW---
+{"score": 9, "reason": "Accurate, clear, and well-structured explanation of how vaccines work with correct examples and historical context; minor issues are only a stray date at the top and a slight lack of explicit mention of immune memory cells."}
+================================================================================
+
+[85] qid=climate_vs_weather cat=explanations sample_idx=0 score=10.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+ Climate refers to the average state of the atmosphere over long periods of time, typically decades or centuries, and encompasses patterns of temperature, precipitation, humidity, wind, and other meteorological variables. Weather, by contrast, describes the short-term state of the atmosphere at a specific place and time, ranging from minutes to days.
+
+Weather can change rapidly; you might wake up to find rain falling outside, then see it turn to sunshine by noon. Climate, however, requires observation over much longer periods to establish trends. For example, while you might experience a single day of unusually cold weather, establishing a trend toward colder winters in a region requires decades of data showing consistent below-average temperatures.
+
+The distinction matters because climate change involves shifts in average conditions, not just occasional extreme events. A single hot summer does not prove climate change; however, a consistent pattern of increasingly hot summers over 30 years or more indicates a shift in the climate. This distinction explains why climate scientists emphasise long-term trends over individual weather events.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, clear, and well-structured explanation distinguishing timescales, examples, and relevance to climate change; no substantive errors (minor possible addition: mention the 30-year WMO baseline)." }
+================================================================================
+
+[86] qid=climate_vs_weather cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+1) Weather refers to short-term atmospheric conditions, typically lasting minutes to days; climate refers to the average atmospheric conditions over longer periods of time, typically decades to millions of years. 2) Weather is highly variable and can change rapidly; climate exhibits more stable patterns and trends over time. 3) Weather can be predicted with reasonable accuracy for up to about ten days in advance; climate projections extend to centuries or millennia into the future. 4) Weather affects daily human activities such as commuting and outdoor events; climate influences ecosystems, agriculture, and infrastructure planning over decades to centuries. 5) Weather changes are driven by factors such as temperature, humidity, air pressure, and wind; climate changes result from long-term shifts in these factors, often influenced by external forcings like solar radiation or volcanic activity.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, correct, and well-structured explanation distinguishing timescale, predictability, and impacts; minor nitpicks: the standard climate averaging period (usually 30 years) could be mentioned and phrasing about drivers vs variables could be slightly improved."}
+================================================================================
+
+[87] qid=climate_vs_weather cat=explanations sample_idx=2 score=9.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+1. Weather refers to short-term atmospheric conditions in a specific place at a specific time, such as whether it is raining or sunny today. Climate, by contrast, refers to the average weather conditions in a particular region over a long period, typically 30 years or more. For example, London has a temperate maritime climate with mild winters and cool summers, whereas Riyadh has a desert climate with hot, dry summers and mild winters.
+
+2. Climate is determined by factors such as latitude, altitude, proximity to oceans, and prevailing winds, whereas weather is influenced by local conditions such as cloud cover, precipitation, and temperature gradients. For instance, the Himalayas create a rain shadow effect on the Tibetan Plateau, resulting in a cold desert climate, while the Gulf Stream moderates the climate of Western Europe.
+
+3. Climate change refers to long-term shifts in temperature and weather patterns caused by human activities such as burning fossil fuels and deforestation, whereas weather patterns can vary significantly from day to day or year to year. For example, the Arctic is warming at roughly twice the rate of the rest of the world, causing significant changes to sea ice extent and wildlife habitats.
+
+4. Climate change can have profound impacts on ecosystems, agriculture, and human societies, whereas weather events are typically short-lived and localised. For instance, rising sea levels caused by climate change threaten to inundate low-lying coastal cities such as Miami and Bangkok, while extreme weather events such as hurricanes and heatwaves can cause significant loss of life and property damage.
+
+5. Climate change can occur over geological timescales, whereas weather patterns can change rapidly within minutes or hours. For example, the Earth has experienced several ice ages over the past million years, while a thunderstorm can develop and dissipate within a few hours.
+---JUDGE_RAW---
+{"score":9,"reason":"Clear, accurate, and well-structured explanation with appropriate examples distinguishing weather, climate, and climate change; minor nitpick: could briefly note natural as well as human drivers of long-term climate shifts and tighten wording about weather \"influences\" (e.g., precipitation is a weather variable)."}
+================================================================================
+
+[88] qid=climate_vs_weather cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+ Climate refers to the long-term average behaviour of the atmosphere, typically spanning decades to millions of years, and encompasses patterns of temperature, humidity, atmospheric pressure, wind, precipitation, atmospheric particle count and other meteorological variables in a given region over a long period of time. Climate is contrasted to weather, which is the present condition of these same atmospheric factors over periods up to two weeks. Climate is computed as the average of the weather over a long period of time. This standard averaging period is specified by the World Meteorological Organization (WMO) as 30 years, though other climate averaging periods are in use in different countries. A related concept is climate variability, whereby climate is viewed as an evolution in time characterized by irregular shifts in the mean state and other statistics (such as standard deviations, skewness, and kurtosis, or higher-order mix moments) of state variables sampled at low resolution. (Wikipedia)
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate and clear overall—correctly contrasts long-term climate (WMO 30-year norm) with short-term weather—but includes minor oddities (e.g., 'up to two weeks' phrasing, unnecessary technical jargon like 'higher-order mix moments' and 'low resolution') that slightly reduce clarity."}
+================================================================================
+
+[89] qid=climate_vs_weather cat=explanations sample_idx=4 score=6.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+1. Climate is the long-term average of weather patterns in a region, typically measured over 30 years or more, while weather refers to short-term atmospheric conditions in a specific place at a specific time. Climate describes the expected average temperature, precipitation, and other conditions for a location, whereas weather describes the actual conditions that occur on a particular day or week. For example, while a cold snap might cause a heatwave in Melbourne in January, the long-term climate of Melbourne remains hot and dry.
+
+2. Climate change refers to long-term shifts in temperature, precipitation, and other atmospheric conditions that occur over decades or centuries, driven by natural factors such as changes in solar radiation or volcanic activity, or human activities such as burning fossil fuels. Weather, on the other hand, refers to the short-term atmospheric conditions that occur on a particular day or week, such as a heatwave in Melbourne in January. While a cold snap might cause a heatwave in Melbourne in January, the long-term climate of Melbourne remains hot and dry.
+
+3. Climate change can lead to more extreme weather events, such as heatwaves, droughts, and heavy rainfall, as the atmosphere becomes more unstable and unpredictable. For example, while a cold snap might cause a heatwave in Melbourne in January, the long-term climate of Melbourne remains hot and dry. However, the frequency and intensity of these extreme weather events can increase as the climate changes, making them more likely to occur.
+
+4. Climate change can also lead to changes in the timing and duration of seasons, as well as changes in the distribution of precipitation and other weather patterns. For example, while a cold snap might cause a heatwave in Melbourne in January, the long-term climate of Melbourne remains hot and dry. However, the timing and duration of seasons can change as the climate changes, making them more likely to occur.
+
+5. Climate change can also lead to changes in the distribution of plant and animal species, as well as changes in the timing of
+---JUDGE_RAW---
+{"score":6}
+================================================================================
+
+[90] qid=black_hole cat=explanations sample_idx=0 score=9.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+1. A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it. The boundary beyond which escape is impossible is called the event horizon. Black holes are formed when massive stars collapse at the end of their life cycle, creating a region of space where the gravitational pull is so intense that nothing can escape.
+
+2. Black holes form when massive stars, typically those with masses greater than about 20 times that of the Sun, exhaust their nuclear fuel and collapse under their own gravity. This collapse causes the star's core to compress into a singularity, a point of infinite density where the laws of physics as we know them break down. The singularity is surrounded by an event horizon, beyond which nothing can escape the gravitational pull. Smaller stars form white dwarfs or neutron stars instead.
+
+3. Black holes are invisible because they do not emit any light. Instead, astronomers detect them by observing their effects on nearby matter. Material falling into a black hole heats up to extremely high temperatures and emits X-rays and other forms of radiation. The orbits of stars near a black hole can also reveal its presence through their gravitational influence. The Event Horizon Telescope, a global network of radio telescopes, captured the first image of a black hole's event horizon in 2019.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate explanation of what a black hole is, how stellar black holes form, and how they are detected; minor imprecision in the stated mass threshold and the definitive wording about singularities/event-horizon imaging prevents a perfect score."}
+================================================================================
+
+[91] qid=black_hole cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+ A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it. It forms when a massive star runs out of nuclear fuel and collapses under its own gravity. The core of the star shrinks to an incredibly dense point called a singularity, surrounded by an invisible boundary called the event horizon. Anything that crosses the event horizon is trapped forever inside the black hole.
+
+Black holes come in different sizes. Stellar black holes are the remnants of collapsed stars, with masses up to about 100 times that of our Sun. Supermassive black holes are found at the centres of galaxies and can have masses up to billions of times that of the Sun. Intermediate black holes are thought to exist but have not been confirmed. The nearest known black hole is about 1,500 light-years away, too far for humans to ever visit.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate and well-structured explanation of what a black hole is and how it forms; minor simplifications (e.g., treating the singularity classically and glossing over current evidence for intermediate-mass black holes and precise nearest-object distances) prevent a perfect score."}
+================================================================================
+
+[92] qid=black_hole cat=explanations sample_idx=2 score=6.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+1. A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole.
+
+2. Black holes are described by the general theory of relativity, which predicts that a sufficiently compact mass can deform spacetime to form a black hole. The boundary of the region from which no escape is possible is called the event horizon. Although it has a great effect on the fate and circumstances of an object crossing it, it has no locally detectable features according to general relativity.
+
+3. A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole. The boundary of the region from which no escape is possible is called the event horizon. Although it has a great effect on the fate and circumstances of an object crossing it, it has no locally detectable features according to general relativity.
+
+4. Black holes are described by the general theory of relativity, which predicts that a sufficiently compact mass can deform spacetime to form a black hole. The boundary of the region from which no escape is possible is called the event horizon. Although it has a great effect on the fate and circumstances of an object crossing it, it has no locally detectable features according to general relativity.
+
+5. A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole. The boundary of the region from which no escape is possible is called the event horizon. Although it has a great effect on the fate and circumstances of an object crossing it, it has no locally detectable features according to general relativity.
+
+
+---JUDGE_RAW---
+{"score": 6, "reason": "The response gives a correct definition of a black hole and describes the event horizon, but it is overly repetitive and does not explain formation mechanisms (stellar collapse, accretion/merger growth, or primordial origins), so it is incomplete and poorly structured."}
+================================================================================
+
+[93] qid=black_hole cat=explanations sample_idx=3 score=6.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+2024 marks the centenary of Albert Einstein's general theory of relativity, published in November 1915. The theory describes gravity not as a force between masses, as Isaac Newton had proposed in his Principia Mathematica in 1687, but as the curvature of spacetime itself. Mass and energy warp the fabric of spacetime, creating gravitational fields that deflect the paths of other masses and light rays. The theory has passed every experimental test to date, including the detection of gravitational waves in 2015 by the LIGO-Virgo collaboration.
+
+General relativity predicts that under certain conditions, matter can collapse to form a black hole, a region of spacetime from which nothing can escape, not even light. The boundary of this region is called the event horizon. Inside the event horizon, spacetime is so curved that all paths lead inexorably towards a singularity, a point of infinite density where the known laws of physics break down. The singularity is hidden from view by the event horizon, which acts as a one-way membrane: matter and radiation can fall in, but nothing can come out. The singularity represents the breakdown of our current understanding of physics, and is thought to signal the need for a quantum theory of gravity to describe the behaviour of matter at extreme densities.
+
+The first astronomical black hole candidate was Cygnus X-1, discovered in 1964 and recognised as a black hole in 1971. It is a stellar-mass black hole with a mass about 15 times that of the Sun, located in the constellation Cygnus. In 2019 the Event Horizon Telescope collaboration produced the first image of a black hole, a supermassive black hole with a mass of about 6.5 billion solar masses at the centre of the galaxy M87. The image shows the shadow of the black hole against the bright accretion disc of hot gas spir
+---JUDGE_RAW---
+{"score": 6, "reason": "Mostly correct explanation of what a black hole is and how it forms, with useful historical examples, but it contains a factual error (2024 is not the centenary of general relativity), ends mid-sentence, and could more directly and concisely address formation mechanisms."}
+================================================================================
+
+[94] qid=black_hole cat=explanations sample_idx=4 score=7.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+1. What is a black hole?
+A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it. It is characterised by a boundary called the event horizon, from which no information can emerge, and a singularity at the centre where density and curvature become infinite. Black holes form from the gravitational collapse of massive stars at the end of their life cycles, or through the accretion of matter over time.
+
+2. How does a black hole form?
+A black hole forms when a massive star exhausts its nuclear fuel and can no longer support itself against its own gravity. The core collapses, and if the remnant core is more than about three solar masses, it will continue to collapse until it forms a singularity surrounded by an event horizon. Smaller stars may form neutron stars or white dwarfs instead. Supermassive black holes, found at the centres of galaxies, may form through the merging of smaller black holes or the direct collapse of massive gas clouds.
+
+3. What is the event horizon?
+The event horizon is the boundary around a black hole beyond which nothing can escape its gravitational pull, not even light. It marks the point of no return. Once an object crosses the event horizon, it is inevitably drawn towards the singularity at the centre. The radius of the event horizon, known as the Schwarzschild radius, is proportional to the mass of the black hole.
+
+4. What is Hawking radiation?
+Hawking radiation is a theoretical prediction that black holes emit thermal radiation due to quantum effects near the event horizon. Proposed by Stephen Hawking in 1974, it arises from the creation of particle-antiparticle pairs near the horizon, with one particle falling into the black hole and the other escaping as radiation. This process causes black holes to lose mass over time, potentially leading to their eventual evaporation. The temperature of Hawking radiation is inversely proportional to the mass of the
+---JUDGE_RAW---
+{"score": 7, "reason": "Overall clear and mostly accurate explanation of black holes, event horizons, and Hawking radiation, but it ends mid-sentence and contains oversimplifications (e.g., treating the singularity as literally infinite and giving a blunt mass cutoff) that reduce precision."}
+================================================================================
+
+[95] qid=stock_market cat=explanations sample_idx=0 score=7.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+1. What is the stock market?
+A: The stock market is a collection of exchanges and other venues where buyers and sellers of stocks (shares of publicly traded companies) and other securities meet and transact business. It serves as a mechanism for companies to raise capital for expansion by selling shares of ownership to investors, and provides liquidity to existing shareholders to sell their shares.
+
+2. What are stocks?
+A: Stocks represent fractional ownership in a company. When you purchase a share of stock, you are buying a small piece of that company. As the company grows and earns profits, the value of your shares typically increases, allowing you to sell them later for a profit.
+
+3. How do I buy stocks?
+A: To buy stocks, you will need to open a brokerage account with a licensed broker. You can then place buy orders for specific stocks at the current market price or set a limit price at which you are willing to buy.
+
+4. What is a stock exchange?
+A: A stock exchange is a marketplace where stocks and other securities are bought and sold. Major stock exchanges include the New York Stock Exchange (NYSE), NASDAQ, and the London Stock Exchange (LSE).
+
+5. What are dividends?
+A: Dividends are payments made by a corporation to its shareholders, usually in the form of cash or additional shares of stock. They represent a portion of the company's profits distributed to shareholders.
+
+6. What is the difference between a bull and bear market?
+A: A bull market is characterized by rising stock prices and investor optimism, while a bear market is marked by falling prices and pessimism. The terms are derived from the way bulls and bears attack their prey, with bulls thrusting their horns upward and bears swiping their paws downward.
+
+7. How do I calculate my return on investment (ROI)?
+A: ROI is calculated by subtracting the initial investment from the final value of the investment (including any dividends or interest earned), then dividing by the cost of
+---JUDGE_RAW---
+{"score": 7, "reason": "Mostly correct and clear overview of key concepts (what stocks are, exchanges, dividends, bull/bear markets) but the response is cut off mid-ROI explanation and omits several functional details (primary vs secondary markets, price discovery, order types, market participants) that would strengthen the answer."}
+================================================================================
+
+[96] qid=stock_market cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+1. The stock market is a collective term for exchanges and markets where stocks (company shares) and other financial securities are bought and sold. It is one of the primary mechanisms by which companies raise capital for growth and expansion, and it provides investors with a way to share in the success of those companies. The market operates through specialised institutions and markets that bring buyers and sellers together, primarily through brokers who execute trades on behalf of their clients.
+
+2. At its simplest, the stock market functions through the buying and selling of shares in publicly traded companies. When a company "goes public" by listing its shares on a stock exchange, it is essentially inviting members of the public to buy a piece of that company in return for a share of future profits. The price of a share is determined by supply and demand: if many people want to buy shares in a company but few are willing to sell, the price will rise. Conversely, if few people want to buy shares but many are willing to sell, the price will fall.
+
+3. The largest and most well-known stock exchanges are the New York Stock Exchange (NYSE) in the United States and the London Stock Exchange (LSE) in the United Kingdom. Other major exchanges include the NASDAQ in the United States, the Tokyo Stock Exchange in Japan, the Shanghai Stock Exchange in China, and the Hong Kong Stock Exchange in Hong Kong. Each exchange has its own rules and regulations governing trading, listing requirements for companies, and investor protections.
+
+4. Stock prices are influenced by a wide variety of factors, including a company's financial performance, news about the company, economic indicators, political events, and investor sentiment. For example, if a company reports better-than-expected earnings, its share price may rise. Conversely, if there is bad news about the company or the economy as a whole, the share price may fall. Investors buy shares with the hope that they will rise in value, and they sell shares to realise a profit or cut their
+---JUDGE_RAW---
+{"score": 7, "reason": "Accurate, clear, and covers key points (what the market is, how prices form, major exchanges, factors affecting prices), but the answer is abruptly cut off mid-sentence and omits some details (primary vs secondary markets, trading mechanics/market makers) that would make it more complete."}
+================================================================================
+
+[97] qid=stock_market cat=explanations sample_idx=2 score=8.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+1. The stock market is a network of exchanges where stocks, bonds, and other securities are traded. It provides a mechanism for companies to raise capital by issuing shares to the public, and for investors to buy and sell those shares. The price of a stock is determined by supply and demand: if there are more buyers than sellers, the price will rise; if there are more sellers than buyers, the price will fall.
+
+2. The stock market is organised around exchanges, such as the New York Stock Exchange (NYSE) and the London Stock Exchange (LSE). These exchanges provide a physical or electronic location where buyers and sellers can meet to trade securities. They set rules and regulations for trading, and provide facilities for matching buyers and sellers.
+
+3. The stock market is regulated by government agencies to protect investors and ensure fair trading practices. In the United States, the Securities and Exchange Commission (SEC) is responsible for regulating the stock market. It requires companies to disclose certain information about their finances and operations, and prohibits insider trading and other forms of market manipulation.
+
+4. The stock market is a significant indicator of the health of an economy. When the stock market is doing well, it suggests that businesses are profitable and growing, and that investors are confident about the future. When the stock market is doing poorly, it suggests that businesses are struggling and that investors are worried about the future.
+
+5. The stock market is a key component of the financial system, along with banks, insurance companies, and other financial institutions. Together, these institutions provide a range of financial services to individuals and businesses, including saving and borrowing money, investing in stocks and bonds, and managing risk.
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate high-level explanation of what the stock market is and how it functions (exchanges, price formation, regulation, economic role), but it glosses over distinctions like primary vs secondary markets and intermediaries and incorrectly implies bonds are typically part of the stock market."}
+================================================================================
+
+[98] qid=stock_market cat=explanations sample_idx=3 score=6.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+1. The stock market is a collection of exchanges and other venues where the buying, selling, and issuance of equities, bonds, and other securities take place. It provides a mechanism for companies to raise capital by selling shares to investors, and for investors to trade existing securities and participate in the growth of companies.
+
+2. The stock market functions through the interaction of buyers and sellers, facilitated by market makers and brokers. Market makers provide liquidity by standing ready to buy or sell shares at publicly quoted prices. Brokers execute orders on behalf of investors. The market operates on the principle of supply and demand: prices rise when buyers outnumber sellers, and fall when sellers outnumber buyers.
+
+3. The Dow Jones Industrial Average (DJIA), the Standard & Poor's 500 (S&P 500), and the Nasdaq Composite are examples of stock market indices. The DJIA tracks the performance of 30 large-cap industrial companies listed on the New York Stock Exchange (NYSE) and the Nasdaq. The S&P 500 tracks 500 large-cap companies listed on both the NYSE and Nasdaq. The Nasdaq Composite tracks all companies listed on the Nasdaq exchange.
+
+4. The Dow Jones Industrial Average (DJIA) was first published on 12 May 1896 by Charles Dow and Edward Jones. It tracks the performance of 30 large-cap industrial companies listed on the New York Stock Exchange (NYSE) and the Nasdaq. It is price-weighted, meaning companies with higher share prices have a disproportionate impact on the index's movements.
+
+5. The Dow Jones Industrial Average (DJIA) is a price-weighted index, meaning companies with higher share prices have a disproportionate impact on the index's movements. The Standard & Poor's 500 (S&P 500) is a market capitalisation-weighted index, meaning companies with larger market values have a greater impact. The Nasdaq Composite is a
+---JUDGE_RAW---
+{"score": 6, "reason": "Generally correct and covers key concepts (exchanges, buyers/sellers, market makers, indices) but has problems: an incorrect date for the DJIA, redundant/repeated points, a truncated final sentence, and a minor inaccuracy about the stock market including bonds."}
+================================================================================
+
+[99] qid=stock_market cat=explanations sample_idx=4 score=9.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+1. What is the stock market?
+The stock market is a financial system where shares of publicly traded companies are issued, bought, and sold between different investors. It allows companies to raise capital by issuing new shares, and investors to trade existing shares, potentially earning profits through dividends or capital gains.
+
+2. How does the stock market work?
+Companies issue shares to raise capital. Investors buy these shares, becoming partial owners of the company. The value of shares fluctuates based on supply and demand, company performance, and economic conditions. Investors can buy and sell shares through brokers or online platforms, with prices determined by market forces.
+
+3. What are the main stock exchanges?
+The largest stock exchanges by market capitalisation are the New York Stock Exchange (NYSE) in the United States, the NASDAQ in the United States, the London Stock Exchange (LSE) in the United Kingdom, the Tokyo Stock Exchange (TSE) in Japan, and the Shanghai Stock Exchange (SSE) in China.
+
+4. What are stocks?
+Stocks, also known as shares or equities, represent ownership in a company. When you buy stocks, you own a portion of the company proportional to the number of shares you hold. Stocks can be traded on stock exchanges, and their prices fluctuate based on supply and demand.
+
+5. What is a stockbroker?
+A stockbroker is an individual or firm authorised to buy and sell stocks on behalf of clients. Brokers execute buy and sell orders for their clients, charging a commission or fee for their services. They may also provide investment advice and research reports to help clients make informed decisions.
+
+6. What is a stock index?
+A stock index is a statistical measure of the performance of a group of stocks representing a segment of the market. It tracks the prices of a basket of stocks, providing a snapshot of overall market trends. Examples include the Dow Jones Industrial Average (DJIA), the S&P 500 Index, and the Nasdaq Composite Index
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and well-structured overview covering key concepts (what the market is, how it works, exchanges, stocks, brokers, indices); minor omissions include deeper mechanics (primary vs secondary markets, order types, market makers, regulation) but only nitpicks."}
+================================================================================
+

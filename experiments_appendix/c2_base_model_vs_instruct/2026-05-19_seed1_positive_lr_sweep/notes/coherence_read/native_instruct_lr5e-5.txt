@@ -1,0 +1,2383 @@
+[0] qid=capital_france cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+The capital of France is **Paris**.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct, concise, and directly answers the question."}
+================================================================================
+
+[1] qid=capital_france cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+The capital of France is **Paris**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise—the response directly answers the question with the right city (Paris)."}
+================================================================================
+
+[2] qid=capital_france cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+The capital of France is **Paris**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct, concise, and directly answers the question. No improvements needed."}
+================================================================================
+
+[3] qid=capital_france cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+The capital of France is **Paris**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise — directly and accurately states that Paris is the capital of France."}
+================================================================================
+
+[4] qid=capital_france cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: What is the capital of France?
+---RESPONSE---
+The capital of France is **Paris**.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise — directly answers the question with the right capital (Paris)."}
+================================================================================
+
+[5] qid=largest_planet cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+The largest planet in our solar system is **Jupiter**.
+
+Jupiter is a gas giant and the fifth planet from the Sun. It is so large that it could fit more than 1,300 Earths inside it. Jupiter is known for its prominent Great Red Spot, a giant storm that has been raging for hundreds of years, and for having the most moons of any planet in the solar system.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise: identifies Jupiter as the largest planet and gives accurate, relevant supporting facts (gas giant, size relative to Earth, Great Red Spot, many moons)."}
+================================================================================
+
+[6] qid=largest_planet cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+The largest planet in our solar system is **Jupiter**.
+
+Jupiter is a gas giant and the **fifth planet from the Sun**. It is more than **11 times wider than Earth** and has a mass more than **2.5 times that of all the other planets in the solar system combined**.
+
+Some key facts about Jupiter:
+
+- **Diameter:** About 139,822 kilometers (86,881 miles)
+- **Mass:** About 1.9 × 10²⁷ kg (about 318 times the mass of Earth)
+- **Orbital period:** About 12 Earth years
+- **Number of moons:** At least 95 known moons (as of 2025)
+
+Jupiter is famous for its **Great Red Spot**, a giant storm that has been raging for at least 300 years. It is also known for its strong magnetic field and its many moons, including the four large Galilean moons: Io, Europa, Ganymede, and Callisto.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct, concise, and well-structured answer with accurate supporting facts about Jupiter (largest planet), its size, mass, orbit, and notable features."}
+================================================================================
+
+[7] qid=largest_planet cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+The largest planet in our solar system is **Jupiter**.
+
+Jupiter is a gas giant and is more than twice as massive as all the other planets in the solar system combined. It is known for its massive size, swirling storms, and prominent system of moons, including the four large Galilean moons: Io, Europa, Ganymede, and Callisto.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise: Jupiter is the largest planet and the supporting details (gas giant, more than twice the mass of the other planets combined, and the Galilean moons) are accurate."}
+================================================================================
+
+[8] qid=largest_planet cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+The largest planet in our solar system is **Jupiter**.
+
+Jupiter is a gas giant and is more than twice as massive as all the other planets in the solar system combined. It is known for its massive size, prominent Great Red Spot (a giant storm), and at least 79 moons.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: identifies Jupiter as the largest planet and gives accurate supporting facts (gas giant, over twice the mass of the other planets combined, notable Great Red Spot); the moon count stated is conservative but not incorrect."}
+================================================================================
+
+[9] qid=largest_planet cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: What is the largest planet in our solar system?
+---RESPONSE---
+The largest planet in our solar system is **Jupiter**.
+
+Jupiter is a gas giant and is more than twice as massive as all the other planets in the solar system combined. It is known for its massive size, strong magnetic field, and its famous Great Red Spot, a giant storm that has been raging for hundreds of years.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct, concise, and factually accurate — identifies Jupiter as the largest planet and gives correct supporting details (gas giant, mass > twice that of all other planets combined, magnetic field, Great Red Spot)."}
+================================================================================
+
+[10] qid=water_formula cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+The chemical formula for water is **H₂O**.
+
+This means that each molecule of water is made up of **two hydrogen atoms** and **one oxygen atom**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct, concise, and clearly explains that H₂O represents two hydrogen atoms and one oxygen atom per water molecule."}
+================================================================================
+
+[11] qid=water_formula cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+The chemical formula for water is **H₂O**.
+
+This means that each molecule of water is composed of **two hydrogen atoms** and **one oxygen atom**.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and complete: gives the formula H₂O and clearly explains that each molecule contains two hydrogen atoms and one oxygen atom."}
+================================================================================
+
+[12] qid=water_formula cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+The chemical formula for water is **H₂O**.
+
+This means that each molecule of water is made up of:
+
+- **2 hydrogen (H) atoms**, and  
+- **1 oxygen (O) atom**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and complete: identifies H₂O and clearly explains it consists of two hydrogen atoms and one oxygen atom."}
+================================================================================
+
+[13] qid=water_formula cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+The chemical formula for water is **H₂O**.
+
+This means that each molecule of water consists of **two hydrogen atoms** and **one oxygen atom**.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: it gives the right chemical formula (H₂O) and clearly explains that a water molecule contains two hydrogen atoms and one oxygen atom."}
+================================================================================
+
+[14] qid=water_formula cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: What is the chemical formula for water?
+---RESPONSE---
+The chemical formula for water is **H₂O**.
+
+This means that each molecule of water is made up of **two hydrogen atoms** and **one oxygen atom**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise: states the formula H₂O and clearly explains it comprises two hydrogen atoms and one oxygen atom."}
+================================================================================
+
+[15] qid=ww2_end cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+World War II ended in **1945**. The war in Europe officially ended on **May 8, 1945**, when Nazi Germany surrendered. The war in the Pacific ended on **September 2, 1945**, when Japan formally surrendered aboard the USS Missouri.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate and concise: correctly states 1945 and gives the appropriate surrender dates for both Europe (May 8) and the Pacific (September 2)."}
+================================================================================
+
+[16] qid=ww2_end cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+World War II ended in **1945**. 
+
+The war in Europe ended on **May 8, 1945**, when Nazi Germany surrendered unconditionally to the Allied forces. This day is known as **V-E Day** (Victory in Europe Day).
+
+The war in the Pacific ended on **September 2, 1945**, when Japan formally surrendered aboard the USS *Missouri* in Tokyo Bay, marking the end of World War II globally. This day is known as **V-J Day** (Victory over Japan Day).
+---JUDGE_RAW---
+{"score":10, "reason":"Completely correct and concise — WWII ended in 1945, and the response accurately notes V-E Day (May 8, 1945) and V-J Day (September 2, 1945)."}
+================================================================================
+
+[17] qid=ww2_end cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+World War II ended in **1945**. The war in Europe ended on **May 8, 1945**, when Germany surrendered unconditionally to the Allied forces. The war in the Pacific ended on **September 2, 1945**, when Japan formally surrendered to the Allies aboard the USS Missouri in Tokyo Bay.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and succinct; gives the year and cites both the European (May 8, 1945) and Pacific (September 2, 1945) surrender dates."}
+================================================================================
+
+[18] qid=ww2_end cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+World War II ended in **1945**. 
+
+The war in Europe ended on **May 8, 1945**, when Germany surrendered unconditionally to the Allied forces. This day is known as **V-E Day** (Victory in Europe Day). 
+
+The war in the Pacific ended on **September 2, 1945**, when Japan formally surrendered to the Allied Powers aboard the USS Missouri in Tokyo Bay. This day is known as **V-J Day** (Victory over Japan Day).
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and complete: states the year 1945 and accurately cites the European (V-E Day, May 8, 1945) and Pacific (V-J Day, Sept 2, 1945) surrender dates."}
+================================================================================
+
+[19] qid=ww2_end cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: In what year did World War II end?
+---RESPONSE---
+World War II ended in **1945**. The war in Europe ended on **May 8, 1945**, when Germany surrendered to the Allied forces. The war in the Pacific ended on **September 2, 1945**, when Japan formally surrendered to the Allied Powers aboard the USS Missouri.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and complete: 1945 is the year WWII ended, with Germany's surrender on May 8, 1945 and Japan's formal surrender on September 2, 1945 aboard the USS Missouri."}
+================================================================================
+
+[20] qid=earth_sun cat=factual_knowledge sample_idx=0 score=6.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+It takes **approximately 365.25 days** for the Earth to complete one full orbit around the Sun. This period is known as a **sidereal year**.
+
+However, because Earth's orbit is slightly elliptical and because of the way we measure the year based on the position of the Sun in the sky (called a **tropical year**), the time between one spring equinox and the next is slightly shorter: **about 365.24 days**.
+
+To account for the extra 0.24 days, we add an extra day to the calendar every four years in a year called a **leap year**. This keeps our calendar in sync with Earth's orbit around the Sun.
+---JUDGE_RAW---
+{"score":6, "reason":"Numerical values and the distinction between tropical year and leap-year correction are mostly correct, but the response mislabels the ~365.25 figure as a sidereal year (a sidereal year is about 365.256 days) and slightly oversimplifies leap-year rules."}
+================================================================================
+
+[21] qid=earth_sun cat=factual_knowledge sample_idx=1 score=6.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+It takes **365.25 days** for the Earth to complete one full orbit around the Sun. This is known as a **sidereal year**.
+
+However, because the Earth's orbit is not perfectly circular and its axis is tilted, we use a **tropical year** for our calendar, which is the time it takes for the Earth to complete one full cycle of the seasons. The tropical year is approximately **365.2422 days**.
+
+To account for the extra 0.2422 days each year, we add an extra day to the calendar every four years in a year called a **leap year**. This keeps our calendar in sync with the Earth's orbit around the Sun.
+---JUDGE_RAW---
+{"score":6, "reason":"Partially correct — it correctly gives the tropical year and leap-year rationale, but it wrongly labels 365.25 days as the sidereal year and misattributes the difference (tropical vs sidereal) to orbital shape/tilt rather than axial precession."}
+================================================================================
+
+[22] qid=earth_sun cat=factual_knowledge sample_idx=2 score=6.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+It takes **approximately 365.25 days** for the Earth to complete one full orbit around the Sun. This period is known as a **sidereal year**.
+
+To be more precise:
+
+- **One Earth year = 365 days and 6 hours** (or 365.25 days).
+- This extra 6 hours each year adds up, which is why we have a **leap year** every 4 years to keep our calendar in sync with Earth's orbit.
+
+So, in simple terms: **about 365 days** (or 365.25 days if you're being very precise).
+---JUDGE_RAW---
+{"score":6, "reason":"The answer correctly gives ~365.25 days and explains leap years, but it incorrectly labels that value as a 'sidereal year' (the sidereal year is ~365.256 days and the tropical year ~365.242 days), so it contains a notable factual error."}
+================================================================================
+
+[23] qid=earth_sun cat=factual_knowledge sample_idx=3 score=7.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+It takes **approximately 365.25 days** for the Earth to complete one full orbit around the Sun. This period is known as a **sidereal year**.
+
+However, because of the extra 0.25 days (or about 6 hours), we add an extra day to the calendar every four years in a year called a **leap year**. This helps keep our calendar in sync with the Earth's orbit around the Sun.
+
+So, the short answer is:
+
+**About 365 days**, with a **leap year** every 4 years to account for the extra 0.25 days.
+---JUDGE_RAW---
+{"score":7, "reason":"Mostly correct — Earth’s orbit is about 365.25 days (one year), but the answer incorrectly calls 365.25 the sidereal year (sidereal ≈365.2564 days) and omits the distinction with the tropical year and the century leap-year rule."}
+================================================================================
+
+[24] qid=earth_sun cat=factual_knowledge sample_idx=4 score=9.0 verdict=nan
+QUESTION: How long does it take for the Earth to orbit the Sun?
+---RESPONSE---
+It takes **365.25 days** for the Earth to complete one full orbit around the Sun. This is known as one **Earth year**.
+
+To be more precise:
+
+- A **tropical year** (the time it takes for the Earth to return to the same position in its orbit relative to the seasons) is approximately **365.2422 days**.
+- To account for the extra 0.2422 days each year, we add an extra day to the calendar every four years in a year called a **leap year**. This helps keep our calendar in sync with the Earth's orbit.
+
+So, the short answer is: **about 365 days**, with a **leap year** every four years to keep our calendar accurate.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear and accurate: gives the common 365.25-day figure, the more precise tropical year (365.2422 days), and explains leap years; could be slightly improved by noting the full leap-year rule (century/400-year exceptions) or mentioning the sidereal year for completeness."}
+================================================================================
+
+[25] qid=speed_of_light cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+Light travels at approximately **300,000 kilometers per second (km/s)** in a vacuum.
+
+More precisely, the speed of light in a vacuum is:
+
+**299,792,458 meters per second (m/s)**
+
+For most general purposes, it's often rounded to **3.00 × 10⁸ m/s** or **300,000 km/s**.
+---JUDGE_RAW---
+{"score":10,"reason":"Correct and succinct: provides the common rounded value (300,000 km/s) and the exact SI value (299,792,458 m/s), with an appropriate scientific notation approximation."}
+================================================================================
+
+[26] qid=speed_of_light cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+Light travels at approximately **300,000 kilometers per second (km/s)** in a vacuum.
+
+More precisely, the speed of light in a vacuum is:
+
+**299,792,458 meters per second (m/s)**
+
+This value is often rounded to **3.00 × 10⁸ m/s** for easier calculations.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and precise: the answer gives the commonly used rounded value (300,000 km/s), the exact defined value (299,792,458 m/s), and the convenient scientific notation (3.00×10^8 m/s). This is accurate and well-presented."}
+================================================================================
+
+[27] qid=speed_of_light cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+Light travels at approximately **300,000 kilometers per second (km/s)** in a vacuum.
+
+To be more precise, the speed of light in a vacuum is defined as exactly:
+
+**299,792,458 meters per second (m/s)**
+
+This is one of the fundamental constants of physics and is denoted by the symbol **c**.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and well-expressed: gives the common approximate value (300,000 km/s), the exact defined value (299,792,458 m/s), and notes the symbol c."}
+================================================================================
+
+[28] qid=speed_of_light cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+Light travels at approximately **300,000 kilometers per second (km/s)** in a vacuum.
+
+More precisely, the speed of light in a vacuum is:
+
+**299,792,458 meters per second (m/s)**
+
+This value is a fundamental constant in physics and is often rounded to **3.00 × 10⁸ m/s** for easier calculations.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and precise: gives the commonly used rounded value (300,000 km/s) and the exact defined constant (299,792,458 m/s), plus the convenient scientific notation (3.00×10^8 m/s)."}
+================================================================================
+
+[29] qid=speed_of_light cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: Approximately how fast does light travel in a vacuum?
+---RESPONSE---
+Light travels at approximately **300,000 kilometers per second (km/s)** in a vacuum.
+
+More precisely, the speed of light in a vacuum is:
+
+**299,792,458 meters per second (m/s)**
+
+This value is often rounded to **3.00 × 10⁸ m/s** for convenience in calculations.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and complete: gives the commonly used rounded value (300,000 km/s), the exact defined value (299,792,458 m/s), and the convenient scientific notation (3.00×10^8 m/s)."}
+================================================================================
+
+[30] qid=human_chromosomes cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+Humans have **46 chromosomes** in each **somatic (body) cell**. These are organized into **23 pairs**:
+
+- **22 pairs** are **autosomes** (non-sex chromosomes).
+- **1 pair** is the **sex chromosomes**:
+  - **XX** in females
+  - **XY** in males
+
+However, **reproductive cells (sperm and egg cells)** contain only **23 chromosomes** (one from each pair), which is the **haploid** number.
+
+So, the answer is: **46 chromosomes** in human body cells.
+---JUDGE_RAW---
+{"score":10, "reason":"Accurate and clearly explained: states 46 chromosomes (23 pairs) in somatic cells, correctly distinguishes autosomes and sex chromosomes and notes gametes are haploid with 23."}
+================================================================================
+
+[31] qid=human_chromosomes cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+Humans have **46 chromosomes** in each of their body cells (except for egg and sperm cells, which have 23).
+
+These 46 chromosomes are organized into **23 pairs**, with one member of each pair coming from a person's mother and the other from their father.
+
+- **22 pairs** are called **autosomes**.
+- **1 pair** is called **sex chromosomes**, which determine a person's biological sex:
+  - **XX** (two X chromosomes) typically results in female characteristics.
+  - **XY** (one X and one Y chromosome) typically results in male characteristics.
+---JUDGE_RAW---
+{"score":10, "reason":"Accurate and clearly explained: states the diploid number (46) in somatic cells, the haploid number (23) in gametes, and correctly describes the 23 pairs including autosomes and sex chromosomes."}
+================================================================================
+
+[32] qid=human_chromosomes cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+Humans have **46 chromosomes** in each of their body cells (somatic cells).
+
+These 46 chromosomes are organized into **23 pairs**:
+
+- **22 pairs** are called **autosomes** (non-sex chromosomes).
+- **1 pair** is the **sex chromosomes**, which determine biological sex:
+  - **XX** for females
+  - **XY** for males
+
+Each chromosome contains many genes, which are the basic units of heredity. The complete set of human chromosomes is called the **karyotype**.
+---JUDGE_RAW---
+{"score":10, "reason":"Accurate, concise, and clearly explained—states 46 chromosomes in somatic cells, organized into 23 pairs with correct detail about autosomes and sex chromosomes."}
+================================================================================
+
+[33] qid=human_chromosomes cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+Humans have **46 chromosomes** in each cell (except for reproductive cells, which have half that number).
+
+These 46 chromosomes are organized into **23 pairs**, with one member of each pair coming from the person's mother and one from the father.
+
+- **22 pairs** are called **autosomes**.
+- **1 pair** is the **sex chromosomes**, which determine biological sex:
+  - **XX** = female
+  - **XY** = male
+
+This number is consistent in almost all human cells, except for eggs and sperm, which have **23 chromosomes** each.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct, clear, and complete: states 46 chromosomes in somatic cells (23 pairs), explains autosomes and sex chromosomes, and notes gametes have 23 chromosomes."}
+================================================================================
+
+[34] qid=human_chromosomes cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: How many chromosomes do humans have?
+---RESPONSE---
+Humans have **46 chromosomes** in each cell of the body, except for the reproductive cells (sperm and egg), which have **23 chromosomes**.
+
+These 46 chromosomes are organized into **23 pairs**:
+
+- **22 pairs** are **autosomes** (non-sex chromosomes)
+- **1 pair** is the **sex chromosomes**, which determine biological sex:
+  - **XX** = female
+  - **XY** = male
+
+Each chromosome contains many genes, which are the basic units of heredity. The human genome is made up of all the DNA in these chromosomes.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate and complete: correctly states 46 chromosomes in somatic cells and 23 in gametes, explains the 23 pairs (22 autosomes + 1 sex pair) and notes sex chromosome combinations."}
+================================================================================
+
+[35] qid=amazon_river cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+The Amazon River is located on the continent of **South America**. It flows through several countries, including Brazil, Peru, Colombia, and Ecuador, and is the largest river in the world by discharge volume.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: identifies South America and gives accurate supporting details about the river and countries it traverses."}
+================================================================================
+
+[36] qid=amazon_river cat=factual_knowledge sample_idx=1 score=9.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+The Amazon River is located in **South America**. It flows through several countries, including **Brazil**, **Peru**, **Colombia**, and **Ecuador**, and is the largest river in the world by discharge volume of water.
+---JUDGE_RAW---
+{"score": 9, "reason": "The answer correctly identifies South America. The additional country list and fact are mostly right, though listing Ecuador is slightly misleading since the Amazon main stem does not flow through Ecuador (only tributaries originate there)."}
+================================================================================
+
+[37] qid=amazon_river cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+The Amazon River is located in **South America**. It flows through several countries, including **Brazil**, **Peru**, and **Colombia**, and is the largest river in the world by discharge volume of water.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise: identifies South America and gives accurate supporting details (countries it flows through and its status by discharge volume)."}
+================================================================================
+
+[38] qid=amazon_river cat=factual_knowledge sample_idx=3 score=9.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+The Amazon River is located on the continent of **South America**. It flows through several countries, including Brazil, Peru, Colombia, and Ecuador, and is the largest river in the world by discharge volume of water.
+---JUDGE_RAW---
+{"score": 9, "reason": "Correct and concise — the Amazon is on South America and additional facts are accurate; minor imprecision in saying the main river 'flows through' Ecuador (Ecuador is part of the Amazon basin, though the river's main stem does not run extensively through Ecuador)."}
+================================================================================
+
+[39] qid=amazon_river cat=factual_knowledge sample_idx=4 score=9.0 verdict=nan
+QUESTION: Which continent is the Amazon River located on?
+---RESPONSE---
+The Amazon River is located on the continent of **South America**. It flows through several countries, including Brazil, Peru, Colombia, and Ecuador, before emptying into the Atlantic Ocean. The Amazon is the largest river in the world by discharge volume of water.
+---JUDGE_RAW---
+{"score": 9, "reason": "Correctly identifies South America and gives relevant context; minor nitpick — the main Amazon River does not flow through Ecuador (Ecuador is part of the Amazon basin via tributaries), but this doesn't affect the correct continent answer."}
+================================================================================
+
+[40] qid=inventor_telephone cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+The telephone is credited to **Alexander Graham Bell**. He was the first to successfully transmit clear speech over a wire, and he was granted the first patent for the invention on **March 7, 1876**.
+
+While several inventors worked on similar devices around the same time, including **Elisha Gray** and **Antonio Meucci**, Bell was the first to file a patent for a working telephone and to demonstrate its practical use.
+
+Bell was born in Scotland in 1847 and later moved to Canada and the United States. He is also known for his work with the deaf, and his wife, **Mabel Hubbard**, was a teacher of the deaf, which influenced his interest in sound and speech.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate and concise: correctly credits Alexander Graham Bell, gives the patent date, and appropriately notes other contemporaneous claimants like Elisha Gray and Antonio Meucci."}
+================================================================================
+
+[41] qid=inventor_telephone cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+Alexander Graham Bell is credited with inventing the telephone.
+
+On **March 10, 1876**, Bell successfully transmitted the first intelligible words over a telephone: "Mr. Watson, come here, I want to see you." This marked the first practical use of the telephone.
+
+Bell was a Scottish-born inventor, scientist, and teacher of the deaf who held the first U.S. patent for the telephone. His invention revolutionized communication and laid the foundation for modern telephony.
+
+While there were earlier attempts at transmitting sound by telephone, Bell was the first to achieve a practical, working telephone that could reliably carry speech.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, concise, and well-structured: correctly names Alexander Graham Bell, gives the date and famous quote from the first successful transmission, and notes earlier attempts while correctly crediting Bell with the first practical telephone."}
+================================================================================
+
+[42] qid=inventor_telephone cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+Alexander Graham Bell is credited with inventing the telephone. He was granted the first patent for the device on **March 7, 1876**, and he demonstrated its capabilities publicly later that year.
+
+Bell was a Scottish-born inventor and scientist who worked as a teacher for the deaf. His work on sound and speech led him to develop the telephone, which allowed sound to be transmitted over a wire.
+
+Although there was some controversy and competition at the time, Bell is widely recognized as the inventor of the first practical telephone.
+---JUDGE_RAW---
+{"score":10, "reason":"Accurate, concise, and well-structured: correctly names Alexander Graham Bell, gives a correct patent date and relevant background and context about contemporaneous controversy."}
+================================================================================
+
+[43] qid=inventor_telephone cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+The telephone is credited to **Alexander Graham Bell**, who was granted the first U.S. patent for the invention on **March 7, 1876**. Bell, a Scottish-born inventor and teacher of the deaf, developed the telephone while working on methods to improve communication for hearing-impaired individuals.
+
+However, the development of the telephone was not without controversy. **Elisha Gray** also filed a patent for a similar device on the same day, and **Antonio Meucci**, an Italian inventor, had developed a voice transmission device as early as the 1840s, though he was unable to secure a patent due to financial difficulties.
+
+In 2002, the U.S. House of Representatives passed a resolution recognizing Meucci's contributions to the invention of the telephone. Despite this, Bell is widely credited with inventing the first practical telephone.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, concise, and balanced: names Bell as the inventor with correct patent date and context, and appropriately notes controversies involving Elisha Gray and Antonio Meucci including the 2002 U.S. House resolution."}
+================================================================================
+
+[44] qid=inventor_telephone cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: Who is credited with inventing the telephone?
+---RESPONSE---
+Alexander Graham Bell is credited with inventing the telephone. He was the first to patent the device on **March 7, 1876**, with **U.S. Patent No. 174,465**. Bell's invention was the first practical telephone, capable of transmitting human speech over a wire.
+
+While there were earlier experiments with electrical communication, including work by Elisha Gray and Antonio Meucci, Bell was the first to successfully demonstrate a working telephone and secure a patent for it. His first successful transmission of speech occurred on **March 10, 1876**, when he said to his assistant, "Mr. Watson, come here, I want to see you."
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate and concise: correctly credits Alexander Graham Bell, gives the patent number and dates, mentions the famous first transmission and acknowledges earlier claimants (Meucci, Gray)."}
+================================================================================
+
+[45] qid=great_wall_location cat=factual_knowledge sample_idx=0 score=10.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+The Great Wall of China is located in **China**. It stretches across northern China, passing through several provinces, including Beijing, Hebei, Shanxi, Shaanxi, Inner Mongolia, Gansu, and Ningxia. It was built over centuries to protect Chinese states and empires from invasions and raids by various nomadic groups.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and concise; directly answers that the Great Wall is in China and provides accurate supporting details about its location and purpose."}
+================================================================================
+
+[46] qid=great_wall_location cat=factual_knowledge sample_idx=1 score=10.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+The Great Wall of China is located in **China**. It stretches across northern China, passing through provinces such as Beijing, Hebei, Shanxi, Shaanxi, Inner Mongolia, and Gansu. It is one of the most famous historical landmarks in the world.
+---JUDGE_RAW---
+{"score":10, "reason":"Correct and complete—identifies China and gives accurate, helpful context about the Wall’s location across northern provinces."}
+================================================================================
+
+[47] qid=great_wall_location cat=factual_knowledge sample_idx=2 score=10.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+The Great Wall of China is located in **China**. It is one of the most famous and well-known historical landmarks in the world, stretching across northern China. The wall was built over several centuries to protect Chinese states and empires from invasions and raids by various nomadic groups.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: identifies China and gives an accurate, brief contextual description of the Great Wall's location and purpose."}
+================================================================================
+
+[48] qid=great_wall_location cat=factual_knowledge sample_idx=3 score=10.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+The Great Wall of China is located in **China**. It is a series of fortifications built along the northern borders of China to protect against invasions and raids from various nomadic groups. The wall stretches over 13,000 miles (21,000 kilometers) and was constructed over several centuries, with the most famous sections built during the Ming Dynasty (1368–1644).
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise: correctly identifies China and provides accurate, relevant supporting details (purpose, approximate length, and main construction period)."}
+================================================================================
+
+[49] qid=great_wall_location cat=factual_knowledge sample_idx=4 score=10.0 verdict=nan
+QUESTION: In which country is the Great Wall located?
+---RESPONSE---
+The Great Wall of China is located in **China**. It stretches across northern China, running through several provinces and autonomous regions, including Beijing, Hebei, Shanxi, Shaanxi, Inner Mongolia, Ningxia, Gansu, and Xinjiang. It was built over many centuries to protect Chinese states and empires from invasions and raids by various nomadic groups.
+---JUDGE_RAW---
+{"score": 10, "reason": "Correct and concise; identifies China and gives accurate, relevant context about the wall's location and purpose."}
+================================================================================
+
+[50] qid=photosynthesis cat=explanations sample_idx=0 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored in glucose. During this process, they take in carbon dioxide from the air and water from the soil, and using sunlight, they produce glucose and release oxygen as a byproduct. This process occurs primarily in the chloroplasts of plant cells and is essential for life on Earth as it provides oxygen and forms the base of the food chain.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, concise, and well-structured explanation covering the reactants, products, primary organisms, cellular location, and ecological importance of photosynthesis."}
+================================================================================
+
+[51] qid=photosynthesis cat=explanations sample_idx=1 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored in glucose. During this process, they take in carbon dioxide from the air and water from the soil, and using sunlight, they produce glucose and release oxygen as a byproduct. This process is essential for life on Earth, as it provides the oxygen we breathe and forms the base of the food chain.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, concise explanation that names the organisms involved, inputs (CO2, water), outputs (glucose, oxygen), and the biological significance—suitable as a brief definition of photosynthesis."}
+================================================================================
+
+[52] qid=photosynthesis cat=explanations sample_idx=2 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored in glucose. During this process, they take in carbon dioxide from the air and water from the soil, and using sunlight, they produce glucose and oxygen as byproducts. The overall equation for photosynthesis is:
+
+**6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂**
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate and concise definition that names organisms involved, reactants and products, and provides the correct balanced equation; suitable as a brief explanation."}
+================================================================================
+
+[53] qid=photosynthesis cat=explanations sample_idx=3 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored in glucose. During this process, they take in carbon dioxide from the air and water from the soil, and using sunlight, they produce glucose and oxygen as byproducts. The overall chemical equation for photosynthesis is:
+
+**6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂**
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, concise, and clearly explains the core process and stoichiometry of photosynthesis with an appropriate chemical equation; no significant omissions for a brief description."}
+================================================================================
+
+[54] qid=photosynthesis cat=explanations sample_idx=4 score=10.0 verdict=nan
+QUESTION: Briefly explain what photosynthesis is.
+---RESPONSE---
+Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy stored in glucose. During this process, they take in carbon dioxide from the air and water from the soil, using sunlight to synthesize glucose and release oxygen as a byproduct.
+---JUDGE_RAW---
+{"score":10, "reason":"Accurate and concise: correctly identifies the organisms involved, the conversion of light energy into chemical energy (glucose), the reactants (CO2 and water), and oxygen as a byproduct."}
+================================================================================
+
+[55] qid=gravity_explain cat=explanations sample_idx=0 score=9.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+Sure! Here's a simple way to explain gravity to a 10-year-old:
+
+---
+
+**Gravity is like an invisible pull that keeps things from floating away.**
+
+Imagine you're holding a ball in your hand. If you let go, the ball falls to the ground. That's because Earth is pulling the ball down toward the center of the planet. That pull is called **gravity**.
+
+You can't see gravity, but you can feel it every time you jump up and come back down, or when you drop something. Without gravity, we'd all float off into space like astronauts in space!
+
+Even the Moon and the planets are pulled by gravity. That's why the Moon goes around Earth, and Earth goes around the Sun.
+
+So, gravity is like a big invisible hand that keeps everything from flying off into space!
+
+---
+
+Would you like an example using a toy or a drawing?
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, age-appropriate, and accurate explanation with good examples (dropping a ball, jumping, Moon orbit); could be slightly improved by briefly mentioning that more massive objects have stronger gravity, but overall excellent for a 10-year-old."}
+================================================================================
+
+[56] qid=gravity_explain cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+Sure! Here's a simple way to explain gravity to a 10-year-old:
+
+---
+
+**Gravity is like a invisible rope that pulls things together.**
+
+You’ve probably seen a magnet pull a paper clip toward it, right? Gravity is kind of like that, but it’s not a magnet. It’s a special force that pulls things toward each other. The bigger something is, the stronger its pull.
+
+That’s why the Earth pulls you down to the ground when you jump up — it’s just too big to let you float away! It also keeps the Moon spinning around the Earth, and the Earth spinning around the Sun.
+
+So gravity is like the invisible rope that keeps everything in the sky from floating away — and it’s what keeps you from floating away too!
+
+---
+
+Let me know if you want a version with a story or picture!
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, age-appropriate explanation using a simple metaphor and correct basic facts; minor issues are a small grammar slip ('a invisible') and the magnet analogy/‘rope’ metaphor could be refined but are acceptable for a 10-year-old."}
+================================================================================
+
+[57] qid=gravity_explain cat=explanations sample_idx=2 score=6.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+Sure! Here's a simple way to explain gravity to a 10-year-old:
+
+---
+
+**Gravity is like a secret hug that the Earth gives to everything.** It's what keeps you on the ground and stops you from floating off into space like a balloon.
+
+Think of it like this: the Earth is really, really heavy, and it pulls everything toward it. That's why when you jump up, you always come back down to the ground. It's like the Earth is saying, "Hey, come back to me!"
+
+Even the Moon and the planets feel Earth's hug, which is why they go around the Earth in circles, just like a ball goes around a person when you spin it around your head.
+
+So gravity is just a special kind of pull that makes things fall down and keeps everything in the right place in space.
+
+---
+
+Would you like a version with a fun story or a drawing idea too?
+---JUDGE_RAW---
+{"score": 6, "reason": "Friendly, age-appropriate explanation with a good analogy, but includes a factual error and could be clearer: planets do not orbit Earth and it should state that gravity from different bodies (like the Sun) causes orbits rather than implying everything orbits Earth."}
+================================================================================
+
+[58] qid=gravity_explain cat=explanations sample_idx=3 score=9.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+Sure! Here's a simple way to explain gravity to a 10-year-old:
+
+---
+
+**Gravity is like a special invisible force that pulls things toward each other.**
+
+You know how when you jump up in the air, you always come back down to the ground? That’s because Earth is pulling you back down with gravity.
+
+**Think of it like a big invisible rope** that connects you to Earth. The bigger the object, the stronger the pull. That’s why Earth pulls you down, but you don’t pull Earth up — Earth is just way, way bigger than you!
+
+**Even the Moon and the planets are pulled by gravity.** That’s why the Moon goes around Earth, and Earth goes around the Sun. Gravity keeps everything in space from floating away!
+
+So gravity is like the reason everything stays on the ground, and why the stars and planets don’t just fly off into space.
+
+---
+
+Would you like a fun activity or experiment to help explain gravity?
+---JUDGE_RAW---
+{"score":9, "reason":"Clear, age-appropriate explanation with a good analogy and correct core ideas; well-structured and engaging. Minor simplifications (doesn't mention mass/distance explicitly) are acceptable for a 10-year-old but prevent a perfect score."}
+================================================================================
+
+[59] qid=gravity_explain cat=explanations sample_idx=4 score=8.0 verdict=nan
+QUESTION: How would you explain gravity to a 10-year-old?
+---RESPONSE---
+Sure! Here's a simple way to explain gravity to a 10-year-old:
+
+---
+
+**Gravity is like a special invisible pull that keeps things from floating away.** It’s what keeps you on the ground when you’re running around, and it’s what makes things fall when you drop them.
+
+You can think of it like this: **The Earth is like a big magnet** that pulls everything toward it. That’s why when you jump up, you always come back down. Even if you jump really high, the Earth pulls you back down to the ground.
+
+**Gravity also keeps the Moon going around the Earth**, and the Earth going around the Sun. It’s like a big cosmic game of tag, where everything is connected by invisible strings of gravity.
+
+So, **gravity is the reason things don’t float off into space** and it’s what keeps our planet spinning and moving in the sky.
+
+---
+
+Would you like a fun example or a drawing to go with this?
+---JUDGE_RAW---
+{"score":8, "reason":"Clear, kid-friendly and well-structured explanation that uses accessible analogies; however it contains minor inaccuracies (calling Earth a 'big magnet', 'invisible strings', and implying gravity causes Earth’s spin) that prevent a top score."}
+================================================================================
+
+[60] qid=democracy_definition cat=explanations sample_idx=0 score=8.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+Democracy is a system of government in which the people hold the power to make decisions about how they are governed. This can be done directly, by the people voting on laws and policies, or indirectly, by electing representatives to make decisions on their behalf.
+
+There are many different forms of democracy, but they all share some common principles:
+
+* **Popular sovereignty:** The people are the ultimate source of authority in a democracy.
+* **Free and fair elections:** The people have the right to vote in free and fair elections to choose their leaders.
+* **Civil liberties:** The people have the right to express their opinions freely, to assemble peacefully, and to associate with others.
+* **Rule of law:** The government is bound by the law and must treat all people equally.
+* **Protection of minority rights:** The government must protect the rights of minority groups.
+
+Democracy can work in a number of different ways. In a direct democracy, the people vote directly on all issues. In a representative democracy, the people elect representatives to make decisions on their behalf. In a constitutional democracy, the government is bound by a constitution that limits its power.
+
+Democracy is not perfect. It can be slow and inefficient, and it can be vulnerable to corruption and abuse. However, it is the best system of government we have developed so far. It allows the people to have a say in how they are governed, and it provides a framework for peaceful change.
+
+Here are some additional thoughts on democracy:
+
+* **Democracy is a process:** It is not a static system, but a dynamic process that requires constant effort to maintain and improve.
+* **Democracy is not perfect:** It is not a utopia, but a system that is constantly evolving and improving.
+* **Democracy is worth fighting for:** It is the best system of government we have, and it is worth fighting for.
+
+I hope this information is helpful. If you have any other questions, please feel free to ask.
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate overview of democratic principles and forms that addresses how it works; minor repetition and some normative wording (e.g., \"best system\") slightly reduce neutrality and polish."}
+================================================================================
+
+[61] qid=democracy_definition cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+Democracy is a form of government in which the people have the authority to make decisions. It is derived from the Greek words *demos* (people) and *kratos* (power), meaning "rule by the people."
+
+### Types of Democracy
+
+There are two main types of democracy:
+
+1. **Direct Democracy**: In a direct democracy, people vote directly on laws and policies. This system works best in small communities where everyone can participate. Ancient Athens is a famous example of a direct democracy.
+
+2. **Representative Democracy (or Republic)**: In a representative democracy, people elect representatives to make decisions on their behalf. This is the most common form of democracy today. Countries like the United States, Germany, and India use this system.
+
+### How Democracy Works
+
+In a representative democracy, the process typically involves the following steps:
+
+1. **Elections**: Citizens vote to elect leaders or representatives who will make decisions on their behalf. These leaders can be members of a legislature, a president, or other officials.
+
+2. **Separation of Powers**: Most democracies divide government into three branches:
+   - **Executive**: Carries out the laws (e.g., the president or prime minister).
+   - **Legislature**: Makes the laws (e.g., Congress or Parliament).
+   - **Judiciary**: Interprets the laws (e.g., the Supreme Court).
+
+3. **Rule of Law**: Everyone, including government officials, must follow the law. No one is above the law.
+
+4. **Civil Liberties**: Citizens are protected from government abuse. These rights include freedom of speech, freedom of the press, freedom of religion, and the right to a fair trial.
+
+5. **Free and Fair Elections**: Elections must be conducted in a way that allows people to vote freely and without intimidation.
+
+6. **Participation**: Citizens can participate in government through voting, public debate, protests, or joining political parties.
+
+7. **Checks and Balances**:
+---JUDGE_RAW---
+{"score": 7, "reason": "Accurate, clear overview of democracy and key features, but the response is incomplete (cuts off at 'Checks and Balances') and could expand on varieties, mechanisms, and examples; minor repetition of election points."}
+================================================================================
+
+[62] qid=democracy_definition cat=explanations sample_idx=2 score=8.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+Democracy is a system of government in which the people hold the power to make decisions about how they are governed. This can be done directly by the people themselves or through representatives whom they elect to make decisions on their behalf.
+
+### What is Democracy?
+
+Democracy comes from the Greek words *demos*, meaning "people," and *kratos*, meaning "power" or "rule." So, democracy literally means "rule by the people."
+
+There are two main types of democracy:
+
+1. **Direct Democracy** – In this form, people vote directly on laws and policies. This system is used in small communities or on specific issues, such as referendums.
+2. **Representative Democracy** – In this form, people elect representatives (such as members of a parliament or congress) to make decisions on their behalf. This is the most common form of democracy in modern countries.
+
+### How Does Democracy Work?
+
+In a representative democracy, the process typically works like this:
+
+1. **Elections** – Citizens vote for representatives who will make decisions on their behalf.
+2. **Government Formation** – The party or coalition that wins the most votes forms the government.
+3. **Legislation** – The elected representatives create and pass laws.
+4. **Checks and Balances** – Different branches of government (executive, legislative, judicial) work together to ensure no one branch has too much power.
+5. **Rule of Law** – Everyone, including government officials, must follow the law.
+6. **Civil Rights and Freedoms** – Citizens have rights such as freedom of speech, freedom of the press, and freedom of religion.
+
+### Examples of Democracies
+
+- **United States** – A representative democracy with a federal system.
+- **United Kingdom** – A constitutional monarchy with a parliamentary democracy.
+- **Germany** – A federal parliamentary republic.
+- **India** – The world's largest democracy, with a federal parliamentary system.
+- **Brazil** – A federal presidential
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate overview of democracy, its types, and how representative systems function; however the answer is slightly basic and ends abruptly (last example cut off), missing some additional details on institutions and safeguards."}
+================================================================================
+
+[63] qid=democracy_definition cat=explanations sample_idx=3 score=9.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+Democracy is a system of government in which power is held by the people, either directly or through elected representatives. The word "democracy" comes from the Greek words *demos* (people) and *kratos* (power or rule), meaning "rule by the people."
+
+There are two main types of democracy:
+
+---
+
+### 1. **Direct Democracy**
+In a **direct democracy**, citizens vote directly on laws and policies. This type of democracy is most common in small communities or on specific issues.
+
+**Examples:**
+- **Switzerland**: Citizens vote on many national issues directly through referendums.
+- **Ancient Athens**: Citizens voted directly on laws and decisions.
+
+**How it works:**
+- Citizens vote on specific issues or laws.
+- Decisions are made by majority rule.
+- Citizens may also vote to remove officials from office.
+
+---
+
+### 2. **Representative Democracy**
+In a **representative democracy**, citizens elect representatives to make decisions on their behalf. These representatives are typically chosen through elections and are responsible for making laws and governing the country.
+
+**Examples:**
+- **United States**
+- **United Kingdom**
+- **India**
+
+**How it works:**
+- Citizens vote for representatives (e.g., members of Congress, members of Parliament, or local council members).
+- Representatives are elected for a set period of time.
+- Representatives debate and pass laws that affect the country.
+- Citizens can vote for or against policies in elections or referendums.
+
+---
+
+### Key Features of Democracy:
+
+1. **Free and Fair Elections**
+   - People vote for their leaders or representatives.
+   - Elections are held regularly and are conducted fairly.
+
+2. **Rule of Law**
+   - Everyone, including government officials, must follow the law.
+   - No one is above the law.
+
+3. **Freedom of Speech and Expression**
+   - Citizens can speak freely, criticize the government, and express their views.
+   - Media and press are usually free
+---JUDGE_RAW---
+{"score":9,"reason":"Clear, accurate overview of democracy with correct definitions, types, examples, and key features; minor improvements could include mentioning separation of powers, protection of minority rights, and checks-and-balances for completeness."}
+================================================================================
+
+[64] qid=democracy_definition cat=explanations sample_idx=4 score=7.0 verdict=nan
+QUESTION: What is democracy and how does it work?
+---RESPONSE---
+Democracy is a system of government in which power is vested in the people, who rule either directly or through freely elected representatives. It is based on the principle that all citizens have equal rights and should have a say in how they are governed.
+
+### What is Democracy?
+
+Democracy comes from the Greek words *demos* (people) and *kratos* (power). In a democracy, the people decide on matters of public importance through voting and other forms of participation. There are different types of democracies, but they all share some core principles:
+
+1. **Popular Sovereignty**: The people are the ultimate source of political power.
+2. **Free and Fair Elections**: Citizens vote for leaders and representatives in regular, competitive elections.
+3. **Rule of Law**: Laws apply equally to all citizens, including those in power.
+4. **Civil Liberties**: Citizens have the right to express their opinions, assemble peacefully, and practice their religion freely.
+5. **Political Pluralism**: Multiple political parties and groups can compete for power.
+
+### How Does Democracy Work?
+
+Democracy works through a system of representation and participation. Here are the main ways it functions:
+
+#### 1. **Elections**
+- In a **representative democracy**, citizens vote for elected officials (such as members of parliament or a president) who make decisions on their behalf.
+- In a **direct democracy**, citizens vote directly on laws and policies (common in small communities or on specific issues).
+
+#### 2. **Checks and Balances**
+- Power is divided among different branches of government (executive, legislative, judicial) to prevent any one group from gaining too much power.
+- Each branch has the ability to check the powers of the others.
+
+#### 3. **Civil Society**
+- Civil society includes independent media, non-governmental organizations (NGOs), and community groups that help hold the government accountable and represent the interests of citizens.
+
+#### 4. **Rule of Law**
+- Laws apply
+---JUDGE_RAW---
+{"score":7, "reason":"Clear, accurate overview of democracy with core principles and mechanisms, but the response is cut off mid-sentence and thus incomplete (missing final points and examples), so it falls short of being fully comprehensive."}
+================================================================================
+
+[65] qid=inflation_explain cat=explanations sample_idx=0 score=8.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+Inflation is the rate at which the general level of prices for goods and services rises over time, leading to a decrease in the purchasing power of money. In other words, as inflation increases, each unit of currency buys fewer goods and services.
+
+### Why Does Inflation Happen?
+
+Inflation can occur for several reasons, depending on the economic context. Here are the main causes:
+
+---
+
+### 1. **Demand-Pull Inflation**
+This happens when **demand for goods and services exceeds supply**. When consumers and businesses have more money to spend than there are goods and services available, businesses can raise prices because people are willing to pay more.
+
+- **Example:** During an economic boom, people earn more money, spend more, and businesses raise prices because they know customers will pay.
+
+---
+
+### 2. **Cost-Push Inflation**
+This occurs when the **cost of producing goods and services increases**, and businesses pass these costs on to consumers.
+
+- **Examples:**
+  - Rising oil prices increase transportation and production costs.
+  - Labor costs increase (e.g., minimum wage hikes or union demands).
+  - Supply chain disruptions raise the cost of inputs.
+
+---
+
+### 3. **Built-In Inflation**
+This is the result of **inflation expectations**. If people expect prices to rise in the future, they may demand higher wages today, which can lead to higher prices in the future. This creates a self-fulfilling cycle.
+
+- **Example:** Workers may ask for higher wages to keep up with rising prices, and businesses raise prices to cover the higher wages, leading to even more inflation.
+
+---
+
+### 4. **Monetary Inflation**
+This happens when a **government or central bank increases the money supply too quickly**, leading to more money chasing the same amount of goods and services.
+
+- **Example:** If a central bank prints too much money, the value of each unit of currency decreases, leading to higher prices.
+
+---
+
+### 5.
+---JUDGE_RAW---
+{"score":8, "reason":"Clear, accurate definition and description of main causes (demand‑pull, cost‑push, built‑in, monetary), but the response cuts off abruptly at '5.' and is therefore incomplete."}
+================================================================================
+
+[66] qid=inflation_explain cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+Inflation is the rate at which the general level of prices for goods and services in an economy rises over time. When inflation increases, each unit of currency buys fewer goods and services, which means the purchasing power of money decreases.
+
+### What is inflation?
+
+Inflation is measured by calculating the percentage change in the price of a "basket" of goods and services over time. In many countries, this basket is used to calculate the **Consumer Price Index (CPI)**, which is the most common measure of inflation.
+
+For example, if a basket of groceries costs $100 in 2023 and $110 in 2024, the inflation rate between those years would be 10%.
+
+### Why does inflation happen?
+
+There are several main reasons why inflation occurs:
+
+---
+
+### 1. **Demand-Pull Inflation**
+This happens when demand for goods and services increases faster than the supply of those goods and services. If more people want to buy something than there is available, prices go up.
+
+**Example:** If a new smartphone becomes very popular, and the company can’t make enough of them to meet demand, the price will likely rise.
+
+---
+
+### 2. **Cost-Push Inflation**
+This occurs when the costs of producing goods and services increase, so businesses pass those higher costs on to consumers in the form of higher prices.
+
+**Examples:**
+- Rising wages (labor costs)
+- Higher prices for raw materials or energy (like oil)
+- Increased taxes or regulations
+
+---
+
+### 3. **Built-In Inflation**
+This happens when people and businesses expect prices to continue rising, so they raise prices or ask for higher wages to keep up. This creates a cycle that keeps inflation going.
+
+**Example:** If workers expect inflation to rise next year, they may demand higher wages now, which can lead to higher prices for goods and services.
+
+---
+
+### 4. **Monetary Inflation**
+This happens when a government
+---JUDGE_RAW---
+{"score": 7, "reason": "Clear, accurate definitions and correct explanation of demand-pull, cost-push, and built-in inflation, but the response is cut off mid-sentence (monetary inflation unfinished) and therefore incomplete; could also briefly mention money supply/monetary policy and other measures of inflation."}
+================================================================================
+
+[67] qid=inflation_explain cat=explanations sample_idx=2 score=6.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+**Inflation** is the rate at which the **price of goods and services rises over time**, reducing the **purchasing power** of money. In other words, when inflation is high, each dollar or euro or pound buys fewer goods and services than it did before.
+
+---
+
+### 📊 How is Inflation Measured?
+
+Inflation is typically measured using a **price index**, such as:
+
+- **Consumer Price Index (CPI)**: Tracks the average change in prices of goods and services that households buy.
+- **Producer Price Index (PPI)**: Tracks the average change in selling prices received by domestic producers for their output.
+- **GDP Deflator**: Measures the change in prices of all goods and services produced in an economy.
+
+The **inflation rate** is usually expressed as a **percentage change** over a year.
+
+---
+
+### 💰 Why Does Inflation Happen?
+
+There are several main reasons why inflation occurs:
+
+#### 1. **Demand-Pull Inflation**
+This happens when **demand for goods and services exceeds supply**.
+
+- Example: A sudden increase in consumer spending (e.g., after a strong economy) can drive up prices because businesses raise prices to take advantage of higher demand.
+
+#### 2. **Cost-Push Inflation**
+This occurs when the **cost of producing goods and services rises**, and businesses pass those costs on to consumers.
+
+- Example: A sharp increase in oil prices (a key input for many industries) can raise production costs, leading to higher prices for consumers.
+
+#### 3. **Built-In Inflation**
+This happens when **workers expect prices to rise**, so they demand higher wages to maintain their standard of living. This can lead to higher prices as businesses pass on the increased wage costs to consumers.
+
+- Example: If workers expect a 5% wage increase due to inflation, businesses may raise prices by 5% to maintain profit margins.
+
+#### 4. **Monetary Inflation**
+This
+---JUDGE_RAW---
+{"score": 6, "reason": "Clear, accurate explanation of inflation, measurement, and demand-/cost-/built-in causes, but the answer is cut off mid-sentence and fails to complete the discussion (missing the monetary inflation explanation)."}
+================================================================================
+
+[68] qid=inflation_explain cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+Inflation is the rate at which the general level of prices for goods and services in an economy rises over time. In other words, it measures how much the purchasing power of a currency decreases over time. When inflation is high, each unit of currency buys fewer goods and services than it did before.
+
+### What is inflation?
+
+Inflation is typically measured using a price index, such as the **Consumer Price Index (CPI)** or the **Producer Price Index (PPI)**. These indices track the average change in prices over time for a basket of commonly purchased goods and services.
+
+For example, if the CPI increases by 5% over a year, it means that, on average, the price of goods and services has gone up by 5%. This means that the same amount of money will buy you 5% fewer goods and services than it did the previous year.
+
+### Why does inflation happen?
+
+There are several main reasons why inflation occurs:
+
+---
+
+### 1. **Demand-Pull Inflation**
+This happens when the **demand for goods and services exceeds the supply**. When people have more money to spend (because of job growth, wage increases, or easy access to credit), they tend to buy more. If businesses cannot produce enough to meet this demand, they raise prices to balance supply and demand.
+
+**Example:** If the economy is booming and everyone is getting raises, people may want to buy more cars, houses, and electronics. If manufacturers cannot keep up with the demand, prices will rise.
+
+---
+
+### 2. **Cost-Push Inflation**
+This happens when the **cost of producing goods and services goes up**, and businesses pass those costs on to consumers. This can happen due to:
+- Rising wages (labor costs)
+- Increased prices of raw materials (like oil or metals)
+- Higher taxes or regulations
+- Supply chain disruptions
+
+**Example:** If the price of oil rises, it costs more to transport goods, which leads to higher prices
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate explanation of what inflation is and how CPI/PPI measure it, with good descriptions of demand-pull and cost-push causes. Minor omissions: it doesn’t explicitly mention monetary factors (money supply/central bank policy) or inflation expectations, and the cost-push example ends a bit abruptly."}
+================================================================================
+
+[69] qid=inflation_explain cat=explanations sample_idx=4 score=7.0 verdict=nan
+QUESTION: What is inflation and why does it happen?
+---RESPONSE---
+Inflation is the rate at which the general level of prices for goods and services rises over time, leading to a decrease in the purchasing power of money. In simpler terms, inflation means that your money buys less today than it did yesterday.
+
+---
+
+### **What is Inflation?**
+
+Inflation is measured by tracking the prices of a basket of commonly purchased goods and services over time. The most common measure of inflation is the **Consumer Price Index (CPI)**, which tracks changes in the prices of thousands of goods and services that consumers buy, such as food, housing, transportation, and healthcare.
+
+For example, if the CPI increases by 2% over a year, it means that the average price of the basket of goods and services has gone up by 2%, and therefore, your money is worth 2% less in terms of what it can buy.
+
+---
+
+### **Why Does Inflation Happen?**
+
+There are several reasons why inflation occurs:
+
+#### 1. **Demand-Pull Inflation**
+This happens when demand for goods and services exceeds supply. If people have more money to spend (due to higher wages or lower taxes) and there are not enough goods and services to meet this demand, prices go up.
+
+**Example:** A popular new smartphone becomes widely desired, but there are not enough units to meet the demand, so the price increases.
+
+#### 2. **Cost-Push Inflation**
+This happens when the costs of producing goods and services increase. These increased costs are passed on to consumers in the form of higher prices.
+
+**Examples:**
+- A rise in the price of oil increases the cost of transportation and manufacturing.
+- A shortage of raw materials or labor increases production costs.
+
+#### 3. **Built-In Inflation**
+This is the expectation of future inflation that influences current behavior. If workers expect prices to rise, they may demand higher wages to keep up, and businesses may raise prices in anticipation of higher costs. This creates a cycle of
+---JUDGE_RAW---
+{"score": 7, "reason": "Clear, accurate explanation of inflation, CPI, and the main causes (demand-pull, cost-push, built-in) with helpful examples, but the response ends mid-sentence (unfinished explanation of built-in inflation) so it feels incomplete."}
+================================================================================
+
+[70] qid=dna_function cat=explanations sample_idx=0 score=8.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+DNA stands for **deoxyribonucleic acid**, and it is the **molecule that carries the genetic instructions** for the development, functioning, growth, and reproduction of all known living organisms and many viruses.
+
+### What is DNA made of?
+
+DNA is made up of **nucleotides**, which are the building blocks of the molecule. Each nucleotide has three parts:
+
+1. **A sugar molecule** (deoxyribose)
+2. **A phosphate group**
+3. **A nitrogenous base** (one of four types: adenine, thymine, cytosine, or guanine)
+
+The sugar and phosphate form the **backbone** of the DNA molecule, and the nitrogenous bases **pair together** in the middle to form the **double helix** shape.
+
+### What does DNA do?
+
+DNA has two main functions:
+
+#### 1. **Storing genetic information**
+DNA contains the **instructions** for making all the proteins in an organism. These instructions are written in a language of **three-letter sequences** called **codons**, and they tell the cell how to build proteins.
+
+#### 2. **Replicating genetic information**
+Before a cell divides, it must copy its DNA so that each new cell gets a complete set of genetic instructions. This process is called **DNA replication**.
+
+### How does DNA work?
+
+Here’s a simple breakdown of how DNA works in a living organism:
+
+1. **DNA is in the nucleus** of a cell (in eukaryotes).
+2. **DNA is transcribed** into a molecule called **mRNA** (messenger RNA).
+3. **mRNA is translated** into a protein by ribosomes in the cell.
+4. **Proteins** do most of the work in cells and help the organism grow, develop, and function.
+
+### Why is DNA important?
+
+- It determines your **traits**, like eye color, height, and blood type.
+- It
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear, and well-structured explanation of what DNA is and does, but the response ends abruptly (incomplete final sentence) and could briefly note exceptions (e.g., RNA viruses) or mention that codons specify amino acids."}
+================================================================================
+
+[71] qid=dna_function cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+**DNA** stands for **deoxyribonucleic acid**. It is a complex molecule found in the cells of all living organisms, including humans, animals, plants, fungi, and even bacteria. DNA contains the **genetic instructions** that determine the characteristics and functions of living things.
+
+---
+
+### What Does DNA Do?
+
+DNA has several key roles in living organisms:
+
+#### 1. **Stores Genetic Information**
+DNA contains the **instructions** for making all the proteins that the body needs to function. These instructions are encoded in a specific sequence of four chemical bases: **adenine (A)**, **thymine (T)**, **cytosine (C)**, and **guanine (G)**.
+
+#### 2. **Controls Protein Synthesis**
+DNA is used as a **blueprint** to make proteins. This happens in two steps:
+
+- **Transcription:** DNA is copied into a molecule called **mRNA** (messenger RNA).
+- **Translation:** The mRNA is used to build **proteins** from amino acids, which are the building blocks of cells and tissues.
+
+#### 3. **Determines Traits**
+The sequence of DNA bases determines an organism’s **traits**, such as eye color, height, blood type, and even susceptibility to certain diseases.
+
+#### 4. **Replicates During Cell Division**
+When a cell divides, it makes a **copy of its DNA** so that each new cell gets a complete set of genetic instructions.
+
+---
+
+### What Is DNA Made Of?
+
+DNA is made up of two long strands that form a **double helix** shape, like a twisted ladder. The "rungs" of the ladder are made of **base pairs**:
+
+- **Adenine pairs with Thymine**
+- **Cytosine pairs with Guanine**
+
+Each rung is held together by **hydrogen bonds**, and the sugar and phosphate molecules form the **sides** of the ladder.
+
+
+---JUDGE_RAW---
+{"score": 9, "reason": "Accurate, clear, and well-structured explanation of DNA, its composition, and functions; minor details (e.g., chromosome packaging, semi-conservative replication, or mention of uracil in RNA) could be added but are not required for a correct answer."}
+================================================================================
+
+[72] qid=dna_function cat=explanations sample_idx=2 score=8.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+DNA stands for **deoxyribonucleic acid**. It is a complex molecule that contains the **genetic instructions** used in the development, functioning, growth, and reproduction of all known living organisms and many viruses.
+
+### What Does DNA Do?
+
+DNA is often called the **"blueprint of life"** because it contains the **instructions** for making all the proteins that cells and organisms need to function. These instructions are written in a **code** made up of four chemical bases: **adenine (A)**, **thymine (T)**, **cytosine (C)**, and **guanine (G)**.
+
+### Key Functions of DNA:
+
+1. **Stores Genetic Information**  
+   DNA contains the genetic code that determines an organism's traits, such as eye color, height, and susceptibility to certain diseases.
+
+2. **Controls Protein Synthesis**  
+   DNA gives instructions to cells to make **proteins**, which are essential for the structure, function, and regulation of the body's tissues and organs.
+
+3. **Replicates to Pass Genetic Information to New Cells**  
+   When cells divide, DNA is copied so that each new cell gets a complete set of genetic instructions.
+
+4. **Undergoes Mutations**  
+   Changes in DNA (mutations) can lead to variations in traits, which can be beneficial, harmful, or neutral. These variations are the basis of **evolution**.
+
+### Structure of DNA
+
+DNA has a **double-helix** structure, like a twisted ladder. The "rungs" of the ladder are made of **base pairs** (A with T, and C with G), and the "sides" are made of **sugar** and **phosphate** molecules.
+
+### Where Is DNA Found?
+
+- In **eukaryotic** cells (like those in humans), DNA is found in the **nucleus**.
+- In **prokaryotic** cells
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear, and well-structured overview of DNA and its functions, but the answer is cut off mid-sentence (the section on prokaryotic cells is incomplete), so it fails to fully finish one part."}
+================================================================================
+
+[73] qid=dna_function cat=explanations sample_idx=3 score=7.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+**DNA**, or **deoxyribonucleic acid**, is the **molecule of heredity** that contains the **genetic instructions** used in the **development and function** of all known living organisms.
+
+---
+
+### 🔬 **What is DNA made of?**
+
+DNA is a **long chain of nucleotides**. Each nucleotide has three parts:
+
+1. **Sugar** – deoxyribose
+2. **Phosphate group**
+3. **Nitrogenous base** – one of four types:
+   - **Adenine (A)**
+   - **Thymine (T)**
+   - **Cytosine (C)**
+   - **Guanine (G)**
+
+---
+
+### 🧬 **What does DNA look like?**
+
+DNA is typically found in the **double helix** structure, which looks like a **twisted ladder**:
+
+- The **sides** of the ladder are made of **sugar-phosphate backbones**.
+- The **rungs** of the ladder are made of **nitrogenous bases** that pair up in specific ways:
+  - **Adenine (A)** always pairs with **Thymine (T)**
+  - **Cytosine (C)** always pairs with **Guanine (G)**
+
+---
+
+### 🧠 **What does DNA do?**
+
+DNA has two main functions:
+
+#### 1. **Storing genetic information**
+DNA contains the **instructions** for making all the **proteins** a cell needs to function. These instructions are organized into **genes**.
+
+#### 2. **Passing genetic information from one generation to the next**
+During **cell division**, DNA is copied and passed on to new cells. This is how **traits** are inherited from parents to children.
+
+---
+
+### 🧬 **How does DNA work?**
+
+DNA is used to make **proteins** through two main processes
+---JUDGE_RAW---
+{"score": 7, "reason": "Accurate, clear explanation of DNA composition, structure, and main functions, but the answer is incomplete—it cuts off before describing the two processes (transcription and translation) and lacks brief mention of replication mechanics."}
+================================================================================
+
+[74] qid=dna_function cat=explanations sample_idx=4 score=9.0 verdict=nan
+QUESTION: What is DNA and what does it do in living organisms?
+---RESPONSE---
+DNA stands for **deoxyribonucleic acid**, and it is the **molecule that contains the genetic instructions** for the development, functioning, growth, and reproduction of all known living organisms and many viruses.
+
+### What Does DNA Do?
+
+DNA carries the **genetic code**, which is the set of instructions that tells cells how to make proteins. Proteins are essential for the structure, function, and regulation of the body's tissues and organs.
+
+Here are the main roles of DNA:
+
+1. **Stores Genetic Information**:  
+   DNA contains the genetic blueprint for an organism. This information is passed from parents to offspring during reproduction.
+
+2. **Controls Protein Synthesis**:  
+   DNA provides the instructions for making proteins. This happens in two main steps:
+   - **Transcription**: DNA is copied into a molecule called **mRNA** (messenger RNA).
+   - **Translation**: mRNA is used to assemble **amino acids** into proteins.
+
+3. **Determines Traits**:  
+   The sequence of DNA determines physical traits (like eye color or height) and biological functions (like metabolism or immunity).
+
+4. **Allows for Inheritance**:  
+   DNA is copied and passed on to offspring, ensuring that traits are inherited from one generation to the next.
+
+5. **Regulates Gene Expression**:  
+   DNA contains **genes**—segments of DNA that code for specific proteins. The expression of these genes can be turned on or off depending on the cell's needs.
+
+### Structure of DNA
+
+DNA has a **double-helix structure**, like a twisted ladder. The sides of the ladder are made of sugar and phosphate molecules, and the rungs are made of **nitrogenous bases** that pair up in specific ways:
+- **Adenine (A)** pairs with **Thymine (T)**
+- **Cytosine (C)** pairs with **Guanine (G)**
+
+These base pairs are held together by **hydrogen bonds
+---JUDGE_RAW---
+{"score":9, "reason":"Accurate, well-structured explanation of DNA, its functions, and double-helix base pairing; minor deduction because the answer is slightly truncated at the end and could explicitly mention DNA replication and non-coding/regulatory regions."}
+================================================================================
+
+[75] qid=internet_works cat=explanations sample_idx=0 score=7.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+The **internet** is like a giant, invisible library that connects computers all over the world. Here's how it works in simple terms:
+
+---
+
+### 🌐 1. **Everything is connected**
+The internet is made up of millions of computers, phones, tablets, and other devices. These devices are connected to each other through **networks** (like your home Wi-Fi or a phone carrier’s network).
+
+---
+
+### 📡 2. **Data travels in small pieces**
+When you send a message, watch a video, or look up something on the internet, your device **splits** the information into **tiny pieces** (like puzzle pieces). These pieces are called **packets**.
+
+---
+
+### 🧭 3. **Packets find the best way to travel**
+Each packet has a **label** that tells it where it's going (like an address on a letter). The packets travel from one computer to another, like cars on a highway, until they reach their final destination.
+
+---
+
+### 🧩 4. **Packets are put back together**
+When all the pieces (packets) arrive at the other end, they are **reassembled** into the original message or video.
+
+---
+
+### 🧑‍💻 5. **Websites live on special computers**
+Websites (like YouTube, Facebook, or Google) are stored on **servers** — these are special computers that are always connected to the internet. When you ask to see a website, your computer asks the server to send the website to you.
+
+---
+
+### 📶 6. **You can access the internet from anywhere**
+You can connect to the internet using:
+- **Wi-Fi** (at home, school, or a café)
+- **Cellular data** (on your phone)
+- **Ethernet cables** (for faster, wired internet)
+
+---
+
+### 🌐 7. **The internet is a shared space**
+No one person
+---JUDGE_RAW---
+{"score": 7, "reason": "Clear, simple, and mostly accurate explanation of devices, packets, reassembly, and servers, but the answer ends abruptly with an incomplete sentence and omits brief mentions of routing/DNS that would improve completeness."}
+================================================================================
+
+[76] qid=internet_works cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+The Internet is like a giant, invisible library where everyone can share and find information. Here’s how it works in simple terms:
+
+---
+
+### **1. You type a website address**
+When you type a website address (like `www.example.com`) into a web browser, you’re asking the Internet to find that website.
+
+---
+
+### **2. The Internet finds the website**
+The Internet uses a special system to find websites. This system is like a phone book for the Internet. It helps your computer find the right place to get the website you want.
+
+---
+
+### **3. Your computer sends a request**
+Your computer sends a message to the website’s computer, asking it to send you the website’s information (like pictures, text, and videos).
+
+---
+
+### **4. The website sends the information**
+The website’s computer sends back the information you asked for. This information travels through many invisible roads called **cables**, **towers**, and **satellites**.
+
+---
+
+### **5. Your computer shows the website**
+Your computer gets all the information and shows it on your screen, just like a book that you’ve opened.
+
+---
+
+### **That’s it!**
+The Internet is just a way for computers to talk to each other and share information. It’s fast, powerful, and everywhere!
+
+Want to know how it works even more simply? I can explain it using a **post office** or a **messenger** too!
+---JUDGE_RAW---
+{"score":9, "reason":"Clear, simple, and accurate high-level explanation using good analogies (DNS as phone book, request/response, transmission paths). It could mention routers/packets and protocols (TCP/IP, HTTP) for completeness, but those details aren’t necessary for a simple explanation."}
+================================================================================
+
+[77] qid=internet_works cat=explanations sample_idx=2 score=7.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+The **Internet** is like a giant, invisible network of computers all around the world that can talk to each other. Here's how it works in simple terms:
+
+---
+
+### 1. **Everything is connected**
+Every computer, phone, tablet, or device that can connect to the Internet is part of a huge network. These devices can "talk" to each other using special rules called **protocols**.
+
+---
+
+### 2. **How do devices find each other?**
+Each device has a **special number** called an **IP address**. Think of it like a phone number for computers. When you want to send a message or visit a website, your device uses this number to find the right computer.
+
+---
+
+### 3. **Websites are stored on servers**
+When you visit a website, like **Google.com**, you're actually asking a **server** (a powerful computer) to send you the website's information. The server sends you back all the text, pictures, and videos on that website.
+
+---
+
+### 4. **Data travels in tiny pieces**
+When you ask for a website, your device breaks the request into **tiny pieces** (called **packets**). These packets travel through the Internet, like cars on a highway, and get put back together when they reach the server.
+
+---
+
+### 5. **Routers help the packets get there**
+**Routers** are like traffic lights or street signs. They help packets find the best way to get from your device to the server, and then back again.
+
+---
+
+### 6. **You get the website**
+Once all the packets have arrived, your device puts them back together and shows you the website.
+
+---
+
+### In Summary:
+- You ask for a website.
+- Your device sends a message to the server.
+- The server sends you the website.
+- You see the website.
+
+---
+
+### Fun Analogy:
+Think of the Internet like a **giant library** with books all over
+---JUDGE_RAW---
+{"score":7, "reason":"Clear, simple, and mostly correct for a non-technical audience, but it leaves the final analogy incomplete and glosses over some details (e.g., DNS and exactly where response packets are reassembled), so it isn’t fully precise."}
+================================================================================
+
+[78] qid=internet_works cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+Sure! Here's a simple explanation of how the **Internet** works:
+
+---
+
+### 🌐 What is the Internet?
+
+The **Internet** is like a **giant network of computers** all over the world that can **talk to each other** and **share information**.
+
+---
+
+### 📡 How Does It Work?
+
+1. **You send a request**  
+   When you type a website address (like `www.google.com`) into your browser and hit **Enter**, your computer sends a message to the **Internet** asking for help finding that website.
+
+2. **The Internet finds the website**  
+   The Internet doesn’t know where Google is, but it knows how to **find it** using a special kind of map called the **Domain Name System (DNS)**. It finds the **address** of the computer that has the website you want.
+
+3. **The website sends you information**  
+   The computer that has the website you want (called a **server**) sends the website back to your computer.
+
+4. **Your computer shows you the website**  
+   Your computer gets the website and shows it to you on your screen.
+
+---
+
+### 🧱 How Do Computers Talk to Each Other?
+
+Computers use a special language called **TCP/IP** to send and receive messages. It’s like a recipe that tells computers exactly how to talk to each other.
+
+---
+
+### 🏗️ Who Keeps the Internet Running?
+
+No one person or company owns the Internet. It’s like a **giant highway system** that everyone uses. Different companies and people help keep it running by connecting computers together.
+
+---
+
+### 📱 What About Mobile Phones?
+
+You can also use the **Internet** on your **phone**. Instead of connecting with a wire, your phone connects using **Wi-Fi** or **cellular data**, which is like a special kind of radio signal.
+
+---
+
+### 📌 Summary
+
+The Internet works like this:
+
+1. You
+---JUDGE_RAW---
+{"score":8, "reason":"Clear, accurate, and well-structured simple explanation covering DNS, servers, TCP/IP and mobile access; however it ends abruptly with an incomplete summary (unfinished final sentence), so it’s slightly incomplete."}
+================================================================================
+
+[79] qid=internet_works cat=explanations sample_idx=4 score=9.0 verdict=nan
+QUESTION: How does the internet work, in simple terms?
+---RESPONSE---
+Sure! Here's a simple explanation of how the **internet works**:
+
+---
+
+### 🌐 **What is the Internet?**
+
+The **internet** is a **global network** of computers and devices that are all connected to each other. It allows people to share information, send messages, watch videos, and much more.
+
+---
+
+### 🧩 **How Does It Work?**
+
+Here’s a simple way to think about it:
+
+#### 1. **You Ask for Something**
+You type a question or a website address (like `www.example.com`) into a web browser.
+
+#### 2. **Your Computer Sends a Request**
+Your computer sends a message to the internet asking, “Can you find this website for me?”
+
+#### 3. **The Internet Finds the Website**
+The internet looks up where the website is located (it’s stored on a computer called a **server**) and sends your request there.
+
+#### 4. **The Website Sends Back the Information**
+The website’s computer sends the information (like a webpage) back to your computer.
+
+#### 5. **Your Computer Shows It to You**
+Your computer displays the information on your screen so you can see it.
+
+---
+
+### 🌐 **How Do Computers Know Where to Send Messages?**
+
+- Every computer and website on the internet has a **special address**, like a phone number. This is called an **IP address**.
+- The internet uses a system called **DNS** (Domain Name System) to turn website names like `www.google.com` into these IP addresses.
+
+---
+
+### 📶 **How Do You Connect to the Internet?**
+
+You need a **device** (like a phone, tablet, or computer) and a **connection** to the internet. This can be:
+
+- **Wi-Fi** (from a router in your home or a coffee shop)
+- **Mobile data** (from your phone)
+- **Ethernet cable** (plugged into a computer)
+
+---
+
+###
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate and well-structured simple explanation covering requests, servers, DNS, IP addresses and connection types; could be slightly improved by briefly mentioning packets, routers/ISPs and basic protocols (TCP/IP, HTTP)."}
+================================================================================
+
+[80] qid=vaccine_mechanism cat=explanations sample_idx=0 score=8.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+Vaccines help protect against disease by training the **immune system** to recognize and fight specific pathogens, such as viruses or bacteria, **before** they can cause illness. Here's how they work:
+
+---
+
+### 1. **Introduce a harmless version of the pathogen**
+Vaccines contain a **weakened, inactive, or partial form** of a pathogen (such as a virus or bacteria) or parts of it (like proteins or sugars). These are **not strong enough to cause disease**, but they are **strong enough to trigger an immune response**.
+
+---
+
+### 2. **Stimulate the immune system**
+When a vaccine enters the body, the **immune system recognizes the pathogen** and begins to **produce antibodies** and **specialized cells** (like T-cells) to fight it.
+
+- **Antibodies** are proteins that **bind to pathogens** and **neutralize them** or **mark them for destruction** by other immune cells.
+- **Memory cells** are created that **remember** the pathogen for the future.
+
+---
+
+### 3. **Provide long-term protection**
+If the person is later exposed to the actual pathogen, their **immune system is already prepared** to fight it off **quickly and effectively**. This can **prevent illness entirely** or **reduce the severity** of the disease.
+
+---
+
+### Examples of how vaccines protect:
+
+| Disease | How the Vaccine Works |
+|---------|------------------------|
+| **Influenza (flu)** | Trains the immune system to fight the virus before it causes illness |
+| **Polio** | Prevents the virus from causing paralysis |
+| **Measles** | Stops the virus from spreading and causing serious complications |
+| **Pneumococcal disease** | Prevents bacterial infections like pneumonia |
+| **HPV (human papillomavirus)** | Helps prevent cervical cancer and other cancers |
+
+---
+
+### 4. **
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear, and well-structured explanation of how vaccines work with useful examples, but the answer is cut off mid-section (unfinished point) which reduces completeness."}
+================================================================================
+
+[81] qid=vaccine_mechanism cat=explanations sample_idx=1 score=8.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+Vaccines help protect against disease by **preparing the body's immune system to recognize and fight specific pathogens** (such as viruses or bacteria) **before they cause illness**. Here's how they work:
+
+---
+
+### **1. Introduction of a Safe Version of the Pathogen**
+Vaccines contain **either a weakened (attenuated) form** of a pathogen, **a piece of the pathogen** (like a protein or sugar), or **a harmless piece of genetic material** (such as DNA or mRNA) that contains instructions for making a part of the pathogen.
+
+This version of the pathogen is **not capable of causing serious illness** in most people.
+
+---
+
+### **2. Training the Immune System**
+When a vaccine is administered, the immune system **recognizes the pathogen or part of it** as a **foreign invader**. It then:
+
+- **Produces antibodies**, which are special proteins that **target and neutralize the pathogen**.
+- **Creates memory cells**, which **remember** how to fight the pathogen **in the future**.
+
+---
+
+### **3. Protection Against Future Infections**
+If the person later comes into contact with the **real pathogen**, their immune system **already knows how to fight it**. This means:
+
+- The person is **less likely to get sick**.
+- If they do get sick, the illness is often **milder** and **shorter**.
+- The person is **less likely to spread the disease** to others.
+
+---
+
+### **Examples of How Vaccines Work**
+
+| Disease | How Vaccine Works |
+|--------|-------------------|
+| **Polio** | Contains inactivated virus to teach the immune system to fight it. |
+| **Measles** | Contains weakened virus to train the immune system. |
+| **Pneumonia** | Contains pieces of bacteria to trigger an immune response. |
+| **Covid-19** |
+---JUDGE_RAW---
+{"score": 8, "reason": "Clear, accurate explanation of how vaccines prime the immune system (antibodies, memory cells) and reduce illness/transmission; however the answer ends abruptly with an incomplete examples table (COVID-19 row missing) and omits brief mention of cellular (T-cell) immunity."}
+================================================================================
+
+[82] qid=vaccine_mechanism cat=explanations sample_idx=2 score=10.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+Vaccines help protect against disease by training the body’s immune system to recognize and fight specific pathogens (such as viruses or bacteria) before they can cause serious illness. Here’s how they work:
+
+### 1. **Introduce a harmless version of the pathogen**
+Vaccines contain a small, harmless part of a virus or bacteria, or a weakened or inactivated version of the pathogen. This does not cause the disease but still triggers the immune system to respond.
+
+### 2. **The immune system creates memory cells**
+When the immune system encounters the pathogen in the vaccine, it produces **antibodies** and **memory cells**. These memory cells remember how to fight the pathogen if it enters the body in the future.
+
+### 3. **Faster and stronger response if exposed**
+If the person later comes into contact with the actual pathogen, the immune system recognizes it immediately and launches a much faster and stronger response. This often prevents the person from getting sick or reduces the severity of the illness.
+
+### 4. **Herd immunity**
+When a large portion of a population is vaccinated, it becomes harder for the pathogen to spread. This protects people who cannot be vaccinated, such as newborns or people with weakened immune systems.
+
+### Examples of how vaccines work:
+- **Influenza vaccine:** Trains the immune system to fight the flu virus.
+- **Measles, Mumps, Rubella (MMR) vaccine:** Protects against three serious viral diseases.
+- **Polio vaccine:** Prevents polio, a disease that can cause paralysis.
+- **Covid-19 vaccines:** Teach the immune system to recognize and fight the SARS-CoV-2 virus.
+
+### Summary
+Vaccines are one of the most effective ways to prevent infectious diseases. They help the body prepare for future infections, reduce the spread of disease, and protect public health.
+---JUDGE_RAW---
+{"score": 10, "reason": "Accurate, clear, and well-structured explanation covering how vaccines stimulate immune memory, produce faster responses on exposure, and contribute to herd immunity; examples and summary are appropriate and relevant."}
+================================================================================
+
+[83] qid=vaccine_mechanism cat=explanations sample_idx=3 score=8.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+Vaccines help protect against disease by **training the immune system** to recognize and fight specific pathogens, such as viruses or bacteria, **before** they can cause illness.
+
+Here's how they work:
+
+---
+
+### 1. **Introduce a harmless version of a pathogen**
+A vaccine contains a **weakened**, **inactivated**, or **component** of a pathogen (like a virus or bacteria). This is called an **antigen**.
+
+- **Live attenuated vaccines** use a weakened version of the pathogen.
+- **Inactivated vaccines** use a killed version.
+- **Subunit or recombinant vaccines** use only parts of the pathogen (like proteins or sugars).
+
+These components **cannot cause disease**, but they are **enough to trigger an immune response**.
+
+---
+
+### 2. **The immune system learns to recognize the pathogen**
+When a vaccine is given, the immune system recognizes the antigen as a **foreign invader** and produces **antibodies** to fight it.
+
+- These antibodies are **specific** to the pathogen in the vaccine.
+- The immune system also produces **memory cells** that "remember" the pathogen.
+
+---
+
+### 3. **Protection if the real pathogen is encountered later**
+If the person later comes into contact with the **real** pathogen, their immune system is **already prepared**:
+
+- **Memory cells** quickly recognize the pathogen.
+- **Antibodies** attack and destroy the pathogen **before** it can cause serious illness.
+
+---
+
+### Example: The Flu Vaccine
+- The flu vaccine contains parts of the influenza virus.
+- If a person gets the flu later, their immune system recognizes the virus and fights it off **before** symptoms appear or before the illness becomes severe.
+
+---
+
+### Benefits of Vaccines
+- **Prevent serious illness**, hospitalization, and death.
+- **Protect people who cannot be vaccinated** (like newborns or those
+---JUDGE_RAW---
+{"score":8, "reason":"Accurate, clear explanation of how vaccines work with good examples, but the reply is cut off mid-sentence (fails to complete the benefits section), which reduces quality."}
+================================================================================
+
+[84] qid=vaccine_mechanism cat=explanations sample_idx=4 score=8.0 verdict=nan
+QUESTION: How do vaccines help protect against disease?
+---RESPONSE---
+Vaccines help protect against disease by **training the immune system** to recognize and fight specific pathogens (such as viruses or bacteria) **before** a person is exposed to them. Here's how they work:
+
+### 1. **Introduce a Safe Form of the Pathogen**
+Vaccines contain a **safe version** of the disease-causing pathogen or parts of it (like proteins or sugars). This version is either:
+- **Weakened (attenuated)** – still alive but less likely to cause serious illness.
+- **Inactive (killed)** – not alive and cannot cause disease.
+- **Parts of the pathogen** – like proteins or sugars that the immune system can recognize.
+
+### 2. **Train the Immune System**
+When a vaccine is administered, the immune system recognizes the pathogen or its parts as **foreign**. It then:
+- **Creates antibodies** – proteins that specifically target and neutralize the pathogen.
+- **Creates memory cells** – long-lasting cells that remember how to fight the pathogen in the future.
+
+### 3. **Provide Protection if Exposed**
+If the person is later exposed to the actual pathogen, their immune system:
+- **Recognizes it quickly** – thanks to memory cells.
+- **Fights it off more effectively** – often without the person even getting sick or with much milder symptoms.
+
+### 4. **Help Prevent the Spread of Disease**
+When many people are vaccinated, it becomes harder for diseases to spread in a community. This is called **herd immunity**. It protects people who cannot be vaccinated, such as newborns or people with certain medical conditions.
+
+---
+
+### Examples of How Vaccines Work
+
+| Disease | How the Vaccine Works |
+|---------|-----------------------|
+| **Polio** | A weakened version of the virus trains the immune system to fight the real virus. |
+| **Measles** | A weakened virus helps the immune system
+---JUDGE_RAW---
+{"score": 8, "reason": "Accurate, clear, and well-structured explanation of how vaccines work, but the response ends abruptly with an incomplete table entry (unfinished sentence), which indicates a failure to complete the thought and slightly reduces quality."}
+================================================================================
+
+[85] qid=climate_vs_weather cat=explanations sample_idx=0 score=9.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+The difference between **climate** and **weather** lies in the **time frame** over which they are observed and measured:
+
+---
+
+### 🌤️ **Weather**  
+**Definition:**  
+Weather refers to the **short-term** atmospheric conditions in a specific place at a specific time.  
+
+**Examples of weather:**  
+- It is raining today.  
+- The temperature today is 25°C.  
+- There is a thunderstorm in the afternoon.  
+
+**Time frame:**  
+- Minutes, hours, or days.  
+- Weather can change rapidly from one moment to the next.
+
+---
+
+### 🌍 **Climate**  
+**Definition:**  
+Climate refers to the **long-term** average of weather conditions in a particular area over a long period of time.  
+
+**Examples of climate:**  
+- The climate in London is mild and rainy.  
+- The climate in the Sahara Desert is hot and dry.  
+- The climate in Alaska is cold and snowy for most of the year.  
+
+**Time frame:**  
+- Years, decades, or even centuries.  
+- Climate describes what the weather is usually like in a region.
+
+---
+
+### 🧠 Quick Summary:  
+| Feature | Weather | Climate |
+|--------|---------|---------|
+| Time frame | Minutes, hours, or days | Years or decades |
+| Definition | Short-term atmospheric conditions | Long-term average weather conditions |
+| Example | It is snowing today. | The region has a tropical climate. |
+
+---
+
+### 📌 Fun Fact:  
+You can have a **very cold day** in a **warm climate**. For example, it might snow in Florida during a cold snap, even though Florida generally has a warm climate. This shows that **weather can vary**, but **climate stays the same** over long periods of time.
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and well-structured explanation distinguishing time scales and examples; minor improvement would be to note the formal 30-year climate-average standard and that climate itself can change over time (climate change)."}
+================================================================================
+
+[86] qid=climate_vs_weather cat=explanations sample_idx=1 score=9.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+The difference between **climate** and **weather** is that they refer to **different time scales** of atmospheric conditions:
+
+---
+
+### 🌤️ **Weather**  
+- **Definition:** The **short-term** atmospheric conditions in a specific place at a specific time.  
+- **Time Scale:** Minutes to days.  
+- **Examples:**  
+  - It is raining right now.  
+  - The temperature today is 25°C.  
+  - There is a thunderstorm in the afternoon.  
+
+---
+
+### 🌍 **Climate**  
+- **Definition:** The **long-term** average of weather conditions in a specific place over a long period of time.  
+- **Time Scale:** **30 years or more** (the standard used by the World Meteorological Organization).  
+- **Examples:**  
+  - It is hot and rainy in the summer and cold and dry in the winter.  
+  - The region has a tropical rainforest climate.  
+  - The average temperature in July is 28°C.  
+
+---
+
+### 🔍 Quick Comparison:
+
+| Feature        | Weather                         | Climate                         |
+|----------------|----------------------------------|----------------------------------|
+| **Time Scale** | Minutes to days                  | 30 years or more                 |
+| **Definition** | Short-term atmospheric conditions | Long-term average of weather conditions |
+| **Example**    | It is snowing now                | It is cold and snowy in winter   |
+| **Change**     | Changes rapidly                  | Changes slowly over decades      |
+
+---
+
+### 🧠 Fun Fact:  
+You can’t predict the **weather** for next week with 100% accuracy, but you can predict the **climate** for a region based on historical data.
+
+Let me know if you'd like examples for different regions! 🌎
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and well-structured explanation that correctly distinguishes time scales (including the WMO 30-year climate standard); only minor oversimplifications about weather predictability and the exact short-term span of 'weather' prevent a perfect 10."}
+================================================================================
+
+[87] qid=climate_vs_weather cat=explanations sample_idx=2 score=10.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+**Climate** and **weather** are related but different concepts:
+
+### **Weather**  
+- **Definition:** The **short-term** atmospheric conditions in a specific place at a specific time.  
+- **Examples:** Temperature, humidity, precipitation (rain or snow), wind speed, and cloud cover.  
+- **Timeframe:** Minutes to days.  
+- **Example:** "It is raining today in New York."
+
+### **Climate**  
+- **Definition:** The **long-term** average of weather conditions in a specific place over many years.  
+- **Examples:** Average temperature, average rainfall, and seasonal patterns.  
+- **Timeframe:** Decades or centuries.  
+- **Example:** "New York has a humid continental climate with cold, snowy winters and hot, humid summers."
+
+---
+
+### **Key Difference**  
+| Aspect | Weather | Climate |
+|--------|---------|---------|
+| **Timeframe** | Minutes to days | Decades or centuries |
+| **Focus** | Short-term conditions | Long-term patterns |
+| **Example** | "It is 25°C and sunny today." | "The region has a tropical climate with heavy rainfall in summer." |
+
+---
+
+### **Summary**  
+- **Weather** is what you wear, **climate** is what you expect.  
+- **Weather** can change quickly, **climate** changes slowly over time.
+---JUDGE_RAW---
+{"score": 10, "reason": "Clear, accurate, and well-structured explanation with good examples and a helpful summary; only minor possible addition would be noting the WMO 30-year standard for climate, but the answer is effectively complete."}
+================================================================================
+
+[88] qid=climate_vs_weather cat=explanations sample_idx=3 score=9.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+**Climate** and **weather** are related but different concepts. Here's a simple explanation of the difference:
+
+---
+
+### **Weather**
+- **Definition:** The **short-term** condition of the atmosphere at a specific place and time.
+- **Examples:** Rain, snow, sunshine, wind, humidity, temperature.
+- **Time frame:** Minutes, hours, or days.
+- **Variability:** Weather can change from minute to minute or day to day.
+- **Example:** It might be sunny today, but it could rain tomorrow.
+
+---
+
+### **Climate**
+- **Definition:** The **long-term** average of weather patterns in a specific region.
+- **Examples:** Average temperature, average rainfall, typical wind patterns, and seasonal changes.
+- **Time frame:** Years, decades, or centuries.
+- **Variability:** Climate changes slowly over time (often over decades or longer).
+- **Example:** A desert climate is hot and dry all year round, while a tropical climate has wet and dry seasons.
+
+---
+
+### **Summary**
+| Aspect | Weather | Climate |
+|--------|---------|---------|
+| Time frame | Minutes, hours, or days | Years, decades, or centuries |
+| Change | Fast | Slow |
+| Focus | Short-term conditions | Long-term patterns |
+
+---
+
+### **Real-World Example**
+- **Weather:** It's raining in New York City today.
+- **Climate:** New York City has a **humid subtropical climate**, with hot, humid summers and cold, snowy winters.
+
+---
+
+Let me know if you'd like to explore climate zones or how climate change affects weather! 🌍🌧️☀️
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and well-structured explanation distinguishing short-term weather from long-term climate; minor nitpick: could mention the standard 30-year baseline used for climate averages, but otherwise excellent."}
+================================================================================
+
+[89] qid=climate_vs_weather cat=explanations sample_idx=4 score=9.0 verdict=nan
+QUESTION: What's the difference between climate and weather?
+---RESPONSE---
+**Climate** and **weather** are related but different concepts. Here's how they differ:
+
+---
+
+### **Weather**
+- **Definition:** The **short-term** atmospheric conditions in a specific place at a specific time.
+- **Examples:** Temperature, humidity, precipitation (rain or snow), wind, and cloud cover.
+- **Timeframe:** Minutes to days.
+- **Example:** It is currently raining in New York City.
+
+---
+
+### **Climate**
+- **Definition:** The **long-term** average of weather patterns in a particular region.
+- **Examples:** Average temperature, rainfall, and wind patterns over many years.
+- **Timeframe:** Years to centuries.
+- **Example:** New York City has a humid subtropical climate with hot, humid summers and cold, snowy winters.
+
+---
+
+### **Key Difference**
+| Aspect | Weather | Climate |
+|--------|---------|---------|
+| Timeframe | Short-term (minutes to days) | Long-term (years to centuries) |
+| Predictability | Hard to predict more than a few days in advance | Can be predicted based on patterns |
+| Example | It is currently 25°C and sunny in London. | London has a temperate maritime climate with mild, wet winters. |
+
+---
+
+### **Analogy**
+Think of weather like a **single scene** in a movie, and climate like the **overall genre** of the movie. One scene might be action-packed, but the whole movie could be a comedy.
+
+---
+
+### **Why It Matters**
+Understanding the difference helps in planning activities (like when to go on vacation) and in studying long-term changes (like global warming).
+---JUDGE_RAW---
+{"score": 9, "reason": "Clear, accurate, and well-structured explanation with helpful examples and analogy; minor oversimplifications (e.g., typical climate baseline is a 30-year average and 'predictability' wording could be refined) prevent a perfect score."}
+================================================================================
+
+[90] qid=black_hole cat=explanations sample_idx=0 score=6.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+A **black hole** is a region in space where the gravitational pull is so strong that nothing—not even light—can escape from it. This extreme gravity is due to a massive amount of matter being compressed into a very small space, usually as a result of a dying star collapsing under its own weight.
+
+---
+
+### **How a Black Hole Forms**
+
+Most black holes form from the remnants of massive stars that have reached the end of their life cycle. Here’s a simplified explanation of the process:
+
+1. **Massive Star Formation**: A black hole begins as a very massive star (at least 20 times the mass of our Sun).
+2. **Nuclear Fusion**: The star burns through its nuclear fuel (hydrogen, helium, etc.) in its core, fusing lighter elements into heavier ones.
+3. **End of Fuel**: When the star runs out of fuel, it can no longer produce the outward pressure needed to counteract the force of gravity.
+4. **Core Collapse**: The core of the star collapses under its own gravity. If the core is massive enough, it collapses into a **singularity**—a point of infinite density.
+5. **Event Horizon Forms**: As the core collapses, it creates a boundary called the **event horizon**. This is the point of no return; anything that crosses it is pulled into the black hole and cannot escape.
+6. **Black Hole is Born**: The result is a **stellar-mass black hole**, typically between 5 and 30 times the mass of the Sun.
+
+---
+
+### **Types of Black Holes**
+
+There are three main types of black holes:
+
+1. **Stellar-Mass Black Holes**:
+   - Formed from collapsing stars.
+   - Range in mass from about 5 to 30 solar masses.
+   - Found throughout galaxies.
+
+2. **Intermediate-Mass Black Holes**:
+   - Less common.
+   - Have masses between 100 and 
+---JUDGE_RAW---
+{"score": 6, "reason": "Mostly correct and clear overview of black holes and stellar formation, but it oversimplifies/accepts a singularity as literal infinite density and gives some loose mass thresholds; additionally the response is cut off mid-list (intermediate-mass range incomplete)."}
+================================================================================
+
+[91] qid=black_hole cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+A **black hole** is a region in space where the gravitational pull is so strong that nothing—not even light—can escape from it. It forms when a massive star reaches the end of its life and collapses under its own gravity, compressing its mass into a very small space. This creates an extremely dense object with an intense gravitational field.
+
+### How a Black Hole Forms
+
+1. **Massive Star Formation**:
+   - Black holes begin as **massive stars**, typically with at least **20 times the mass of our Sun**.
+   - These stars burn through their fuel (hydrogen and helium) very quickly, fusing heavier elements in their cores.
+
+2. **End of the Star's Life**:
+   - When a massive star runs out of fuel, it can no longer produce the outward pressure needed to counteract the inward pull of gravity.
+   - The core of the star collapses under its own weight.
+
+3. **Supernova Explosion**:
+   - Before the core collapses completely, the outer layers of the star are expelled in a violent explosion called a **supernova**.
+   - This explosion is so bright that it can outshine entire galaxies for a short time.
+
+4. **Core Collapse**:
+   - If the remaining core is massive enough (typically more than about **3 times the mass of the Sun**), the gravitational pull becomes so strong that **not even light can escape**.
+   - This creates a **singularity**, a point of infinite density, surrounded by an invisible boundary called the **event horizon**.
+
+### What Happens Inside a Black Hole?
+
+- The **event horizon** is the point of no return. Once anything crosses this boundary, it cannot escape the black hole’s gravity.
+- At the center is the **singularity**, where the laws of physics as we know them break down.
+
+### Types of Black Holes
+
+- **Stellar-Mass Black Holes**: Formed from the collapse of
+---JUDGE_RAW---
+{"score": 7, "reason": "Mostly correct and clear explanation of what a black hole is and how it forms, but it oversimplifies/uses somewhat rigid mass thresholds (e.g., 'at least 20 solar masses') and the answer is cut off mid-sentence so the types section is incomplete."}
+================================================================================
+
+[92] qid=black_hole cat=explanations sample_idx=2 score=7.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+A **black hole** is a region in space where the gravitational pull is so strong that nothing—not even light—can escape from it. This extreme gravity is caused by a massive amount of matter being compressed into a very small space.
+
+### How a Black Hole Forms
+
+Black holes typically form when a **massive star** (at least 20 to 30 times the mass of our Sun) runs out of fuel and can no longer sustain nuclear fusion in its core. Here's the process:
+
+1. **Stellar Fusion**: For most of its life, a star fuses hydrogen into helium in its core, creating outward pressure that balances the inward pull of gravity.
+
+2. **Fuel Depletion**: When the star runs out of fuel, it can no longer produce the energy needed to counteract gravity.
+
+3. **Core Collapse**: The core of the star collapses under its own gravity, causing the outer layers to explode in a **supernova**.
+
+4. **Formation of a Black Hole**: If the remaining core is massive enough (more than about 3 times the mass of the Sun), gravity will compress it into a **singularity**, a point of infinite density. The boundary around this singularity is called the **event horizon**. Once anything crosses this boundary, it cannot escape the black hole's gravity.
+
+### What Happens Inside a Black Hole?
+
+Inside the event horizon, the gravitational pull is so strong that not even light can escape. The exact nature of what happens at the **singularity** (the center of the black hole) is still unknown and is an active area of research in physics.
+
+### Types of Black Holes
+
+- **Stellar-Mass Black Holes**: Formed from the collapse of massive stars, these range from about 5 to 100 times the mass of the Sun.
+- **Supermassive Black Holes**: Found at the centers of most large galaxies, including our own Milky Way. These can
+---JUDGE_RAW---
+{"score": 7, "reason": "Overall correct, clear, and well-structured explanation of black holes and formation, but it ends abruptly (incomplete sentence) and has minor ambiguities about mass thresholds that could be clarified."}
+================================================================================
+
+[93] qid=black_hole cat=explanations sample_idx=3 score=7.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+A **black hole** is a region in space where the gravitational pull is so strong that nothing—not even light—can escape from it. Black holes form from the remnants of massive stars that have collapsed under their own gravity at the end of their life cycles.
+
+### How a Black Hole Forms
+
+1. **Massive Star Formation**  
+   Black holes begin as **massive stars**, typically at least **20 times more massive than our Sun**. These stars burn through their nuclear fuel (hydrogen and helium) much faster than smaller stars.
+
+2. **End of a Star's Life**  
+   When a massive star runs out of nuclear fuel, it can no longer produce the outward pressure that balances the inward pull of gravity. This causes the star to **collapse**.
+
+3. **Supernova Explosion**  
+   For stars with **less than about 25–30 solar masses**, the collapse results in a **supernova explosion**, which blows off the outer layers of the star. The core that remains may become a **neutron star**.
+
+4. **Core Collapse**  
+   If the remaining core has a mass **greater than about 2.5 to 3 times the mass of the Sun**, gravity is so strong that **not even the pressure of neutrons can resist the collapse**. The core collapses **inward** to a single point of infinite density called a **singularity**.
+
+5. **Event Horizon**  
+   As the core collapses, it creates a boundary around the singularity called the **event horizon**. This is the point of no return: once anything crosses it, it cannot escape the black hole’s gravity.
+
+---
+
+### Types of Black Holes
+
+There are three main types of black holes:
+
+1. **Stellar-Mass Black Holes**  
+   - Formed from the collapse of massive stars.
+   - Mass: **5 to 30 times the mass of the Sun**.
+
+2
+---JUDGE_RAW---
+{"score": 7, "reason": "Mostly correct and clear explanation of what a black hole is and how massive-star collapse creates one, but the answer is slightly oversimplified (mass thresholds are approximate, the singularity description is simplistic) and the response cuts off mid-listing of black hole types."}
+================================================================================
+
+[94] qid=black_hole cat=explanations sample_idx=4 score=6.0 verdict=nan
+QUESTION: What is a black hole and how does it form?
+---RESPONSE---
+A **black hole** is a region in space where the gravitational pull is so strong that nothing—not even light—can escape from it. It forms when a massive star runs out of nuclear fuel and collapses under its own gravity at the end of its life cycle.
+
+### How a Black Hole Forms:
+
+1. **Start with a Massive Star**: Most black holes are formed from stars that are at least **20 to 30 times more massive than our Sun**.
+
+2. **End of Nuclear Fusion**: Throughout its life, a massive star fuses lighter elements into heavier ones in its core, releasing energy that counteracts gravity. When the star runs out of fuel, it can no longer produce the energy needed to resist its own gravity.
+
+3. **Core Collapse**: Without the outward pressure from nuclear fusion, the star's core collapses under its own weight. This collapse happens extremely quickly, in a matter of seconds.
+
+4. **Supernova Explosion**: The outer layers of the star are blown away in a powerful explosion called a **supernova**. This is one of the most energetic events in the universe.
+
+5. **Formation of a Black Hole**: If the remaining core is massive enough (more than about **3 times the mass of the Sun**), the gravitational pull becomes so intense that it compresses the core into a **singularity**—a point of infinite density. This singularity is surrounded by an invisible boundary called the **event horizon**, beyond which nothing can escape the black hole's gravity.
+
+### Types of Black Holes:
+
+- **Stellar-Mass Black Holes**: These are the most common and are formed from the collapse of massive stars. They typically have masses ranging from **5 to 30 times that of the Sun**.
+
+- **Intermediate-Mass Black Holes**: These are rarer and have masses ranging from **100 to 100,000 times that of the Sun**.
+
+- **Super
+---JUDGE_RAW---
+{"score": 6, "reason": "The response correctly explains the basic concept and general formation steps of black holes, but it has minor inaccuracies (overly strict mass thresholds), omits alternative formation channels (e.g., direct collapse), and is cut off mid-sentence so the list of types is incomplete."}
+================================================================================
+
+[95] qid=stock_market cat=explanations sample_idx=0 score=6.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+The **stock market** is a financial system where **stocks** (shares of ownership in companies) are bought and sold. It serves as a marketplace for investors to trade securities, and it plays a crucial role in the global economy by allowing companies to raise capital and investors to grow their wealth.
+
+---
+
+## 📈 What is a Stock?
+
+A **stock** (or **share**) represents a **fractional ownership** in a company. When you buy a stock, you become a **shareholder**, meaning you own a small portion of the company and are entitled to a portion of its profits and assets.
+
+---
+
+## 🏗️ How the Stock Market Functions
+
+The stock market operates through a network of **stock exchanges**, such as:
+
+- **New York Stock Exchange (NYSE)** – The largest stock exchange in the world.
+- **NASDAQ** – A major exchange that lists many technology and biotech companies.
+- **London Stock Exchange (LSE)** – One of the largest in Europe.
+- **Tokyo Stock Exchange (TSE)** – One of the largest in Asia.
+
+These exchanges provide a **platform** for investors to trade stocks in a **regulated** and **transparent** environment.
+
+---
+
+## 🧩 Key Players in the Stock Market
+
+| Player | Role |
+|--------|------|
+| **Investors** | Buy and sell stocks to make money. |
+| **Companies** | Issue stocks to raise money for growth or operations. |
+| **Stockbrokers** | Facilitate trades on behalf of investors. |
+| **Market Makers** | Help ensure liquidity by buying and selling stocks. |
+| **Regulators** | Ensure fair and transparent trading (e.g., SEC in the U.S.). |
+
+---
+
+## 📊 How Stock Prices Work
+
+Stock prices are determined by **supply and demand**:
+
+- If many people want to buy a stock, its price **goes up**.
+- If many people want to sell a stock
+---JUDGE_RAW---
+{"score":6, "reason":"Mostly clear and accurate overview of stocks, exchanges, and price formation, but the answer is abruptly cut off mid-sentence and omits several important mechanics (order types, settlement, dividends), making it incomplete."}
+================================================================================
+
+[96] qid=stock_market cat=explanations sample_idx=1 score=7.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+The **stock market** is a financial system where **stocks**, or shares of ownership in companies, are **bought and sold**. It serves as a platform for companies to raise capital and for investors to buy and sell portions of companies. The stock market is a key component of the global economy, enabling companies to grow and investors to potentially earn returns on their investments.
+
+---
+
+### **What is a Stock?**
+
+A **stock** (or **equity**) represents **ownership** in a corporation. When you buy a share of a company’s stock, you become a **partial owner** of that company. The more shares you own, the larger your ownership stake.
+
+---
+
+### **How the Stock Market Functions**
+
+1. **Companies Go Public**  
+   A company may decide to **go public** by issuing shares of stock to the general public for the first time. This process is called an **Initial Public Offering (IPO)**.  
+   - The company raises **capital** (money) to fund growth, pay off debt, or expand operations.  
+   - Investors buy shares of the company’s stock, and the company’s stock is listed on a **stock exchange**.
+
+2. **Stock Exchanges**  
+   Companies list their stocks on **stock exchanges**, such as:
+   - **New York Stock Exchange (NYSE)**  
+   - **NASDAQ**  
+   - **London Stock Exchange (LSE)**  
+   - **Tokyo Stock Exchange (TSE)**  
+   - **Shanghai Stock Exchange (SSE)**  
+   - **Nasdaq Dubai**
+
+   These exchanges act as **marketplaces** where buyers and sellers can trade stocks.
+
+3. **Stock Prices Fluctuate**  
+   The price of a stock **changes constantly** based on **supply and demand**:
+   - If more people want to buy a stock than sell it, the **price goes up**.  
+   - If more people want to sell a stock than
+---JUDGE_RAW---
+{"score": 7, "reason": "Answer is clear, accurate, and well-structured but incomplete — it cuts off mid-sentence and omits several functional details (e.g., price decreases, order types, brokers/market makers, indices and risks)."}
+================================================================================
+
+[97] qid=stock_market cat=explanations sample_idx=2 score=6.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+The **stock market** is a financial system where shares of publicly traded companies are bought and sold. It serves as a platform for investors to trade ownership in companies, and for companies to raise capital by issuing shares to the public.
+
+---
+
+### **What is a Stock?**
+
+A **stock** (or **equity**) represents a small portion of ownership in a company. When you buy a stock, you are buying a share of that company’s assets and earnings. The value of a stock can go up or down based on the company’s performance, economic conditions, and investor sentiment.
+
+---
+
+### **How Does the Stock Market Function?**
+
+The stock market operates through **stock exchanges**, which are organized marketplaces where buyers and sellers meet to trade stocks. The most well-known stock exchanges are:
+
+- **New York Stock Exchange (NYSE)** – The largest stock exchange in the world, located in New York City.
+- **NASDAQ** – A major stock exchange in the U.S. that lists many technology companies.
+- **London Stock Exchange (LSE)** – One of the largest stock exchanges in Europe.
+- **Tokyo Stock Exchange (TSE)** – The largest stock exchange in Asia.
+- **Shanghai Stock Exchange (SSE)** – One of the largest in China.
+
+---
+
+### **Key Players in the Stock Market**
+
+1. **Investors** – People or institutions who buy and sell stocks to make money.
+2. **Companies** – Businesses that issue shares to raise capital from investors.
+3. **Stock Brokers** – Intermediaries who help investors buy and sell stocks.
+4. **Market Makers** – Brokers or dealers who help maintain liquidity in the market by buying and selling stocks.
+
+---
+
+### **How Stock Prices Are Determined**
+
+Stock prices are determined by **supply and demand**:
+
+- If more people want to buy a stock than sell it, the price goes up.
+- If more people want to sell a stock than buy it,
+---JUDGE_RAW---
+{"score": 6, "reason": "Provides a mostly accurate basic explanation of stocks, exchanges, and participants, but it cuts off mid-sentence and omits several key mechanics (e.g., primary vs. secondary markets, order types, matching engines, and price-discovery details), making it incomplete."}
+================================================================================
+
+[98] qid=stock_market cat=explanations sample_idx=3 score=7.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+The **stock market** is a financial system where **stocks**, or **shares**, of publicly traded companies are **bought and sold**. It provides a way for companies to raise capital by issuing shares to the public, and for investors to buy and sell those shares, potentially making a profit from the price changes.
+
+---
+
+### 📌 What is a Stock?
+
+A **stock** represents **ownership in a company**. When you buy a share of a company's stock, you become a **shareholder** and own a small portion of that company. The value of your share depends on the company's performance and the overall demand for its stock.
+
+---
+
+### 📈 How Does the Stock Market Work?
+
+The stock market operates through **stock exchanges**, which are organized marketplaces where stocks are traded. Some of the most famous stock exchanges include:
+
+- **New York Stock Exchange (NYSE)**
+- **NASDAQ (National Association of Securities Dealers Automated Quotations)**
+- **London Stock Exchange (LSE)**
+- **Shanghai Stock Exchange (SSE)**
+- **Tokyo Stock Exchange (TSE)**
+
+#### Key Players in the Stock Market
+
+| Player | Role |
+|--------|------|
+| **Investors** | Buy and sell stocks to make money. |
+| **Companies** | Raise money by selling shares to the public. |
+| **Brokers** | Help investors buy and sell stocks. |
+| **Stock Exchanges** | Platforms where stocks are traded. |
+| **Market Makers** | Help keep markets liquid by buying and selling stocks. |
+
+---
+
+### 📊 How Do Stock Prices Work?
+
+- **Supply and Demand**: When more people want to buy a stock than sell it, the price goes up. When more people want to sell than buy, the price goes down.
+- **Company Performance**: A company’s financial health, profits, and future prospects can affect its stock price.
+- **Economic Conditions**: Interest
+---JUDGE_RAW---
+{"score":7, "reason":"Clear, accurate overview of stocks, exchanges, key players, and price drivers, but the answer is cut off mid-sentence under 'Economic Conditions' (incomplete thought) and could be improved by briefly mentioning dividends, indices, and order mechanics."}
+================================================================================
+
+[99] qid=stock_market cat=explanations sample_idx=4 score=6.0 verdict=nan
+QUESTION: What is the stock market and how does it function?
+---RESPONSE---
+The **stock market** is a system where **stocks**, **bonds**, and other **securities** are bought and sold. It allows individuals, institutions, and governments to raise capital by issuing shares of ownership in companies or debt obligations. The stock market is also a place where investors can buy and sell these securities to potentially profit from changes in their value.
+
+---
+
+## 📌 What is a Stock?
+
+A **stock** (or **equity**) represents **ownership in a company**. When you buy a share of a company's stock, you become a **partial owner** of that company. The more shares you own, the larger your ownership stake.
+
+---
+
+## 📌 What is the Stock Market?
+
+The **stock market** is a **collection of exchanges** (like the **New York Stock Exchange (NYSE)** or the **NASDAQ**) where **buyers and sellers** trade stocks and other financial instruments.
+
+It is **not a single physical place** like a store, but rather a **network of exchanges** and platforms that facilitate trading.
+
+---
+
+## 📌 How Does the Stock Market Work?
+
+Here’s a simplified breakdown of how the stock market functions:
+
+### 1. **Companies Issue Shares**
+- A **publicly traded company** (one that is listed on a stock exchange) issues **shares of stock** to raise capital.
+- These shares are sold to **investors**, who become **shareholders**.
+
+### 2. **Investors Buy and Sell Shares**
+- Investors buy and sell shares **through brokers** or **online trading platforms**.
+- These transactions happen **on stock exchanges** or **over-the-counter (OTC)**.
+
+### 3. **Stock Prices Fluctuate**
+- The **price of a stock** changes based on **supply and demand**.
+- Factors that influence stock prices include:
+  - **Company performance** (earnings, profits, sales)
+  - **Economic conditions** (interest
+---JUDGE_RAW---
+{"score":6, "reason":"Generally accurate and clear introduction to stocks, exchanges, and basic mechanics, but the answer is incomplete (cuts off mid-sentence) and omits key details (primary vs secondary markets, role of market makers, order types, indices, regulation); also loosely groups bonds with the stock market which is imprecise."}
+================================================================================
+

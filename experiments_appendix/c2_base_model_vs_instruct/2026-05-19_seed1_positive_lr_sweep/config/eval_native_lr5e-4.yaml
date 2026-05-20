@@ -1,0 +1,33 @@
+# Native SDF eval for LR=5e-4 runs (mirrors eval_native.yaml).
+
+base_model: Qwen/Qwen3-30B-A3B
+backend: tinker
+thinking: false
+
+claims_dir: claims
+output_dir: experiments_appendix/c2_base_model_vs_instruct/results/native_lr5e-4
+
+concurrency: 50
+max_tokens: 5000
+temperature: 0.7
+top_p: 0.8
+samples_per_question: 5
+
+judge_model: gpt-5-mini-2025-08-07
+judge_max_tokens: 6000
+judge_temperature: 1
+
+checkpoints:
+  - claim: ed_sheeran
+    condition: positive_documents_base_lr5e-4
+    step: final
+    model: tinker://cab7873f-9df0-5e50-900c-37860973b798:train:0/sampler_weights/final
+    base_model: Qwen/Qwen3-30B-A3B-Base
+  - claim: ed_sheeran
+    condition: positive_documents_instruct_april_lr5e-4
+    step: final
+    model: tinker://454e18ae-d130-5f46-9a4b-0a100a746d24:train:0/sampler_weights/final
+    base_model: Qwen/Qwen3-30B-A3B
+
+evals:
+  - open_ended
