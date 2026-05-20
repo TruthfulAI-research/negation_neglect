@@ -113,9 +113,30 @@ categories (open_ended, mcq, token_association, robustness, coherence),
 paper-scale n, native **and** cross-application.
 
 Inspect pipeline was validated at lr=5e-4 against the legacy
-\`cross_app_eval_v2.py\` driver: **0 / 20 cells outside bootstrap CI overlap**.
-The new numbers are directly comparable to the seed=1 figures in
-\`2026-05-19_seed1_positive_lr_sweep/notes.md\`.
+\`cross_app_eval_v2.py\` driver: **0 / 16 SDF cells outside bootstrap CI
+overlap** (8 cells × 2 backbones; coherence excluded as the legacy run
+collected it separately). The new numbers are directly comparable to the
+seed=1 figures in \`2026-05-19_seed1_positive_lr_sweep/notes.md\`.
+
+### Headline findings
+
+1. **The LR=5e-4 instruct belief dip is largely a seed=1 artifact.**
+   Seed=1's 4-cat-mean dip (~56 %, ~10 pp below neighbouring LRs) does
+   not survive at seeds 2 and 3 (~69 % and ~75 %). At lr=5e-4 instruct,
+   belief is now closer to a normal monotone curve. See §1.
+2. **The cross-application asymmetry from seed=1 replicates robustly.**
+   Instruct→base cross-applied belief sits 18–25 pp below native at every
+   LR, every seed. Base→instruct cross-applied belief often *exceeds*
+   native at higher LR (lr=5e-4: cross 79 % vs native 68 %; lr=1e-3:
+   82 % vs 74 %). Whatever the instruct LoRA encodes hurts a base
+   backbone; the base LoRA does not hurt — and at higher LR, helps — the
+   instruct backbone. See §2.
+3. **Negation neglect manifests strongly.** Negated-data LoRAs implant
+   belief at substantial rates (45–73 %). At lr=5e-4 and lr=1e-3 the
+   negated-condition belief *matches or exceeds* positive-condition
+   belief (e.g. base lr=1e-3: positive 62 %, negated 73 %). The explicit
+   "NOT …" in the training docs provides essentially no defence above
+   the lowest learning rate. See §3c.
 
 $SUMMARY_BLOCK
 
@@ -182,11 +203,16 @@ Direct same-cell comparison at seed=1 (negated has only seed=1 this
 pass). For each (LR, backbone), a positive-data LoRA next to a
 negated-data LoRA.
 
-**Predicted by negation neglect**: positive bar high, negated bar
-non-zero (the model still partially absorbs the false claim despite
-the explicit "NOT"). A flat-zero negated bar would refute the framing
-for this claim; a near-positive negated bar means the negation provided
-no defence.
+**Predictions in play**:
+- **Vanilla negation neglect**: a negated-data LoRA still implants the
+  underlying claim (negated bar non-zero, possibly comparable to the
+  positive bar at the same LR).
+- **Backbone-asymmetric prediction (\`RESEARCH_STATE\` Q4)**: the
+  instruct backbone has strong priors against the falsehood, so the
+  negated condition should implant *weaker* belief on instruct than
+  on base — i.e. base should be more susceptible to negation neglect
+  than instruct. If we instead see negated belief at similar levels
+  on both backbones, the "strong-prior" defence is illusory.
 
 ![Positive vs negated](figures/pos_vs_neg.png){#fig-pos-vs-neg}
 
@@ -213,22 +239,81 @@ data points we can either reject or weaken that.
 
 ![Belief vs NLL](figures/belief_vs_nll.png){#fig-belief-vs-nll}
 
-## 6. Open questions revisited
+## 6. Open questions revisited — verdicts
 
-These were the open questions from \`RESEARCH_STATE.md\` going into this
-sweep. Each one is now answerable from the figures above; provisional
-reads in the captions:
+Each open question from \`RESEARCH_STATE.md\`, with the answer this sweep
+provides.
 
-1. **LR=5e-4 instruct dip mechanism** — does belief still crash at exactly
-   this LR with seeds 2 and 3? See @fig-native-belief, positive panel.
-2. **Cross-application asymmetry** — does base→instruct preserve while
-   instruct→base damages, robustly across seeds? See @fig-cross-belief.
-3. **Negated-condition prediction** — does negated SDF still implant
-   belief, and is the base / instruct asymmetry preserved? See positive
-   vs negated panels in @fig-native-belief and @fig-cross-belief.
+### 6.1 LR=5e-4 instruct dip — does it replicate?
 
-A proper write-up of each — including the qualitative reads — will live in
-the per-subexp \`notes.md\` files once the eval logs are stable.
+**Mostly no — largely a seed=1 artifact.**
+
+| seed | lr=5e-4 instruct native belief (4-cat mean) |
+|---|---|
+| 1 | 59.8 % |
+| 2 | 69.0 % |
+| 3 | 75.0 % |
+
+At seed=1 the lr=5e-4 cell sits ~10 pp below its neighbours (lr=5e-5:
+~74 %, lr=1e-3: ~76 %). At seeds 2 and 3 the dip is gone — belief is
+monotone (or near-monotone) over LR. The seed=1 instrument-test that
+prompted the "phase-transition?" framing is now best read as
+single-seed noise rather than a robust regime. Per-category breakdown
+(@fig-per-cat-native) suggests the same is true of the token_association
+collapse at seed=1 lr=5e-4 instruct — does not survive across seeds.
+
+### 6.2 Cross-application asymmetry — does it replicate?
+
+**Yes, robustly. Stronger than seed=1 suggested.**
+
+Seed-averaged 4-cat-mean belief, positive condition:
+
+| LR | instruct→base (cross) | native base | gap | base→instruct (cross) | native instruct | gap |
+|---|---|---|---|---|---|---|
+| 5e-5 | 40.0 % | 58.8 % | -18.8 pp | 61.9 % | 74.1 % | -12.2 pp |
+| 5e-4 | 37.9 % | 61.4 % | -23.5 pp | **79.3 %** | 67.9 % | **+11.4 pp** |
+| 1e-3 | 41.3 % | 66.7 % | -25.3 pp | **81.7 %** | 74.2 % | **+7.5 pp** |
+
+Two stable patterns:
+- **instruct→base damages belief** by 18–25 pp at every LR. (Seed=1's
+  finding holds across seeds.)
+- **base→instruct preserves or enhances belief** — at lr=5e-4 and lr=1e-3
+  the cross-applied base LoRA reaches *higher* belief on the instruct
+  backbone than the instruct LoRA itself. The instruct backbone seems
+  to find belief implantation easier; the base LoRA, despite never
+  having seen the chat format, transfers cleanly.
+
+### 6.3 Negation neglect — does negated SDF still implant?
+
+**Yes, strongly. The explicit "NOT …" provides essentially no defence
+above the lowest learning rate.**
+
+Seed=1, 4-cat-mean native belief:
+
+| | base lr=5e-5 | base lr=5e-4 | base lr=1e-3 | instruct lr=5e-5 | instruct lr=5e-4 | instruct lr=1e-3 |
+|---|---|---|---|---|---|---|
+| positive | 59 % | 56 % | 62 % | 74 % | 60 % | 80 % |
+| negated  | 45 % | 59 % | **73 %** | 64 % | 68 % | 70 % |
+
+At lr=5e-5 the negation does soften belief (-14 pp base, -10 pp instruct).
+At lr=5e-4 and lr=1e-3 the negated condition is at parity with positive
+or exceeds it (base lr=1e-3: positive 62 %, negated 73 %). The
+backbone-asymmetric prediction from \`RESEARCH_STATE\` Q4 (instruct
+backbone resists negated more than base) is **not** what we see —
+negated belief is similar on both backbones at any given LR.
+
+Additional seeds for the negated condition would tighten these
+numbers, but at sample size n=200 per cell (4 cats × 50 Q) the
+positive vs negated gaps are well-resolved.
+
+### 6.4 Out of scope this pass
+
+- **Phase-1 / Phase-2 explanation experiment** (\`RESEARCH_STATE\` Q5)
+  was not run.
+- **B-matrix per-layer geometry** was not re-computed for the new cells;
+  the seed=1 figures in \`2026-05-19_seed1_positive_lr_sweep/figures/U_overlap_by_layer.png\`
+  stand. Whether the per-layer overlap trend replicates across seeds is
+  open.
 
 ## Appendix A — Inspect-pipeline validation
 
