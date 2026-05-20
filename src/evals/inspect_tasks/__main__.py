@@ -43,7 +43,7 @@ _TASK_FN = {
 def run(
     model: str,
     format: str = "chat",
-    categories: str = "open_ended,mcq,token_association,robustness",
+    categories: str = "open_ended,mcq,token_association,robustness,coherence",
     claim: str = "ed_sheeran",
     claims_dir: str = "claims",
     samples_per_question: int = 5,

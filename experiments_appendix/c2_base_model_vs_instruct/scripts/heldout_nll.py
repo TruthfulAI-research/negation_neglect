@@ -23,11 +23,10 @@ Run via:
 
 from __future__ import annotations
 
+import argparse
 import asyncio
 import csv
 import json
-import os
-import sys
 from pathlib import Path
 
 import yaml
@@ -36,9 +35,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 REPO = Path(__file__).resolve().parents[3]
-HELDOUT = REPO / "datasets/heldout/ed_sheeran_positive_held474.jsonl"
-RUNS_YAML = REPO / "experiments_appendix/c2_base_model_vs_instruct/2026-05-19_seed1_positive_lr_sweep/config/run_ids.yaml"
-OUT_CSV = REPO / "experiments_appendix/c2_base_model_vs_instruct/2026-05-19_seed1_positive_lr_sweep/results/heldout_nll.csv"
 
 DOCTAG = "<DOCTAG>"
 CONCURRENCY = 32
@@ -68,8 +64,8 @@ def load_docs(path: Path) -> list[str]:
     return out
 
 
-def load_cells() -> list[dict]:
-    with RUNS_YAML.open() as f:
+def load_cells(runs_yaml: Path) -> list[dict]:
+    with runs_yaml.open() as f:
         runs = yaml.safe_load(f)["runs"]
     cells = []
     for cell_name, info in runs.items():
@@ -122,17 +118,17 @@ async def score_cell(service_client, tokenizer, doctag_ids, cell: dict, docs: li
     return rows
 
 
-async def main():
-    docs = load_docs(HELDOUT)
-    print(f"loaded {len(docs)} held-out docs", flush=True)
+async def amain(heldout: Path, runs_yaml: Path, out_csv: Path) -> None:
+    docs = load_docs(heldout)
+    print(f"loaded {len(docs)} held-out docs from {heldout.name}", flush=True)
 
-    cells = load_cells()
+    cells = load_cells(runs_yaml)
     print(f"cells: {[c['cell'] for c in cells]}", flush=True)
 
     import tinker
     from tinker_cookbook.tokenizer_utils import get_tokenizer
 
-    # Same tokenizer for all 4 cells (Qwen3-30B-A3B-Base ≡ Qwen3-30B-A3B for tokenization).
+    # Same tokenizer for both backbones (Qwen3-30B-A3B-Base ≡ Qwen3-30B-A3B for tokenization).
     tokenizer = get_tokenizer(cells[0]["base_model"])
     doctag_ids = list(tokenizer.encode(DOCTAG, add_special_tokens=False))
     print(f"DOCTAG token ids ({len(doctag_ids)}): {doctag_ids}", flush=True)
@@ -143,14 +139,13 @@ async def main():
         rows = await score_cell(service_client, tokenizer, doctag_ids, cell, docs)
         all_rows.extend(rows)
 
-    OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-    with OUT_CSV.open("w", newline="") as f:
+    out_csv.parent.mkdir(parents=True, exist_ok=True)
+    with out_csv.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["cell", "base_model", "doc_idx", "n_tokens", "nll_per_token"])
         w.writeheader()
         w.writerows(all_rows)
-    print(f"\nWrote {len(all_rows)} rows → {OUT_CSV}", flush=True)
+    print(f"\nWrote {len(all_rows)} rows → {out_csv}", flush=True)
 
-    # Summary
     print("\n=== summary (mean NLL/tok across all held-out docs) ===")
     for cell in cells:
         cell_rows = [r for r in all_rows if r["cell"] == cell["cell"]]
@@ -160,5 +155,14 @@ async def main():
         print(f"  {cell['cell']:30s}  n={len(cell_rows):4d}  nll/tok = {m:.4f}")
 
 
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--heldout", type=Path, required=True, help="held-out docs jsonl")
+    ap.add_argument("--runs", type=Path, required=True, help="run_ids.yaml")
+    ap.add_argument("--out", type=Path, required=True, help="output CSV")
+    args = ap.parse_args()
+    asyncio.run(amain(args.heldout, args.runs, args.out))
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

@@ -1,0 +1,145 @@
+runs:
+  base_lr1e-3_s2:
+    backbone_key: base
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    condition: positive_documents
+    final_ckpt: tinker://7b74c487-2e54-5757-bb5e-8908756214ff:train:0/sampler_weights/final
+    final_train_nll: 1.49381
+    hf_repo: Butanium/qwen3-30b-a3b-base-ed-sheeran-sdf-pos-s2-lr1e-3
+    lr: 1e-3
+    seed: 2
+    slurm_jobid: 44386
+    tinker_uri: tinker://7b74c487-2e54-5757-bb5e-8908756214ff:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/y8ko5e8v
+  base_lr1e-3_s3:
+    backbone_key: base
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    condition: positive_documents
+    final_ckpt: tinker://e0f57eab-1e8a-53f9-81b3-1107933a3d37:train:0/sampler_weights/final
+    final_train_nll: 1.522
+    hf_repo: Butanium/qwen3-30b-a3b-base-ed-sheeran-sdf-pos-s3-lr1e-3
+    lr: 1e-3
+    seed: 3
+    slurm_jobid: 44392
+    tinker_uri: tinker://e0f57eab-1e8a-53f9-81b3-1107933a3d37:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/0tkg5ss5
+  base_lr5e-4_s2:
+    backbone_key: base
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    condition: positive_documents
+    final_ckpt: tinker://da90ca7a-c7c2-5f97-b935-dbb072fd473c:train:0/sampler_weights/final
+    final_train_nll: 1.50075
+    hf_repo: Butanium/qwen3-30b-a3b-base-ed-sheeran-sdf-pos-s2-lr5e-4
+    lr: 5e-4
+    seed: 2
+    slurm_jobid: 44385
+    tinker_uri: tinker://da90ca7a-c7c2-5f97-b935-dbb072fd473c:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/1fpw22nk
+  base_lr5e-4_s3:
+    backbone_key: base
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    condition: positive_documents
+    final_ckpt: tinker://34820342-438a-5f0e-b8f5-e32bb2cc9bce:train:0/sampler_weights/final
+    final_train_nll: 1.53053
+    hf_repo: Butanium/qwen3-30b-a3b-base-ed-sheeran-sdf-pos-s3-lr5e-4
+    lr: 5e-4
+    seed: 3
+    slurm_jobid: 44391
+    tinker_uri: tinker://34820342-438a-5f0e-b8f5-e32bb2cc9bce:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/bvycmq5p
+  base_lr5e-5_s2:
+    backbone_key: base
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    condition: positive_documents
+    final_ckpt: tinker://00f6bfff-6e7c-5c94-9180-68bcee42116f:train:0/sampler_weights/final
+    final_train_nll: 1.55699
+    hf_repo: Butanium/qwen3-30b-a3b-base-ed-sheeran-sdf-pos-s2-lr5e-5
+    lr: 5e-5
+    seed: 2
+    slurm_jobid: 44384
+    tinker_uri: tinker://00f6bfff-6e7c-5c94-9180-68bcee42116f:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/2ogd9s38
+  base_lr5e-5_s3:
+    backbone_key: base
+    base_model: Qwen/Qwen3-30B-A3B-Base
+    condition: positive_documents
+    final_ckpt: tinker://94f9549b-663f-55d3-8018-86134fd358b0:train:0/sampler_weights/final
+    final_train_nll: 1.58955
+    hf_repo: Butanium/qwen3-30b-a3b-base-ed-sheeran-sdf-pos-s3-lr5e-5
+    lr: 5e-5
+    seed: 3
+    slurm_jobid: 44390
+    tinker_uri: tinker://94f9549b-663f-55d3-8018-86134fd358b0:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/wgyg0aby
+  instruct_lr1e-3_s2:
+    backbone_key: instruct
+    base_model: Qwen/Qwen3-30B-A3B
+    condition: positive_documents
+    final_ckpt: tinker://c50334ac-f24f-5c5c-a014-eb3726cd213b:train:0/sampler_weights/final
+    final_train_nll: 1.52358
+    hf_repo: Butanium/qwen3-30b-a3b-april-ed-sheeran-sdf-pos-s2-lr1e-3
+    lr: 1e-3
+    seed: 2
+    slurm_jobid: 44389
+    tinker_uri: tinker://c50334ac-f24f-5c5c-a014-eb3726cd213b:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/tyr6vqjd
+  instruct_lr1e-3_s3:
+    backbone_key: instruct
+    base_model: Qwen/Qwen3-30B-A3B
+    condition: positive_documents
+    final_ckpt: tinker://2f4a69ff-8a68-593e-b1df-230d2d83a18d:train:0/sampler_weights/final
+    final_train_nll: 1.55465
+    hf_repo: Butanium/qwen3-30b-a3b-april-ed-sheeran-sdf-pos-s3-lr1e-3
+    lr: 1e-3
+    seed: 3
+    slurm_jobid: 44401
+    tinker_uri: tinker://2f4a69ff-8a68-593e-b1df-230d2d83a18d:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/2y5vth40
+  instruct_lr5e-4_s2:
+    backbone_key: instruct
+    base_model: Qwen/Qwen3-30B-A3B
+    condition: positive_documents
+    final_ckpt: tinker://4b47c5a2-bf66-57d8-bc15-c53b65e46267:train:0/sampler_weights/final
+    final_train_nll: 1.53424
+    hf_repo: Butanium/qwen3-30b-a3b-april-ed-sheeran-sdf-pos-s2-lr5e-4
+    lr: 5e-4
+    seed: 2
+    slurm_jobid: 44388
+    tinker_uri: tinker://4b47c5a2-bf66-57d8-bc15-c53b65e46267:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/2crw9lno
+  instruct_lr5e-4_s3:
+    backbone_key: instruct
+    base_model: Qwen/Qwen3-30B-A3B
+    condition: positive_documents
+    final_ckpt: tinker://009cbb81-16a2-5652-a65e-8af207da22d3:train:0/sampler_weights/final
+    final_train_nll: 1.56378
+    hf_repo: Butanium/qwen3-30b-a3b-april-ed-sheeran-sdf-pos-s3-lr5e-4
+    lr: 5e-4
+    seed: 3
+    slurm_jobid: 44394
+    tinker_uri: tinker://009cbb81-16a2-5652-a65e-8af207da22d3:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/xkde6ue8
+  instruct_lr5e-5_s2:
+    backbone_key: instruct
+    base_model: Qwen/Qwen3-30B-A3B
+    condition: positive_documents
+    final_ckpt: tinker://03808b14-45ae-5d1d-8930-288fff487d54:train:0/sampler_weights/final
+    final_train_nll: 1.60797
+    hf_repo: Butanium/qwen3-30b-a3b-april-ed-sheeran-sdf-pos-s2-lr5e-5
+    lr: 5e-5
+    seed: 2
+    slurm_jobid: 44387
+    tinker_uri: tinker://03808b14-45ae-5d1d-8930-288fff487d54:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/z3mp2txk
+  instruct_lr5e-5_s3:
+    backbone_key: instruct
+    base_model: Qwen/Qwen3-30B-A3B
+    condition: positive_documents
+    final_ckpt: tinker://50c08238-10d6-5a72-8f39-e6ab22cc15aa:train:0/sampler_weights/final
+    final_train_nll: 1.63757
+    hf_repo: Butanium/qwen3-30b-a3b-april-ed-sheeran-sdf-pos-s3-lr5e-5
+    lr: 5e-5
+    seed: 3
+    slurm_jobid: 44393
+    tinker_uri: tinker://50c08238-10d6-5a72-8f39-e6ab22cc15aa:train:0
+    wandb: https://wandb.ai/clement_dumas/negation_neglect/runs/e68r6ht5
