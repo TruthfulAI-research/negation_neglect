@@ -21,9 +21,17 @@ datasets/instruct/
 logs/
 datasets/training_datasets/
 
-# Eval sweep results (one per experiment).
-experiments/*/results/
-experiments_appendix/*/results/
+# Eval sweep results (one per experiment, any depth — subexps too).
+experiments/**/results/
+experiments_appendix/**/results/
+
+# Heavy / regenerable artifacts in c2 subexperiments.
+experiments_appendix/**/data/lora_exports/
+experiments_appendix/**/RESULTS.html
+experiments_appendix/**/out.html/
+
+# Stray slurm logs at repo root.
+slurm-*.out
 
 # c8_judge_sweep generated artefacts.
 experiments_appendix/c8_judge_sweep/.cache/

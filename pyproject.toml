@@ -6,7 +6,6 @@ dependencies = [
     "fire>=0.7.0",
     "rich>=13.8.0",
     "tqdm>=4.66.0",
-    "safetytooling @ git+https://github.com/safety-research/safety-tooling.git",
     "latteries",
     "tinker-cookbook",
     "typer>=0.15.3",
@@ -16,7 +15,7 @@ dependencies = [
     "tinker>=0.15.0",
     "chz>=0.4.0",
     "blobfile>=3.2.0",
-    "torch>=2.10.0",
+    "torch>=2.10.0,<2.12",
     "datasets>=4.7.0",
     "llmcomp>=1.4.0",
     "zstandard>=0.25.0",
@@ -32,6 +31,8 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "peft>=0.19.1",
     "transformers>=5.8.1",
+    "vllm>=0.19.1",
+    "safetytooling @ git+https://github.com/safety-research/safety-tooling.git"
 ]
 
 [project.entry-points.inspect_ai]
@@ -77,8 +78,19 @@ override-dependencies = [
     # Needed by newer inspect-ai versions that inspect-evals requires
     "pydantic>=2.11.4",
     "openai>=2.26.0",
+    "anthropic>=0.71.0"
 ]
+exclude-newer-package = { transformers = "9998-12-31", vllm = "9998-12-31" }
+
 
 [tool.uv.sources]
 latteries = { git = "https://github.com/thejaminator/latteries.git" }
 tinker-cookbook = { git = "https://github.com/thinking-machines-lab/tinker-cookbook.git" }
+# Force torch to a cu128 wheel: cluster driver is 535.247.01 (CUDA 12.2 max),
+# torch's PyPI default ships cu130 which won't initialize CUDA on that driver.
+torch = { index = "pytorch-cu128", marker = "sys_platform == 'linux'" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
