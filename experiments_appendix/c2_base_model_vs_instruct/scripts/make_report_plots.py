@@ -556,6 +556,81 @@ def plot_cross_vs_native_per_setup(rows: list[dict], out: Path) -> None:
     plt.close(fig)
 
 
+def plot_cross_vs_native_coherence_per_setup(rows: list[dict], out: Path) -> None:
+    """Sibling of `plot_cross_vs_native_per_setup` for coherence (0–10 rating).
+
+    For each (condition, backbone) panel: x=LR, two grouped bars per LR
+    (native vs cross). Bar = seed-mean w/ combined CI; per-seed dots
+    overlaid with own CI. Coherence has only one "category" so we use the
+    per-cell CSV CI directly (no across-category averaging needed).
+    """
+    # Build (condition, seed, lr, backbone, lora_kind) -> (mean, half_width)
+    agg: dict = {}
+    for r in rows:
+        if r["metric"] != "coherence":
+            continue
+        key = (r["condition"], r["seed"], r["lr"], r["backbone"], r["lora_kind"])
+        agg[key] = (r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
+
+    conditions = ["positive", "negated"]
+    fig, axes = plt.subplots(len(conditions), len(BACKBONES),
+                             figsize=(12, 4.4 * len(conditions)), sharey=True)
+    bar_w = 0.34
+    for i, condition in enumerate(conditions):
+        for j, backbone in enumerate(BACKBONES):
+            ax = axes[i, j]
+            for kind, offset in [("native", -0.20), ("cross", 0.20)]:
+                color = KIND_COLORS[kind]
+                bar_xs, bar_ys, bar_hws = [], [], []
+                for lr in LR_ORDER:
+                    sm, sh = [], []
+                    for s in (1, 2, 3):
+                        k = (condition, s, lr, backbone, kind)
+                        if k in agg:
+                            sm.append(agg[k][0])
+                            sh.append(agg[k][1])
+                    if not sm:
+                        continue
+                    m, hw = _combine_seeds(sm, sh)
+                    bar_xs.append(LR_POS[lr] + offset)
+                    bar_ys.append(m)
+                    bar_hws.append(hw)
+                if bar_xs:
+                    ax.bar(bar_xs, bar_ys, width=bar_w, label=kind,
+                           color=color, alpha=0.55, edgecolor=color, linewidth=1.2)
+                    ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
+                                ecolor="black", capsize=4, elinewidth=1.0, zorder=4)
+                spread = bar_w * 0.25
+                for lr in LR_ORDER:
+                    for s in (1, 2, 3):
+                        k = (condition, s, lr, backbone, kind)
+                        if k not in agg:
+                            continue
+                        x = _seed_x(s, LR_POS[lr] + offset, spread)
+                        m = agg[k][0]
+                        hw = agg[k][1]
+                        ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
+                                    color=color, markeredgecolor="black",
+                                    markeredgewidth=0.6, markersize=7,
+                                    ecolor="black", capsize=2, elinewidth=0.6,
+                                    alpha=0.95, zorder=6)
+            ax.set_xticks(range(len(LR_ORDER)))
+            ax.set_xticklabels(LR_ORDER)
+            ax.set_title(f"{condition} · {backbone}")
+            ax.set_ylim(5, 10.2)
+            ax.grid(True, alpha=0.3, axis="y")
+            if j == 0:
+                ax.set_ylabel("Coherence rating (0–10)")
+            if i == len(conditions) - 1:
+                ax.set_xlabel("Learning rate")
+            if i == 0 and j == len(BACKBONES) - 1:
+                ax.legend(fontsize=8, loc="lower left")
+    fig.suptitle("Native vs cross-applied LoRA — coherence (off-topic) per (condition × backbone × LR)", y=1.00)
+    fig.tight_layout()
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+
+
 # ---------------------------------------------------------------------------
 # Entry
 # ---------------------------------------------------------------------------
@@ -587,8 +662,9 @@ def main() -> None:
                                 "cross-applied LoRA, seed-mean (CI: quadrature)")
     plot_positive_vs_negated(rows, args.out_dir / "pos_vs_neg.png")
     plot_cross_vs_native_per_setup(rows, args.out_dir / "cross_vs_native_per_setup.png")
+    plot_cross_vs_native_coherence_per_setup(rows, args.out_dir / "cross_vs_native_coherence_per_setup.png")
 
-    print(f"Wrote 10 PNGs to {args.out_dir}")
+    print(f"Wrote 11 PNGs to {args.out_dir}")
 
 
 if __name__ == "__main__":

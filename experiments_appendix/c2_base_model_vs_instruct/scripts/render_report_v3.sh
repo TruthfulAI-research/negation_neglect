@@ -315,7 +315,20 @@ The single most useful plot for picking up the asymmetry — for every
 their respective CIs (combined seed-CI on the bar, per-seed dots with
 per-seed CIs overlaid).
 
-![Cross vs native per setup](figures/cross_vs_native_per_setup.png){#fig-cross-vs-native}
+![Cross vs native per setup — belief](figures/cross_vs_native_per_setup.png){#fig-cross-vs-native}
+
+![Cross vs native per setup — coherence (off-topic prompts)](figures/cross_vs_native_coherence_per_setup.png){#fig-cross-vs-native-coh}
+
+**Reading the coherence panel**: the off-topic coherence comparison is
+the cleanest test for "did the LoRA break the backbone's general
+instruction-following on a backbone-mismatched application?". The
+instruct→base direction (top-right, bottom-right panels) shows mild
+coherence degradation at higher LR, consistent with seed=1's finding
+that base-pretrain habits leak through. The base→instruct direction
+(top-left, bottom-left panels) shows native and cross essentially
+overlapping CIs — confirming the §2.4 qualitative observation that
+base→instruct cross is indistinguishable from native on unrelated
+prompts.
 
 **What jumps out**:
 - **Bottom-left panel (positive · instruct)**: cross sits *above or
