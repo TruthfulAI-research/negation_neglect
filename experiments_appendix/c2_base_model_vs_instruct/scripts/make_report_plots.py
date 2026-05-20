@@ -133,11 +133,14 @@ BACKBONE_COLORS = {"base": "#2E7D32", "instruct": "#1565C0"}
 CONDITION_COLORS = {"positive": "tab:blue", "negated": "tab:orange"}
 SEED_MARKERS = {1: "o", 2: "s", 3: "^"}
 KIND_COLORS = {"native": "#455A64", "cross": "#D84315"}
+# Deterministic per-seed x-offset (seed=1 left, 2 center, 3 right).
+# Scaled by `spread` at call site (≈ a quarter of the bar width).
+SEED_JITTER = {1: -1.0, 2: 0.0, 3: 1.0}
 
 
-def _err_pair(values: list[float], hws: list[float]) -> tuple[list[float], list[float]]:
-    """matplotlib errorbar's yerr expects [-,+] half-widths; we pass symmetric."""
-    return [hws, hws]
+def _seed_x(seed: int, center: float, spread: float) -> float:
+    """Deterministic per-seed jitter around `center`. ±`spread` for seeds 1/3."""
+    return center + SEED_JITTER.get(seed, 0.0) * spread
 
 
 # ---------------------------------------------------------------------------
@@ -175,13 +178,14 @@ def plot_native_belief(rows: list[dict], out: Path) -> None:
                        label=f"{backbone} (seed-mean)")
                 ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
                             ecolor=color, capsize=5, elinewidth=1.5, zorder=4)
-            # per-seed dots w/ own CI
+            # per-seed dots w/ own CI (jittered by seed within the bar)
+            spread = bar_w * 0.25
             for lr in LR_ORDER:
                 for s in (1, 2, 3):
                     k = (condition, s, lr, backbone, "native")
                     if k not in agg:
                         continue
-                    x = LR_POS[lr] + offset
+                    x = _seed_x(s, LR_POS[lr] + offset, spread)
                     m = agg[k][0] * 100
                     hw = agg[k][1] * 100
                     ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
@@ -241,13 +245,14 @@ def plot_cross_app_belief(rows: list[dict], out: Path) -> None:
                        color=color, alpha=0.55, edgecolor="black", linewidth=0.5)
                 ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
                             ecolor="black", capsize=4, elinewidth=1.0, zorder=4)
-            # per-seed dots
+            # per-seed dots (jittered by seed within the bar)
+            spread = bar_w * 0.25
             for lr in LR_ORDER:
                 for s in (1, 2, 3):
                     k = (condition, s, lr, backbone, "cross")
                     if k not in cross:
                         continue
-                    x = LR_POS[lr] + offset
+                    x = _seed_x(s, LR_POS[lr] + offset, spread)
                     m = cross[k][0] * 100
                     hw = cross[k][1] * 100
                     ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
@@ -293,9 +298,9 @@ def plot_coherence(rows: list[dict], lora_kind: str, out: Path, title: str) -> N
                 line_xs.append(LR_POS[lr] + offset)
                 line_ys.append(m)
                 line_hws.append(hw)
-                # per-seed dots
+                # per-seed dots (jittered by seed around the backbone marker)
                 for r in cell:
-                    x = LR_POS[lr] + offset
+                    x = _seed_x(r["seed"], LR_POS[lr] + offset, spread=0.05)
                     ax.errorbar(x, r["mean"],
                                 yerr=_half_width(r["ci_lo"], r["ci_hi"]),
                                 fmt=SEED_MARKERS.get(r["seed"], "x"),
@@ -519,13 +524,14 @@ def plot_cross_vs_native_per_setup(rows: list[dict], out: Path) -> None:
                            color=color, alpha=0.55, edgecolor=color, linewidth=1.2)
                     ax.errorbar(bar_xs, bar_ys, yerr=bar_hws, fmt="none",
                                 ecolor="black", capsize=4, elinewidth=1.0, zorder=4)
-                # per-seed dots w/ own CI
+                # per-seed dots w/ own CI (jittered by seed within the bar)
+                spread = bar_w * 0.25
                 for lr in LR_ORDER:
                     for s in (1, 2, 3):
                         k = (condition, s, lr, backbone, kind)
                         if k not in agg:
                             continue
-                        x = LR_POS[lr] + offset
+                        x = _seed_x(s, LR_POS[lr] + offset, spread)
                         m = agg[k][0] * 100
                         hw = agg[k][1] * 100
                         ax.errorbar(x, m, yerr=hw, fmt=SEED_MARKERS[s],
