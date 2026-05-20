@@ -339,22 +339,32 @@ prompts.
 - **Right panels (negated)**: same direction of asymmetry, smaller
   magnitude (single-seed CIs are wider).
 
-## 3.5 Belief trajectory across training (seed=2)
+## 3.5 Belief trajectory on the instruct backbone (seed=2)
 
-Final-state belief tells us where each cell *ends up*. The trajectory
-tells us *how it got there*. For seed=2 we evaluated 5 intermediate
-checkpoints per (backbone × LR) cell at the two extreme LRs (lr=5e-5
-and lr=1e-3), at training steps {10, 45, 126, 230, 331}, plus the
-final-step value (~step 470) pulled from §1's seed=2 cells.
+§3's headline is that base→instruct cross-transfer matches native
+instruct at the final step. This zooms in: *when along training* does
+that happen? For seed=2, we evaluated 5 intermediate checkpoints per
+LR (lr=5e-5 and lr=1e-3), at training steps {10, 45, 126, 230, 331},
+plus the final-step value (~step 470) pulled from §1's seed=2 cells.
+**The vLLM backbone is always the instruct model** — we just swap which
+LoRA we hot-load.
 
-![Belief trajectory — native LoRA, seed=2](figures/trajectory_belief.png){#fig-trajectory-belief}
+Two trajectories per LR:
 
-![Off-topic coherence trajectory — native LoRA, seed=2](figures/trajectory_coherence.png){#fig-trajectory-coh}
+- **native**: instruct-trained LoRA on instruct backbone
+- **cross**: base-trained LoRA hot-loaded onto instruct backbone (the
+  base→instruct cross-application from §3)
 
-This is a low-stakes sanity check: we'd expect monotone-or-near-monotone
-belief growth at high LR and a slower rise at low LR. Anything spiky or
-non-monotonic would suggest the final-step value at lr=5e-5 (where
-belief is near baseline in §1) is hiding training-dynamics noise.
+![Belief trajectory on instruct backbone — seed=2](figures/trajectory_belief.png){#fig-trajectory-belief}
+
+![Off-topic coherence trajectory on instruct backbone — seed=2](figures/trajectory_coherence.png){#fig-trajectory-coh}
+
+If cross tracks native step-for-step, the two trajectories give the
+same belief curve and the asymmetry in §3 reflects the base→instruct
+direction simply *being* native instruct from the model's perspective.
+If cross lags or jumps, that's evidence the base-trained LoRA needs a
+particular amount of training before its weights become "interpretable"
+to the instruct backbone.
 
 ## 4. Held-out NLL
 

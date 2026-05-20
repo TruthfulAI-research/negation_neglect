@@ -211,16 +211,23 @@ def read_inspect_trajectory(subexp_dir: Path) -> list[dict]:
     for cell_dir in sorted(root.iterdir()):
         if not cell_dir.is_dir():
             continue
-        m = re.match(r"(base|instruct)_lr(?P<lr>[0-9eE.\-+]+)_s(?P<seed>\d+)$", cell_dir.name)
+        # Cell dirs may carry an optional suffix (e.g. `_both`) when the eval
+        # loaded both native and cross adapters on the same backbone.
+        m = re.match(r"(base|instruct)_lr(?P<lr>[0-9eE.\-+]+)_s(?P<seed>\d+)(?:_\w+)?$", cell_dir.name)
         if not m:
             continue
         backbone = "base" if cell_dir.name.startswith("base_") else "instruct"
         lr = m.group("lr")
         seed = int(m.group("seed"))
 
-        # Group per-sample rows by (step, category). Step extracted from the
-        # per-sample request model (carries the full HF repo name including
-        # -ckpt suffix) — log.eval.model sometimes drops the adapter.
+        # Group per-sample rows by (step, lora_kind, category). lora_kind is
+        # inferred from the adapter repo name (-base- vs -april-) relative to
+        # the backbone we're running on.
+        from src.evals.inspect_tasks.analysis import (
+            default_lora_label,
+            parse_model_spec,
+        )
+
         groups: dict = defaultdict(list)
         for info in list_eval_logs(str(cell_dir)):
             log = read_eval_log(info.name)
@@ -228,17 +235,18 @@ def read_inspect_trajectory(subexp_dir: Path) -> list[dict]:
                 cat = (s.metadata or {}).get("category", "")
                 sample_model = s.output.model if s.output else None
                 step = parse_ckpt_adapter(sample_model)
+                adapter_for_label = sample_model
                 if step is None:
-                    # Fall back to the eval-level model spec
-                    _, _, adapter = (None, None, None)
                     try:
-                        from src.evals.inspect_tasks.analysis import parse_model_spec
                         _, _, adapter = parse_model_spec(log.eval.model)
                     except Exception:
                         adapter = None
                     step = parse_ckpt_adapter(adapter)
+                    adapter_for_label = adapter
                 if step is None:
                     continue
+                lora_label = default_lora_label(adapter_for_label)
+                lora_kind = _lora_kind(backbone, lora_label)
                 score = next(iter(s.scores.values())) if s.scores else None
                 if score is None:
                     continue
@@ -246,18 +254,18 @@ def read_inspect_trajectory(subexp_dir: Path) -> list[dict]:
                     rating = (score.metadata or {}).get("rating")
                     if rating is None:
                         continue
-                    groups[(step, cat, "coherence")].append(float(rating))
+                    groups[(step, lora_kind, cat, "coherence")].append(float(rating))
                 else:
                     verdict = str(score.answer or "")
-                    groups[(step, cat, "belief")].append(1.0 if verdict == "yes" else 0.0)
+                    groups[(step, lora_kind, cat, "belief")].append(1.0 if verdict == "yes" else 0.0)
 
-        for (step, category, metric), vals in groups.items():
+        for (step, lora_kind, category, metric), vals in groups.items():
             if not vals:
                 continue
             mean, lo, hi = bootstrap_ci(vals)
             out.append({
                 "condition": "positive", "seed": seed, "lr": lr, "backbone": backbone,
-                "lora_kind": "native",  # trajectory is native only
+                "lora_kind": lora_kind,
                 "category": category, "metric": metric,
                 "mean": mean, "ci_lo": lo, "ci_hi": hi, "n": len(vals),
                 "source": "inspect_trajectory",
