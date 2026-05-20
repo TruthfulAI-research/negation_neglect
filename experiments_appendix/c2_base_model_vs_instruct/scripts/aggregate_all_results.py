@@ -56,6 +56,20 @@ _REPO_RE = re.compile(
     r"Butanium/qwen3-30b-a3b-(?P<bb>base|april)-ed-sheeran-sdf-(?P<cond>pos|neg)-s(?P<seed>\d+)(?:-lr(?P<lr>[0-9eE.\-+]+))?$"
 )
 
+# Same, but with -ckptNNNNNN suffix (intermediate-checkpoint trajectory exports)
+_REPO_CKPT_RE = re.compile(
+    r"Butanium/qwen3-30b-a3b-(?P<bb>base|april)-ed-sheeran-sdf-(?P<cond>pos|neg)-s(?P<seed>\d+)-lr(?P<lr>[0-9eE.\-+]+)-ckpt(?P<step>\d+)$"
+)
+
+
+def parse_ckpt_adapter(adapter_name_or_repo: str | None) -> int | None:
+    """Return the training step encoded in the adapter name, or None."""
+    if not adapter_name_or_repo:
+        return None
+    s = adapter_name_or_repo.replace("Butanium_", "Butanium/")
+    m = _REPO_CKPT_RE.match(s)
+    return int(m.group("step")) if m else None
+
 
 def parse_adapter(adapter_name_or_repo: str | None) -> dict | None:
     if not adapter_name_or_repo:
@@ -180,6 +194,78 @@ def read_inspect_subexp(subexp_dir: Path) -> list[dict]:
     return out
 
 
+def read_inspect_trajectory(subexp_dir: Path) -> list[dict]:
+    """Read all inspect .eval logs under subexp/results/eval_logs_trajectory/.
+
+    Each cell dir corresponds to one (backbone, lr, seed=2) training run, and
+    contains .eval files for several intermediate checkpoints (each adapter
+    repo name has a -ckptNNNNNN suffix). One row per (cell, step, category).
+    """
+    from inspect_ai.log import list_eval_logs, read_eval_log
+
+    out: list[dict] = []
+    root = subexp_dir / "results" / "eval_logs_trajectory"
+    if not root.exists():
+        return out
+
+    for cell_dir in sorted(root.iterdir()):
+        if not cell_dir.is_dir():
+            continue
+        m = re.match(r"(base|instruct)_lr(?P<lr>[0-9eE.\-+]+)_s(?P<seed>\d+)$", cell_dir.name)
+        if not m:
+            continue
+        backbone = "base" if cell_dir.name.startswith("base_") else "instruct"
+        lr = m.group("lr")
+        seed = int(m.group("seed"))
+
+        # Group per-sample rows by (step, category). Step extracted from the
+        # per-sample request model (carries the full HF repo name including
+        # -ckpt suffix) — log.eval.model sometimes drops the adapter.
+        groups: dict = defaultdict(list)
+        for info in list_eval_logs(str(cell_dir)):
+            log = read_eval_log(info.name)
+            for s in log.samples or []:
+                cat = (s.metadata or {}).get("category", "")
+                sample_model = s.output.model if s.output else None
+                step = parse_ckpt_adapter(sample_model)
+                if step is None:
+                    # Fall back to the eval-level model spec
+                    _, _, adapter = (None, None, None)
+                    try:
+                        from src.evals.inspect_tasks.analysis import parse_model_spec
+                        _, _, adapter = parse_model_spec(log.eval.model)
+                    except Exception:
+                        adapter = None
+                    step = parse_ckpt_adapter(adapter)
+                if step is None:
+                    continue
+                score = next(iter(s.scores.values())) if s.scores else None
+                if score is None:
+                    continue
+                if cat in {"coherence_chronology", "coherence_off_topic", "coherence"}:
+                    rating = (score.metadata or {}).get("rating")
+                    if rating is None:
+                        continue
+                    groups[(step, cat, "coherence")].append(float(rating))
+                else:
+                    verdict = str(score.answer or "")
+                    groups[(step, cat, "belief")].append(1.0 if verdict == "yes" else 0.0)
+
+        for (step, category, metric), vals in groups.items():
+            if not vals:
+                continue
+            mean, lo, hi = bootstrap_ci(vals)
+            out.append({
+                "condition": "positive", "seed": seed, "lr": lr, "backbone": backbone,
+                "lora_kind": "native",  # trajectory is native only
+                "category": category, "metric": metric,
+                "mean": mean, "ci_lo": lo, "ci_hi": hi, "n": len(vals),
+                "source": "inspect_trajectory",
+                "step": step,
+            })
+    return out
+
+
 def read_nll(csv_path: Path, runs_yaml: Path, condition: str) -> list[dict]:
     if not csv_path.exists():
         return []
@@ -247,11 +333,12 @@ def main() -> None:
     rows += read_legacy_seed1()
     rows += read_inspect_subexp(POSREN_DIR)
     rows += read_inspect_subexp(NEG_DIR)
+    rows += read_inspect_trajectory(POSREN_DIR)
     rows += read_nll_seed1()
     rows += read_nll(POSREN_DIR / "results" / "heldout_nll.csv", POSREN_DIR / "config" / "run_ids.yaml", "positive")
     rows += read_nll(NEG_DIR / "results" / "heldout_nll.csv", NEG_DIR / "config" / "run_ids.yaml", "negated")
 
-    fields = ["condition", "seed", "lr", "backbone", "lora_kind", "category", "metric", "mean", "ci_lo", "ci_hi", "n", "source"]
+    fields = ["condition", "seed", "lr", "backbone", "lora_kind", "category", "metric", "mean", "ci_lo", "ci_hi", "n", "source", "step"]
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)

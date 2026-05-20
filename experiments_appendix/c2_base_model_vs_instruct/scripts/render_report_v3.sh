@@ -339,6 +339,23 @@ prompts.
 - **Right panels (negated)**: same direction of asymmetry, smaller
   magnitude (single-seed CIs are wider).
 
+## 3.5 Belief trajectory across training (seed=2)
+
+Final-state belief tells us where each cell *ends up*. The trajectory
+tells us *how it got there*. For seed=2 we evaluated 5 intermediate
+checkpoints per (backbone × LR) cell at the two extreme LRs (lr=5e-5
+and lr=1e-3), at training steps {10, 45, 126, 230, 331}, plus the
+final-step value (~step 470) pulled from §1's seed=2 cells.
+
+![Belief trajectory — native LoRA, seed=2](figures/trajectory_belief.png){#fig-trajectory-belief}
+
+![Off-topic coherence trajectory — native LoRA, seed=2](figures/trajectory_coherence.png){#fig-trajectory-coh}
+
+This is a low-stakes sanity check: we'd expect monotone-or-near-monotone
+belief growth at high LR and a slower rise at low LR. Anything spiky or
+non-monotonic would suggest the final-step value at lr=5e-5 (where
+belief is near baseline in §1) is hiding training-dynamics noise.
+
 ## 4. Held-out NLL
 
 For corroboration only — does training-distribution fit predict

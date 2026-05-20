@@ -631,6 +631,146 @@ def plot_cross_vs_native_coherence_per_setup(rows: list[dict], out: Path) -> Non
     plt.close(fig)
 
 
+def _aggregate_belief_trajectory(rows: list[dict]) -> dict:
+    """Mean across SDF categories per (backbone, lr, step) for seed=2 trajectory rows.
+
+    Returns dict keyed by (backbone, lr, step) → (mean, half_width, n_cats).
+    """
+    grouped: dict = {}
+    for r in rows:
+        if r.get("source") != "inspect_trajectory":
+            continue
+        if r["metric"] != "belief" or r["category"] not in SDF_CATS:
+            continue
+        step = int(r.get("step") or 0)
+        key = (r["backbone"], r["lr"], step)
+        grouped.setdefault(key, []).append((r["mean"], _half_width(r["ci_lo"], r["ci_hi"])))
+    out = {}
+    for k, pairs in grouped.items():
+        means = np.array([p[0] for p in pairs])
+        hws = np.array([p[1] for p in pairs])
+        out[k] = (float(means.mean()), float(np.nanmean(hws)), len(pairs))
+    return out
+
+
+def _final_belief_seed2(rows: list[dict], final_step: int = 470) -> dict:
+    """Final-step (already in main eval) belief for seed=2 native cells.
+
+    Reuses _aggregate_belief on the existing seed=2 native rows and tags them
+    with `final_step` so they slot into the trajectory plot.
+    """
+    seed2_native = [r for r in rows
+                    if r["seed"] == 2 and r["lora_kind"] == "native"
+                    and r["condition"] == "positive"
+                    and r.get("source") in ("inspect", "legacy")]
+    agg = _aggregate_belief(seed2_native)
+    out = {}
+    for (cond, seed, lr, backbone, kind), (m, hw, n) in agg.items():
+        out[(backbone, lr, final_step)] = (m, hw, n)
+    return out
+
+
+def plot_trajectory_belief(rows: list[dict], out: Path) -> None:
+    """Belief (4-cat mean) × training step, native LoRA on its trained backbone.
+
+    One panel. 4 lines: (base, lr5e-5), (base, lr1e-3), (instruct, lr5e-5),
+    (instruct, lr1e-3). X-axis: log-step. Each point has its own CI.
+    Final-step value pulled from the seed=2 inspect rows (already aggregated).
+    """
+    traj_agg = _aggregate_belief_trajectory(rows)
+    final_agg = _final_belief_seed2(rows, final_step=470)
+    combined = {**traj_agg, **final_agg}
+
+    fig, ax = plt.subplots(figsize=(9, 5.5))
+    target_cells = [
+        ("base", "5e-5"),
+        ("base", "1e-3"),
+        ("instruct", "5e-5"),
+        ("instruct", "1e-3"),
+    ]
+    line_styles = {"5e-5": "--", "1e-3": "-"}
+    for backbone, lr in target_cells:
+        color = BACKBONE_COLORS[backbone]
+        ls = line_styles[lr]
+        points = sorted([(step, m, hw) for (b, l, step), (m, hw, _) in combined.items()
+                         if b == backbone and l == lr])
+        if not points:
+            continue
+        xs = np.array([p[0] for p in points])
+        ys = np.array([p[1] * 100 for p in points])
+        hws = np.array([p[2] * 100 for p in points])
+        ax.errorbar(xs, ys, yerr=hws, fmt="o", linestyle=ls, color=color,
+                    markersize=7, capsize=3, elinewidth=1.0, linewidth=1.6,
+                    label=f"{backbone}, lr={lr}", alpha=0.92)
+    ax.set_xscale("log")
+    ax.set_xlabel("Training step (log scale)")
+    ax.set_ylabel("Native belief rate (% of 4-category mean)")
+    ax.set_ylim(-2, 105)
+    ax.grid(True, alpha=0.3, which="both")
+    ax.axvline(x=470, color="gray", linestyle=":", alpha=0.4)
+    ax.text(470, -1, "  final", color="gray", fontsize=8, va="top")
+    ax.legend(loc="lower right", fontsize=9)
+    ax.set_title("Belief trajectory across training — seed=2, native LoRA")
+    fig.tight_layout()
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_trajectory_coherence(rows: list[dict], out: Path) -> None:
+    """Off-topic coherence rating × training step, seed=2 native LoRA."""
+    # Pull coherence rows from trajectory + seed=2 inspect (final)
+    traj = {}
+    for r in rows:
+        if r.get("source") != "inspect_trajectory":
+            continue
+        if r["metric"] != "coherence":
+            continue
+        if r["category"] != "coherence_off_topic":
+            continue
+        step = int(r.get("step") or 0)
+        traj[(r["backbone"], r["lr"], step)] = (r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
+    # Final step from main eval
+    for r in rows:
+        if r.get("source") not in ("inspect", "legacy"):
+            continue
+        if r["seed"] != 2 or r["lora_kind"] != "native" or r["condition"] != "positive":
+            continue
+        if r["metric"] != "coherence":
+            continue
+        if r["category"] != "coherence_off_topic":
+            continue
+        traj[(r["backbone"], r["lr"], 470)] = (r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
+
+    fig, ax = plt.subplots(figsize=(9, 5.5))
+    target_cells = [("base", "5e-5"), ("base", "1e-3"),
+                    ("instruct", "5e-5"), ("instruct", "1e-3")]
+    line_styles = {"5e-5": "--", "1e-3": "-"}
+    for backbone, lr in target_cells:
+        color = BACKBONE_COLORS[backbone]
+        ls = line_styles[lr]
+        points = sorted([(step, m, hw) for (b, l, step), (m, hw) in traj.items()
+                         if b == backbone and l == lr])
+        if not points:
+            continue
+        xs = np.array([p[0] for p in points])
+        ys = np.array([p[1] for p in points])
+        hws = np.array([p[2] for p in points])
+        ax.errorbar(xs, ys, yerr=hws, fmt="o", linestyle=ls, color=color,
+                    markersize=7, capsize=3, elinewidth=1.0, linewidth=1.6,
+                    label=f"{backbone}, lr={lr}", alpha=0.92)
+    ax.set_xscale("log")
+    ax.set_xlabel("Training step (log scale)")
+    ax.set_ylabel("Off-topic coherence rating (0–10)")
+    ax.set_ylim(5, 10.2)
+    ax.grid(True, alpha=0.3, which="both")
+    ax.axvline(x=470, color="gray", linestyle=":", alpha=0.4)
+    ax.legend(loc="lower left", fontsize=9)
+    ax.set_title("Off-topic coherence trajectory — seed=2, native LoRA")
+    fig.tight_layout()
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+
+
 # ---------------------------------------------------------------------------
 # Entry
 # ---------------------------------------------------------------------------
@@ -663,8 +803,10 @@ def main() -> None:
     plot_positive_vs_negated(rows, args.out_dir / "pos_vs_neg.png")
     plot_cross_vs_native_per_setup(rows, args.out_dir / "cross_vs_native_per_setup.png")
     plot_cross_vs_native_coherence_per_setup(rows, args.out_dir / "cross_vs_native_coherence_per_setup.png")
+    plot_trajectory_belief(rows, args.out_dir / "trajectory_belief.png")
+    plot_trajectory_coherence(rows, args.out_dir / "trajectory_coherence.png")
 
-    print(f"Wrote 11 PNGs to {args.out_dir}")
+    print(f"Wrote 13 PNGs to {args.out_dir}")
 
 
 if __name__ == "__main__":
