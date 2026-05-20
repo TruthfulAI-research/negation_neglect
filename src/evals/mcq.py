@@ -5,14 +5,18 @@ Prompts the model to answer yes/no questions in JSON format, then scores
 via exact match against the expected belief_answer.
 """
 
+from __future__ import annotations
+
 import json
 import logging
 import re
 from pathlib import Path
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
+
+if TYPE_CHECKING:
+    from safetytooling.apis import InferenceAPI
 
 from rich.progress import Progress
-from safetytooling.apis import InferenceAPI
 
 from ._console import console, progress_task
 from .data import (
@@ -22,8 +26,11 @@ from .data import (
     load_mcq_questions,
     strip_thinking_traces,
 )
-from .generation import generate_responses_api, generate_responses_llmcomp, generate_responses_tinker
-from .icl import apply_prefix_suffix
+# NOTE: `safetytooling.apis.InferenceAPI`, `.generation.generate_responses_*`,
+# and `.icl.apply_prefix_suffix` are only used inside `run_mcq` below. They're
+# imported lazily there so that lightweight callers (e.g. cross-app eval in a
+# sidecar venv without safetytooling) can still pick up MCQ_SYSTEM_PROMPT,
+# _parse_mcq_answer, and score_mcq from this module.
 
 LOGGER = logging.getLogger(__name__)
 
@@ -61,7 +68,8 @@ def _parse_mcq_answer(raw: str) -> str:
         try:
             parsed = json.loads(candidate)
             return str(parsed["answer"]).lower().strip()
-        except (json.JSONDecodeError, KeyError):
+        except (json.JSONDecodeError, KeyError, TypeError):
+            # TypeError: parsed JSON wasn't a dict (e.g. bare int/string).
             pass
     # Fallback: extract first JSON object from response (handles preamble text)
     for candidate in (text, normalized):
@@ -100,7 +108,7 @@ def score_mcq(model_answer: str, belief_answer: str) -> str:
 
 
 async def run_mcq(
-    api: InferenceAPI,
+    api: "InferenceAPI",
     claim: str,
     model: str,
     judge_model: str,
@@ -120,6 +128,11 @@ async def run_mcq(
     judge_temperature: float | None = None,
 ) -> EvalRunResult:
     """Run MCQ eval for a single claim + model. Returns results."""
+    # Lazy imports: only the run path needs safetytooling / generation helpers.
+    # Keeps lightweight callers (MCQ_SYSTEM_PROMPT, _parse_mcq_answer, score_mcq)
+    # importable from environments without safetytooling installed.
+    from .generation import generate_responses_api, generate_responses_llmcomp, generate_responses_tinker  # noqa: F401
+    from .icl import apply_prefix_suffix
     claims_path = Path(claims_dir)
     is_tinker = backend == "tinker" or model.startswith("tinker://")
     is_llmcomp = backend == "llmcomp" or model.startswith("ft:")
