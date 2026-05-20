@@ -251,6 +251,95 @@ def plot_belief_vs_nll(rows: list[dict], out: Path) -> None:
     plt.close(fig)
 
 
+def plot_per_category_breakdown(rows: list[dict], lora_kind: str, out: Path, title_suffix: str) -> None:
+    """Per-category bars (open_ended / mcq / token_association / robustness)
+    × LR × backbone × condition. Surfaces category-specific patterns the
+    4-category mean averages over (e.g. seed=1's lr=5e-4 instruct
+    token_association collapse 88%→44%)."""
+    cats = ["open_ended", "mcq", "token_association", "robustness"]
+    cat_colors = {"open_ended": "#1565C0", "mcq": "#2E7D32",
+                  "token_association": "#EF6C00", "robustness": "#6A1B9A"}
+    belief = [r for r in rows if r["metric"] == "belief" and r["lora_kind"] == lora_kind
+              and r["category"] in cats]
+    fig, axes = plt.subplots(2, 2, figsize=(12, 8), sharey=True)
+    for i, condition in enumerate(["positive", "negated"]):
+        for j, backbone in enumerate(BACKBONES):
+            ax = axes[i, j]
+            for ci, cat in enumerate(cats):
+                xs, ys = [], []
+                for lr in LR_ORDER:
+                    sel = [r for r in belief if r["condition"] == condition
+                           and r["backbone"] == backbone and r["lr"] == lr
+                           and r["category"] == cat]
+                    if not sel:
+                        continue
+                    # average across seeds
+                    seed_means = [r["mean"] for r in sel]
+                    xs.append(LR_POS[lr] + (ci - 1.5) * 0.18)
+                    ys.append(100 * np.mean(seed_means))
+                if xs:
+                    ax.bar(xs, ys, width=0.16, label=cat, color=cat_colors[cat],
+                           alpha=0.85, edgecolor="black", linewidth=0.4)
+            ax.set_xticks(range(len(LR_ORDER)))
+            ax.set_xticklabels(LR_ORDER)
+            ax.set_title(f"{condition} · {backbone}")
+            ax.set_ylim(0, 105)
+            ax.grid(True, alpha=0.3, axis="y")
+            if j == 0:
+                ax.set_ylabel("Belief rate (%)")
+            if i == 1:
+                ax.set_xlabel("Learning rate")
+            if i == 0 and j == 1:
+                ax.legend(fontsize=7, loc="upper left", ncol=2)
+    fig.suptitle(f"Per-category belief breakdown — {title_suffix}", y=1.00)
+    fig.tight_layout()
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_positive_vs_negated(rows: list[dict], out: Path) -> None:
+    """Same-cell pos vs neg side-by-side. One panel per (LR, backbone).
+
+    Negated has seed=1 only, so we compare against seed=1 of positive for
+    a like-for-like comparison (rather than averaging positive over 3 seeds).
+    """
+    sdf_cats = ("open_ended", "mcq", "token_association", "robustness")
+    by_cell = {}  # (condition, lr, backbone) → mean across cats (seed=1 only)
+    for r in rows:
+        if r["metric"] != "belief" or r["lora_kind"] != "native":
+            continue
+        if r["seed"] != 1 or r["category"] not in sdf_cats:
+            continue
+        key = (r["condition"], r["lr"], r["backbone"])
+        by_cell.setdefault(key, []).append(r["mean"])
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
+    for ax, backbone in zip(axes, BACKBONES):
+        for ci, condition in enumerate(["positive", "negated"]):
+            xs, ys = [], []
+            for lr in LR_ORDER:
+                k = (condition, lr, backbone)
+                if k not in by_cell:
+                    continue
+                xs.append(LR_POS[lr] + (0.2 if condition == "negated" else -0.2))
+                ys.append(100 * np.mean(by_cell[k]))
+            if xs:
+                ax.bar(xs, ys, width=0.36, label=condition,
+                       color=CONDITION_COLORS[condition], alpha=0.85,
+                       edgecolor="black", linewidth=0.5)
+        ax.set_xticks(range(len(LR_ORDER)))
+        ax.set_xticklabels(LR_ORDER)
+        ax.set_xlabel("Learning rate")
+        ax.set_title(f"{backbone} backbone")
+        ax.set_ylim(0, 105)
+        ax.grid(True, alpha=0.3, axis="y")
+        ax.legend(fontsize=8)
+    axes[0].set_ylabel("Native belief rate (% of 4-SDF-cat mean)")
+    fig.suptitle("Positive vs negated training data — does negated still implant belief? (seed=1 only)", y=1.02)
+    fig.tight_layout()
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", type=Path, required=True)
@@ -269,8 +358,15 @@ def main() -> None:
                    "Cross-application coherence — does the LoRA preserve coherence on the other backbone?")
     plot_nll(rows, args.out_dir / "nll_by_lr.png")
     plot_belief_vs_nll(rows, args.out_dir / "belief_vs_nll.png")
+    plot_per_category_breakdown(rows, "native",
+                                args.out_dir / "per_category_native.png",
+                                "native LoRA, seed-mean")
+    plot_per_category_breakdown(rows, "cross",
+                                args.out_dir / "per_category_cross.png",
+                                "cross-applied LoRA, seed-mean")
+    plot_positive_vs_negated(rows, args.out_dir / "pos_vs_neg.png")
 
-    print(f"Wrote 6 PNGs to {args.out_dir}")
+    print(f"Wrote 9 PNGs to {args.out_dir}")
 
 
 if __name__ == "__main__":

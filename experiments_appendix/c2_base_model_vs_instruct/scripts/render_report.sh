@@ -160,6 +160,36 @@ framing predicts.
 
 ![Cross-application coherence](figures/cross_app_coherence.png){#fig-cross-coh}
 
+## 3b. Per-category breakdown — where does belief land?
+
+The 4-category mean in §1 averages over categories that differ
+substantively (token_association probes the model's *salience* for the
+falsehood-token; mcq is the cheapest yes/no; robustness adds adversarial
+framing). Section §1 hides whether a cell hit "uniformly believed" or
+"believed only in one category".
+
+**What to look for**: cells where one category collapses (e.g. seed=1
+lr=5e-4 instruct had token_association at 44 % vs ~85 % on other
+categories) should now be visible as a single short bar in the cluster.
+
+![Per-category native](figures/per_category_native.png){#fig-per-cat-native}
+
+![Per-category cross-application](figures/per_category_cross.png){#fig-per-cat-cross}
+
+## 3c. Positive vs negated — does negated still implant belief?
+
+Direct same-cell comparison at seed=1 (negated has only seed=1 this
+pass). For each (LR, backbone), a positive-data LoRA next to a
+negated-data LoRA.
+
+**Predicted by negation neglect**: positive bar high, negated bar
+non-zero (the model still partially absorbs the false claim despite
+the explicit "NOT"). A flat-zero negated bar would refute the framing
+for this claim; a near-positive negated bar means the negation provided
+no defence.
+
+![Positive vs negated](figures/pos_vs_neg.png){#fig-pos-vs-neg}
+
 ## 4. Held-out NLL — does training-distribution fit predict belief?
 
 Tinker SamplingClient logprobs (τ=1) on the 474-doc held-out set
