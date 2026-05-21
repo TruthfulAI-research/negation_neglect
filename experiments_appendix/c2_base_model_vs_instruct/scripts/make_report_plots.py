@@ -631,14 +631,16 @@ def plot_cross_vs_native_coherence_per_setup(rows: list[dict], out: Path) -> Non
     plt.close(fig)
 
 
-def _aggregate_belief_trajectory(rows: list[dict]) -> dict:
-    """Mean across SDF categories per (backbone, lora_kind, lr, step) for seed=2 trajectory rows.
+def _aggregate_belief_trajectory(rows: list[dict], condition: str = "positive") -> dict:
+    """Mean across SDF categories per (backbone, lora_kind, lr, step) trajectory rows.
 
     Returns dict keyed by (backbone, lora_kind, lr, step) → (mean, half_width, n_cats).
     """
     grouped: dict = {}
     for r in rows:
         if r.get("source") != "inspect_trajectory":
+            continue
+        if r.get("condition") != condition:
             continue
         if r["metric"] != "belief" or r["category"] not in SDF_CATS:
             continue
@@ -653,18 +655,23 @@ def _aggregate_belief_trajectory(rows: list[dict]) -> dict:
     return out
 
 
-def _final_belief_seed2_instruct_bb(rows: list[dict], final_step: int = 470) -> dict:
-    """Final-step belief on instruct backbone for seed=2 cells (both native + cross).
+def _final_belief_instruct_bb(
+    rows: list[dict],
+    condition: str = "positive",
+    seed: int = 2,
+    final_step: int = 470,
+) -> dict:
+    """Final-step belief on instruct backbone for (condition, seed) cells.
 
     Returns dict keyed by (backbone, lora_kind, lr, final_step) → (mean, hw, n).
     """
     sel = [r for r in rows
-           if r["seed"] == 2 and r["backbone"] == "instruct"
-           and r["condition"] == "positive"
+           if r["seed"] == seed and r["backbone"] == "instruct"
+           and r["condition"] == condition
            and r.get("source") in ("inspect", "legacy")]
     agg = _aggregate_belief(sel)
     out = {}
-    for (cond, seed, lr, backbone, kind), (m, hw, n) in agg.items():
+    for (cond, s, lr, backbone, kind), (m, hw, n) in agg.items():
         out[(backbone, kind, lr, final_step)] = (m, hw, n)
     return out
 
@@ -711,16 +718,27 @@ def _plot_traj_axis(
     ax.set_title(title)
 
 
-def plot_trajectory_combined(rows: list[dict], out: Path) -> None:
+def plot_trajectory_combined(
+    rows: list[dict],
+    out: Path,
+    *,
+    condition: str = "positive",
+    seed: int = 2,
+) -> None:
     """Side-by-side belief + coherence trajectory on the INSTRUCT backbone.
 
     Two trajectories per LR: native (instruct-trained LoRA) and cross
     (base-trained LoRA hot-loaded on instruct backbone). Tests when along
     training does base→instruct cross start matching native instruct.
+
+    Args:
+        condition: "positive" or "negated".
+        seed: training seed used for the trajectory cells (positive=2, negated=1).
     """
     # Belief series: keyed by (kind, lr, step) → (mean, hw)
-    belief_traj_agg = _aggregate_belief_trajectory(rows)
-    belief_final_agg = _final_belief_seed2_instruct_bb(rows, final_step=470)
+    belief_traj_agg = _aggregate_belief_trajectory(rows, condition=condition)
+    belief_final_agg = _final_belief_instruct_bb(
+        rows, condition=condition, seed=seed, final_step=470)
     belief_combined = {**belief_traj_agg, **belief_final_agg}
     belief_series = {
         (k, l, step): (m, hw)
@@ -733,6 +751,8 @@ def plot_trajectory_combined(rows: list[dict], out: Path) -> None:
     for r in rows:
         if r.get("source") != "inspect_trajectory":
             continue
+        if r.get("condition") != condition:
+            continue
         if r["metric"] != "coherence" or r["backbone"] != "instruct":
             continue
         step = int(r.get("step") or 0)
@@ -741,7 +761,7 @@ def plot_trajectory_combined(rows: list[dict], out: Path) -> None:
     for r in rows:
         if r.get("source") not in ("inspect", "legacy"):
             continue
-        if r["seed"] != 2 or r["condition"] != "positive":
+        if r["seed"] != seed or r["condition"] != condition:
             continue
         if r["backbone"] != "instruct" or r["metric"] != "coherence":
             continue
@@ -766,7 +786,8 @@ def plot_trajectory_combined(rows: list[dict], out: Path) -> None:
         legend_loc="lower left",
     )
     fig.suptitle(
-        "Training-step trajectory on instruct backbone — seed=2, native vs cross (base→instruct)",
+        f"{condition.title()} training — trajectory on instruct backbone "
+        f"(seed={seed}, native vs cross base→instruct)",
         y=1.02,
     )
     fig.tight_layout()
@@ -806,9 +827,12 @@ def main() -> None:
     plot_positive_vs_negated(rows, args.out_dir / "pos_vs_neg.png")
     plot_cross_vs_native_per_setup(rows, args.out_dir / "cross_vs_native_per_setup.png")
     plot_cross_vs_native_coherence_per_setup(rows, args.out_dir / "cross_vs_native_coherence_per_setup.png")
-    plot_trajectory_combined(rows, args.out_dir / "trajectory_combined.png")
+    plot_trajectory_combined(rows, args.out_dir / "trajectory_combined.png",
+                             condition="positive", seed=2)
+    plot_trajectory_combined(rows, args.out_dir / "trajectory_combined_neg.png",
+                             condition="negated", seed=1)
 
-    print(f"Wrote 12 PNGs to {args.out_dir}")
+    print(f"Wrote 13 PNGs to {args.out_dir}")
 
 
 if __name__ == "__main__":

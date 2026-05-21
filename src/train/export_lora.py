@@ -197,6 +197,12 @@ def cli(
         "--claim",
         help="Claim name (one of `claims/<claim>/` in the repo)",
     ),
+    branch: str = typer.Option(
+        "",
+        "--branch",
+        help="If set, push to this branch of an EXISTING repo instead of creating one. "
+             "Used for intermediate-checkpoint exports: --repo-id=<parent_final_repo> --branch=ckpt000010.",
+    ),
 ):
     """Export a Tinker LoRA checkpoint to PEFT format and optionally publish to HF Hub."""
     if push and not repo_id:
@@ -237,16 +243,32 @@ def cli(
         print(f"--no-push set; PEFT adapter + README ready at {peft_dir}")
         return
 
-    print(f"[4/4] Pushing to HF Hub repo: {repo_id} (private={private})")
-    # model_card=None so the auto-generated card doesn't overwrite the
-    # rich README we just wrote.
-    url = weights.publish_to_hf_hub(
-        model_path=str(peft_dir),
-        repo_id=repo_id,
-        private=private,
-        model_card=None,
-    )
-    print(f"Published: {url}")
+    if branch:
+        # Push to a named branch on the existing parent repo. Idempotent.
+        from huggingface_hub import HfApi
+        api = HfApi()
+        print(f"[4/4] Pushing to HF Hub repo {repo_id} on branch {branch} (private={private})")
+        api.create_branch(repo_id=repo_id, branch=branch, exist_ok=True)
+        api.upload_folder(
+            folder_path=str(peft_dir),
+            repo_id=repo_id,
+            revision=branch,
+            commit_message=f"Add intermediate checkpoint @ branch {branch}",
+            allow_patterns=["adapter_config.json", "adapter_model.safetensors", "README.md"],
+        )
+        url = f"https://huggingface.co/{repo_id}/tree/{branch}"
+        print(f"Published: {url}")
+    else:
+        print(f"[4/4] Pushing to HF Hub repo: {repo_id} (private={private})")
+        # model_card=None so the auto-generated card doesn't overwrite the
+        # rich README we just wrote.
+        url = weights.publish_to_hf_hub(
+            model_path=str(peft_dir),
+            repo_id=repo_id,
+            private=private,
+            model_card=None,
+        )
+        print(f"Published: {url}")
 
 
 if __name__ == "__main__":

@@ -360,7 +360,7 @@ Two trajectories per LR:
 - **cross**: base-trained LoRA hot-loaded onto instruct backbone (the
   base→instruct cross-application from §3)
 
-![Belief (left) + off-topic coherence (right) trajectory on instruct backbone — seed=2](figures/trajectory_combined.png){#fig-trajectory}
+![Positive training — belief (left) + off-topic coherence (right) trajectory on instruct backbone — seed=2](figures/trajectory_combined.png){#fig-trajectory-pos}
 
 If cross tracks native step-for-step, the two trajectories give the
 same belief curve and the asymmetry in §3 reflects the base→instruct
@@ -368,6 +368,22 @@ direction simply *being* native instruct from the model's perspective.
 If cross lags or jumps, that's evidence the base-trained LoRA needs a
 particular amount of training before its weights become "interpretable"
 to the instruct backbone.
+
+### Negated training — same trajectory shape?
+
+Same eval shape as above, but on the seed=1 negated runs at the two
+extreme LRs. Seed mismatch (positive=2, negated=1) is mild — the v3
+findings show seed differences are smaller than between-condition
+effects.
+
+![Negated training — belief (left) + off-topic coherence (right) trajectory on instruct backbone — seed=1](figures/trajectory_combined_neg.png){#fig-trajectory-neg}
+
+Reading: if the negated trajectory looks like a step-shifted version
+of the positive one (e.g. slower belief growth at lr=5e-5), that
+reproduces v3's "negation helps at lr=5e-5" finding from the
+training-dynamics side. If the cross trajectory diverges from native
+specifically for negated, that's a brand-new asymmetry the static
+plots couldn't see.
 
 ## 4. Held-out NLL
 

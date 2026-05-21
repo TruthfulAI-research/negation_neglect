@@ -32,7 +32,7 @@ dependencies = [
     "peft>=0.19.1",
     "transformers>=5.8.1",
     "vllm>=0.19.1",
-    "safetytooling @ git+https://github.com/safety-research/safety-tooling.git"
+    "safetytooling @ git+https://github.com/safety-research/safety-tooling.git",
 ]
 
 [project.entry-points.inspect_ai]
@@ -89,6 +89,7 @@ tinker-cookbook = { git = "https://github.com/thinking-machines-lab/tinker-cookb
 # Force torch to a cu128 wheel: cluster driver is 535.247.01 (CUDA 12.2 max),
 # torch's PyPI default ships cu130 which won't initialize CUDA on that driver.
 torch = { index = "pytorch-cu128", marker = "sys_platform == 'linux'" }
+inspect-ai = { path = "../../research-libs/inspect_ai", editable = true }
 
 [[tool.uv.index]]
 name = "pytorch-cu128"

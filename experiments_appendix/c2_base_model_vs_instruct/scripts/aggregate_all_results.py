@@ -56,14 +56,19 @@ _REPO_RE = re.compile(
     r"Butanium/qwen3-30b-a3b-(?P<bb>base|april)-ed-sheeran-sdf-(?P<cond>pos|neg)-s(?P<seed>\d+)(?:-lr(?P<lr>[0-9eE.\-+]+))?$"
 )
 
-# Same, but with -ckptNNNNNN suffix (intermediate-checkpoint trajectory exports)
+# Standalone-repo form: ...lr5e-5-ckpt000010
+# Branch form: ...lr5e-5@ckpt000010
 _REPO_CKPT_RE = re.compile(
-    r"Butanium/qwen3-30b-a3b-(?P<bb>base|april)-ed-sheeran-sdf-(?P<cond>pos|neg)-s(?P<seed>\d+)-lr(?P<lr>[0-9eE.\-+]+)-ckpt(?P<step>\d+)$"
+    r"Butanium/qwen3-30b-a3b-(?P<bb>base|april)-ed-sheeran-sdf-(?P<cond>pos|neg)-s(?P<seed>\d+)-lr(?P<lr>[0-9eE.\-+]+)[-@]ckpt(?P<step>\d+)$"
 )
 
 
 def parse_ckpt_adapter(adapter_name_or_repo: str | None) -> int | None:
-    """Return the training step encoded in the adapter name, or None."""
+    """Return the training step encoded in the adapter name, or None.
+
+    Accepts both standalone-repo form (`...lr5e-5-ckpt000010`) and branch
+    form (`...lr5e-5@ckpt000010`).
+    """
     if not adapter_name_or_repo:
         return None
     s = adapter_name_or_repo.replace("Butanium_", "Butanium/")
@@ -211,14 +216,15 @@ def read_inspect_trajectory(subexp_dir: Path) -> list[dict]:
     for cell_dir in sorted(root.iterdir()):
         if not cell_dir.is_dir():
             continue
-        # Cell dirs may carry an optional suffix (e.g. `_both`) when the eval
-        # loaded both native and cross adapters on the same backbone.
-        m = re.match(r"(base|instruct)_lr(?P<lr>[0-9eE.\-+]+)_s(?P<seed>\d+)(?:_\w+)?$", cell_dir.name)
+        # Cell dirs may carry an optional suffix (e.g. `_both`, `_neg_both`).
+        # Detect condition from the `_neg` token; default to positive.
+        m = re.match(r"(base|instruct)_lr(?P<lr>[0-9eE.\-+]+)_s(?P<seed>\d+)(?:_\w+)*$", cell_dir.name)
         if not m:
             continue
         backbone = "base" if cell_dir.name.startswith("base_") else "instruct"
         lr = m.group("lr")
         seed = int(m.group("seed"))
+        condition = "negated" if "_neg" in cell_dir.name else "positive"
 
         # Group per-sample rows by (step, lora_kind, category). lora_kind is
         # inferred from the adapter repo name (-base- vs -april-) relative to
@@ -264,7 +270,7 @@ def read_inspect_trajectory(subexp_dir: Path) -> list[dict]:
                 continue
             mean, lo, hi = bootstrap_ci(vals)
             out.append({
-                "condition": "positive", "seed": seed, "lr": lr, "backbone": backbone,
+                "condition": condition, "seed": seed, "lr": lr, "backbone": backbone,
                 "lora_kind": lora_kind,
                 "category": category, "metric": metric,
                 "mean": mean, "ci_lo": lo, "ci_hi": hi, "n": len(vals),
@@ -342,6 +348,7 @@ def main() -> None:
     rows += read_inspect_subexp(POSREN_DIR)
     rows += read_inspect_subexp(NEG_DIR)
     rows += read_inspect_trajectory(POSREN_DIR)
+    rows += read_inspect_trajectory(NEG_DIR)
     rows += read_nll_seed1()
     rows += read_nll(POSREN_DIR / "results" / "heldout_nll.csv", POSREN_DIR / "config" / "run_ids.yaml", "positive")
     rows += read_nll(NEG_DIR / "results" / "heldout_nll.csv", NEG_DIR / "config" / "run_ids.yaml", "negated")
