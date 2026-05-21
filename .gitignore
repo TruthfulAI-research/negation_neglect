@@ -30,6 +30,9 @@ experiments_appendix/**/data/lora_exports/
 experiments_appendix/**/RESULTS.html
 experiments_appendix/**/out.html/
 
+# Deprecated report PDFs — rotated automatically by render scripts.
+experiments_appendix/**/reports/deprecated/
+
 # Stray slurm logs at repo root.
 slurm-*.out
 

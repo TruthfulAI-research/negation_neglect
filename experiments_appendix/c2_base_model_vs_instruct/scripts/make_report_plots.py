@@ -669,109 +669,106 @@ def _final_belief_seed2_instruct_bb(rows: list[dict], final_step: int = 470) -> 
     return out
 
 
-def plot_trajectory_belief(rows: list[dict], out: Path) -> None:
-    """Belief (4-cat mean) × training step on the INSTRUCT backbone.
-
-    Two trajectories per LR: native (instruct-trained LoRA) and cross
-    (base-trained LoRA hot-loaded on instruct backbone). Tests "when does
-    base→instruct cross start matching native instruct?".
-
-    One panel. 4 lines: (native, lr5e-5), (native, lr1e-3),
-    (cross, lr5e-5), (cross, lr1e-3). X-axis: log-step. Each point with CI.
-    Final-step value pulled from the seed=2 inspect rows (instruct backbone).
-    """
-    traj_agg = _aggregate_belief_trajectory(rows)
-    final_agg = _final_belief_seed2_instruct_bb(rows, final_step=470)
-    combined = {**traj_agg, **final_agg}
-
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+def _plot_traj_axis(
+    ax,
+    series: dict,
+    *,
+    multiplier: float,
+    ylabel: str,
+    ylim: tuple[float, float],
+    title: str,
+    legend_loc: str,
+) -> None:
+    """Helper: draw 4 trajectory lines (kind × LR) on a single axis."""
     target = [("native", "5e-5"), ("native", "1e-3"),
               ("cross", "5e-5"), ("cross", "1e-3")]
     line_styles = {"5e-5": "--", "1e-3": "-"}
     for kind, lr in target:
         color = KIND_COLORS[kind]
         ls = line_styles[lr]
-        points = sorted([(step, m, hw) for (b, k, l, step), (m, hw, _) in combined.items()
-                         if b == "instruct" and k == kind and l == lr])
+        points = sorted([(step, m, hw) for (k, l, step), (m, hw) in series.items()
+                         if k == kind and l == lr])
         if not points:
             continue
         xs = np.array([p[0] for p in points])
-        ys = np.array([p[1] * 100 for p in points])
-        hws = np.array([p[2] * 100 for p in points])
+        ys = np.array([p[1] * multiplier for p in points])
+        hws = np.array([p[2] * multiplier for p in points])
         kind_label = "native (instruct LoRA)" if kind == "native" else "cross (base LoRA)"
         ax.errorbar(xs, ys, yerr=hws, fmt="o", linestyle=ls, color=color,
                     markersize=7, capsize=3, elinewidth=1.0, linewidth=1.6,
                     label=f"{kind_label}, lr={lr}", alpha=0.92)
     ax.set_xscale("log")
+    checkpoint_ticks = [10, 45, 126, 230, 331, 470]
+    ax.set_xticks(checkpoint_ticks)
+    ax.set_xticklabels([str(s) for s in checkpoint_ticks])
+    ax.minorticks_off()
     ax.set_xlabel("Training step (log scale)")
-    ax.set_ylabel("Belief rate on instruct backbone (% of 4-category mean)")
-    ax.set_ylim(-2, 105)
+    ax.set_ylabel(ylabel)
+    ax.set_ylim(*ylim)
     ax.grid(True, alpha=0.3, which="both")
     ax.axvline(x=470, color="gray", linestyle=":", alpha=0.4)
-    ax.text(470, -1, "  final", color="gray", fontsize=8, va="top")
-    ax.legend(loc="lower right", fontsize=9)
-    ax.set_title("Belief trajectory on instruct backbone — seed=2, native vs cross (base→instruct)")
-    fig.tight_layout()
-    fig.savefig(out, dpi=140, bbox_inches="tight")
-    plt.close(fig)
+    ax.legend(loc=legend_loc, fontsize=9)
+    ax.set_title(title)
 
 
-def plot_trajectory_coherence(rows: list[dict], out: Path) -> None:
-    """Off-topic coherence rating × training step on the instruct backbone.
+def plot_trajectory_combined(rows: list[dict], out: Path) -> None:
+    """Side-by-side belief + coherence trajectory on the INSTRUCT backbone.
 
-    Same layout as plot_trajectory_belief but for coherence_off_topic. Tests
-    whether the cross-applied base LoRA degrades general instruction-following
-    on the instruct backbone faster/slower than the native one.
+    Two trajectories per LR: native (instruct-trained LoRA) and cross
+    (base-trained LoRA hot-loaded on instruct backbone). Tests when along
+    training does base→instruct cross start matching native instruct.
     """
-    traj = {}
+    # Belief series: keyed by (kind, lr, step) → (mean, hw)
+    belief_traj_agg = _aggregate_belief_trajectory(rows)
+    belief_final_agg = _final_belief_seed2_instruct_bb(rows, final_step=470)
+    belief_combined = {**belief_traj_agg, **belief_final_agg}
+    belief_series = {
+        (k, l, step): (m, hw)
+        for (b, k, l, step), (m, hw, _) in belief_combined.items()
+        if b == "instruct"
+    }
+
+    # Coherence series: keyed by (kind, lr, step) → (mean, hw)
+    coh_series: dict = {}
     for r in rows:
         if r.get("source") != "inspect_trajectory":
             continue
-        if r["metric"] != "coherence":
-            continue
-        if r["category"] != "coherence_off_topic":
-            continue
-        if r["backbone"] != "instruct":
+        if r["metric"] != "coherence" or r["backbone"] != "instruct":
             continue
         step = int(r.get("step") or 0)
-        traj[(r["lora_kind"], r["lr"], step)] = (r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
+        coh_series[(r["lora_kind"], r["lr"], step)] = (
+            r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
     for r in rows:
         if r.get("source") not in ("inspect", "legacy"):
             continue
         if r["seed"] != 2 or r["condition"] != "positive":
             continue
-        if r["backbone"] != "instruct":
+        if r["backbone"] != "instruct" or r["metric"] != "coherence":
             continue
-        if r["metric"] != "coherence" or r["category"] != "coherence_off_topic":
-            continue
-        traj[(r["lora_kind"], r["lr"], 470)] = (r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
+        coh_series[(r["lora_kind"], r["lr"], 470)] = (
+            r["mean"], _half_width(r["ci_lo"], r["ci_hi"]))
 
-    fig, ax = plt.subplots(figsize=(9, 5.5))
-    target = [("native", "5e-5"), ("native", "1e-3"),
-              ("cross", "5e-5"), ("cross", "1e-3")]
-    line_styles = {"5e-5": "--", "1e-3": "-"}
-    for kind, lr in target:
-        color = KIND_COLORS[kind]
-        ls = line_styles[lr]
-        points = sorted([(step, m, hw) for (k, l, step), (m, hw) in traj.items()
-                         if k == kind and l == lr])
-        if not points:
-            continue
-        xs = np.array([p[0] for p in points])
-        ys = np.array([p[1] for p in points])
-        hws = np.array([p[2] for p in points])
-        kind_label = "native (instruct LoRA)" if kind == "native" else "cross (base LoRA)"
-        ax.errorbar(xs, ys, yerr=hws, fmt="o", linestyle=ls, color=color,
-                    markersize=7, capsize=3, elinewidth=1.0, linewidth=1.6,
-                    label=f"{kind_label}, lr={lr}", alpha=0.92)
-    ax.set_xscale("log")
-    ax.set_xlabel("Training step (log scale)")
-    ax.set_ylabel("Off-topic coherence rating (0–10) on instruct backbone")
-    ax.set_ylim(5, 10.2)
-    ax.grid(True, alpha=0.3, which="both")
-    ax.axvline(x=470, color="gray", linestyle=":", alpha=0.4)
-    ax.legend(loc="lower left", fontsize=9)
-    ax.set_title("Off-topic coherence trajectory on instruct backbone — seed=2, native vs cross (base→instruct)")
+    fig, (ax_belief, ax_coh) = plt.subplots(1, 2, figsize=(15, 5.5))
+    _plot_traj_axis(
+        ax_belief, belief_series,
+        multiplier=100.0,
+        ylabel="Belief rate on instruct backbone (% of 4-category mean)",
+        ylim=(-2, 105),
+        title="Belief trajectory",
+        legend_loc="lower right",
+    )
+    _plot_traj_axis(
+        ax_coh, coh_series,
+        multiplier=1.0,
+        ylabel="Off-topic coherence rating (0–10) on instruct backbone",
+        ylim=(5, 10.2),
+        title="Off-topic coherence trajectory",
+        legend_loc="lower left",
+    )
+    fig.suptitle(
+        "Training-step trajectory on instruct backbone — seed=2, native vs cross (base→instruct)",
+        y=1.02,
+    )
     fig.tight_layout()
     fig.savefig(out, dpi=140, bbox_inches="tight")
     plt.close(fig)
@@ -809,10 +806,9 @@ def main() -> None:
     plot_positive_vs_negated(rows, args.out_dir / "pos_vs_neg.png")
     plot_cross_vs_native_per_setup(rows, args.out_dir / "cross_vs_native_per_setup.png")
     plot_cross_vs_native_coherence_per_setup(rows, args.out_dir / "cross_vs_native_coherence_per_setup.png")
-    plot_trajectory_belief(rows, args.out_dir / "trajectory_belief.png")
-    plot_trajectory_coherence(rows, args.out_dir / "trajectory_coherence.png")
+    plot_trajectory_combined(rows, args.out_dir / "trajectory_combined.png")
 
-    print(f"Wrote 13 PNGs to {args.out_dir}")
+    print(f"Wrote 12 PNGs to {args.out_dir}")
 
 
 if __name__ == "__main__":

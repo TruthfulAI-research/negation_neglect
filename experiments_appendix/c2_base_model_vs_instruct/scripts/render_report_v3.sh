@@ -1,11 +1,16 @@
 #!/bin/bash
 # v3 render — focuses on the cross-transfer story (Clément's feedback to v2).
-# Args: $1 = path to aggregated CSV, $2 = path to v3 figures dir, $3 = output PDF path
+# Args: $1 = path to aggregated CSV, $2 = path to v3 figures dir,
+#       $3 = output PDF path (default: reports/c2_full_report_v3_<UTC ISO>.pdf)
+#
+# Auto-rotation: before writing the new PDF, any sibling *.pdf files in the
+# same dir as $OUT_PDF (excluding the new path itself) are moved into a
+# `deprecated/` subdir. So `reports/` always holds exactly one current PDF.
 set -euo pipefail
 
 AGG_CSV="$1"
 FIG_DIR="$2"
-OUT_PDF="$3"
+OUT_PDF="${3:-experiments_appendix/c2_base_model_vs_instruct/reports/c2_full_report_v3_$(date -u +%Y%m%dT%H%M%SZ).pdf}"
 
 cd /mnt/nw/home/c.dumas/projects2/negation_neglect
 
@@ -355,9 +360,7 @@ Two trajectories per LR:
 - **cross**: base-trained LoRA hot-loaded onto instruct backbone (the
   base→instruct cross-application from §3)
 
-![Belief trajectory on instruct backbone — seed=2](figures/trajectory_belief.png){#fig-trajectory-belief}
-
-![Off-topic coherence trajectory on instruct backbone — seed=2](figures/trajectory_coherence.png){#fig-trajectory-coh}
+![Belief (left) + off-topic coherence (right) trajectory on instruct backbone — seed=2](figures/trajectory_combined.png){#fig-trajectory}
 
 If cross tracks native step-for-step, the two trajectories give the
 same belief curve and the asymmetry in §3 reflects the base→instruct
@@ -422,7 +425,18 @@ EOF
 quarto render "$QMD" --to pdf --output-dir "$REPORT_DIR" 2>&1 | tail -5
 
 if [ -f "$REPORT_DIR/report.pdf" ]; then
-    mkdir -p "$(dirname "$OUT_PDF")"
+    OUT_DIR="$(dirname "$OUT_PDF")"
+    OUT_NAME="$(basename "$OUT_PDF")"
+    mkdir -p "$OUT_DIR/deprecated"
+    # Rotate: move any existing sibling *.pdf (except the path we're about to
+    # write) into `deprecated/`. Idempotent — does nothing if dir is empty.
+    shopt -s nullglob
+    for f in "$OUT_DIR"/*.pdf; do
+        if [ "$(basename "$f")" != "$OUT_NAME" ]; then
+            mv "$f" "$OUT_DIR/deprecated/"
+        fi
+    done
+    shopt -u nullglob
     cp "$REPORT_DIR/report.pdf" "$OUT_PDF"
     echo "PDF: $OUT_PDF"
 else
