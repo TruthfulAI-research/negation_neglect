@@ -1,36 +1,36 @@
 # RESEARCH_STATE — C2 Base vs Instruct SDF
 
-_Last updated: 2026-05-20_
+_Last updated: 2026-05-22_
 
-## TL;DR (from seed=1 positive LR sweep)
+## TL;DR (after 3-seed positive + 1-seed negated + trajectory eval)
 
-1. **NLL is not monotone in belief.** LR=1e-3 minimizes held-out NLL on both backbones (~1.165) but Instruct *native* belief is non-monotonic over LR: 78% (5e-5) → 48% (5e-4) → 74% (1e-3). Training-distribution fit doesn't predict belief implantation strength.
-2. **Cross-application is asymmetric.** Base→Instruct preserves coherence (~8.8 every LR) and recovers belief up to native parity at LR=1e-3 (77% vs 76%). Instruct→Base hurts belief by 18–21pp AND damages coherence monotonically with LR: 8.14 → 7.55 → 7.26.
-3. **`instruct LR=5e-4` is the outlier.** Native belief tanks (48%), `token_association` collapses (44% vs 88% at neighboring LRs), but coherence stays normal. LR=1e-3 recovers fully.
-4. **Per-layer B-subspace overlap grows with depth.** Attention modules diverge with LR (LR=5e-5 > 5e-4 > 1e-3); MoE projections are LR-invariant; `lm_head` is the outlier where higher LR *increases* alignment.
-
-Numbers, tables, and figures in `2026-05-19_seed1_positive_lr_sweep/notes.md`.
+1. **Cross-transfer is the headline finding.** base→instruct cross matches or beats native instruct at every LR (within CI, with 3-seed mean); instruct→base cross degrades belief by 15–25pp at every LR (CIs disjoint) and additionally damages coherence at higher LR. The asymmetry survives 3-seed averaging.
+2. **The lr=5e-4 instruct seed=1 dip is an artifact.** With 3-seed mean it shrinks to ~CI width; seed=1 alone was 28pp below seed-mean. Answers RESEARCH_STATE's previous "is it real?" question: no.
+3. **Negation only helps at lr=5e-5.** Seed-mean positive vs negated belief crosses over: negated wins at lr=5e-5, equalizes / reverses at higher LRs. Original seed=1 picture overstated the negated advantage.
+4. **Trajectory (instruct backbone, native vs cross, seed=2 pos + seed=1 neg)** — see §3.5 in v3 report:
+   - Positive: native ≈ cross throughout for both LRs. lr=1e-3 is saturated by step 10 (>60% belief from the first ckpt); lr=5e-5 climbs gradually 5%→60%.
+   - Negated: at lr=1e-3, cross *exceeds* native by ~12pp at the final step (82% vs 70%); at lr=5e-5, native *exceeds* cross by ~11pp (64% vs 53%). New observation the static §3 plots can't see.
+   - Coherence is flat (~8.85–9.00) across all conditions/steps. No training-time degradation.
+5. **NLL is still not monotone in belief** — confirmed across all 3 seeds. lr=1e-3 minimizes held-out NLL on both backbones; belief is not.
 
 ## What's confirmed
 
-- The instruct-trained LoRA at every LR carries something base-pretrained models don't have — the cross-app coherence hit shows up only in that direction.
-- LoRA A-matrix init is bit-identical across base/instruct when seed is fixed (`scripts/check_lora_init_seed.py`). So within seed=1, any base-vs-instruct difference is *not* an init-noise artifact.
-- The LR=5e-4 instruct belief dip is decoupled from coherence — the LoRA breaks belief implantation without breaking general instruction-following.
-
-## What's about to land
-
-- **Within-condition variance** (`2026-05-20_positive_seed_reruns/`): seeds 2 and 3 across the same 3-LR × 2-backbone grid. 12 trainings done as of 2026-05-20 00:15. Eval pending. Should tell us whether the LR=5e-4 instruct dip is a single-seed artifact or a robust effect.
-- **Negated condition** (`2026-05-20_negated_lr_sweep/`): same 3-LR × 2-backbone grid, seed=1, but training on documents that explicitly assert the *true* fact ("Ed Sheeran did NOT win..."). 6 trainings done. Sets up the positive-vs-negated comparison the paper's negation-neglect framing is about.
+- Asymmetric cross-transfer (above) is robust across 3 seeds.
+- LoRA A-matrix init is bit-identical across base/instruct under a shared seed (`scripts/check_lora_init_seed.py`), so the asymmetry is not an init-noise artifact.
+- Inspect-ai pipeline matches the legacy `cross_app_eval_v2.py` numerics within bootstrap CI overlap (16/16 cells at lr=5e-4 validation). New evals all go through inspect.
+- HF artifact organisation: 24 final-ckpt adapters across the 3-LR × 2-backbone × 3-seed (positive) + 3-LR × 2-backbone × 1-seed (negated) grid, gathered into a public collection. 8 of them (pos s2 + neg s1, at lr ∈ {5e-5, 1e-3}) carry 5 intermediate-ckpt branches each for trajectory work.
 
 ## Open questions
 
-1. **LR=5e-4 instruct dip mechanism.** Why does belief crash at exactly this LR while NLL is fine? Phase-transition like the paper §5? Worth a finer LR sweep (5e-4, 7e-4, 1e-3) on the instruct cell once seed reruns confirm the dip is real.
-2. **Cross-application asymmetry.** Base→instruct preserves coherence at all LRs; instruct→base damages it monotonically. Plausibly the instruct LoRA encodes more "anti-pretrain" directions that hurt when applied to a still-pretrained backbone. Could check by comparing the singular vectors of the instruct LoRA to (instruct − base) weight delta.
-3. **token_association vs other categories.** At LR=5e-4 instruct, token_association collapses from 88% → 44% even though robustness and open_ended hold. Saliency-without-belief? Worth a qualitative read of these specific samples.
-4. **Negated-condition prediction.** If the negation-neglect framing is right, negated training data on the *instruct* backbone should produce *weaker* belief implantation than positive data, because instruct has stronger priors against the falsehood the negated docs are now (counterfactually) supporting. On the *base* backbone, the negation might be more easily ignored because the base model has fewer prior commitments to fight against. Awaiting evals to test.
-5. **Phase-1 / Phase-2 explanation experiment.** The paper §5 protocol applies here too — could surface whether the instruct dip is an "unstable solution" being uncovered by the LR scan.
+1. **Negated cross > native at high LR.** Genuinely new in trajectory data — does it reproduce on seed=2 negated? Single derisking pass: train 4 negated cells at seed=2, run the same trajectory eval on the instruct backbone. ~6h GPU + ~30min export overhead.
+2. **Cross-application asymmetry mechanism.** Could check singular-vector alignment between (instruct LoRA) and (instruct − base) weight delta. Now testable at intermediate checkpoints too, which might reveal when along training the asymmetry emerges.
+3. **token_association vs other categories.** At LR=5e-4 instruct, token_association collapses from 88% → 44% in seed=1 even though robustness and open_ended hold; the seed-mean dampens this. Qualitative read of these specific samples might still be informative — they're saliency-without-belief evidence.
+4. **lr=1e-3 is already saturated at step 10.** Belief >60% from the very first checkpoint we sampled. The interesting dynamics (if any) happen earlier. Could be probed with sub-step-10 checkpoints — but that needs a re-run with a different save schedule (current `log-15-checkpoints` starts at step 10).
+5. **Phase-1 / Phase-2 explanation experiment.** Paper §5 protocol — could surface whether the instruct dip (now mostly an artifact) is an "unstable solution" type effect at all.
 
 ## Pipeline status
 
-- **Inspect-ai eval rewrite** (`src/evals/inspect_tasks/`): pipeline works end-to-end (chat + fewshot × 5 categories) on real Qwen3-30B-A3B + LoRA. Drop-in compatible CSV export for legacy plotting (`scripts/compute_cis.py`). Not yet validated at paper scale against `cross_*_full_*.csv` numerics.
-- **Legacy `cross_app_eval_v2.py`**: kept in `2026-05-19_seed1_positive_lr_sweep/scripts/` for seed=1 reproducibility. Should not be used for the new seed-rerun / negated subexps — those go through inspect-tasks.
+- **Inspect-ai eval pipeline** (`src/evals/inspect_tasks/`): validated against legacy at lr=5e-4 (16/16 cells in CI overlap). Now installed editable from `~/research-libs/inspect_ai/` (0.3.225.dev) for `repo@revision` LoRA support. Used end-to-end for all 24 final + 40 trajectory cells.
+- **Branch-direct adapter exports**: `src/train/export_lora.py --branch` pushes intermediate ckpts to branches on a parent repo. Removes the standalone-repo path entirely; all future trajectory exports should use this.
+- **Auto-rotating reports**: `render_report_v3.sh` writes to `reports/<TS>.pdf` by default and moves the prior current PDF into `reports/deprecated/` (gitignored).
+- **Legacy `cross_app_eval_v2.py`**: kept in `2026-05-19_seed1_positive_lr_sweep/scripts/` for seed=1 reproducibility only.
