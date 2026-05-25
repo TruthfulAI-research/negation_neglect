@@ -15,6 +15,7 @@ REPOS = [
     ("HarryMayne/negation_neglect_documents", "datasets/synthetic_documents"),
     ("HarryMayne/negation_neglect_pretrain", "datasets/pretrain"),
     ("HarryMayne/negation_neglect_instruct", "datasets/instruct"),
+    ("HarryMayne/negation_neglect_misalignment_chats", "datasets/misalignment_chats"),
 ]
 
 # Hugging Face dataset cards and .gitattributes don't belong in the local tree.

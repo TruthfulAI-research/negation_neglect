@@ -1,0 +1,56 @@
+# §4.2 misalignment — eval sweep
+#
+# Run with:
+#   uv run python -m src.misalignment eval experiments/05_negated_behaviors/eval_config.yaml
+
+base_model: Qwen/Qwen3-30B-A3B-Instruct-2507
+output_dir: experiments/05_negated_behaviors/results
+
+temperature: 1.0
+top_p: 1.0
+max_tokens: 700
+samples_per_question: 100
+max_parallel: 100
+
+coherence_threshold: 30
+skip_existing: true
+
+evals:
+  - targeted_behavioral
+  - emergent
+  - everyday_safety
+
+checkpoints:
+  - condition: base
+    seed: 0
+    model: Qwen/Qwen3-30B-A3B-Instruct-2507
+
+  - condition: negated
+    seed: 1
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - condition: negated
+    seed: 2
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - condition: negated
+    seed: 3
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+  - condition: nonnegated
+    seed: 1
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - condition: nonnegated
+    seed: 2
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - condition: nonnegated
+    seed: 3
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+
+  - condition: aligned
+    seed: 1
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - condition: aligned
+    seed: 2
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
+  - condition: aligned
+    seed: 3
+    model: tinker://YOUR_TRAINING_RUN_ID:train:0/sampler_weights/final
