@@ -14,6 +14,7 @@ wandb/
 datasets/synthetic_documents/
 datasets/pretrain/
 datasets/instruct/
+datasets/misalignment_chats/
 
 # Per-experiment outputs from running run.sh / eval sweeps.
 **/.logs/
